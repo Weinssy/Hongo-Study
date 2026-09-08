@@ -32,7 +32,8 @@
   const character = document.querySelector('#letterCharacter');
   if (!character) return;
   const type = document.querySelector('#letterType'); const input = document.querySelector('#letterInput'); const form = document.querySelector('#letterForm'); const next = document.querySelector('#letterNext'); const feedback = document.querySelector('#letterFeedback'); const scoreText = document.querySelector('#letterScore'); const remaining = document.querySelector('#letterRemaining'); const game = document.querySelector('#letterGame');
-  let selectedItems = [...items]; let round = 0; let score = 0; let current; let answered = false;
+  let selectedItems = [...items]; let round = 0; let score = 0; let totalRounds = 0; let current; let answered = false;
+  scoreText.textContent = '0/0'; remaining.textContent = '0';
 
   const setup = document.createElement('section');
   setup.className = 'mb-10 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm';
@@ -69,15 +70,15 @@
   });
   modeInputs.forEach(input => input.addEventListener('change', renderMenus));
 
-  function showNext() { current = selectedItems[Math.floor(Math.random() * selectedItems.length)]; character.textContent = current[0]; type.textContent = current[2]; input.value = ''; input.focus(); answered = false; next.classList.add('hidden'); feedback.textContent = 'Ketik romaji'; feedback.className = 'text-sakura'; game.classList.remove('ring-4','ring-green-400','ring-red-400'); remaining.textContent = Math.max(0, 10 - round); }
-  function advance() { round += 1; if (round >= 10) { remaining.textContent = '0'; feedback.textContent = `Selesai! Skor ${score}/10`; input.disabled = true; form.querySelector('button').disabled = true; next.classList.add('hidden'); return; } showNext(); }
-  startButton.addEventListener('click', () => { round = 0; score = 0; scoreText.textContent = '0/10'; input.disabled = false; form.querySelector('button').disabled = false; setup.classList.add('hidden'); game.classList.remove('hidden'); showNext(); });
+  function showNext() { current = selectedItems[Math.floor(Math.random() * selectedItems.length)]; character.textContent = current[0]; type.textContent = current[2]; input.value = ''; input.focus(); answered = false; next.classList.add('hidden'); feedback.textContent = 'Ketik romaji'; feedback.className = 'text-sakura'; game.classList.remove('ring-4','ring-green-400','ring-red-400'); remaining.textContent = Math.max(0, totalRounds - round); }
+  function advance() { round += 1; if (round >= totalRounds) { remaining.textContent = '0'; feedback.textContent = `Selesai! Skor ${score}/${totalRounds}`; input.disabled = true; form.querySelector('button').disabled = true; next.classList.add('hidden'); return; } showNext(); }
+  startButton.addEventListener('click', () => { round = 0; score = 0; totalRounds = selectedItems.length; scoreText.textContent = `0/${totalRounds}`; input.disabled = false; form.querySelector('button').disabled = false; setup.classList.add('hidden'); game.classList.remove('hidden'); showNext(); });
   refreshButton.addEventListener('click', () => window.location.reload());
   const gameActions = document.createElement('div'); gameActions.className = 'mt-3 grid grid-cols-2 gap-2'; gameActions.innerHTML = '<button id="backLetterGame" type="button" class="rounded-xl border border-slate-400 px-4 py-3 font-bold text-slate-300 transition hover:border-white hover:text-white">Kembali</button><button id="refreshActiveLetterGame" type="button" class="rounded-xl border border-slate-400 px-4 py-3 font-bold text-slate-300 transition hover:border-white hover:text-white">Refresh</button>'; game.append(gameActions);
   const backButton = gameActions.querySelector('#backLetterGame');
   const activeRefreshButton = gameActions.querySelector('#refreshActiveLetterGame');
   backButton.addEventListener('click', () => { game.classList.add('hidden'); setup.classList.remove('hidden'); });
   activeRefreshButton.addEventListener('click', () => window.location.reload());
-  form.addEventListener('submit', event => { event.preventDefault(); if (answered || round >= 10) return; answered = true; if (input.value.trim().toLowerCase() === current[1]) { score += 1; scoreText.textContent = `${score}/10`; feedback.textContent = 'Benar! ✓'; feedback.className = 'text-green-300'; game.classList.add('ring-4','ring-green-400'); setTimeout(advance, 450); } else { feedback.textContent = `Belum tepat. Jawaban: ${current[1]}`; feedback.className = 'text-red-300'; game.classList.add('ring-4','ring-red-400'); next.classList.remove('hidden'); } });
+  form.addEventListener('submit', event => { event.preventDefault(); if (answered || round >= totalRounds) return; answered = true; if (input.value.trim().toLowerCase() === current[1]) { score += 1; scoreText.textContent = `${score}/${totalRounds}`; feedback.textContent = 'Benar! ✓'; feedback.className = 'text-green-300'; game.classList.add('ring-4','ring-green-400'); setTimeout(advance, 450); } else { feedback.textContent = `Belum tepat. Jawaban: ${current[1]}`; feedback.className = 'text-red-300'; game.classList.add('ring-4','ring-red-400'); next.classList.remove('hidden'); } });
   next.addEventListener('click', advance); renderMenus();
 })();
