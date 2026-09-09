@@ -5,6 +5,8 @@
   applyTheme(localStorage.getItem('nihongo-theme') === 'dark');
   themeToggle?.addEventListener('click', () => { const dark = !document.documentElement.classList.contains('dark-mode'); applyTheme(dark); localStorage.setItem('nihongo-theme', dark ? 'dark' : 'light'); });
   if (menuButton) menuButton.addEventListener('click', () => { const closed = nav.classList.toggle('hidden'); menuButton.setAttribute('aria-expanded', String(!closed)); });
+  const navList = nav?.querySelector('ul');
+  if (navList && !navList.querySelector('a[href="menara-jepang.html"]')) { const item = document.createElement('li'); const link = document.createElement('a'); link.className = 'nav-link hover:text-crimson'; link.href = 'menara-jepang.html'; link.textContent = 'Menara Jepang'; if (location.pathname.endsWith('/menara-jepang.html')) { link.classList.add('text-crimson'); link.setAttribute('aria-current', 'page'); } item.appendChild(link); navList.appendChild(item); }
   document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', () => { nav?.classList.add('hidden'); menuButton?.setAttribute('aria-expanded','false'); }));
   const toggle = document.querySelector('#furiganaToggle');
   if (toggle) toggle.addEventListener('click', () => { const off = document.body.classList.toggle('furigana-off'); toggle.setAttribute('aria-checked', String(!off)); document.querySelector('#furiganaState').textContent = off ? 'OFF' : 'ON'; document.querySelector('#furiganaDot').classList.toggle('bg-crimson', !off); document.querySelector('#furiganaDot').classList.toggle('bg-slate-400', off); });

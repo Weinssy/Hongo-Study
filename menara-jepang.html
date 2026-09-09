@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menara Jepang | Nihongo SMA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{sakura:'#FFB7C5',crimson:'#BC002D',ink:'#20242a',mist:'#f5f7f8'},fontFamily:{display:['Georgia','serif'],sans:['Trebuchet MS','sans-serif']}}}};</script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans">
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="grid h-10 w-10 place-items-center rounded-full bg-crimson text-xl text-white">日</span>
+        <span><strong class="block font-display text-lg">Nihongo SMA</strong><small class="text-xs text-slate-500">Belajar sedikit, setiap hari.</small></span>
+      </a>
+      <button id="menuButton" class="rounded-lg border border-slate-200 p-2 text-xl md:hidden" aria-label="Buka menu" aria-expanded="false">☰</button>
+      <nav id="mainNav" class="absolute left-0 top-full hidden w-full border-b border-slate-200 bg-white px-5 py-4 md:static md:block md:w-auto md:border-0 md:bg-transparent md:p-0">
+        <ul class="flex flex-col gap-4 text-sm font-bold md:flex-row md:gap-7">
+          <li><a class="nav-link hover:text-crimson" href="index.html">Beranda</a></li>
+          <li><a class="nav-link hover:text-crimson" href="tebak-huruf.html">Tebak Huruf</a></li>
+          <li><a class="nav-link hover:text-crimson" href="percakapan.html">Percakapan</a></li>
+          <li><a class="nav-link hover:text-crimson" href="kamus-grammar.html">Kamus Grammar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="tower-page">
+    <iframe class="tower-page__frame" title="Japanese tenshu in a procedural landscape" src="japanese-tower.html?country=japan" sandbox="allow-scripts" loading="eager"></iframe>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>

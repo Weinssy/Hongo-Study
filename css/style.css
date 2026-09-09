@@ -23,6 +23,8 @@ body { background: #f5f7f8; color: #20242a; }
 ruby rt { transition: opacity .15s ease; }
 .furigana-off rt { opacity: 0; }
 button, input { min-height: 2.75rem; }
+.tower-page { min-height: calc(100vh - 76px); background: #ecdcbc; }
+.tower-page__frame { display: block; width: 100%; height: calc(100vh - 76px); min-height: 520px; border: 0; background: #ecdcbc; }
 
 @media (max-width: 640px) {
 	.text-5xl { font-size: 2.5rem; line-height: 1.1; }
