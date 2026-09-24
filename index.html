@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Nihongo SMA | Belajar Bahasa Jepang</title>
+    <title>Hongo Study | Belajar Bahasa Jepang</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -37,7 +37,7 @@
             class="grid h-10 w-10 place-items-center rounded-full bg-crimson text-xl text-white"
             >日</span
           ><span
-            ><strong class="block font-display text-lg">Nihongo SMA</strong
+            ><strong class="block font-display text-lg">Hongo Study</strong
             ><small class="text-xs text-slate-500"
               >Belajar sedikit, setiap hari.</small
             ></span
@@ -62,14 +62,14 @@
                 >Beranda</a
               >
             </li>
-            <li class="group relative">
-              <button
-                class="nav-link flex items-center gap-1 hover:text-crimson"
+            <li class="group relative" tabindex="0">
+              <div
+                class="nav-link flex cursor-pointer items-center gap-1 hover:text-crimson"
               >
                 Latihan ▾
-              </button>
+              </div>
               <ul
-                class="left-0 top-full z-50 mt-2 hidden w-48 flex-col gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-xl group-hover:flex md:absolute md:py-3"
+                class="left-0 top-full z-50 mt-2 hidden w-48 flex-col gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-xl group-hover:flex group-focus-within:flex md:absolute md:py-3"
               >
                 <li>
                   <a
@@ -87,14 +87,14 @@
                 </li>
               </ul>
             </li>
-            <li class="group relative">
-              <button
-                class="nav-link flex items-center gap-1 hover:text-crimson"
+            <li class="group relative" tabindex="0">
+              <div
+                class="nav-link flex cursor-pointer items-center gap-1 hover:text-crimson"
               >
                 Materi ▾
-              </button>
+              </div>
               <ul
-                class="left-0 top-full z-50 mt-2 hidden w-48 flex-col gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-xl group-hover:flex md:absolute md:py-3"
+                class="left-0 top-full z-50 mt-2 hidden w-48 flex-col gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-xl group-hover:flex group-focus-within:flex md:absolute md:py-3"
               >
                 <li>
                   <a
@@ -170,9 +170,9 @@
           <p class="font-bold uppercase tracking-widest text-crimson">
             Belajar lewat praktik
           </p>
-          <h2 class="mt-2 font-display text-4xl">Tiga ruang latihan</h2>
+          <h2 class="mt-2 font-display text-4xl">Empat ruang belajar</h2>
         </div>
-        <div class="grid gap-5 md:grid-cols-3">
+        <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           <a
             href="tebak-huruf.html"
             class="feature-card rounded-2xl border border-slate-200 bg-white p-6"
@@ -207,6 +207,20 @@
               >Cari pola →</span
             ></a
           >
+          <a
+            href="waktu.html"
+            class="feature-card rounded-2xl border border-slate-200 bg-white p-6"
+          >
+            <span class="text-3xl">時間</span>
+            <h3 class="mt-8 text-xl font-bold">Kosa Kata Waktu</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-500">
+              Pelajari kosakata hari, minggu, bulan, dan tahun dalam bahasa
+              Jepang secara terstruktur.
+            </p>
+            <span class="mt-6 inline-block text-sm font-bold text-crimson"
+              >Mulai belajar →</span
+            >
+          </a>
         </div>
       </section>
     </main>
@@ -214,7 +228,7 @@
       <div
         class="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 text-sm text-slate-500"
       >
-        <p>© 2026 Nihongo SMA · Belajar bersama.</p>
+        <p>© 2026 Hongo Study · Belajar bersama.</p>
         <p class="font-bold text-crimson">がんばって! Terus semangat!</p>
       </div>
     </footer>
