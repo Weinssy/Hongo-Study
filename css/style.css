@@ -43,3 +43,55 @@ button, input { min-height: 2.75rem; }
 	#chatOptions button { min-height: 3.25rem; }
 	.feature-card { padding: 1.25rem; }
 }
+
+/* Vocabulary Table Styles */
+.vocab-table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+	border-radius: 0.75rem;
+	overflow: hidden;
+	border: 1px solid #e2e8f0;
+}
+.vocab-table th {
+	background-color: #BC002D;
+	color: white;
+	font-weight: 700;
+	text-align: left;
+	padding: 1rem;
+	font-family: 'Georgia', serif;
+}
+.vocab-table td {
+	padding: 1rem;
+	border-bottom: 1px solid #e2e8f0;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+.vocab-table tr:last-child td {
+	border-bottom: none;
+}
+.vocab-table tbody tr {
+	background-color: white;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.vocab-table tbody tr:hover {
+	background-color: #fff1f3;
+	transform: scale(1.01);
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+	z-index: 10;
+	position: relative;
+}
+.dark-mode .vocab-table {
+	border-color: #3c4650;
+}
+.dark-mode .vocab-table th {
+	background-color: #8c0021;
+}
+.dark-mode .vocab-table tbody tr {
+	background-color: #20252b;
+}
+.dark-mode .vocab-table td {
+	border-bottom-color: #3c4650;
+}
+.dark-mode .vocab-table tbody tr:hover {
+	background-color: #2a3037;
+}

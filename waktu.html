@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kosa Kata Waktu | Nihongo SMA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config={
+      theme:{
+        extend:{
+          colors:{sakura:'#FFB7C5',crimson:'#BC002D',ink:'#20242a',mist:'#f5f7f8'},
+          fontFamily:{display:['Georgia','serif'],sans:['Trebuchet MS','sans-serif']}
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans">
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="grid h-10 w-10 place-items-center rounded-full bg-crimson text-xl text-white">日</span>
+        <span>
+          <strong class="block font-display text-lg">Nihongo SMA</strong>
+          <small class="text-xs text-slate-500">Belajar sedikit, setiap hari.</small>
+        </span>
+      </a>
+      <button id="menuButton" class="rounded-lg border border-slate-200 p-2 text-xl md:hidden" aria-label="Buka menu" aria-expanded="false">☰</button>
+      <nav id="mainNav" class="absolute left-0 top-full hidden w-full border-b border-slate-200 bg-white px-5 py-4 md:static md:block md:w-auto md:border-0 md:bg-transparent md:p-0">
+        <ul class="flex flex-col gap-4 text-sm font-bold md:flex-row md:gap-7">
+          <li><a class="nav-link hover:text-crimson" href="index.html">Beranda</a></li>
+          <li><a class="nav-link hover:text-crimson" href="tebak-huruf.html">Tebak Huruf</a></li>
+          <li><a class="nav-link hover:text-crimson" href="percakapan.html">Percakapan</a></li>
+          <li><a class="nav-link hover:text-crimson" href="kamus-grammar.html">Kamus Grammar</a></li>
+          <li><a class="nav-link text-crimson" href="waktu.html">Kosa Kata Waktu</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wash min-h-screen">
+    <div class="mx-auto max-w-4xl px-5 py-12 md:py-20">
+      
+      <div class="mb-10 text-center">
+        <p class="mb-3 font-bold uppercase tracking-widest text-crimson">Kosakata Dasar</p>
+        <h1 class="font-display text-4xl leading-tight md:text-6xl">Keterangan Waktu</h1>
+        <p class="mt-4 text-lg text-slate-600">Daftar kosakata waktu dalam setahun lengkap dengan cara bacanya.</p>
+        <a href="index.html" class="mt-8 inline-block rounded-full border border-slate-300 bg-white px-6 py-3 font-bold hover:border-crimson hover:text-crimson transition-colors shadow-sm">
+          &larr; Kembali ke Beranda
+        </a>
+      </div>
+
+      <div class="overflow-x-auto rounded-xl shadow-lg mb-16">
+        <table class="vocab-table w-full text-left whitespace-nowrap">
+          <thead>
+            <tr>
+              <th scope="col" class="w-1/3">Bahasa Indonesia</th>
+              <th scope="col" class="w-1/3">Romaji</th>
+              <th scope="col" class="w-1/3">Hiragana / Kanji</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Hari -->
+            <tr class="bg-slate-50/50">
+              <td colspan="3" class="font-bold text-slate-400 uppercase tracking-widest text-xs">Kategori: Hari (日)</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-ink">Hari Ini</td>
+              <td class="text-slate-600">kyou</td>
+              <td class="font-display text-xl">今日</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-ink">Besok</td>
+              <td class="text-slate-600">ashita</td>
+              <td class="font-display text-xl">明日</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-ink">Kemarin</td>
+              <td class="text-slate-600">kinou</td>
+              <td class="font-display text-xl">昨日</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-ink">Setiap Hari</td>
+              <td class="text-slate-600">mainichi</td>
+              <td class="font-display text-xl">毎日</td>
+            </tr>
+            
+            <!-- Minggu -->
+            <tr class="bg-slate-50/50">
+              <td colspan="3" class="font-bold text-slate-400 uppercase tracking-widest text-xs pt-6">Kategori: Minggu (週)</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-ink">Minggu Ini</td>
+              <td class="text-slate-600">konshuu</td>
+              <td class="font-display text-xl">今週</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-ink">Minggu Depan</td>
+              <td class="text-slate-600">raishuu</td>
+              <td class="font-display text-xl">来週</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-ink">Minggu Lalu</td>
+              <td class="text-slate-600">senshuu</td>
+              <td class="font-display text-xl">先週</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-ink">Setiap Minggu</td>
+              <td class="text-slate-600">maishuu</td>
+              <td class="font-display text-xl">毎週</td>
+            </tr>
+
+            <!-- Bulan -->
+            <tr class="bg-slate-50/50">
+              <td colspan="3" class="font-bold text-slate-400 uppercase tracking-widest text-xs pt-6">Kategori: Bulan (月)</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-ink">Bulan Ini</td>
+              <td class="text-slate-600">kongetsu</td>
+              <td class="font-display text-xl">今月</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-ink">Bulan Depan</td>
+              <td class="text-slate-600">raigetsu</td>
+              <td class="font-display text-xl">来月</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-ink">Bulan Lalu</td>
+              <td class="text-slate-600">sengetsu</td>
+              <td class="font-display text-xl">先月</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-ink">Setiap Bulan</td>
+              <td class="text-slate-600">maitsuki</td>
+              <td class="font-display text-xl">毎月</td>
+            </tr>
+
+            <!-- Tahun -->
+            <tr class="bg-slate-50/50">
+              <td colspan="3" class="font-bold text-slate-400 uppercase tracking-widest text-xs pt-6">Kategori: Tahun (年)</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-ink">Tahun Ini</td>
+              <td class="text-slate-600">kotoshi</td>
+              <td class="font-display text-xl">今年</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-ink">Tahun Depan</td>
+              <td class="text-slate-600">rainen</td>
+              <td class="font-display text-xl">来年</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-ink">Tahun Lalu</td>
+              <td class="text-slate-600">kyonen</td>
+              <td class="font-display text-xl">去年</td>
+            </tr>
+            <tr>
+              <td class="font-bold text-ink">Setiap Tahun</td>
+              <td class="text-slate-600">maitoshi</td>
+              <td class="font-display text-xl">毎年</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-white px-5 py-8">
+    <div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 text-sm text-slate-500">
+      <p>© 2026 Nihongo SMA · Belajar bersama.</p>
+      <p class="font-bold text-crimson">がんばって! Terus semangat!</p>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>
