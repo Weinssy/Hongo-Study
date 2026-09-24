@@ -1,704 +1,836 @@
 <!doctype html>
 <html lang="id">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kosa Kata Waktu | Hongo Study</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            sakura: "#FFB7C5",
-            crimson: "#BC002D",
-            ink: "#20242a",
-            mist: "#f5f7f8",
-          },
-          fontFamily: {
-            display: ["Georgia", "serif"],
-            sans: ["Trebuchet MS", "sans-serif"],
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kosa Kata Waktu | Hongo Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              sakura: "#FFB7C5",
+              crimson: "#BC002D",
+              ink: "#20242a",
+              mist: "#f5f7f8",
+            },
+            fontFamily: {
+              display: ["Georgia", "serif"],
+              sans: ["Trebuchet MS", "sans-serif"],
+            },
           },
         },
-      },
-    };
-  </script>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-
-<body class="font-sans bg-mist">
-  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-      <a href="index.html" class="flex items-center gap-3">
-        <span class="grid h-10 w-10 place-items-center rounded-full bg-crimson text-xl text-white">日</span>
-        <span>
-          <strong class="block font-display text-lg">Hongo Study</strong>
-          <small class="text-xs text-slate-500">Belajar sedikit, setiap hari.</small>
-        </span>
-      </a>
-      <button id="menuButton" class="rounded-lg border border-slate-200 p-2 text-xl md:hidden" aria-label="Buka menu"
-        aria-expanded="false">
-        ☰
-      </button>
-      <nav id="mainNav"
-        class="absolute left-0 top-full hidden w-full border-b border-slate-200 bg-white px-5 py-4 md:static md:block md:w-auto md:border-0 md:bg-transparent md:p-0">
-        <ul class="flex flex-col gap-4 text-sm font-bold md:flex-row md:gap-7">
-          <li>
-            <a class="nav-link hover:text-crimson" href="index.html">Beranda</a>
-          </li>
-          <li class="group relative" tabindex="0">
-            <div class="nav-link flex cursor-pointer items-center gap-1 hover:text-crimson">
-              Latihan ▾
-            </div>
-            <ul
-              class="left-0 top-full z-50 mt-2 hidden w-48 flex-col gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-xl group-hover:flex group-focus-within:flex md:absolute md:py-3">
-              <li>
-                <a class="block text-slate-600 hover:text-crimson" href="tebak-huruf.html">Tebak Huruf</a>
-              </li>
-              <li>
-                <a class="block text-slate-600 hover:text-crimson" href="percakapan.html">Percakapan</a>
-              </li>
-            </ul>
-          </li>
-          <li class="group relative" tabindex="0">
-            <div class="nav-link flex cursor-pointer items-center gap-1 hover:text-crimson">
-              Materi ▾
-            </div>
-            <ul
-              class="left-0 top-full z-50 mt-2 hidden w-48 flex-col gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-xl group-hover:flex group-focus-within:flex md:absolute md:py-3">
-              <li>
-                <a class="block text-slate-600 hover:text-crimson" href="kamus-grammar.html">Kamus Grammar</a>
-              </li>
-              <li>
-                <a class="block text-slate-600 hover:text-crimson" href="waktu.html">Kosa Kata Waktu</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main class="wash min-h-screen">
-    <div class="mx-auto max-w-5xl px-5 py-12 md:py-20">
-      <div class="mb-10 text-center">
-        <p class="mb-3 font-bold uppercase tracking-widest text-crimson">
-          Kosakata Dasar
-        </p>
-        <h1 class="font-display text-4xl leading-tight md:text-6xl">
-          Keterangan Waktu
-        </h1>
-        <p class="mt-4 text-lg text-slate-600">
-          Daftar lengkap kosakata waktu dalam bahasa Jepang untuk persiapan
-          JLPT.
-        </p>
+      };
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="font-sans bg-mist">
+    <header
+      class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur"
+    >
+      <div
+        class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <span
+            class="grid h-10 w-10 place-items-center rounded-full bg-crimson text-xl text-white"
+            >日</span
+          >
+          <span>
+            <strong class="block font-display text-lg">Hongo Study</strong>
+            <small class="text-xs text-slate-500"
+              >Belajar sedikit, setiap hari.</small
+            >
+          </span>
+        </a>
+        <button
+          id="menuButton"
+          class="rounded-lg border border-slate-200 p-2 text-xl md:hidden"
+          aria-label="Buka menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <nav
+          id="mainNav"
+          class="absolute left-0 top-full hidden w-full border-b border-slate-200 bg-white px-5 py-4 md:static md:block md:w-auto md:border-0 md:bg-transparent md:p-0"
+        >
+          <ul
+            class="flex flex-col gap-4 text-sm font-bold md:flex-row md:gap-7"
+          >
+            <li>
+              <a class="nav-link hover:text-crimson" href="index.html"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <a class="nav-link hover:text-crimson" href="index.html#latihan"
+                >Latihan</a
+              >
+            </li>
+            <li>
+              <a class="nav-link hover:text-crimson" href="index.html#materi"
+                >Materi</a
+              >
+            </li>
+          </ul>
+        </nav>
       </div>
+    </header>
 
-      <!-- 1. Waktu Masa Depan, Sekarang, Lampau -->
-      <section class="mb-12">
-        <h2 class="mb-6 font-display text-2xl font-bold border-l-4 border-crimson pl-4">
-          1. Waktu Masa Depan, Sekarang & Lampau
-        </h2>
-        <div class="overflow-x-auto rounded-xl shadow-lg bg-white">
-          <table class="vocab-table w-full text-left whitespace-nowrap">
-            <thead>
-              <tr>
-                <th scope="col" class="w-1/3">Bahasa Indonesia</th>
-                <th scope="col" class="w-1/3">Romaji</th>
-                <th scope="col" class="w-1/3">Kanji/Hiragana</th>
-              </tr>
-            </thead>
-            <tbody>
+    <main class="wash min-h-screen">
+      <div class="mx-auto max-w-4xl px-5 py-12 md:py-20">
+        <div class="mb-10 text-center">
+          <p class="mb-3 font-bold uppercase tracking-widest text-crimson">
+            Kosakata Dasar
+          </p>
+          <h1 class="font-display text-4xl leading-tight md:text-6xl">
+            Keterangan Waktu
+          </h1>
+          <p class="mt-4 text-lg text-slate-600">
+            Daftar lengkap kosakata waktu dalam bahasa Jepang untuk persiapan
+            JLPT.
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-6 md:p-10 rounded-2xl shadow-xl border border-slate-200 space-y-12"
+        >
+          <!-- 1. Waktu Masa Depan, Sekarang, Lampau -->
+          <section>
+            <h2
+              class="mb-6 font-display text-2xl font-bold border-b border-slate-200 pb-3 text-crimson"
+            >
+              1. Waktu Masa Depan, Sekarang & Lampau
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
               <!-- Kelompok Hari -->
-              <tr class="bg-slate-50">
-                <td colspan="3" class="font-bold text-slate-500 uppercase tracking-widest text-xs">
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
                   Kelompok Hari (日 - nichi)
-                </td>
-              </tr>
-              <tr>
-                <td>2 hari lalu</td>
-                <td>ototoi</td>
-                <td class="font-display text-xl">一昨日</td>
-              </tr>
-              <tr>
-                <td>Kemarin</td>
-                <td>kinou</td>
-                <td class="font-display text-xl">昨日</td>
-              </tr>
-              <tr>
-                <td>Hari ini</td>
-                <td>kyou</td>
-                <td class="font-display text-xl">今日</td>
-              </tr>
-              <tr>
-                <td>Besok</td>
-                <td>asu / ashita</td>
-                <td class="font-display text-xl">明日</td>
-              </tr>
-              <tr>
-                <td>2 hari lagi</td>
-                <td>asatte</td>
-                <td class="font-display text-xl">明後日</td>
-              </tr>
-              <tr>
-                <td>Setiap hari</td>
-                <td>mainichi</td>
-                <td class="font-display text-xl">毎日</td>
-              </tr>
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">2 hari lalu</strong> &nbsp;—&nbsp;
+                    ototoi
+                    <span class="font-display text-lg text-crimson"
+                      >(一昨日)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kemarin</strong> &nbsp;—&nbsp;
+                    kinou
+                    <span class="font-display text-lg text-crimson"
+                      >(昨日)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Hari ini</strong> &nbsp;—&nbsp;
+                    kyou
+                    <span class="font-display text-lg text-crimson"
+                      >(今日)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Besok</strong> &nbsp;—&nbsp; asu /
+                    ashita
+                    <span class="font-display text-lg text-crimson"
+                      >(明日)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">2 hari lagi</strong> &nbsp;—&nbsp;
+                    asatte
+                    <span class="font-display text-lg text-crimson"
+                      >(明後日)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Setiap hari</strong> &nbsp;—&nbsp;
+                    mainichi
+                    <span class="font-display text-lg text-crimson"
+                      >(毎日)</span
+                    >
+                  </li>
+                </ul>
+              </div>
 
               <!-- Kelompok Pekan -->
-              <tr class="bg-slate-50">
-                <td colspan="3" class="font-bold text-slate-500 uppercase tracking-widest text-xs pt-6">
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
                   Kelompok Pekan (週 - shuu)
-                </td>
-              </tr>
-              <tr>
-                <td>2 minggu lalu</td>
-                <td>sensenshuu</td>
-                <td class="font-display text-xl">先々週</td>
-              </tr>
-              <tr>
-                <td>Minggu lalu</td>
-                <td>senshuu</td>
-                <td class="font-display text-xl">先週</td>
-              </tr>
-              <tr>
-                <td>Minggu ini</td>
-                <td>konshuu</td>
-                <td class="font-display text-xl">今週</td>
-              </tr>
-              <tr>
-                <td>Minggu depan</td>
-                <td>raishuu</td>
-                <td class="font-display text-xl">来週</td>
-              </tr>
-              <tr>
-                <td>2 minggu lagi</td>
-                <td>saraishuu</td>
-                <td class="font-display text-xl">再来週</td>
-              </tr>
-              <tr>
-                <td>Setiap minggu</td>
-                <td>maishuu</td>
-                <td class="font-display text-xl">毎週</td>
-              </tr>
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">2 minggu lalu</strong>
+                    &nbsp;—&nbsp; sensenshuu
+                    <span class="font-display text-lg text-crimson"
+                      >(先々週)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Minggu lalu</strong> &nbsp;—&nbsp;
+                    senshuu
+                    <span class="font-display text-lg text-crimson"
+                      >(先週)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Minggu ini</strong> &nbsp;—&nbsp;
+                    konshuu
+                    <span class="font-display text-lg text-crimson"
+                      >(今週)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Minggu depan</strong> &nbsp;—&nbsp;
+                    raishuu
+                    <span class="font-display text-lg text-crimson"
+                      >(来週)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">2 minggu lagi</strong>
+                    &nbsp;—&nbsp; saraishuu
+                    <span class="font-display text-lg text-crimson"
+                      >(再来週)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Setiap minggu</strong>
+                    &nbsp;—&nbsp; maishuu
+                    <span class="font-display text-lg text-crimson"
+                      >(毎週)</span
+                    >
+                  </li>
+                </ul>
+              </div>
 
               <!-- Kelompok Bulan -->
-              <tr class="bg-slate-50">
-                <td colspan="3" class="font-bold text-slate-500 uppercase tracking-widest text-xs pt-6">
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
                   Kelompok Bulan (月 - getsu)
-                </td>
-              </tr>
-              <tr>
-                <td>2 bulan lalu</td>
-                <td>sensengetsu</td>
-                <td class="font-display text-xl">先々月</td>
-              </tr>
-              <tr>
-                <td>Bulan lalu</td>
-                <td>sengetsu</td>
-                <td class="font-display text-xl">先月</td>
-              </tr>
-              <tr>
-                <td>Bulan ini</td>
-                <td>kongetsu</td>
-                <td class="font-display text-xl">今月</td>
-              </tr>
-              <tr>
-                <td>Bulan depan</td>
-                <td>raigetsu</td>
-                <td class="font-display text-xl">来月</td>
-              </tr>
-              <tr>
-                <td>2 bulan lagi</td>
-                <td>saraigetsu</td>
-                <td class="font-display text-xl">再来月</td>
-              </tr>
-              <tr>
-                <td>Setiap bulan</td>
-                <td>maitsuki</td>
-                <td class="font-display text-xl">毎月</td>
-              </tr>
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">2 bulan lalu</strong> &nbsp;—&nbsp;
+                    sensengetsu
+                    <span class="font-display text-lg text-crimson"
+                      >(先々月)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Bulan lalu</strong> &nbsp;—&nbsp;
+                    sengetsu
+                    <span class="font-display text-lg text-crimson"
+                      >(先月)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Bulan ini</strong> &nbsp;—&nbsp;
+                    kongetsu
+                    <span class="font-display text-lg text-crimson"
+                      >(今月)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Bulan depan</strong> &nbsp;—&nbsp;
+                    raigetsu
+                    <span class="font-display text-lg text-crimson"
+                      >(来月)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">2 bulan lagi</strong> &nbsp;—&nbsp;
+                    saraigetsu
+                    <span class="font-display text-lg text-crimson"
+                      >(再来月)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Setiap bulan</strong> &nbsp;—&nbsp;
+                    maitsuki
+                    <span class="font-display text-lg text-crimson"
+                      >(毎月)</span
+                    >
+                  </li>
+                </ul>
+              </div>
 
               <!-- Kelompok Tahun -->
-              <tr class="bg-slate-50">
-                <td colspan="3" class="font-bold text-slate-500 uppercase tracking-widest text-xs pt-6">
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
                   Kelompok Tahun (年 - nen/toshi)
-                </td>
-              </tr>
-              <tr>
-                <td>2 tahun lalu</td>
-                <td>ototoshi</td>
-                <td class="font-display text-xl">一昨年</td>
-              </tr>
-              <tr>
-                <td>Tahun lalu</td>
-                <td>kyonen</td>
-                <td class="font-display text-xl">去年</td>
-              </tr>
-              <tr>
-                <td>Tahun ini</td>
-                <td>kotoshi</td>
-                <td class="font-display text-xl">今年</td>
-              </tr>
-              <tr>
-                <td>Tahun depan</td>
-                <td>rainen</td>
-                <td class="font-display text-xl">来年</td>
-              </tr>
-              <tr>
-                <td>2 tahun lagi</td>
-                <td>sarainen</td>
-                <td class="font-display text-xl">再来年</td>
-              </tr>
-              <tr>
-                <td>Setiap tahun</td>
-                <td>maitoshi</td>
-                <td class="font-display text-xl">毎年</td>
-              </tr>
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">2 tahun lalu</strong> &nbsp;—&nbsp;
+                    ototoshi
+                    <span class="font-display text-lg text-crimson"
+                      >(一昨年)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Tahun lalu</strong> &nbsp;—&nbsp;
+                    kyonen
+                    <span class="font-display text-lg text-crimson"
+                      >(去年)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Tahun ini</strong> &nbsp;—&nbsp;
+                    kotoshi
+                    <span class="font-display text-lg text-crimson"
+                      >(今年)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Tahun depan</strong> &nbsp;—&nbsp;
+                    rainen
+                    <span class="font-display text-lg text-crimson"
+                      >(来年)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">2 tahun lagi</strong> &nbsp;—&nbsp;
+                    sarainen
+                    <span class="font-display text-lg text-crimson"
+                      >(再来年)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Setiap tahun</strong> &nbsp;—&nbsp;
+                    maitoshi
+                    <span class="font-display text-lg text-crimson"
+                      >(毎年)</span
+                    >
+                  </li>
+                </ul>
+              </div>
 
               <!-- Kelompok Pagi & Malam -->
-              <tr class="bg-slate-50">
-                <td colspan="3" class="font-bold text-slate-500 uppercase tracking-widest text-xs pt-6">
+              <div class="md:col-span-2">
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
                   Kelompok Pagi (朝) & Malam (夜/晩)
-                </td>
-              </tr>
-              <tr>
-                <td>Pagi ini</td>
-                <td>kesa</td>
-                <td class="font-display text-xl">今朝</td>
-              </tr>
-              <tr>
-                <td>Besok pagi</td>
-                <td>myouchou</td>
-                <td class="font-display text-xl">明朝</td>
-              </tr>
-              <tr>
-                <td>Setiap pagi</td>
-                <td>maiasa</td>
-                <td class="font-display text-xl">毎朝</td>
-              </tr>
-              <tr>
-                <td>Malam lalu</td>
-                <td>sakuya / yuube</td>
-                <td class="font-display text-xl">昨夜 / 夕べ</td>
-              </tr>
-              <tr>
-                <td>Malam ini</td>
-                <td>konban</td>
-                <td class="font-display text-xl">今晩</td>
-              </tr>
-              <tr>
-                <td>Besok malam</td>
-                <td>myouban</td>
-                <td class="font-display text-xl">明晩</td>
-              </tr>
-              <tr>
-                <td>Setiap malam</td>
-                <td>maiban</td>
-                <td class="font-display text-xl">毎晩</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                  <ul class="list-disc list-inside space-y-3 text-slate-700">
+                    <li>
+                      <strong class="text-ink">Pagi ini</strong> &nbsp;—&nbsp;
+                      kesa
+                      <span class="font-display text-lg text-crimson"
+                        >(今朝)</span
+                      >
+                    </li>
+                    <li>
+                      <strong class="text-ink">Besok pagi</strong> &nbsp;—&nbsp;
+                      myouchou
+                      <span class="font-display text-lg text-crimson"
+                        >(明朝)</span
+                      >
+                    </li>
+                    <li>
+                      <strong class="text-ink">Setiap pagi</strong>
+                      &nbsp;—&nbsp; maiasa
+                      <span class="font-display text-lg text-crimson"
+                        >(毎朝)</span
+                      >
+                    </li>
+                  </ul>
+                  <ul class="list-disc list-inside space-y-3 text-slate-700">
+                    <li>
+                      <strong class="text-ink">Malam lalu</strong> &nbsp;—&nbsp;
+                      sakuya / yuube
+                      <span class="font-display text-lg text-crimson"
+                        >(昨夜 / 夕べ)</span
+                      >
+                    </li>
+                    <li>
+                      <strong class="text-ink">Malam ini</strong> &nbsp;—&nbsp;
+                      konban
+                      <span class="font-display text-lg text-crimson"
+                        >(今晩)</span
+                      >
+                    </li>
+                    <li>
+                      <strong class="text-ink">Besok malam</strong>
+                      &nbsp;—&nbsp; myouban
+                      <span class="font-display text-lg text-crimson"
+                        >(明晩)</span
+                      >
+                    </li>
+                    <li>
+                      <strong class="text-ink">Setiap malam</strong>
+                      &nbsp;—&nbsp; maiban
+                      <span class="font-display text-lg text-crimson"
+                        >(毎晩)</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
 
-      <!-- 2. Tanggal -->
-      <section class="mb-12">
-        <h2 class="mb-6 font-display text-2xl font-bold border-l-4 border-crimson pl-4">
-          2. Tanggal (日)
-        </h2>
-        <div
-          class="bg-white p-5 rounded-xl shadow-lg border border-slate-200 text-slate-700 leading-relaxed mb-4 text-sm">
-          <span class="font-bold text-crimson">※ Penting:</span> Perhatikan
-          pembacaan tanggal 1 sampai 10, tanggal 14 (juu-yokka), 20 (hatsuka),
-          dan 24 (ni-juu-yokka) yang sangat berbeda dengan hitungan normal.
-          Ini menggunakan sistem penghitungan asli Jepang.
-        </div>
-        <div class="overflow-x-auto rounded-xl shadow-lg bg-white">
-          <table class="vocab-table w-full text-left whitespace-nowrap">
-            <thead>
-              <tr>
-                <th scope="col">Tanggal</th>
-                <th scope="col">Romaji</th>
-                <th scope="col">Kanji</th>
-                <th scope="col">Tanggal</th>
-                <th scope="col">Romaji</th>
-                <th scope="col">Kanji</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td><strong class="text-crimson">tsuitachi</strong></td>
-                <td class="font-display text-xl">1日</td>
-                <td>17</td>
-                <td>juu-shichi-nichi</td>
-                <td class="font-display text-xl">17日</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td><strong class="text-crimson">futsuka</strong></td>
-                <td class="font-display text-xl">2日</td>
-                <td>18</td>
-                <td>juu-hachi-nichi</td>
-                <td class="font-display text-xl">18日</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td><strong class="text-crimson">mikka</strong></td>
-                <td class="font-display text-xl">3日</td>
-                <td>19</td>
-                <td>juu-ku-nichi</td>
-                <td class="font-display text-xl">19日</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td><strong class="text-crimson">yokka</strong></td>
-                <td class="font-display text-xl">4日</td>
-                <td>20</td>
-                <td><strong class="text-crimson">hatsuka</strong></td>
-                <td class="font-display text-xl">20日</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td><strong class="text-crimson">itsuka</strong></td>
-                <td class="font-display text-xl">5日</td>
-                <td>21</td>
-                <td>ni-juu-ichi-nichi</td>
-                <td class="font-display text-xl">21日</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td><strong class="text-crimson">muika</strong></td>
-                <td class="font-display text-xl">6日</td>
-                <td>22</td>
-                <td>ni-juu-ni-nichi</td>
-                <td class="font-display text-xl">22日</td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td><strong class="text-crimson">nanoka</strong></td>
-                <td class="font-display text-xl">7日</td>
-                <td>23</td>
-                <td>ni-juu-san-nichi</td>
-                <td class="font-display text-xl">23日</td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td><strong class="text-crimson">youka</strong></td>
-                <td class="font-display text-xl">8日</td>
-                <td>24</td>
-                <td><strong class="text-crimson">ni-juu-yokka</strong></td>
-                <td class="font-display text-xl">24日</td>
-              </tr>
-              <tr>
-                <td>9</td>
-                <td><strong class="text-crimson">kokonoka</strong></td>
-                <td class="font-display text-xl">9日</td>
-                <td>25</td>
-                <td>ni-juu-go-nichi</td>
-                <td class="font-display text-xl">25日</td>
-              </tr>
-              <tr>
-                <td>10</td>
-                <td><strong class="text-crimson">tooka</strong></td>
-                <td class="font-display text-xl">10日</td>
-                <td>26</td>
-                <td>ni-juu-roku-nichi</td>
-                <td class="font-display text-xl">26日</td>
-              </tr>
-              <tr>
-                <td>11</td>
-                <td>juu-ichi-nichi</td>
-                <td class="font-display text-xl">11日</td>
-                <td>27</td>
-                <td>ni-juu-shichi-nichi</td>
-                <td class="font-display text-xl">27日</td>
-              </tr>
-              <tr>
-                <td>12</td>
-                <td>juu-ni-nichi</td>
-                <td class="font-display text-xl">12日</td>
-                <td>28</td>
-                <td>ni-juu-hachi-nichi</td>
-                <td class="font-display text-xl">28日</td>
-              </tr>
-              <tr>
-                <td>13</td>
-                <td>juu-san-nichi</td>
-                <td class="font-display text-xl">13日</td>
-                <td>29</td>
-                <td>ni-juu-ku-nichi</td>
-                <td class="font-display text-xl">29日</td>
-              </tr>
-              <tr>
-                <td>14</td>
-                <td><strong class="text-crimson">juu-yokka</strong></td>
-                <td class="font-display text-xl">14日</td>
-                <td>30</td>
-                <td>san-juu-nichi</td>
-                <td class="font-display text-xl">30日</td>
-              </tr>
-              <tr>
-                <td>15</td>
-                <td>juu-go-nichi</td>
-                <td class="font-display text-xl">15日</td>
-                <td>31</td>
-                <td>san-juu-ichi-nichi</td>
-                <td class="font-display text-xl">31日</td>
-              </tr>
-              <tr>
-                <td>16</td>
-                <td>juu-roku-nichi</td>
-                <td class="font-display text-xl">16日</td>
-                <td colspan="3" class="bg-slate-50 font-bold text-center">
-                  Berapa: 何日 (nan-nichi)
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+          <!-- 2. Tanggal -->
+          <section>
+            <h2
+              class="mb-4 font-display text-2xl font-bold border-b border-slate-200 pb-3 text-crimson"
+            >
+              2. Tanggal (日)
+            </h2>
+            <div
+              class="bg-mist p-4 rounded-xl border border-slate-200 text-slate-700 leading-relaxed mb-6 text-sm"
+            >
+              <span class="font-bold text-crimson">※ Penting:</span> Perhatikan
+              pembacaan tanggal 1 sampai 10, tanggal 14 (juu-yokka), 20
+              (hatsuka), dan 24 (ni-juu-yokka) yang sangat berbeda dengan
+              hitungan normal.
+            </div>
+            <div
+              class="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-6 text-slate-700"
+            >
+              <div>
+                <strong class="text-ink">Tanggal 1</strong><br /><span
+                  class="text-crimson font-bold"
+                  >tsuitachi</span
+                >
+                <span class="font-display text-lg">(1日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 2</strong><br /><span
+                  class="text-crimson font-bold"
+                  >futsuka</span
+                >
+                <span class="font-display text-lg">(2日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 3</strong><br /><span
+                  class="text-crimson font-bold"
+                  >mikka</span
+                >
+                <span class="font-display text-lg">(3日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 4</strong><br /><span
+                  class="text-crimson font-bold"
+                  >yokka</span
+                >
+                <span class="font-display text-lg">(4日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 5</strong><br /><span
+                  class="text-crimson font-bold"
+                  >itsuka</span
+                >
+                <span class="font-display text-lg">(5日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 6</strong><br /><span
+                  class="text-crimson font-bold"
+                  >muika</span
+                >
+                <span class="font-display text-lg">(6日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 7</strong><br /><span
+                  class="text-crimson font-bold"
+                  >nanoka</span
+                >
+                <span class="font-display text-lg">(7日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 8</strong><br /><span
+                  class="text-crimson font-bold"
+                  >youka</span
+                >
+                <span class="font-display text-lg">(8日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 9</strong><br /><span
+                  class="text-crimson font-bold"
+                  >kokonoka</span
+                >
+                <span class="font-display text-lg">(9日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 10</strong><br /><span
+                  class="text-crimson font-bold"
+                  >tooka</span
+                >
+                <span class="font-display text-lg">(10日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 11</strong><br />juu-ichi-nichi
+                <span class="font-display text-lg">(11日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 12</strong><br />juu-ni-nichi
+                <span class="font-display text-lg">(12日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 13</strong><br />juu-san-nichi
+                <span class="font-display text-lg">(13日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 14</strong><br /><span
+                  class="text-crimson font-bold"
+                  >juu-yokka</span
+                >
+                <span class="font-display text-lg">(14日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 15</strong><br />juu-go-nichi
+                <span class="font-display text-lg">(15日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 16</strong><br />juu-roku-nichi
+                <span class="font-display text-lg">(16日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 17</strong
+                ><br />juu-shichi-nichi
+                <span class="font-display text-lg">(17日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 18</strong
+                ><br />juu-hachi-nichi
+                <span class="font-display text-lg">(18日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 19</strong><br />juu-ku-nichi
+                <span class="font-display text-lg">(19日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 20</strong><br /><span
+                  class="text-crimson font-bold"
+                  >hatsuka</span
+                >
+                <span class="font-display text-lg">(20日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 21</strong
+                ><br />ni-juu-ichi-nichi
+                <span class="font-display text-lg">(21日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 22</strong
+                ><br />ni-juu-ni-nichi
+                <span class="font-display text-lg">(22日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 23</strong
+                ><br />ni-juu-san-nichi
+                <span class="font-display text-lg">(23日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 24</strong><br /><span
+                  class="text-crimson font-bold"
+                  >ni-juu-yokka</span
+                >
+                <span class="font-display text-lg">(24日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 25</strong
+                ><br />ni-juu-go-nichi
+                <span class="font-display text-lg">(25日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 26</strong
+                ><br />ni-juu-roku-nichi
+                <span class="font-display text-lg">(26日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 27</strong
+                ><br />ni-juu-shichi-nichi
+                <span class="font-display text-lg">(27日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 28</strong
+                ><br />ni-juu-hachi-nichi
+                <span class="font-display text-lg">(28日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 29</strong
+                ><br />ni-juu-ku-nichi
+                <span class="font-display text-lg">(29日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 30</strong><br />san-juu-nichi
+                <span class="font-display text-lg">(30日)</span>
+              </div>
+              <div>
+                <strong class="text-ink">Tanggal 31</strong
+                ><br />san-juu-ichi-nichi
+                <span class="font-display text-lg">(31日)</span>
+              </div>
+              <div
+                class="col-span-2 sm:col-span-3 mt-4 pt-4 border-t border-slate-100"
+              >
+                <strong class="text-ink">Tanggal berapa?</strong> &nbsp;—&nbsp;
+                nan-nichi
+                <span class="font-display text-lg text-crimson">(何日)</span>
+              </div>
+            </div>
+          </section>
 
-      <div class="grid md:grid-cols-2 gap-10">
-        <!-- 3. Nama Hari -->
-        <section class="mb-12">
-          <h2 class="mb-6 font-display text-2xl font-bold border-l-4 border-crimson pl-4">
-            3. Nama Hari
-          </h2>
-          <div class="overflow-x-auto rounded-xl shadow-lg bg-white h-full">
-            <table class="vocab-table w-full text-left whitespace-nowrap">
-              <thead>
-                <tr>
-                  <th scope="col">Hari</th>
-                  <th scope="col">Romaji</th>
-                  <th scope="col">Kanji</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Senin</td>
-                  <td>getsu-youbi</td>
-                  <td class="font-display text-xl">月曜日</td>
-                </tr>
-                <tr>
-                  <td>Selasa</td>
-                  <td>ka-youbi</td>
-                  <td class="font-display text-xl">火曜日</td>
-                </tr>
-                <tr>
-                  <td>Rabu</td>
-                  <td>sui-youbi</td>
-                  <td class="font-display text-xl">水曜日</td>
-                </tr>
-                <tr>
-                  <td>Kamis</td>
-                  <td>moku-youbi</td>
-                  <td class="font-display text-xl">木曜日</td>
-                </tr>
-                <tr>
-                  <td>Jumat</td>
-                  <td>kin-youbi</td>
-                  <td class="font-display text-xl">金曜日</td>
-                </tr>
-                <tr>
-                  <td>Sabtu</td>
-                  <td>do-youbi</td>
-                  <td class="font-display text-xl">土曜日</td>
-                </tr>
-                <tr>
-                  <td>Minggu</td>
-                  <td>nichi-youbi</td>
-                  <td class="font-display text-xl">日曜日</td>
-                </tr>
-                <tr class="bg-slate-50">
-                  <td class="font-bold">Hari apa</td>
-                  <td class="font-bold text-crimson">nan-youbi</td>
-                  <td class="font-display text-xl">何曜日</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="grid md:grid-cols-2 gap-12">
+            <!-- 3. Nama Hari -->
+            <section>
+              <h2
+                class="mb-6 font-display text-2xl font-bold border-b border-slate-200 pb-3 text-crimson"
+              >
+                3. Nama Hari
+              </h2>
+              <ul class="list-disc list-inside space-y-3 text-slate-700">
+                <li>
+                  <strong class="text-ink">Senin</strong> &nbsp;—&nbsp;
+                  getsu-youbi
+                  <span class="font-display text-lg text-crimson"
+                    >(月曜日)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Selasa</strong> &nbsp;—&nbsp;
+                  ka-youbi
+                  <span class="font-display text-lg text-crimson"
+                    >(火曜日)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Rabu</strong> &nbsp;—&nbsp; sui-youbi
+                  <span class="font-display text-lg text-crimson"
+                    >(水曜日)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Kamis</strong> &nbsp;—&nbsp;
+                  moku-youbi
+                  <span class="font-display text-lg text-crimson"
+                    >(木曜日)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Jumat</strong> &nbsp;—&nbsp;
+                  kin-youbi
+                  <span class="font-display text-lg text-crimson"
+                    >(金曜日)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Sabtu</strong> &nbsp;—&nbsp; do-youbi
+                  <span class="font-display text-lg text-crimson"
+                    >(土曜日)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Minggu</strong> &nbsp;—&nbsp;
+                  nichi-youbi
+                  <span class="font-display text-lg text-crimson"
+                    >(日曜日)</span
+                  >
+                </li>
+                <li class="mt-4 pt-4 border-t border-slate-100 list-none">
+                  <strong class="text-ink">Hari apa?</strong> &nbsp;—&nbsp;
+                  nan-youbi
+                  <span class="font-display text-lg text-crimson"
+                    >(何曜日)</span
+                  >
+                </li>
+              </ul>
+            </section>
+
+            <!-- 4. Bulan -->
+            <section>
+              <h2
+                class="mb-6 font-display text-2xl font-bold border-b border-slate-200 pb-3 text-crimson"
+              >
+                4. Bulan (月)
+              </h2>
+              <ul class="list-disc list-inside space-y-3 text-slate-700">
+                <li>
+                  <strong class="text-ink">Januari</strong> &nbsp;—&nbsp;
+                  ichi-gatsu
+                  <span class="font-display text-lg text-crimson">(1月)</span>
+                </li>
+                <li>
+                  <strong class="text-ink">Februari</strong> &nbsp;—&nbsp;
+                  ni-gatsu
+                  <span class="font-display text-lg text-crimson">(2月)</span>
+                </li>
+                <li>
+                  <strong class="text-ink">Maret</strong> &nbsp;—&nbsp;
+                  san-gatsu
+                  <span class="font-display text-lg text-crimson">(3月)</span>
+                </li>
+                <li>
+                  <strong class="text-ink">April</strong> &nbsp;—&nbsp;
+                  <span class="text-crimson font-bold">shi-gatsu</span>
+                  <span class="font-display text-lg text-crimson">(4月)</span>
+                </li>
+                <li>
+                  <strong class="text-ink">Mei</strong> &nbsp;—&nbsp; go-gatsu
+                  <span class="font-display text-lg text-crimson">(5月)</span>
+                </li>
+                <li>
+                  <strong class="text-ink">Juni</strong> &nbsp;—&nbsp;
+                  roku-gatsu
+                  <span class="font-display text-lg text-crimson">(6月)</span>
+                </li>
+                <li>
+                  <strong class="text-ink">Juli</strong> &nbsp;—&nbsp;
+                  <span class="text-crimson font-bold">shichi-gatsu</span>
+                  <span class="font-display text-lg text-crimson">(7月)</span>
+                </li>
+                <li>
+                  <strong class="text-ink">Agustus</strong> &nbsp;—&nbsp;
+                  hachi-gatsu
+                  <span class="font-display text-lg text-crimson">(8月)</span>
+                </li>
+                <li>
+                  <strong class="text-ink">September</strong> &nbsp;—&nbsp;
+                  <span class="text-crimson font-bold">ku-gatsu</span>
+                  <span class="font-display text-lg text-crimson">(9月)</span>
+                </li>
+                <li>
+                  <strong class="text-ink">Oktober</strong> &nbsp;—&nbsp;
+                  juu-gatsu
+                  <span class="font-display text-lg text-crimson">(10月)</span>
+                </li>
+                <li>
+                  <strong class="text-ink">November</strong> &nbsp;—&nbsp;
+                  juu-ichi-gatsu
+                  <span class="font-display text-lg text-crimson">(11月)</span>
+                </li>
+                <li>
+                  <strong class="text-ink">Desember</strong> &nbsp;—&nbsp;
+                  juu-ni-gatsu
+                  <span class="font-display text-lg text-crimson">(12月)</span>
+                </li>
+                <li class="mt-4 pt-4 border-t border-slate-100 list-none">
+                  <strong class="text-ink">Bulan apa?</strong> &nbsp;—&nbsp;
+                  nan-gatsu
+                  <span class="font-display text-lg text-crimson">(何月)</span>
+                </li>
+              </ul>
+            </section>
           </div>
-        </section>
 
-        <!-- 4. Bulan -->
-        <section class="mb-12">
-          <h2 class="mb-6 font-display text-2xl font-bold border-l-4 border-crimson pl-4">
-            4. Bulan (月)
-          </h2>
-          <div class="overflow-x-auto rounded-xl shadow-lg bg-white h-full">
-            <table class="vocab-table w-full text-left whitespace-nowrap">
-              <thead>
-                <tr>
-                  <th scope="col">Bulan</th>
-                  <th scope="col">Romaji</th>
-                  <th scope="col">Kanji</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Januari</td>
-                  <td>ichi-gatsu</td>
-                  <td class="font-display text-xl">1月</td>
-                </tr>
-                <tr>
-                  <td>Februari</td>
-                  <td>ni-gatsu</td>
-                  <td class="font-display text-xl">2月</td>
-                </tr>
-                <tr>
-                  <td>Maret</td>
-                  <td>san-gatsu</td>
-                  <td class="font-display text-xl">3月</td>
-                </tr>
-                <tr>
-                  <td>April</td>
-                  <td><strong class="text-crimson">shi-gatsu</strong></td>
-                  <td class="font-display text-xl">4月</td>
-                </tr>
-                <tr>
-                  <td>Mei</td>
-                  <td>go-gatsu</td>
-                  <td class="font-display text-xl">5月</td>
-                </tr>
-                <tr>
-                  <td>Juni</td>
-                  <td>roku-gatsu</td>
-                  <td class="font-display text-xl">6月</td>
-                </tr>
-                <tr>
-                  <td>Juli</td>
-                  <td><strong class="text-crimson">shichi-gatsu</strong></td>
-                  <td class="font-display text-xl">7月</td>
-                </tr>
-                <tr>
-                  <td>Agustus</td>
-                  <td>hachi-gatsu</td>
-                  <td class="font-display text-xl">8月</td>
-                </tr>
-                <tr>
-                  <td>September</td>
-                  <td><strong class="text-crimson">ku-gatsu</strong></td>
-                  <td class="font-display text-xl">9月</td>
-                </tr>
-                <tr>
-                  <td>Oktober</td>
-                  <td>juu-gatsu</td>
-                  <td class="font-display text-xl">10月</td>
-                </tr>
-                <tr>
-                  <td>November</td>
-                  <td>juu-ichi-gatsu</td>
-                  <td class="font-display text-xl">11月</td>
-                </tr>
-                <tr>
-                  <td>Desember</td>
-                  <td>juu-ni-gatsu</td>
-                  <td class="font-display text-xl">12月</td>
-                </tr>
-                <tr class="bg-slate-50">
-                  <td class="font-bold">Bulan apa</td>
-                  <td class="font-bold text-crimson">nan-gatsu</td>
-                  <td class="font-display text-xl">何月</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
+          <!-- 5. Tahun -->
+          <section>
+            <h2
+              class="mb-4 font-display text-2xl font-bold border-b border-slate-200 pb-3 text-crimson"
+            >
+              5. Tahun (年)
+            </h2>
+            <div
+              class="bg-mist p-4 rounded-xl border border-slate-200 text-slate-700 leading-relaxed mb-6 text-sm"
+            >
+              <span class="font-bold text-crimson">※ Penting:</span> Perhatikan
+              tahun 4 karena angka 4 dibaca
+              <strong class="text-crimson">yo-nen</strong> (bukan yon-nen) untuk
+              menyatakan tahun. Begitu pula 2024 dibaca
+              <strong class="text-crimson">ni-sen-ni-juu-yo-nen</strong>.
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+              <ul class="list-disc list-inside space-y-3 text-slate-700">
+                <li>
+                  <strong class="text-ink">1 Tahun</strong> &nbsp;—&nbsp;
+                  ichi-nen
+                  <span class="font-display text-lg text-crimson">(1年)</span>
+                </li>
+                <li>
+                  <strong class="text-ink">2 Tahun</strong> &nbsp;—&nbsp; ni-nen
+                  <span class="font-display text-lg text-crimson">(2年)</span>
+                </li>
+                <li>
+                  <strong class="text-ink">3 Tahun</strong> &nbsp;—&nbsp;
+                  san-nen
+                  <span class="font-display text-lg text-crimson">(3年)</span>
+                </li>
+                <li>
+                  <strong class="text-ink">4 Tahun</strong> &nbsp;—&nbsp;
+                  <span class="text-crimson font-bold">yo-nen</span>
+                  <span class="font-display text-lg text-crimson">(4年)</span>
+                </li>
+                <li>
+                  <strong class="text-ink">5 Tahun</strong> &nbsp;—&nbsp; go-nen
+                  <span class="font-display text-lg text-crimson">(5年)</span>
+                </li>
+                <li>
+                  <strong class="text-ink">10 Tahun</strong> &nbsp;—&nbsp;
+                  juu-nen
+                  <span class="font-display text-lg text-crimson">(10年)</span>
+                </li>
+              </ul>
+              <ul class="list-disc list-inside space-y-3 text-slate-700">
+                <li>
+                  <strong class="text-ink">Tahun 2020</strong> &nbsp;—&nbsp;
+                  nisen-nijuu-nen
+                  <span class="font-display text-lg text-crimson"
+                    >(2020年)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Tahun 2021</strong> &nbsp;—&nbsp;
+                  nisen-nijuu-ichi-nen
+                  <span class="font-display text-lg text-crimson"
+                    >(2021年)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Tahun 2022</strong> &nbsp;—&nbsp;
+                  nisen-nijuu-ni-nen
+                  <span class="font-display text-lg text-crimson"
+                    >(2022年)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Tahun 2023</strong> &nbsp;—&nbsp;
+                  nisen-nijuu-san-nen
+                  <span class="font-display text-lg text-crimson"
+                    >(2023年)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Tahun 2024</strong> &nbsp;—&nbsp;
+                  <span class="text-crimson font-bold">nisen-nijuu-yo-nen</span>
+                  <span class="font-display text-lg text-crimson"
+                    >(2024年)</span
+                  >
+                </li>
+                <li class="mt-4 pt-4 border-t border-slate-100 list-none">
+                  <strong class="text-ink">Tahun berapa?</strong> &nbsp;—&nbsp;
+                  nan-nen
+                  <span class="font-display text-lg text-crimson">(何年)</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
       </div>
+    </main>
 
-      <!-- 5. Tahun -->
-      <section class="mb-12">
-        <h2 class="mb-6 font-display text-2xl font-bold border-l-4 border-crimson pl-4">
-          5. Tahun (年)
-        </h2>
-        <div
-          class="bg-white p-5 rounded-xl shadow-lg border border-slate-200 text-slate-700 leading-relaxed mb-4 text-sm">
-          <span class="font-bold text-crimson">※ Penting:</span> Perhatikan
-          tahun 4 karena angka 4 dibaca
-          <strong class="text-crimson">yo-nen</strong> (bukan yon-nen) untuk
-          menyatakan tahun. Begitu pula 2024 dibaca
-          <strong class="text-crimson">ni-sen-ni-juu-yo-nen</strong>.
-        </div>
-        <div class="overflow-x-auto rounded-xl shadow-lg bg-white">
-          <table class="vocab-table w-full text-left whitespace-nowrap">
-            <thead>
-              <tr>
-                <th scope="col">Tahun</th>
-                <th scope="col">Romaji</th>
-                <th scope="col">Kanji</th>
-                <th scope="col">Tahun</th>
-                <th scope="col">Romaji</th>
-                <th scope="col">Kanji</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1 Tahun</td>
-                <td>ichi-nen</td>
-                <td class="font-display text-xl">1年</td>
-                <td>Tahun 2020</td>
-                <td>nisen-nijuu-nen</td>
-                <td class="font-display text-xl">2020年</td>
-              </tr>
-              <tr>
-                <td>2 Tahun</td>
-                <td>ni-nen</td>
-                <td class="font-display text-xl">2年</td>
-                <td>Tahun 2021</td>
-                <td>nisen-nijuu-ichi-nen</td>
-                <td class="font-display text-xl">2021年</td>
-              </tr>
-              <tr>
-                <td>3 Tahun</td>
-                <td>san-nen</td>
-                <td class="font-display text-xl">3年</td>
-                <td>Tahun 2022</td>
-                <td>nisen-nijuu-ni-nen</td>
-                <td class="font-display text-xl">2022年</td>
-              </tr>
-              <tr>
-                <td>4 Tahun</td>
-                <td><strong class="text-crimson">yo-nen</strong></td>
-                <td class="font-display text-xl">4年</td>
-                <td>Tahun 2023</td>
-                <td>nisen-nijuu-san-nen</td>
-                <td class="font-display text-xl">2023年</td>
-              </tr>
-              <tr>
-                <td>5 Tahun</td>
-                <td>go-nen</td>
-                <td class="font-display text-xl">5年</td>
-                <td>Tahun 2024</td>
-                <td>
-                  <strong class="text-crimson">nisen-nijuu-yo-nen</strong>
-                </td>
-                <td class="font-display text-xl">2024年</td>
-              </tr>
-              <tr>
-                <td>10 Tahun</td>
-                <td>juu-nen</td>
-                <td class="font-display text-xl">10年</td>
-                <td colspan="3" class="bg-slate-50 font-bold text-center">
-                  Tahun berapa: 何年 (nan-nen)
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <footer class="bg-white px-5 py-8">
-    <div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 text-sm text-slate-500">
-      <p>© 2026 Hongo Study · Belajar bersama.</p>
-      <p class="font-bold text-crimson">がんばって! Terus semangat!</p>
-    </div>
-  </footer>
-  <script src="js/main.js"></script>
-</body>
-
+    <footer class="bg-white px-5 py-8">
+      <div
+        class="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 text-sm text-slate-500"
+      >
+        <p>© 2026 Hongo Study · Belajar bersama.</p>
+        <p class="font-bold text-crimson">がんばって! Terus semangat!</p>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
 </html>
