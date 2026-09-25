@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kuis Interaktif Materi | Hongo Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              sakura: "#FFB7C5",
+              crimson: "#BC002D",
+              ink: "#20242a",
+              mist: "#f5f7f8",
+            },
+            fontFamily: {
+              display: ["Georgia", "serif"],
+              sans: ["Trebuchet MS", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="font-sans bg-mist min-h-screen flex flex-col justify-between">
+    <header
+      class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur"
+    >
+      <div
+        class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <span
+            class="grid h-10 w-10 place-items-center rounded-full bg-crimson text-xl text-white"
+            >日</span
+          >
+          <span>
+            <strong class="block font-display text-lg">Hongo Study</strong>
+            <small class="text-xs text-slate-500"
+              >Belajar sedikit, setiap hari.</small
+            >
+          </span>
+        </a>
+        <button
+          id="menuButton"
+          class="rounded-lg border border-slate-200 p-2 text-xl md:hidden"
+          aria-label="Buka menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <nav
+          id="mainNav"
+          class="absolute left-0 top-full hidden w-full border-b border-slate-200 bg-white px-5 py-4 md:static md:block md:w-auto md:border-0 md:bg-transparent md:p-0"
+        >
+          <ul
+            class="flex flex-col gap-4 text-sm font-bold md:flex-row md:gap-7"
+          >
+            <li>
+              <a class="nav-link hover:text-crimson" href="index.html"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <a class="nav-link hover:text-crimson" href="index.html#latihan"
+                >Latihan</a
+              >
+            </li>
+            <li>
+              <a class="nav-link hover:text-crimson" href="index.html#materi"
+                >Materi</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wash flex-1 py-10 md:py-16">
+      <div class="mx-auto max-w-3xl px-5">
+        <!-- Header Info -->
+        <div class="mb-8 text-center">
+          <p class="mb-2 font-bold uppercase tracking-widest text-crimson">
+            Evaluasi Belajar
+          </p>
+          <h1 class="font-display text-3xl md:text-5xl">
+            Kuis Materi Interaktif
+          </h1>
+          <p class="mt-3 text-slate-600">
+            Pilih topik materi yang ingin diuji, lalu jawab 10 pertanyaan
+            pilihan ganda.
+          </p>
+        </div>
+
+        <!-- Category Selector Tabs -->
+        <div
+          id="categorySelector"
+          class="mb-8 flex flex-wrap justify-center gap-2"
+        >
+          <button
+            type="button"
+            data-category="waktu"
+            class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
+          >
+            ⏱️ Waktu
+          </button>
+          <button
+            type="button"
+            data-category="sekolah"
+            class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
+          >
+            🏫 Sekolah & Kelas
+          </button>
+          <button
+            type="button"
+            data-category="mata-pelajaran"
+            class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
+          >
+            📚 Mata Pelajaran
+          </button>
+          <button
+            type="button"
+            data-category="pekerjaan"
+            class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
+          >
+            💼 Pekerjaan
+          </button>
+          <button
+            type="button"
+            data-category="campuran"
+            class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
+          >
+            🔀 Mode Campuran
+          </button>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="mb-4">
+          <div
+            class="flex justify-between text-xs font-bold text-slate-500 mb-1"
+          >
+            <span id="questionNumber">Soal 1 dari 10</span>
+            <span id="quizCategoryBadge" class="text-crimson">Kategori</span>
+          </div>
+          <div class="h-2 w-full overflow-hidden rounded-full bg-slate-200">
+            <div
+              id="progressBar"
+              class="h-full bg-crimson transition-all duration-300"
+              style="width: 10%"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Active Question Card -->
+        <div
+          id="quizCard"
+          class="rounded-3xl border border-slate-200 bg-white p-6 md:p-10 shadow-xl transition-all"
+        >
+          <div class="text-center py-4">
+            <span
+              class="inline-block rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson mb-3"
+              >Apa arti kosakata ini?</span
+            >
+            <h2
+              id="questionJapanese"
+              class="font-display text-5xl md:text-7xl font-bold text-ink tracking-wide"
+            >
+              今日
+            </h2>
+            <p
+              id="questionRomaji"
+              class="mt-3 text-lg font-bold text-slate-400"
+            >
+              kyou
+            </p>
+          </div>
+
+          <!-- Options Grid -->
+          <div id="optionsGrid" class="mt-8 grid gap-3 sm:grid-cols-2">
+            <!-- Dynamically injected choices -->
+          </div>
+
+          <!-- Feedback Alert -->
+          <div id="feedbackBox" class="hidden mt-4"></div>
+
+          <!-- Next Button -->
+          <button
+            id="nextButton"
+            type="button"
+            class="mt-6 hidden w-full rounded-2xl bg-crimson py-4 text-center font-bold text-white shadow-lg transition hover:bg-red-900 focus:outline-none"
+          >
+            Soal Berikutnya →
+          </button>
+        </div>
+
+        <!-- Summary Card (Hidden initially) -->
+        <div
+          id="quizSummary"
+          class="hidden rounded-3xl border border-slate-200 bg-white p-8 md:p-12 text-center shadow-xl"
+        >
+          <div
+            class="mx-auto mb-6 grid h-24 w-24 place-items-center rounded-full bg-sakura/40 text-4xl"
+          >
+            🏆
+          </div>
+          <p class="font-bold uppercase tracking-widest text-crimson text-sm">
+            Hasil Latihan
+          </p>
+          <h2 class="mt-2 font-display text-4xl md:text-5xl font-bold text-ink">
+            Selesai!
+          </h2>
+
+          <div
+            class="my-6 inline-flex items-baseline gap-2 rounded-2xl bg-slate-50 px-6 py-4 border border-slate-200"
+          >
+            <span class="text-sm font-bold text-slate-500">Skor Akhir:</span>
+            <strong
+              id="finalScoreText"
+              class="font-display text-4xl text-crimson"
+              >10 / 10</strong
+            >
+            <span
+              id="finalScorePercent"
+              class="text-sm font-bold text-emerald-600"
+              >(100%)</span
+            >
+          </div>
+
+          <p
+            id="finalFeedbackMessage"
+            class="mx-auto max-w-md text-base md:text-lg text-slate-600 leading-relaxed"
+          >
+            Luar biasa! Kamu menguasai materi ini dengan sangat baik!
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <button
+              id="restartQuizBtn"
+              type="button"
+              class="rounded-xl bg-crimson px-6 py-3 font-bold text-white shadow transition hover:bg-red-900"
+            >
+              🔄 Ulangi Kuis (Acak Baru)
+            </button>
+            <a
+              id="backToMaterialBtn"
+              href="index.html#materi"
+              class="rounded-xl border border-slate-300 bg-white px-6 py-3 font-bold text-ink shadow-sm transition hover:border-crimson hover:text-crimson"
+            >
+              📖 Buka Halaman Materi →
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-white px-5 py-8 border-t border-slate-200/80">
+      <div
+        class="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 text-sm text-slate-500"
+      >
+        <p>© 2026 Hongo Study · Belajar bersama.</p>
+        <p class="font-bold text-crimson">がんばって! Terus semangat!</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/quiz-data.js"></script>
+    <script src="js/kuis.js"></script>
+  </body>
+</html>
