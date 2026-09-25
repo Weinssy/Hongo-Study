@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kata Ganti & Kosakata Orang | Hongo Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              sakura: "#FFB7C5",
+              crimson: "#BC002D",
+              ink: "#20242a",
+              mist: "#f5f7f8",
+            },
+            fontFamily: {
+              display: ["Georgia", "serif"],
+              sans: ["Trebuchet MS", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="font-sans bg-mist">
+    <header
+      class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur"
+    >
+      <div
+        class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <span
+            class="grid h-10 w-10 place-items-center rounded-full bg-crimson text-xl text-white"
+            >日</span
+          >
+          <span>
+            <strong class="block font-display text-lg">Hongo Study</strong>
+            <small class="text-xs text-slate-500"
+              >Belajar sedikit, setiap hari.</small
+            >
+          </span>
+        </a>
+        <button
+          id="menuButton"
+          class="rounded-lg border border-slate-200 p-2 text-xl md:hidden"
+          aria-label="Buka menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <nav
+          id="mainNav"
+          class="absolute left-0 top-full hidden w-full border-b border-slate-200 bg-white px-5 py-4 md:static md:block md:w-auto md:border-0 md:bg-transparent md:p-0"
+        >
+          <ul
+            class="flex flex-col gap-4 text-sm font-bold md:flex-row md:gap-7"
+          >
+            <li>
+              <a class="nav-link hover:text-crimson" href="index.html"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <a class="nav-link hover:text-crimson" href="index.html#latihan"
+                >Latihan</a
+              >
+            </li>
+            <li>
+              <a class="nav-link hover:text-crimson" href="index.html#materi"
+                >Materi</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wash min-h-screen">
+      <div class="mx-auto max-w-4xl px-5 py-12 md:py-20">
+        <div class="mb-10 text-center">
+          <p class="mb-3 font-bold uppercase tracking-widest text-crimson">
+            Kosakata Dasar
+          </p>
+          <h1 class="font-display text-4xl leading-tight md:text-6xl">
+            Orang & Kata Ganti
+          </h1>
+          <p class="mt-4 text-lg text-slate-600">
+            Daftar lengkap kata ganti orang (pronomina), sebutan usia/sosial,
+            serta kewarganegaraan dalam bahasa Jepang.
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-6 md:p-10 rounded-2xl shadow-xl border border-slate-200 space-y-12"
+        >
+          <!-- 1. Kata Ganti Orang (Pronomina) -->
+          <section>
+            <h2
+              class="mb-6 font-display text-2xl font-bold border-b border-slate-200 pb-3 text-crimson"
+            >
+              1. Kata Ganti Orang (人称代名詞)
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+              <!-- Tunggal & Bentuk Sopan -->
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
+                  Kata Ganti Utama & Sopan
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">Saya (Standar)</strong>
+                    &nbsp;—&nbsp; watashi
+                    <span class="font-display text-lg text-crimson"
+                      >(私 / わたし)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink"
+                      >Saya (Sangat Formal / Pidato)</strong
+                    >
+                    &nbsp;—&nbsp; watakushi
+                    <span class="font-display text-lg text-crimson"
+                      >(わたくし)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Aku (Laki-laki / Netral)</strong>
+                    &nbsp;—&nbsp; boku
+                    <span class="font-display text-lg text-crimson"
+                      >(僕 / ぼく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Gue / Aku (Pria Akrab)</strong>
+                    &nbsp;—&nbsp; ore
+                    <span class="font-display text-lg text-crimson"
+                      >(俺 / おれ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Aku (Perempuan Akrab)</strong>
+                    &nbsp;—&nbsp; atashi
+                    <span class="font-display text-lg text-crimson"
+                      >(あたし)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Diri Sendiri</strong> &nbsp;—&nbsp;
+                    jibun
+                    <span class="font-display text-lg text-crimson"
+                      >(自分 / じぶん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Anda / Kamu</strong> &nbsp;—&nbsp;
+                    anata
+                    <span class="font-display text-lg text-crimson"
+                      >(あなた)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kamu (Akrab / Sebaya)</strong>
+                    &nbsp;—&nbsp; kimi
+                    <span class="font-display text-lg text-crimson"
+                      >(君 / きみ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Dia (Laki-laki)</strong>
+                    &nbsp;—&nbsp; kare
+                    <span class="font-display text-lg text-crimson"
+                      >(彼 / かれ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Dia (Perempuan)</strong>
+                    &nbsp;—&nbsp; kanojo
+                    <span class="font-display text-lg text-crimson"
+                      >(彼女 / かのじょ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang ini (Biasa)</strong>
+                    &nbsp;—&nbsp; kono hito
+                    <span class="font-display text-lg text-crimson"
+                      >(この人 / このひと)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang itu (Biasa)</strong>
+                    &nbsp;—&nbsp; sono hito / ano hito
+                    <span class="font-display text-lg text-crimson"
+                      >(その人 / あの人)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang ini (Hormat)</strong>
+                    &nbsp;—&nbsp; kono kata
+                    <span class="font-display text-lg text-crimson"
+                      >(この方 / このかた)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang itu (Hormat)</strong>
+                    &nbsp;—&nbsp; sono kata / ano kata
+                    <span class="font-display text-lg text-crimson"
+                      >(その方 / あの方)</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Bentuk Jamak & Kasual -->
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
+                  Bentuk Jamak & Kolektif
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">Kita / Kami</strong> &nbsp;—&nbsp;
+                    watashitachi
+                    <span class="font-display text-lg text-crimson"
+                      >(私たち / わたしたち)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kita / Kami (Laki-laki)</strong>
+                    &nbsp;—&nbsp; bokutachi / bokura
+                    <span class="font-display text-lg text-crimson"
+                      >(僕たち / 僕ら)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kita / Kami (Pria Akrab)</strong>
+                    &nbsp;—&nbsp; oretachi / orera
+                    <span class="font-display text-lg text-crimson"
+                      >(俺たち / 俺ら)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kami / Pihak Kami (Formal)</strong>
+                    &nbsp;—&nbsp; wareware
+                    <span class="font-display text-lg text-crimson"
+                      >(我々 / われわれ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kalian / Anda Sekalian</strong>
+                    &nbsp;—&nbsp; anatatachi
+                    <span class="font-display text-lg text-crimson"
+                      >(あなたたち)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Anda Sekalian (Hormat)</strong>
+                    &nbsp;—&nbsp; anatagata
+                    <span class="font-display text-lg text-crimson"
+                      >(あなた方 / あなたがた)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kalian (Sebaya)</strong>
+                    &nbsp;—&nbsp; kimitachi / kimira
+                    <span class="font-display text-lg text-crimson"
+                      >(君たち / 君ら)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink"
+                      >Mereka (Laki-laki / Campuran)</strong
+                    >
+                    &nbsp;—&nbsp; karera
+                    <span class="font-display text-lg text-crimson"
+                      >(彼ら / かれら)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Mereka (Perempuan)</strong>
+                    &nbsp;—&nbsp; kanojora
+                    <span class="font-display text-lg text-crimson"
+                      >(彼女ら / かのじょら)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Semuanya (Kasual)</strong>
+                    &nbsp;—&nbsp; min'na
+                    <span class="font-display text-lg text-crimson"
+                      >(みんな)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Hadirin / Semuanya (Sopan)</strong>
+                    &nbsp;—&nbsp; minasan
+                    <span class="font-display text-lg text-crimson"
+                      >(皆さん / みなさん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink"
+                      >Seluruh Hadirin (Sangat Hormat)</strong
+                    >
+                    &nbsp;—&nbsp; minasama
+                    <span class="font-display text-lg text-crimson"
+                      >(皆様 / みなさま)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink"
+                      >Seluruh Anggota / Semua Orang</strong
+                    >
+                    &nbsp;—&nbsp; zen'in
+                    <span class="font-display text-lg text-crimson"
+                      >(全員 / ぜんいん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang-orang ini (Hormat)</strong>
+                    &nbsp;—&nbsp; kono katagata
+                    <span class="font-display text-lg text-crimson"
+                      >(この方々 / このかたがた)</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. Kosakata Orang & Tahapan Usia -->
+          <section>
+            <h2
+              class="mb-6 font-display text-2xl font-bold border-b border-slate-200 pb-3 text-crimson"
+            >
+              2. Kosakata Orang & Kelompok Usia
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+              <!-- Gender & Hubungan Sosial -->
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
+                  Gender & Hubungan Sosial
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">Orang</strong> &nbsp;—&nbsp; hito
+                    <span class="font-display text-lg text-crimson"
+                      >(人 / ひと)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang-orang</strong> &nbsp;—&nbsp;
+                    hitobito
+                    <span class="font-display text-lg text-crimson"
+                      >(人々 / ひとびと)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Manusia</strong> &nbsp;—&nbsp;
+                    ningen
+                    <span class="font-display text-lg text-crimson"
+                      >(人間 / にんげん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pria / Laki-laki</strong>
+                    &nbsp;—&nbsp; dansee / otoko
+                    <span class="font-display text-lg text-crimson"
+                      >(男性 / 男)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Wanita / Perempuan</strong>
+                    &nbsp;—&nbsp; josee / onna
+                    <span class="font-display text-lg text-crimson"
+                      >(女性 / 女)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Anak Laki-laki</strong>
+                    &nbsp;—&nbsp; otokonoko
+                    <span class="font-display text-lg text-crimson"
+                      >(男の子 / おとこのこ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Anak Perempuan</strong>
+                    &nbsp;—&nbsp; onnanoko
+                    <span class="font-display text-lg text-crimson"
+                      >(女の子 / おんなのこ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Teman / Sahabat</strong>
+                    &nbsp;—&nbsp; tomodachi
+                    <span class="font-display text-lg text-crimson"
+                      >(友達 / ともだち)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pacar / Kekasih</strong>
+                    &nbsp;—&nbsp; koibito
+                    <span class="font-display text-lg text-crimson"
+                      >(恋人 / こいびと)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Lawan Bicara / Rekan</strong>
+                    &nbsp;—&nbsp; aite
+                    <span class="font-display text-lg text-crimson"
+                      >(相手 / あいて)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Terkenal</strong>
+                    &nbsp;—&nbsp; yuumeejin
+                    <span class="font-display text-lg text-crimson"
+                      >(有名人 / ゆうめいじん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Populer</strong>
+                    &nbsp;—&nbsp; ninkimono
+                    <span class="font-display text-lg text-crimson"
+                      >(人気者 / にんきもの)</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Usia & Status -->
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
+                  Tahapan Usia & Status
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">Bayi</strong> &nbsp;—&nbsp; akachan
+                    <span class="font-display text-lg text-crimson"
+                      >(赤ちゃん / あかちゃん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Balita</strong> &nbsp;—&nbsp; yooji
+                    <span class="font-display text-lg text-crimson"
+                      >(幼児 / ようじ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Anak-anak</strong> &nbsp;—&nbsp;
+                    kodomo
+                    <span class="font-display text-lg text-crimson"
+                      >(子供 / こども)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Anak Kembar</strong> &nbsp;—&nbsp;
+                    futago
+                    <span class="font-display text-lg text-crimson"
+                      >(双子 / ふたご)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Anak Muda / Pemuda</strong>
+                    &nbsp;—&nbsp; wakamono
+                    <span class="font-display text-lg text-crimson"
+                      >(若者 / わかもの)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Remaja</strong> &nbsp;—&nbsp;
+                    seenen
+                    <span class="font-display text-lg text-crimson"
+                      >(青年 / せいねん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Dewasa</strong> &nbsp;—&nbsp;
+                    otona
+                    <span class="font-display text-lg text-crimson"
+                      >(大人 / おとな)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Paruh Baya</strong> &nbsp;—&nbsp;
+                    chuunen
+                    <span class="font-display text-lg text-crimson"
+                      >(中年 / ちゅうねん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Lansia (Sopan & Ramah)</strong>
+                    &nbsp;—&nbsp; otoshiyori
+                    <span class="font-display text-lg text-crimson"
+                      >(お年寄り / おとしより)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Warga Lanjut Usia (Formal)</strong>
+                    &nbsp;—&nbsp; kooreesha / roojin
+                    <span class="font-display text-lg text-crimson"
+                      >(高齢者 / 老人)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Lajang (Single)</strong>
+                    &nbsp;—&nbsp; dokushin
+                    <span class="font-display text-lg text-crimson"
+                      >(独身 / どくしん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Sudah Menikah</strong>
+                    &nbsp;—&nbsp; kikon
+                    <span class="font-display text-lg text-crimson"
+                      >(既婚 / きこん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Belum Menikah</strong>
+                    &nbsp;—&nbsp; mikon
+                    <span class="font-display text-lg text-crimson"
+                      >(未婚 / みこん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Anak Tersesat</strong>
+                    &nbsp;—&nbsp; maigo
+                    <span class="font-display text-lg text-crimson"
+                      >(迷子 / まいご)</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. Orang Asing & Asal Negara -->
+          <section>
+            <h2
+              class="mb-6 font-display text-2xl font-bold border-b border-slate-200 pb-3 text-crimson"
+            >
+              3. Orang Asing & Kewarganegaraan (～人)
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
+                  Istilah Umum & Asia
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">Orang Asing</strong> &nbsp;—&nbsp;
+                    gaikokujin
+                    <span class="font-display text-lg text-crimson"
+                      >(外国人 / がいこくじん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pelajar Asing</strong>
+                    &nbsp;—&nbsp; ryuugakusee
+                    <span class="font-display text-lg text-crimson"
+                      >(留学生 / りゅうがくせい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Jepang</strong> &nbsp;—&nbsp;
+                    nihonjin
+                    <span class="font-display text-lg text-crimson"
+                      >(日本人 / にほんじん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Indonesia</strong>
+                    &nbsp;—&nbsp; indoneshiajin
+                    <span class="font-display text-lg text-crimson"
+                      >(インドネシア人)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Malaysia</strong>
+                    &nbsp;—&nbsp; mareeshiajin
+                    <span class="font-display text-lg text-crimson"
+                      >(マレーシア人)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Singapura</strong>
+                    &nbsp;—&nbsp; shingapoorujin
+                    <span class="font-display text-lg text-crimson"
+                      >(シンガポール人)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Tiongkok</strong>
+                    &nbsp;—&nbsp; chuugokujin
+                    <span class="font-display text-lg text-crimson"
+                      >(中国人 / ちゅうごくじん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Korea Selatan</strong>
+                    &nbsp;—&nbsp; kankokujin
+                    <span class="font-display text-lg text-crimson"
+                      >(韓国人 / かんこくじん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Asia</strong> &nbsp;—&nbsp;
+                    ajiajin
+                    <span class="font-display text-lg text-crimson"
+                      >(アジア人)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Jawa</strong> &nbsp;—&nbsp;
+                    jawajin
+                    <span class="font-display text-lg text-crimson"
+                      >(ジャワ人)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Sunda</strong> &nbsp;—&nbsp;
+                    sundajin
+                    <span class="font-display text-lg text-crimson"
+                      >(スンダ人)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Bali</strong> &nbsp;—&nbsp;
+                    barijin
+                    <span class="font-display text-lg text-crimson"
+                      >(バリ人)</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
+                  Negara Barat & Istilah Lainnya
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">Orang Barat</strong> &nbsp;—&nbsp;
+                    seeyoojin / oobeejin
+                    <span class="font-display text-lg text-crimson"
+                      >(西洋人 / 欧米人)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Amerika</strong>
+                    &nbsp;—&nbsp; amerikajin
+                    <span class="font-display text-lg text-crimson"
+                      >(アメリカ人)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Inggris</strong>
+                    &nbsp;—&nbsp; igirisujin
+                    <span class="font-display text-lg text-crimson"
+                      >(イギリス人)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Jerman</strong> &nbsp;—&nbsp;
+                    doitsujin
+                    <span class="font-display text-lg text-crimson"
+                      >(ドイツ人)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Prancis</strong>
+                    &nbsp;—&nbsp; furansujin
+                    <span class="font-display text-lg text-crimson"
+                      >(フランス人)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Belanda</strong>
+                    &nbsp;—&nbsp; orandajin
+                    <span class="font-display text-lg text-crimson"
+                      >(オランダ人)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Spanyol</strong>
+                    &nbsp;—&nbsp; supeinjin
+                    <span class="font-display text-lg text-crimson"
+                      >(スペイン人)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Kulit Putih</strong>
+                    &nbsp;—&nbsp; hakujin
+                    <span class="font-display text-lg text-crimson"
+                      >(白人 / はくじん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Orang Kulit Hitam</strong>
+                    &nbsp;—&nbsp; kokujin
+                    <span class="font-display text-lg text-crimson"
+                      >(黒人 / こくじん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink"
+                      >Alien / Makhluk Luar Angkasa</strong
+                    >
+                    &nbsp;—&nbsp; uchuujin
+                    <span class="font-display text-lg text-crimson"
+                      >(宇宙人 / うちゅうじん)</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- CTA Kuis Materi -->
+        <div
+          class="mt-10 rounded-2xl border-2 border-dashed border-sakura bg-white p-6 md:p-8 text-center shadow-sm"
+        >
+          <span
+            class="inline-block rounded-full bg-crimson/10 px-4 py-1 text-xs font-bold uppercase tracking-wider text-crimson mb-2"
+            >Uji Hafalanmu</span
+          >
+          <h3 class="font-display text-2xl font-bold text-ink">
+            Sudah selesai mempelajari materi ini?
+          </h3>
+          <p class="mt-2 text-slate-600 max-w-md mx-auto text-sm">
+            Ayo tes daya ingatmu seputar kata ganti & kosakata orang dengan kuis
+            interaktif 10 soal pilihan ganda.
+          </p>
+          <a
+            href="kuis.html?kategori=orang"
+            class="mt-5 inline-flex items-center gap-2 rounded-xl bg-crimson px-6 py-3 font-bold text-white shadow-md transition hover:bg-red-900"
+          >
+            <span>Mulai Kuis Kosakata Orang</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-white px-5 py-8">
+      <div
+        class="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 text-sm text-slate-500"
+      >
+        <p>© 2026 Hongo Study · Belajar bersama.</p>
+        <p class="font-bold text-crimson">がんばって! Terus semangat!</p>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

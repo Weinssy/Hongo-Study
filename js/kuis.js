@@ -48,6 +48,7 @@
       label: "Materi Mata Pelajaran",
     },
     pekerjaan: { url: "kosakata-pekerjaan.html", label: "Materi Pekerjaan" },
+    orang: { url: "kosakata-orang.html", label: "Materi Kosakata Orang" },
     campuran: { url: "index.html#materi", label: "Semua Materi" },
   };
 
