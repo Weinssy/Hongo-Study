@@ -1,0 +1,1224 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kosakata Sekolah & Kelas | Hongo Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              sakura: "#FFB7C5",
+              crimson: "#BC002D",
+              ink: "#20242a",
+              mist: "#f5f7f8",
+            },
+            fontFamily: {
+              display: ["Georgia", "serif"],
+              sans: ["Trebuchet MS", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="font-sans bg-mist">
+    <header
+      class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur"
+    >
+      <div
+        class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <span
+            class="grid h-10 w-10 place-items-center rounded-full bg-crimson text-xl text-white"
+            >日</span
+          >
+          <span>
+            <strong class="block font-display text-lg">Hongo Study</strong>
+            <small class="text-xs text-slate-500"
+              >Belajar sedikit, setiap hari.</small
+            >
+          </span>
+        </a>
+        <button
+          id="menuButton"
+          class="rounded-lg border border-slate-200 p-2 text-xl md:hidden"
+          aria-label="Buka menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <nav
+          id="mainNav"
+          class="absolute left-0 top-full hidden w-full border-b border-slate-200 bg-white px-5 py-4 md:static md:block md:w-auto md:border-0 md:bg-transparent md:p-0"
+        >
+          <ul
+            class="flex flex-col gap-4 text-sm font-bold md:flex-row md:gap-7"
+          >
+            <li>
+              <a class="nav-link hover:text-crimson" href="index.html"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <a class="nav-link hover:text-crimson" href="index.html#latihan"
+                >Latihan</a
+              >
+            </li>
+            <li>
+              <a class="nav-link hover:text-crimson" href="index.html#materi"
+                >Materi</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wash min-h-screen">
+      <div class="mx-auto max-w-4xl px-5 py-12 md:py-20">
+        <div class="mb-10 text-center">
+          <p class="mb-3 font-bold uppercase tracking-widest text-crimson">
+            Kosakata Dasar
+          </p>
+          <h1 class="font-display text-4xl leading-tight md:text-6xl">
+            Sekolah & Kelas
+          </h1>
+          <p class="mt-4 text-lg text-slate-600">
+            Daftar kosakata seputar lingkungan sekolah, ruangan, fasilitas
+            kelas, dan aktivitas belajar dalam bahasa Jepang.
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-6 md:p-10 rounded-2xl shadow-xl border border-slate-200 space-y-12"
+        >
+          <!-- 1. Kosakata Sekolah & Jenjang Pendidikan -->
+          <section>
+            <h2
+              class="mb-6 font-display text-2xl font-bold border-b border-slate-200 pb-3 text-crimson"
+            >
+              1. Kosakata Sekolah & Orang di Sekolah
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <!-- Tingkatan Sekolah -->
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
+                  Lembaga & Jenjang Sekolah
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">Sekolah</strong> &nbsp;—&nbsp;
+                    gakkoo
+                    <span class="font-display text-lg text-crimson"
+                      >(学校 / がっこう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">TK (Taman Kanak-kanak)</strong>
+                    &nbsp;—&nbsp; yoochien
+                    <span class="font-display text-lg text-crimson"
+                      >(幼稚園 / ようちえん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">SD (Sekolah Dasar)</strong>
+                    &nbsp;—&nbsp; shoogakkoo
+                    <span class="font-display text-lg text-crimson"
+                      >(小学校 / しょうがっこう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">SMP</strong> &nbsp;—&nbsp;
+                    chuugakkoo
+                    <span class="font-display text-lg text-crimson"
+                      >(中学校 / ちゅうがっこう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">SMA</strong> &nbsp;—&nbsp; kookoo
+                    <span class="font-display text-lg text-crimson"
+                      >(高校 / こうこう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">SMK</strong> &nbsp;—&nbsp;
+                    shokugyoo kookoo
+                    <span class="font-display text-lg text-crimson"
+                      >(職業高校 / しょくぎょうこうこう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink"
+                      >Universitas / Perguruan Tinggi</strong
+                    >
+                    &nbsp;—&nbsp; daigaku
+                    <span class="font-display text-lg text-crimson"
+                      >(大学 / だいがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pascasarjana (S2/S3)</strong>
+                    &nbsp;—&nbsp; daigakuin
+                    <span class="font-display text-lg text-crimson"
+                      >(大学院 / だいがくいん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Sekolah Negeri</strong>
+                    &nbsp;—&nbsp; kokuritsu
+                    <span class="font-display text-lg text-crimson"
+                      >(国立 / こくりつ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Sekolah Umum (Pemda)</strong>
+                    &nbsp;—&nbsp; kooritsu
+                    <span class="font-display text-lg text-crimson"
+                      >(公立 / こうりつ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Sekolah Swasta</strong>
+                    &nbsp;—&nbsp; shiritsu / watakushiritsu
+                    <span class="font-display text-lg text-crimson"
+                      >(私立 / しりつ)</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Murid & Pengajar -->
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
+                  Murid, Guru & Warga Sekolah
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">Anak TK</strong> &nbsp;—&nbsp;
+                    yoochienji
+                    <span class="font-display text-lg text-crimson"
+                      >(幼稚園児 / ようちえんじ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Siswa SD</strong> &nbsp;—&nbsp;
+                    shoogakusee
+                    <span class="font-display text-lg text-crimson"
+                      >(小学生 / しょうがくせい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Siswa SMP</strong> &nbsp;—&nbsp;
+                    chuugakusee
+                    <span class="font-display text-lg text-crimson"
+                      >(中学生 / ちゅうがくせい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Siswa SMA</strong> &nbsp;—&nbsp;
+                    kookoosee
+                    <span class="font-display text-lg text-crimson"
+                      >(高校生 / こうこうせい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Mahasiswa</strong> &nbsp;—&nbsp;
+                    daigakusee
+                    <span class="font-display text-lg text-crimson"
+                      >(大学生 / だいがくせい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pelajar (Umum)</strong>
+                    &nbsp;—&nbsp; gakusee
+                    <span class="font-display text-lg text-crimson"
+                      >(学生 / がくせい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Murid (Sekolah tertentu)</strong>
+                    &nbsp;—&nbsp; seeto
+                    <span class="font-display text-lg text-crimson"
+                      >(生徒 / せいと)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pengajar (Profesi)</strong>
+                    &nbsp;—&nbsp; kyooshi
+                    <span class="font-display text-lg text-crimson"
+                      >(教師 / きょうし)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Profesor</strong> &nbsp;—&nbsp;
+                    kyooju
+                    <span class="font-display text-lg text-crimson"
+                      >(教授 / きょうじゅ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Guru / Dosen (Panggilan)</strong>
+                    &nbsp;—&nbsp; sensee
+                    <span class="font-display text-lg text-crimson"
+                      >(先生 / せんせい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Wali Kelas</strong> &nbsp;—&nbsp;
+                    tan'nin
+                    <span class="font-display text-lg text-crimson"
+                      >(担任 / たんにん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kepala Sekolah</strong>
+                    &nbsp;—&nbsp; koochoo sensee
+                    <span class="font-display text-lg text-crimson"
+                      >(校長先生 / こうちょうせんせい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Wakil Kepala Sekolah</strong>
+                    &nbsp;—&nbsp; kyootoo sensee
+                    <span class="font-display text-lg text-crimson"
+                      >(教頭先生 / きょうとうせんせい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Senior</strong> &nbsp;—&nbsp;
+                    senpai
+                    <span class="font-display text-lg text-crimson"
+                      >(先輩 / せんぱい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Junior</strong> &nbsp;—&nbsp;
+                    koohai
+                    <span class="font-display text-lg text-crimson"
+                      >(後輩 / こうはい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pelajar Asing</strong>
+                    &nbsp;—&nbsp; ryuugakusee
+                    <span class="font-display text-lg text-crimson"
+                      >(留学生 / りゅうがくせい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Siswa Tingkat ke-～</strong>
+                    &nbsp;—&nbsp; ~nensee
+                    <span class="font-display text-lg text-crimson"
+                      >(～年生 / ～ねんせい)</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. Ruangan di Sekolah -->
+          <section>
+            <h2
+              class="mb-6 font-display text-2xl font-bold border-b border-slate-200 pb-3 text-crimson"
+            >
+              2. Ruangan & Fasilitas di Sekolah
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <ul class="list-disc list-inside space-y-3 text-slate-700">
+                <li>
+                  <strong class="text-ink">Ruang Kelas</strong> &nbsp;—&nbsp;
+                  kyooshitsu
+                  <span class="font-display text-lg text-crimson"
+                    >(教室 / きょうしつ)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Perpustakaan</strong> &nbsp;—&nbsp;
+                  toshokan
+                  <span class="font-display text-lg text-crimson"
+                    >(図書館 / としょかん)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Ruang Guru</strong> &nbsp;—&nbsp;
+                  shokuin-shitsu
+                  <span class="font-display text-lg text-crimson"
+                    >(職員室 / しょくいんしつ)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Ruang Kepala Sekolah</strong>
+                  &nbsp;—&nbsp; koochoo-shitsu
+                  <span class="font-display text-lg text-crimson"
+                    >(校長室 / こうちょうしつ)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Ruang Tata Usaha (TU)</strong>
+                  &nbsp;—&nbsp; jimu-shitsu
+                  <span class="font-display text-lg text-crimson"
+                    >(事務室 / じむしつ)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Ruang UKS / Kesehatan</strong>
+                  &nbsp;—&nbsp; hoken-shitsu
+                  <span class="font-display text-lg text-crimson"
+                    >(保健室 / ほけんしつ)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Laboratorium IPA</strong>
+                  &nbsp;—&nbsp; rikashitsu
+                  <span class="font-display text-lg text-crimson"
+                    >(理科室 / りかしつ)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Laboratorium Bahasa (LL)</strong>
+                  &nbsp;—&nbsp; erueru-kyooshitsu
+                  <span class="font-display text-lg text-crimson"
+                    >(LL教室 / えるえるきょうしつ)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Ruang Seni</strong> &nbsp;—&nbsp;
+                  bijutsu-shitsu
+                  <span class="font-display text-lg text-crimson"
+                    >(美術室 / びじゅつしつ)</span
+                  >
+                </li>
+              </ul>
+              <ul class="list-disc list-inside space-y-3 text-slate-700">
+                <li>
+                  <strong class="text-ink">Ruang Musik</strong> &nbsp;—&nbsp;
+                  ongaku-shitsu
+                  <span class="font-display text-lg text-crimson"
+                    >(音楽室 / おんがくしつ)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Gedung Olahraga (GOR)</strong>
+                  &nbsp;—&nbsp; taiikukan
+                  <span class="font-display text-lg text-crimson"
+                    >(体育館 / たいいくかん)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Lapangan Olahraga</strong>
+                  &nbsp;—&nbsp; undoojoo
+                  <span class="font-display text-lg text-crimson"
+                    >(運動場 / うんどうじょう)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Halaman Sekolah</strong>
+                  &nbsp;—&nbsp; kootee
+                  <span class="font-display text-lg text-crimson"
+                    >(校庭 / こうてい)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Kantin</strong> &nbsp;—&nbsp;
+                  shokudoo
+                  <span class="font-display text-lg text-crimson"
+                    >(食堂 / しょくどう)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Aula / Auditorium</strong>
+                  &nbsp;—&nbsp; koodoo
+                  <span class="font-display text-lg text-crimson"
+                    >(講堂 / こうどう)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Lorong</strong> &nbsp;—&nbsp; rooka
+                  <span class="font-display text-lg text-crimson"
+                    >(ろうか)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Toilet</strong> &nbsp;—&nbsp; toire
+                  <span class="font-display text-lg text-crimson"
+                    >(トイレ)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Asrama</strong> &nbsp;—&nbsp; ryoo
+                  <span class="font-display text-lg text-crimson"
+                    >(寮 / りょう)</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- 3. Barang-barang, Alat, atau Fasilitas di Ruang Kelas -->
+          <section>
+            <h2
+              class="mb-6 font-display text-2xl font-bold border-b border-slate-200 pb-3 text-crimson"
+            >
+              3. Fasilitas & Alat Tulis di Kelas
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <!-- Perabotan & Elektronik -->
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
+                  Perabotan & Perlengkapan Kelas
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">Meja</strong> &nbsp;—&nbsp; tsukue
+                    <span class="font-display text-lg text-crimson"
+                      >(机 / つくえ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kursi / Bangku</strong>
+                    &nbsp;—&nbsp; isu
+                    <span class="font-display text-lg text-crimson"
+                      >(椅子 / いす)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Papan Tulis Hitam</strong>
+                    &nbsp;—&nbsp; kokuban
+                    <span class="font-display text-lg text-crimson"
+                      >(黒板 / こくばん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Penghapus Papan Tulis</strong>
+                    &nbsp;—&nbsp; kokuban-keshi
+                    <span class="font-display text-lg text-crimson"
+                      >(黒板消し / こくばんけし)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kapur</strong> &nbsp;—&nbsp; chooku
+                    <span class="font-display text-lg text-crimson"
+                      >(チョーク)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Papan Tulis Putih</strong>
+                    &nbsp;—&nbsp; howaitoboodo
+                    <span class="font-display text-lg text-crimson"
+                      >(ホワイトボード)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Rak Buku</strong> &nbsp;—&nbsp;
+                    hondana
+                    <span class="font-display text-lg text-crimson"
+                      >(本棚 / ほんだな)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Jam Dinding</strong> &nbsp;—&nbsp;
+                    tokee
+                    <span class="font-display text-lg text-crimson"
+                      >(時計 / とけい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Lonceng / Bel</strong>
+                    &nbsp;—&nbsp; chaimu
+                    <span class="font-display text-lg text-crimson"
+                      >(チャイム)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kalender</strong> &nbsp;—&nbsp;
+                    karendaa
+                    <span class="font-display text-lg text-crimson"
+                      >(カレンダー)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">AC (Air Conditioner)</strong>
+                    &nbsp;—&nbsp; eakon
+                    <span class="font-display text-lg text-crimson"
+                      >(エアコン)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kipas Angin</strong> &nbsp;—&nbsp;
+                    senpuuki
+                    <span class="font-display text-lg text-crimson"
+                      >(扇風機 / せんぷうき)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Tas</strong> &nbsp;—&nbsp; kaban
+                    <span class="font-display text-lg text-crimson"
+                      >(かばん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Seragam Sekolah</strong>
+                    &nbsp;—&nbsp; seifuku
+                    <span class="font-display text-lg text-crimson"
+                      >(制服 / せいふく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Peta</strong> &nbsp;—&nbsp; chizu
+                    <span class="font-display text-lg text-crimson"
+                      >(地図 / ちず)</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Alat Tulis (Bunboogu) -->
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
+                  Alat Tulis (文房具 - Bunboogu)
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">Alat Tulis (Umum)</strong>
+                    &nbsp;—&nbsp; bunboogu
+                    <span class="font-display text-lg text-crimson"
+                      >(文房具 / ぶんぼうぐ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Buku</strong> &nbsp;—&nbsp; hon
+                    <span class="font-display text-lg text-crimson"
+                      >(本 / ほん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Buku Tulis / Catatan</strong>
+                    &nbsp;—&nbsp; nooto
+                    <span class="font-display text-lg text-crimson"
+                      >(ノート)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink"
+                      >Buku Agenda / Catatan Kecil</strong
+                    >
+                    &nbsp;—&nbsp; techoo
+                    <span class="font-display text-lg text-crimson"
+                      >(手帳 / てちょう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pensil</strong> &nbsp;—&nbsp;
+                    enpitsu
+                    <span class="font-display text-lg text-crimson"
+                      >(えんぴつ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pensil Mekanik</strong>
+                    &nbsp;—&nbsp; shaapen
+                    <span class="font-display text-lg text-crimson"
+                      >(シャーペン)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pena</strong> &nbsp;—&nbsp; pen
+                    <span class="font-display text-lg text-crimson"
+                      >(ペン)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Bolpoin</strong> &nbsp;—&nbsp;
+                    boorupen
+                    <span class="font-display text-lg text-crimson"
+                      >(ボールペン)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Penghapus</strong> &nbsp;—&nbsp;
+                    keshigomu
+                    <span class="font-display text-lg text-crimson"
+                      >(消しゴム / けしごむ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Penggaris</strong> &nbsp;—&nbsp;
+                    joogi
+                    <span class="font-display text-lg text-crimson"
+                      >(定規 / じょうぎ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Gunting</strong> &nbsp;—&nbsp;
+                    hasami
+                    <span class="font-display text-lg text-crimson"
+                      >(はさみ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Cutter / Pisau Pemotong</strong>
+                    &nbsp;—&nbsp; kattaa
+                    <span class="font-display text-lg text-crimson"
+                      >(カッター)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kertas</strong> &nbsp;—&nbsp; kami
+                    <span class="font-display text-lg text-crimson"
+                      >(紙 / かみ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Fotokopi / Kertas Handout</strong>
+                    &nbsp;—&nbsp; purinto
+                    <span class="font-display text-lg text-crimson"
+                      >(プリント)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Lembaran Kertas Formulir</strong>
+                    &nbsp;—&nbsp; yooshi
+                    <span class="font-display text-lg text-crimson"
+                      >(用紙 / ようし)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Klip Kertas</strong> &nbsp;—&nbsp;
+                    kurippu
+                    <span class="font-display text-lg text-crimson"
+                      >(クリップ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Post-it / Pembatas Kertas</strong>
+                    &nbsp;—&nbsp; fusen
+                    <span class="font-display text-lg text-crimson"
+                      >(ふせん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Tinta</strong> &nbsp;—&nbsp; inku
+                    <span class="font-display text-lg text-crimson"
+                      >(インク)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kalkulator</strong> &nbsp;—&nbsp;
+                    dentaku
+                    <span class="font-display text-lg text-crimson"
+                      >(電卓 / でんたく)</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. Kosakata Kegiatan Kelas & Belajar -->
+          <section>
+            <h2
+              class="mb-6 font-display text-2xl font-bold border-b border-slate-200 pb-3 text-crimson"
+            >
+              4. Kosakata Kegiatan Kelas & Aktivitas Belajar
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <!-- Sesi Kelas & Tugas -->
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
+                  Kelas, Pelajaran & Ujian
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">Pelajaran / Sesi Kelas</strong>
+                    &nbsp;—&nbsp; jugyoo
+                    <span class="font-display text-lg text-crimson"
+                      >(授業 / じゅぎょう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kelas (Grup)</strong> &nbsp;—&nbsp;
+                    kurasu
+                    <span class="font-display text-lg text-crimson"
+                      >(クラス)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Jadwal Pelajaran</strong>
+                    &nbsp;—&nbsp; jikanwari
+                    <span class="font-display text-lg text-crimson"
+                      >(時間割 / じかんわり)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Buku Pelajaran</strong>
+                    &nbsp;—&nbsp; kyookasho
+                    <span class="font-display text-lg text-crimson"
+                      >(教科書 / きょうかしょ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Buku Teks</strong> &nbsp;—&nbsp;
+                    tekisuto
+                    <span class="font-display text-lg text-crimson"
+                      >(テキスト)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Halaman</strong> &nbsp;—&nbsp;
+                    peeji
+                    <span class="font-display text-lg text-crimson"
+                      >(ページ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pasangan (Pair)</strong>
+                    &nbsp;—&nbsp; pea
+                    <span class="font-display text-lg text-crimson"
+                      >(ペア)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kelompok (Group)</strong>
+                    &nbsp;—&nbsp; guruupu
+                    <span class="font-display text-lg text-crimson"
+                      >(グループ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pekerjaan Rumah (PR)</strong>
+                    &nbsp;—&nbsp; shukudai
+                    <span class="font-display text-lg text-crimson"
+                      >(宿題 / しゅくだい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Ujian</strong> &nbsp;—&nbsp; shiken
+                    <span class="font-display text-lg text-crimson"
+                      >(試験 / しけん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Tes</strong> &nbsp;—&nbsp; tesuto
+                    <span class="font-display text-lg text-crimson"
+                      >(テスト)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink"
+                      >Ujian Tengah Semester (UTS)</strong
+                    >
+                    &nbsp;—&nbsp; chuukan shiken
+                    <span class="font-display text-lg text-crimson"
+                      >(中間試験 / ちゅうかんしけん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Ujian Akhir Semester (UAS)</strong>
+                    &nbsp;—&nbsp; kimatsu shiken
+                    <span class="font-display text-lg text-crimson"
+                      >(期末試験 / きまつしけん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Ujian Nasional (UN)</strong>
+                    &nbsp;—&nbsp; zenkoku tooitsu shiken
+                    <span class="font-display text-lg text-crimson"
+                      >(全国統一試験 / ぜんこくとういつしけん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kelulusan (Lulus Ujian)</strong>
+                    &nbsp;—&nbsp; gookaku
+                    <span class="font-display text-lg text-crimson"
+                      >(合格 / ごうかく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Tidak Lulus / Gagal</strong>
+                    &nbsp;—&nbsp; fugookaku
+                    <span class="font-display text-lg text-crimson"
+                      >(不合格 / ふごうかく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Skor / Poin</strong> &nbsp;—&nbsp;
+                    tensuu
+                    <span class="font-display text-lg text-crimson"
+                      >(点数 / てんすう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Prestasi / Rapor / Nilai</strong>
+                    &nbsp;—&nbsp; seeseki
+                    <span class="font-display text-lg text-crimson"
+                      >(成績 / せいせき)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Makalah / Laporan</strong>
+                    &nbsp;—&nbsp; repooto
+                    <span class="font-display text-lg text-crimson"
+                      >(レポート)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pertanyaan</strong> &nbsp;—&nbsp;
+                    shitsumon
+                    <span class="font-display text-lg text-crimson"
+                      >(質問 / しつもん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Soal / Masalah</strong>
+                    &nbsp;—&nbsp; mondai
+                    <span class="font-display text-lg text-crimson"
+                      >(問題 / もんだい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Jawaban</strong> &nbsp;—&nbsp;
+                    kotae / kaitoo
+                    <span class="font-display text-lg text-crimson"
+                      >(答え / 回答)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Jawaban Benar</strong>
+                    &nbsp;—&nbsp; seikai
+                    <span class="font-display text-lg text-crimson"
+                      >(正解 / せいかい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kekeliruan / Salah</strong>
+                    &nbsp;—&nbsp; machigai
+                    <span class="font-display text-lg text-crimson"
+                      >(間違い / まちがい)</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Pembelajaran Bahasa & Istilah Akademik -->
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
+                  Aktivitas Belajar & Istilah Bahasa
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">Belajar</strong> &nbsp;—&nbsp;
+                    benkyoo
+                    <span class="font-display text-lg text-crimson"
+                      >(勉強 / べんきょう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Latihan</strong> &nbsp;—&nbsp;
+                    renshuu
+                    <span class="font-display text-lg text-crimson"
+                      >(練習 / れんしゅう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Persiapan Pelajaran</strong>
+                    &nbsp;—&nbsp; yoshuu
+                    <span class="font-display text-lg text-crimson"
+                      >(予習 / よしゅう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pengulangan / Review</strong>
+                    &nbsp;—&nbsp; fukushuu
+                    <span class="font-display text-lg text-crimson"
+                      >(復習 / ふくしゅう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Belajar Mandiri</strong>
+                    &nbsp;—&nbsp; jishuu
+                    <span class="font-display text-lg text-crimson"
+                      >(自習 / じしゅう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Otodidak</strong> &nbsp;—&nbsp;
+                    dokugaku
+                    <span class="font-display text-lg text-crimson"
+                      >(独学 / どくがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Presentasi / Pengumuman</strong>
+                    &nbsp;—&nbsp; happyoo
+                    <span class="font-display text-lg text-crimson"
+                      >(発表 / はっぴょう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Penjelasan</strong> &nbsp;—&nbsp;
+                    setsumee
+                    <span class="font-display text-lg text-crimson"
+                      >(説明 / せつめい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pengecekan (Check)</strong>
+                    &nbsp;—&nbsp; chekku
+                    <span class="font-display text-lg text-crimson"
+                      >(チェック)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Ekspresi / Ungkapan</strong>
+                    &nbsp;—&nbsp; hyoogen
+                    <span class="font-display text-lg text-crimson"
+                      >(表現 / ひょうげん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pelafalan / Pengucapan</strong>
+                    &nbsp;—&nbsp; hatsuon
+                    <span class="font-display text-lg text-crimson"
+                      >(発音 / はつおん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Percakapan</strong> &nbsp;—&nbsp;
+                    kaiwa
+                    <span class="font-display text-lg text-crimson"
+                      >(会話 / かいわ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kosakata</strong> &nbsp;—&nbsp;
+                    tango
+                    <span class="font-display text-lg text-crimson"
+                      >(単語 / たんご)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kamus</strong> &nbsp;—&nbsp; jisho
+                    <span class="font-display text-lg text-crimson"
+                      >(辞書 / じしょ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kanji</strong> &nbsp;—&nbsp; kanji
+                    <span class="font-display text-lg text-crimson"
+                      >(漢字 / かんじ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Furigana (Cara baca)</strong>
+                    &nbsp;—&nbsp; furigana
+                    <span class="font-display text-lg text-crimson"
+                      >(ふりがな)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Arti / Makna</strong> &nbsp;—&nbsp;
+                    imi
+                    <span class="font-display text-lg text-crimson"
+                      >(意味 / いみ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Tata Bahasa (Grammar)</strong>
+                    &nbsp;—&nbsp; bunpoo
+                    <span class="font-display text-lg text-crimson"
+                      >(文法 / ぶんぽう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Contoh</strong> &nbsp;—&nbsp; ree
+                    <span class="font-display text-lg text-crimson"
+                      >(例 / れい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Referensi / Acuan</strong>
+                    &nbsp;—&nbsp; sankoo
+                    <span class="font-display text-lg text-crimson"
+                      >(参考 / さんこう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kalimat</strong> &nbsp;—&nbsp; bun
+                    <span class="font-display text-lg text-crimson"
+                      >(文 / ぶん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Tulisan / Wacana</strong>
+                    &nbsp;—&nbsp; bunshoo
+                    <span class="font-display text-lg text-crimson"
+                      >(文章 / ぶんしょう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Karangan / Esai</strong>
+                    &nbsp;—&nbsp; sakubun
+                    <span class="font-display text-lg text-crimson"
+                      >(作文 / さくぶん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Skripsi / Karya Ilmiah</strong>
+                    &nbsp;—&nbsp; ronbun
+                    <span class="font-display text-lg text-crimson"
+                      >(論文 / ろんぶん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Peribahasa</strong> &nbsp;—&nbsp;
+                    kotowaza
+                    <span class="font-display text-lg text-crimson"
+                      >(ことわざ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Percobaan / Eksperimen</strong>
+                    &nbsp;—&nbsp; jikken
+                    <span class="font-display text-lg text-crimson"
+                      >(実験 / じっけん)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kehadiran</strong> &nbsp;—&nbsp;
+                    shusseki
+                    <span class="font-display text-lg text-crimson"
+                      >(出席 / しゅっせき)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Ketidakhadiran / Absen</strong>
+                    &nbsp;—&nbsp; kesseki
+                    <span class="font-display text-lg text-crimson"
+                      >(欠席 / けっせき)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Masuk Sekolah</strong>
+                    &nbsp;—&nbsp; nyuugaku
+                    <span class="font-display text-lg text-crimson"
+                      >(入学 / にゅうがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kelulusan Sekolah</strong>
+                    &nbsp;—&nbsp; sotsugyoo
+                    <span class="font-display text-lg text-crimson"
+                      >(卒業 / そつぎょう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Penelitian</strong> &nbsp;—&nbsp;
+                    kenkyuu
+                    <span class="font-display text-lg text-crimson"
+                      >(研究 / けんきゅう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pendidikan</strong> &nbsp;—&nbsp;
+                    kyooiku
+                    <span class="font-display text-lg text-crimson"
+                      >(教育 / きょういく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Semester</strong> &nbsp;—&nbsp;
+                    gakki
+                    <span class="font-display text-lg text-crimson"
+                      >(学期 / がっき)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kegiatan Klub (Ekskul)</strong>
+                    &nbsp;—&nbsp; bukatsu
+                    <span class="font-display text-lg text-crimson"
+                      >(部活 / ぶかつ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Makan Siang Sekolah</strong>
+                    &nbsp;—&nbsp; kyuushoku
+                    <span class="font-display text-lg text-crimson"
+                      >(給食 / きゅうしょく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Hari Libur</strong> &nbsp;—&nbsp;
+                    yasumi
+                    <span class="font-display text-lg text-crimson"
+                      >(休み / やすみ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Libur Musim Panas</strong>
+                    &nbsp;—&nbsp; natsu-yasumi
+                    <span class="font-display text-lg text-crimson"
+                      >(夏休み / なつやすみ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Libur Musim Dingin</strong>
+                    &nbsp;—&nbsp; fuyu-yasumi
+                    <span class="font-display text-lg text-crimson"
+                      >(冬休み / ふゆやすみ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Libur Musim Semi</strong>
+                    &nbsp;—&nbsp; haru-yasumi
+                    <span class="font-display text-lg text-crimson"
+                      >(春休み / はるやすみ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Penindasan / Bullying</strong>
+                    &nbsp;—&nbsp; ijime
+                    <span class="font-display text-lg text-crimson"
+                      >(いじめ)</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-white px-5 py-8">
+      <div
+        class="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 text-sm text-slate-500"
+      >
+        <p>© 2026 Hongo Study · Belajar bersama.</p>
+        <p class="font-bold text-crimson">がんばって! Terus semangat!</p>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

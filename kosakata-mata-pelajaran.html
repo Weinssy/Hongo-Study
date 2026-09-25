@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kosakata Mata Pelajaran & Jurusan | Hongo Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              sakura: "#FFB7C5",
+              crimson: "#BC002D",
+              ink: "#20242a",
+              mist: "#f5f7f8",
+            },
+            fontFamily: {
+              display: ["Georgia", "serif"],
+              sans: ["Trebuchet MS", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="font-sans bg-mist">
+    <header
+      class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur"
+    >
+      <div
+        class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <span
+            class="grid h-10 w-10 place-items-center rounded-full bg-crimson text-xl text-white"
+            >日</span
+          >
+          <span>
+            <strong class="block font-display text-lg">Hongo Study</strong>
+            <small class="text-xs text-slate-500"
+              >Belajar sedikit, setiap hari.</small
+            >
+          </span>
+        </a>
+        <button
+          id="menuButton"
+          class="rounded-lg border border-slate-200 p-2 text-xl md:hidden"
+          aria-label="Buka menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <nav
+          id="mainNav"
+          class="absolute left-0 top-full hidden w-full border-b border-slate-200 bg-white px-5 py-4 md:static md:block md:w-auto md:border-0 md:bg-transparent md:p-0"
+        >
+          <ul
+            class="flex flex-col gap-4 text-sm font-bold md:flex-row md:gap-7"
+          >
+            <li>
+              <a class="nav-link hover:text-crimson" href="index.html"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <a class="nav-link hover:text-crimson" href="index.html#latihan"
+                >Latihan</a
+              >
+            </li>
+            <li>
+              <a class="nav-link hover:text-crimson" href="index.html#materi"
+                >Materi</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wash min-h-screen">
+      <div class="mx-auto max-w-4xl px-5 py-12 md:py-20">
+        <div class="mb-10 text-center">
+          <p class="mb-3 font-bold uppercase tracking-widest text-crimson">
+            Kosakata Dasar
+          </p>
+          <h1 class="font-display text-4xl leading-tight md:text-6xl">
+            Mata Pelajaran & Jurusan
+          </h1>
+          <p class="mt-4 text-lg text-slate-600">
+            Daftar lengkap mata pelajaran sekolah (SD, SMP, SMA) dan program
+            studi/jurusan perkuliahan dalam bahasa Jepang.
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-6 md:p-10 rounded-2xl shadow-xl border border-slate-200 space-y-12"
+        >
+          <!-- 1. Mata Pelajaran di Sekolah (SD, SMP, SMA) -->
+          <section>
+            <h2
+              class="mb-6 font-display text-2xl font-bold border-b border-slate-200 pb-3 text-crimson"
+            >
+              1. Mata Pelajaran Umum (SD, SMP, SMA)
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <!-- Istilah Umum & Pelajaran Wajib -->
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
+                  Pelajaran Pokok & Umum
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">Mata Pelajaran</strong>
+                    &nbsp;—&nbsp; kyooka
+                    <span class="font-display text-lg text-crimson"
+                      >(教科 / きょうか)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink"
+                      >Mata Pelajaran (Kategori Cabang)</strong
+                    >
+                    &nbsp;—&nbsp; kamoku
+                    <span class="font-display text-lg text-crimson"
+                      >(科目 / かもく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pendidikan Agama</strong>
+                    &nbsp;—&nbsp; shuukyoo
+                    <span class="font-display text-lg text-crimson"
+                      >(宗教 / しゅうきょう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink"
+                      >Pendidikan Kewarganegaraan (PKn)</strong
+                    >
+                    &nbsp;—&nbsp; kokumin kyouiku
+                    <span class="font-display text-lg text-crimson"
+                      >(国民教育 / こくみんきょういく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Bahasa Nasional / Jepang</strong>
+                    &nbsp;—&nbsp; kokugo
+                    <span class="font-display text-lg text-crimson"
+                      >(国語 / こくご)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Matematika (SMP & SMA)</strong>
+                    &nbsp;—&nbsp; suugaku
+                    <span class="font-display text-lg text-crimson"
+                      >(数学 / すうがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink"
+                      >Matematika / Berhitung (SD)</strong
+                    >
+                    &nbsp;—&nbsp; sansuu
+                    <span class="font-display text-lg text-crimson"
+                      >(算数 / さんすう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">IPA (Sains)</strong> &nbsp;—&nbsp;
+                    rika
+                    <span class="font-display text-lg text-crimson"
+                      >(理科 / りか)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">IPS (Sosial)</strong> &nbsp;—&nbsp;
+                    shakai
+                    <span class="font-display text-lg text-crimson"
+                      >(社会 / しゃかい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Bahasa Inggris</strong>
+                    &nbsp;—&nbsp; eego
+                    <span class="font-display text-lg text-crimson"
+                      >(英語 / えいご)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink"
+                      >Seni Budaya & Keterampilan (SBK)</strong
+                    >
+                    &nbsp;—&nbsp; bunka geejutsu / zukoo
+                    <span class="font-display text-lg text-crimson"
+                      >(文化芸術/図工 / ぶんかげいじゅつ/ずこう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Prakarya</strong> &nbsp;—&nbsp;
+                    koogee
+                    <span class="font-display text-lg text-crimson"
+                      >(工芸 / こうげい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink"
+                      >Prakarya & Kewirausahaan (PKWU)</strong
+                    >
+                    &nbsp;—&nbsp; koogee to seegyoo
+                    <span class="font-display text-lg text-crimson"
+                      >(工芸と生業 / こうげいとせいぎょう)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink"
+                      >Pendidikan Jasmani & Kesehatan (Penjaskes)</strong
+                    >
+                    &nbsp;—&nbsp; hoken taiiku
+                    <span class="font-display text-lg text-crimson"
+                      >(保健体育 / ほけんたいいく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink"
+                      >Mata Pelajaran Peminatan / Pilihan</strong
+                    >
+                    &nbsp;—&nbsp; sentaku kamoku
+                    <span class="font-display text-lg text-crimson"
+                      >(選択科目 / せんたくかもく)</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Kelompok Peminatan (MIPA, IPS, Bahasa) -->
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
+                  Kelompok Peminatan & Bahasa
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">Kelompok Ilmu Alam (MIPA)</strong>
+                    &nbsp;—&nbsp; shizen bunya
+                    <span class="font-display text-lg text-crimson"
+                      >(自然分野 / しぜんぶんや)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Fisika</strong> &nbsp;—&nbsp;
+                    butsuri
+                    <span class="font-display text-lg text-crimson"
+                      >(物理 / ぶつり)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Biologi</strong> &nbsp;—&nbsp;
+                    seebutsu
+                    <span class="font-display text-lg text-crimson"
+                      >(生物 / せいぶつ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kimia</strong> &nbsp;—&nbsp; kagaku
+                    <span class="font-display text-lg text-crimson"
+                      >(化学 / かがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kelompok Ilmu Sosial (IPS)</strong>
+                    &nbsp;—&nbsp; shakai bunya
+                    <span class="font-display text-lg text-crimson"
+                      >(社会分野 / しゃかいぶんや)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Sejarah</strong> &nbsp;—&nbsp;
+                    rekishi
+                    <span class="font-display text-lg text-crimson"
+                      >(歴史 / れきし)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Geografi</strong> &nbsp;—&nbsp;
+                    chiri
+                    <span class="font-display text-lg text-crimson"
+                      >(地理 / ちり)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Ekonomi</strong> &nbsp;—&nbsp;
+                    keezai
+                    <span class="font-display text-lg text-crimson"
+                      >(経済 / けいざい)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Sosiologi</strong> &nbsp;—&nbsp;
+                    shakaigaku
+                    <span class="font-display text-lg text-crimson"
+                      >(社会学 / しゃかいがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kelompok Bahasa & Budaya</strong>
+                    &nbsp;—&nbsp; gogaku to bunka bunya
+                    <span class="font-display text-lg text-crimson"
+                      >(語学と文化分野 / ごがくとぶんかぶんや)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Bahasa & Sastra Indonesia</strong>
+                    &nbsp;—&nbsp; Indonesiago to Indonesia bungaku
+                    <span class="font-display text-lg text-crimson"
+                      >(インドネシア語とインドネシア文学)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Bahasa & Sastra Inggris</strong>
+                    &nbsp;—&nbsp; eego to eebungaku
+                    <span class="font-display text-lg text-crimson"
+                      >(英語と英文学 / えいごとえいぶんがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Bahasa Daerah</strong>
+                    &nbsp;—&nbsp; chihoo gengo
+                    <span class="font-display text-lg text-crimson"
+                      >(地方言語 / ちほうげんご)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Bahasa Asing</strong> &nbsp;—&nbsp;
+                    gaikokugo
+                    <span class="font-display text-lg text-crimson"
+                      >(外国語 / がいこくご)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Antropologi</strong> &nbsp;—&nbsp;
+                    jinruigaku
+                    <span class="font-display text-lg text-crimson"
+                      >(人類学 / じんるいがく)</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. Mata Pelajaran Khusus SD di Jepang -->
+          <section>
+            <h2
+              class="mb-4 font-display text-2xl font-bold border-b border-slate-200 pb-3 text-crimson"
+            >
+              2. Mata Pelajaran Khusus SD di Jepang (小学校)
+            </h2>
+            <div
+              class="bg-mist p-4 rounded-xl border border-slate-200 text-slate-700 leading-relaxed mb-6 text-sm"
+            >
+              <span class="font-bold text-crimson">※ Catatan Budaya:</span> Di
+              sekolah dasar Jepang, terdapat mata pelajaran khas seperti
+              <em>Doutoku</em> (pendidikan moral & karakter) serta
+              <em>Katei</em> (keterampilan tata boga dan menjahit dasar rumah
+              tangga).
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+              <ul class="list-disc list-inside space-y-3 text-slate-700">
+                <li>
+                  <strong class="text-ink">Musik</strong> &nbsp;—&nbsp; ongaku
+                  <span class="font-display text-lg text-crimson"
+                    >(音楽 / おんがく)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink"
+                    >Ilmu Tata Boga / Kesejahteraan Keluarga</strong
+                  >
+                  &nbsp;—&nbsp; katee
+                  <span class="font-display text-lg text-crimson"
+                    >(家庭 / かてい)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Teknik / Keterampilan</strong>
+                  &nbsp;—&nbsp; gijutsu
+                  <span class="font-display text-lg text-crimson"
+                    >(技術 / ぎじゅつ)</span
+                  >
+                </li>
+              </ul>
+              <ul class="list-disc list-inside space-y-3 text-slate-700">
+                <li>
+                  <strong class="text-ink"
+                    >Pendidikan Budi Pekerti / Moral</strong
+                  >
+                  &nbsp;—&nbsp; dootoku
+                  <span class="font-display text-lg text-crimson"
+                    >(道徳 / どうとく)</span
+                  >
+                </li>
+                <li>
+                  <strong class="text-ink">Seni Rupa & Prakarya (SD)</strong>
+                  &nbsp;—&nbsp; zugakoosaku
+                  <span class="font-display text-lg text-crimson"
+                    >(図画工作 / ずがこうさく)</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- 3. Jurusan & Fakultas di Perguruan Tinggi (Kuliah) -->
+          <section>
+            <h2
+              class="mb-6 font-display text-2xl font-bold border-b border-slate-200 pb-3 text-crimson"
+            >
+              3. Fakultas & Jurusan Kuliah (大学・大学院)
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <!-- Istilah Pokok & Sains / Teknik / Medis -->
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
+                  Sains, Teknik & Medis
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">Fakultas</strong> &nbsp;—&nbsp;
+                    gakubu
+                    <span class="font-display text-lg text-crimson"
+                      >(学部 / がくぶ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Jurusan / Program Studi</strong>
+                    &nbsp;—&nbsp; gakka
+                    <span class="font-display text-lg text-crimson"
+                      >(学科 / がっか)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Matematika</strong> &nbsp;—&nbsp;
+                    suugaku
+                    <span class="font-display text-lg text-crimson"
+                      >(数学 / すうがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Statistika</strong> &nbsp;—&nbsp;
+                    tookeegaku
+                    <span class="font-display text-lg text-crimson"
+                      >(統計学 / とうけいがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Fisika</strong> &nbsp;—&nbsp;
+                    butsurigaku
+                    <span class="font-display text-lg text-crimson"
+                      >(物理学 / ぶつりがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Astronomi</strong> &nbsp;—&nbsp;
+                    tenmongaku
+                    <span class="font-display text-lg text-crimson"
+                      >(天文学 / てんもんがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kimia</strong> &nbsp;—&nbsp; kagaku
+                    <span class="font-display text-lg text-crimson"
+                      >(化学 / かがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Biologi</strong> &nbsp;—&nbsp;
+                    seebutsugaku
+                    <span class="font-display text-lg text-crimson"
+                      >(生物学 / せいぶつがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Teknik (Engineering)</strong>
+                    &nbsp;—&nbsp; koogaku
+                    <span class="font-display text-lg text-crimson"
+                      >(工学 / こうがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Arsitektur</strong> &nbsp;—&nbsp;
+                    kenchikugaku
+                    <span class="font-display text-lg text-crimson"
+                      >(建築学 / けんちくがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Pertanian (Agroteknologi)</strong>
+                    &nbsp;—&nbsp; noogaku
+                    <span class="font-display text-lg text-crimson"
+                      >(農学 / のうがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Perikanan</strong> &nbsp;—&nbsp;
+                    suisangaku
+                    <span class="font-display text-lg text-crimson"
+                      >(水産学 / すいさんがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kehutanan</strong> &nbsp;—&nbsp;
+                    ringaku
+                    <span class="font-display text-lg text-crimson"
+                      >(林学 / りんがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Peternakan</strong> &nbsp;—&nbsp;
+                    chikusangaku
+                    <span class="font-display text-lg text-crimson"
+                      >(畜産学 / ちくさんがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kedokteran Hewan</strong>
+                    &nbsp;—&nbsp; juuigaku
+                    <span class="font-display text-lg text-crimson"
+                      >(獣医学 / じゅういがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Ilmu Kedokteran</strong>
+                    &nbsp;—&nbsp; igaku
+                    <span class="font-display text-lg text-crimson"
+                      >(医学 / いがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Kedokteran Gigi</strong>
+                    &nbsp;—&nbsp; shigaku
+                    <span class="font-display text-lg text-crimson"
+                      >(歯学 / しがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Farmasi</strong> &nbsp;—&nbsp;
+                    yakugaku
+                    <span class="font-display text-lg text-crimson"
+                      >(薬学 / やくがく)</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Sosial, Humaniora & Bisnis -->
+              <div>
+                <h3
+                  class="font-bold text-slate-500 uppercase tracking-widest text-sm mb-4"
+                >
+                  Sosial, Humaniora, Seni & Bisnis
+                </h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong class="text-ink">Ilmu Hukum</strong> &nbsp;—&nbsp;
+                    hoogaku
+                    <span class="font-display text-lg text-crimson"
+                      >(法学 / ほうがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Ilmu Politik</strong> &nbsp;—&nbsp;
+                    seejigaku
+                    <span class="font-display text-lg text-crimson"
+                      >(政治学 / せいじがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Ilmu Ekonomi</strong> &nbsp;—&nbsp;
+                    keezaigaku
+                    <span class="font-display text-lg text-crimson"
+                      >(経済学 / けいざいがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink"
+                      >Manajemen / Administrasi Bisnis</strong
+                    >
+                    &nbsp;—&nbsp; kee'eegaku
+                    <span class="font-display text-lg text-crimson"
+                      >(経営学 / けいえいがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Akuntansi</strong> &nbsp;—&nbsp;
+                    kaikeegaku
+                    <span class="font-display text-lg text-crimson"
+                      >(会計学 / かいけいがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Sosiologi</strong> &nbsp;—&nbsp;
+                    shakaigaku
+                    <span class="font-display text-lg text-crimson"
+                      >(社会学 / しゃかいがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Ilmu Pendidikan / Pedagogi</strong>
+                    &nbsp;—&nbsp; kyooikugaku
+                    <span class="font-display text-lg text-crimson"
+                      >(教育学 / きょういくがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Psikologi</strong> &nbsp;—&nbsp;
+                    shinrigaku
+                    <span class="font-display text-lg text-crimson"
+                      >(心理学 / しんりがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Filsafat</strong> &nbsp;—&nbsp;
+                    tetsugaku
+                    <span class="font-display text-lg text-crimson"
+                      >(哲学 / てつがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Ilmu Agama / Teologi</strong>
+                    &nbsp;—&nbsp; shuukyoogaku
+                    <span class="font-display text-lg text-crimson"
+                      >(宗教学 / しゅうきょうがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Linguistik (Ilmu Bahasa)</strong>
+                    &nbsp;—&nbsp; gengogaku
+                    <span class="font-display text-lg text-crimson"
+                      >(言語学 / げんごがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Sastra</strong> &nbsp;—&nbsp;
+                    bungaku
+                    <span class="font-display text-lg text-crimson"
+                      >(文学 / ぶんがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Seni</strong> &nbsp;—&nbsp;
+                    geejutsu
+                    <span class="font-display text-lg text-crimson"
+                      >(芸術 / げいじゅつ)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Antropologi</strong> &nbsp;—&nbsp;
+                    jinruigaku
+                    <span class="font-display text-lg text-crimson"
+                      >(人類学 / じんるいがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Arkeologi</strong> &nbsp;—&nbsp;
+                    kookogaku
+                    <span class="font-display text-lg text-crimson"
+                      >(考古学 / こうこがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Sejarah</strong> &nbsp;—&nbsp;
+                    rekishigaku
+                    <span class="font-display text-lg text-crimson"
+                      >(歴史学 / れきしがく)</span
+                    >
+                  </li>
+                  <li>
+                    <strong class="text-ink">Geografi</strong> &nbsp;—&nbsp;
+                    chirigaku
+                    <span class="font-display text-lg text-crimson"
+                      >(地理学 / ちりがく)</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-white px-5 py-8">
+      <div
+        class="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 text-sm text-slate-500"
+      >
+        <p>© 2026 Hongo Study · Belajar bersama.</p>
+        <p class="font-bold text-crimson">がんばって! Terus semangat!</p>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
