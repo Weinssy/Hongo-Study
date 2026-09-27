@@ -22,8 +22,10 @@
   "homepage": "https://github.com/Weinssy/Website-Belajar-Bahasa-Jepang#readme",
   "devDependencies": {
     "autoprefixer": "^10.6.1",
+    "handlebars": "^4.7.9",
     "postcss": "^8.5.28",
     "tailwindcss": "^3.4.19",
-    "vite": "^8.3.1"
+    "vite": "^8.3.1",
+    "vite-plugin-handlebars": "^2.0.3"
   }
 }
