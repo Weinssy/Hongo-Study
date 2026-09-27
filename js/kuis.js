@@ -16,6 +16,7 @@
   const feedbackBox = document.querySelector("#feedbackBox");
 
   // Summary Elements
+  const quizReviewList = document.querySelector("#quizReviewList");
   const finalScoreText = document.querySelector("#finalScoreText");
   const finalScorePercent = document.querySelector("#finalScorePercent");
   const finalFeedbackMessage = document.querySelector("#finalFeedbackMessage");
@@ -28,6 +29,7 @@
   let currentIndex = 0;
   let score = 0;
   let answered = false;
+  let userAnswers = [];
 
   // URL Parameter Handling
   const urlParams = new URLSearchParams(window.location.search);
@@ -62,6 +64,19 @@
     return copy;
   }
 
+  // LocalStorage Helper for Wrong Answers
+  function getWrongAnswers() {
+    try {
+      return JSON.parse(localStorage.getItem("hongo_wrong_answers")) || [];
+    } catch {
+      return [];
+    }
+  }
+
+  function saveWrongAnswers(wrongList) {
+    localStorage.setItem("hongo_wrong_answers", JSON.stringify(wrongList));
+  }
+
   // Prepare questions for category
   function prepareQuestions(catKey) {
     let pool = [];
@@ -75,9 +90,22 @@
 
     if (pool.length < 4) return [];
 
-    // Shuffle and pick 10 items
-    const shuffledPool = shuffle(pool);
-    const selected = shuffledPool.slice(0, Math.min(10, shuffledPool.length));
+    // Load wrong answers
+    const wrongHistory = getWrongAnswers();
+    const wrongPool = pool.filter((item) => wrongHistory.includes(item.q));
+    const normalPool = pool.filter((item) => !wrongHistory.includes(item.q));
+
+    // Shuffle and prioritize wrong answers
+    let selected = [];
+    const shuffledWrong = shuffle(wrongPool);
+    const shuffledNormal = shuffle(normalPool);
+
+    selected = shuffledWrong.slice(0, 10);
+    if (selected.length < 10) {
+      selected = selected.concat(shuffledNormal.slice(0, 10 - selected.length));
+    }
+
+    selected = shuffle(selected); // shuffle the selected 10 items
 
     return selected.map((item) => {
       // Find 3 distractors with different answers
@@ -149,6 +177,15 @@
 
     const current = questions[currentIndex];
     const isCorrect = selectedChoice === current.answer;
+
+    // Save answer history
+    userAnswers.push({
+      question: current.question,
+      romaji: current.romaji,
+      correctAnswer: current.answer,
+      userAnswer: selectedChoice,
+      isCorrect: isCorrect,
+    });
     const allButtons = optionsGrid.querySelectorAll(".choice-btn");
 
     allButtons.forEach((btn) => {
@@ -239,6 +276,39 @@
     }
     finalFeedbackMessage.textContent = msg;
 
+    // Render Review List and handle Spaced Repetition (LocalStorage)
+    let wrongHistory = getWrongAnswers();
+    if (quizReviewList) {
+      quizReviewList.innerHTML = userAnswers
+        .map((ans) => {
+          // Update spaced repetition storage
+          if (!ans.isCorrect && !wrongHistory.includes(ans.question)) {
+            wrongHistory.push(ans.question);
+          } else if (ans.isCorrect && wrongHistory.includes(ans.question)) {
+            wrongHistory = wrongHistory.filter((q) => q !== ans.question);
+          }
+
+          return `
+          <div class="rounded-xl border ${ans.isCorrect ? "border-emerald-200 bg-emerald-50" : "border-rose-200 bg-rose-50"} p-4 flex gap-4 items-start">
+            <div class="mt-1 flex-shrink-0 grid h-6 w-6 place-items-center rounded-full ${ans.isCorrect ? "bg-emerald-200 text-emerald-800" : "bg-rose-200 text-rose-800"} font-bold text-xs">
+              ${ans.isCorrect ? "✓" : "✕"}
+            </div>
+            <div>
+              <p class="font-bold text-ink">${ans.question} <span class="text-xs text-slate-500 font-normal">(${ans.romaji})</span></p>
+              ${
+                !ans.isCorrect
+                  ? `<p class="text-sm text-rose-700 mt-1">Jawabanmu: <span class="line-through">${ans.userAnswer}</span></p>
+                   <p class="text-sm text-emerald-700 mt-1 font-bold">Benar: ${ans.correctAnswer}</p>`
+                  : `<p class="text-sm text-emerald-700 mt-1">Jawaban: ${ans.userAnswer}</p>`
+              }
+            </div>
+          </div>
+        `;
+        })
+        .join("");
+      saveWrongAnswers(wrongHistory);
+    }
+
     // Setup back to material button
     const matInfo = materialLinks[currentCategory] || materialLinks.campuran;
     backToMaterialBtn.href = matInfo.url;
@@ -251,6 +321,7 @@
     questions = prepareQuestions(catKey);
     currentIndex = 0;
     score = 0;
+    userAnswers = [];
 
     // Update active tab button
     if (categorySelector) {
