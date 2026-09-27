@@ -1,0 +1,29 @@
+{
+  "name": "hongo-study",
+  "version": "1.0.0",
+  "description": "**Website pembelajaran bahasa Jepang yang ringkas, interaktif, dan ramah untuk siswa SMA.**",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Weinssy/Website-Belajar-Bahasa-Jepang.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Weinssy/Website-Belajar-Bahasa-Jepang/issues"
+  },
+  "homepage": "https://github.com/Weinssy/Website-Belajar-Bahasa-Jepang#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.6.1",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19",
+    "vite": "^8.3.1"
+  }
+}

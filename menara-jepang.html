@@ -5,25 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Menara | Nihongo SMA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            sakura: "#FFB7C5",
-            crimson: "#BC002D",
-            ink: "#20242a",
-            mist: "#f5f7f8",
-          },
-          fontFamily: {
-            display: ["Georgia", "serif"],
-            sans: ["Trebuchet MS", "sans-serif"],
-          },
-        },
-      },
-    };
-  </script>
+  <link rel="stylesheet" href="css/tailwind.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -62,7 +44,7 @@
     <iframe class="tower-page__frame" title="Japanese tenshu in a procedural landscape"
       src="japanese-tower.html?country=japan" sandbox="allow-scripts" loading="eager"></iframe>
   </main>
-  <script src="js/main.js"></script>
+  <script type="module" src="/js/main.js"></script>
 </body>
 
 </html>
