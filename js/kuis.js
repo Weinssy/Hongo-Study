@@ -120,6 +120,7 @@
       return {
         question: item.q,
         romaji: item.r,
+        furigana: item.f,
         answer: item.a,
         choices: allChoices,
       };
@@ -147,7 +148,11 @@
     quizCategoryBadge.textContent = catBadge;
 
     // Question content
-    questionJapanese.textContent = current.question;
+    if (current.furigana) {
+      questionJapanese.innerHTML = `<ruby>${current.question}<rt class="text-3xl md:text-4xl text-crimson mb-1 font-normal tracking-normal">${current.furigana}</rt></ruby>`;
+    } else {
+      questionJapanese.textContent = current.question;
+    }
     questionRomaji.textContent = current.romaji;
 
     // Render Choices
