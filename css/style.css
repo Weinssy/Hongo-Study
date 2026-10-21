@@ -4,9 +4,16 @@ body { background: #f5f7f8; color: #20242a; }
 .dark-mode body { background: #15181c; color: #edf1f3; }
 .dark-mode .bg-white { background-color: #20252b !important; }
 .dark-mode .bg-mist, .dark-mode .bg-slate-100 { background-color: #2a3037 !important; }
+.dark-mode .bg-slate-50 { background-color: #1a1e24 !important; }
+.dark-mode .bg-rose-50, .dark-mode .bg-rose-50\/50, .dark-mode .bg-rose-50\/40, .dark-mode .bg-rose-50\/30 { background-color: #2e1d24 !important; }
+.dark-mode .bg-amber-50, .dark-mode .bg-amber-50\/70, .dark-mode .bg-amber-50\/80 { background-color: #2b2318 !important; }
 .dark-mode .text-ink { color: #edf1f3 !important; }
 .dark-mode .text-slate-500, .dark-mode .text-slate-600, .dark-mode .text-slate-700, .dark-mode .text-slate-800 { color: #aeb8c2 !important; }
-.dark-mode .border-slate-200, .dark-mode .border-slate-300 { border-color: #3c4650 !important; }
+.dark-mode .border-slate-100, .dark-mode .border-slate-200, .dark-mode .border-slate-300 { border-color: #3c4650 !important; }
+.dark-mode .border-rose-200 { border-color: #5c2938 !important; }
+.dark-mode .border-amber-200 { border-color: #594420 !important; }
+.dark-mode .text-amber-900 { color: #fde68a !important; }
+.dark-mode table thead.bg-slate-50 { background-color: #1a1e24 !important; }
 .dark-mode .bg-white\/90 { background-color: rgba(32,37,43,.92) !important; }
 .dark-mode .wash { background: radial-gradient(circle at 86% 20%, rgba(188,0,45,.28), transparent 28%), linear-gradient(135deg, #20252b 0%, #241d21 56%, #15181c 100%); }
 .dark-mode .grid-paper { background-image: linear-gradient(rgba(255,183,197,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,183,197,.08) 1px, transparent 1px); }
