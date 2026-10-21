@@ -41,14 +41,14 @@
         <!-- Section: Statistik & Ringkasan Cepat -->
         <div class="mb-12 grid grid-cols-2 gap-4 md:grid-cols-4">
           <div class="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm">
-            <span class="font-display text-3xl md:text-4xl font-bold text-crimson">300+</span>
+            <span class="font-display text-3xl md:text-4xl font-bold text-crimson">350+</span>
             <p class="mt-1 text-xs font-bold uppercase tracking-wider text-slate-500">Total Kosakata</p>
             <p class="mt-1 text-[11px] text-slate-400">Kanji, romaji, &amp; furigana</p>
           </div>
           <div class="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm">
-            <span class="font-display text-3xl md:text-4xl font-bold text-ink">5</span>
+            <span class="font-display text-3xl md:text-4xl font-bold text-ink">6</span>
             <p class="mt-1 text-xs font-bold uppercase tracking-wider text-slate-500">Subbab Tematik</p>
-            <p class="mt-1 text-xs text-slate-400">Waktu, sekolah, profesi, dll.</p>
+            <p class="mt-1 text-xs text-slate-400">Waktu, sekolah, keluarga, dll.</p>
           </div>
           <div class="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm">
             <span class="font-display text-3xl md:text-4xl font-bold text-emerald-600">100%</span>
@@ -184,7 +184,7 @@
             <!-- Subbab 5: Orang -->
             <a
               href="kosakata/orang.html"
-              class="feature-card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-crimson focus:outline-none focus:ring-2 focus:ring-crimson md:col-span-2 lg:col-span-1"
+              class="feature-card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-crimson focus:outline-none focus:ring-2 focus:ring-crimson"
             >
               <div>
                 <div class="flex items-center justify-between">
@@ -204,6 +204,33 @@
               <div class="mt-6 border-t border-slate-100 pt-4">
                 <span class="inline-flex items-center font-bold text-xs text-crimson group-hover:underline">
                   Buka Kosakata Orang &rarr;
+                </span>
+              </div>
+            </a>
+
+            <!-- Subbab 6: Keluarga -->
+            <a
+              href="kosakata/keluarga.html"
+              class="feature-card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-crimson focus:outline-none focus:ring-2 focus:ring-crimson"
+            >
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson">Subbab 06</span>
+                  <span class="font-display text-2xl text-slate-400">家族</span>
+                </div>
+                <h3 class="mt-4 font-display text-xl font-bold text-ink">Keluarga &amp; Memperkenalkan Diri</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Penyebutan keluarga sendiri (uchi) vs orang lain (soto), aturan menghitung jumlah orang, dan pola kalimat perkenalan.
+                </p>
+                <div class="mt-4 space-y-1 text-xs text-slate-500">
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Sendiri: 父, 母, 兄, 姉, 弟, 妹</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Orang lain: お父さん, お母さん, ご家族</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Hitungan: ひとり, ふたり, 四人, 何人</p>
+                </div>
+              </div>
+              <div class="mt-6 border-t border-slate-100 pt-4">
+                <span class="inline-flex items-center font-bold text-xs text-crimson group-hover:underline">
+                  Buka Kosakata Keluarga &rarr;
                 </span>
               </div>
             </a>
@@ -266,6 +293,13 @@
               class="category-filter-btn rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
             >
               人 Orang
+            </button>
+            <button
+              type="button"
+              data-category="keluarga"
+              class="category-filter-btn rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
+            >
+              家族 Keluarga
             </button>
           </div>
 

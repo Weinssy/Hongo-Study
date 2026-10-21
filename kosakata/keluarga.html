@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Keluarga & Memperkenalkan Anggota Keluarga | Hongo Study</title>
+    <link rel="stylesheet" href="../css/tailwind.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="font-sans bg-mist">
+    {{> header }}
+
+    <main class="wash min-h-screen">
+      <div class="mx-auto max-w-4xl px-5 py-12 md:py-20">
+        <!-- Breadcrumb & Control Bar -->
+        <nav aria-label="Breadcrumb" class="mb-6 flex flex-wrap items-center justify-between gap-4">
+          <a
+            href="../kosakata.html"
+            class="inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline"
+          >
+            &larr; Kembali ke Indeks Kosakata
+          </a>
+          <button
+            id="furiganaToggle"
+            type="button"
+            class="furigana-toggle-btn inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-xs font-bold shadow-sm transition hover:border-crimson"
+            aria-checked="true"
+          >
+            <span class="inline-block h-2 w-2 rounded-full bg-crimson" id="furiganaDot"></span>
+            Furigana: <span id="furiganaState" class="font-mono text-crimson">ON</span>
+          </button>
+        </nav>
+
+        <!-- Header Materi -->
+        <div class="mb-10 text-center">
+          <span class="inline-block rounded-full bg-sakura/40 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-crimson">
+            Subbab 06 · Materi SMA Kelas X & XI · JLPT N5
+          </span>
+          <h1 class="mt-3 font-display text-4xl leading-tight md:text-5xl text-ink">
+            Keluarga &amp; Memperkenalkan Diri
+          </h1>
+          <p class="mt-3 text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
+            Pelajari perbedaan penyebutan keluarga sendiri (uchi) vs keluarga orang lain (soto), aturan menghitung jumlah orang, serta pola percakapan memperkenalkan anggota keluarga.
+          </p>
+        </div>
+
+        <div class="space-y-10">
+          <!-- Kotak Paham Budaya: Uchi vs Soto -->
+          <section class="rounded-2xl border-2 border-sakura bg-white p-6 md:p-8 shadow-sm">
+            <div class="flex items-start gap-4">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-sakura/50 text-2xl font-bold text-crimson">
+                内
+              </span>
+              <div>
+                <h2 class="font-display text-xl font-bold text-ink">
+                  Kunci Utama: Konsep "Uchi (Dalam)" vs "Soto (Luar)"
+                </h2>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Dalam budaya Jepang, cara kita menyebut anggota keluarga bergantung pada <strong>siapa yang kita ajak bicara</strong>:
+                </p>
+                <div class="mt-4 grid gap-4 sm:grid-cols-2 text-sm">
+                  <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                    <p class="font-bold text-crimson">1. Keluarga Sendiri (Uchi / 内)</p>
+                    <p class="mt-1 text-slate-600">
+                      Disebut dengan ungkapan yang <em>rendah hati (kenjougo)</em> tanpa akhiran <em>-san</em> saat berbicara kepada orang lain. Contoh: Ayah saya = <strong>chichi (父)</strong>, Ibu saya = <strong>haha (母)</strong>.
+                    </p>
+                  </div>
+                  <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                    <p class="font-bold text-crimson">2. Keluarga Orang Lain (Soto / 外)</p>
+                    <p class="mt-1 text-slate-600">
+                      Disebut dengan ungkapan <em>penghormatan (sonkeigo)</em> memakai imbuhan <em>o- / go-</em> dan akhiran <em>-san</em>. Contoh: Ayah orang lain = <strong>otousan (お父さん)</strong>, Ibu orang lain = <strong>okaasan (お母さん)</strong>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 1. Memperkenalkan Anggota Keluarga Sendiri -->
+          <section class="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+            <div class="border-b border-slate-200 pb-4 mb-6">
+              <span class="text-xs font-bold uppercase tracking-wider text-crimson">Bagian 1</span>
+              <h2 class="font-display text-2xl font-bold text-ink">
+                1. Memperkenalkan Anggota Keluarga Sendiri
+              </h2>
+              <p class="mt-1 text-sm text-slate-500">
+                Penyebutan anggota keluarga sendiri secara umum kepada orang lain, serta panggilan akrab di dalam rumah.
+              </p>
+            </div>
+
+            <!-- Tabel 1.1: Penyebutan Umum -->
+            <div class="mb-8">
+              <h3 class="mb-3 font-display text-lg font-bold text-slate-800">
+                1.1 Kosakata Penyebutan Keluarga Sendiri (Saat Bicara ke Orang Lain)
+              </h3>
+              <div class="overflow-x-auto rounded-xl border border-slate-200">
+                <table class="w-full text-left text-sm">
+                  <thead class="bg-slate-50 text-xs uppercase tracking-wider text-slate-600 border-b border-slate-200">
+                    <tr>
+                      <th class="px-4 py-3">Bahasa Jepang (Kanji &amp; Furigana)</th>
+                      <th class="px-4 py-3">Romaji</th>
+                      <th class="px-4 py-3">Arti Bahasa Indonesia</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-100 text-slate-700">
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>家族<rt class="text-xs text-crimson">かぞく</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">kazoku</td>
+                      <td class="px-4 py-3">Keluarga</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>両親<rt class="text-xs text-crimson">りょうしん</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">ryoushin (ryooshin)</td>
+                      <td class="px-4 py-3">Kedua orang tua</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>父<rt class="text-xs text-crimson">ちち</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">chichi</td>
+                      <td class="px-4 py-3">Ayah kandung</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>母<rt class="text-xs text-crimson">はは</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">haha</td>
+                      <td class="px-4 py-3">Ibu kandung</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>兄弟<rt class="text-xs text-crimson">きょうだい</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">kyoudai (kyoodai)</td>
+                      <td class="px-4 py-3">Saudara kandung</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>姉妹<rt class="text-xs text-crimson">しまい</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">shimai</td>
+                      <td class="px-4 py-3">Saudara perempuan</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>兄<rt class="text-xs text-crimson">あに</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">ani</td>
+                      <td class="px-4 py-3">Kakak laki-laki</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>姉<rt class="text-xs text-crimson">あね</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">ane</td>
+                      <td class="px-4 py-3">Kakak perempuan</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>弟<rt class="text-xs text-crimson">おとうと</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">otouto (otooto)</td>
+                      <td class="px-4 py-3">Adik laki-laki</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>妹<rt class="text-xs text-crimson">いもうと</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">imouto (imooto)</td>
+                      <td class="px-4 py-3">Adik perempuan</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>夫婦<rt class="text-xs text-crimson">ふうふ</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">fuufu</td>
+                      <td class="px-4 py-3">Suami istri</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>夫<rt class="text-xs text-crimson">おっと</rt></ruby> / <ruby>主人<rt class="text-xs text-crimson">しゅじん</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">otto / shujin</td>
+                      <td class="px-4 py-3">Suami saya</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>妻<rt class="text-xs text-crimson">つま</rt></ruby> / <ruby>家内<rt class="text-xs text-crimson">かない</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">tsuma / kanai</td>
+                      <td class="px-4 py-3">Istri saya</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>子供<rt class="text-xs text-crimson">こども</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">kodomo</td>
+                      <td class="px-4 py-3">Anak</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>息子<rt class="text-xs text-crimson">むすこ</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">musuko</td>
+                      <td class="px-4 py-3">Anak laki-laki saya</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>娘<rt class="text-xs text-crimson">むすめ</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">musume</td>
+                      <td class="px-4 py-3">Anak perempuan saya</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>孫<rt class="text-xs text-crimson">まご</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">mago</td>
+                      <td class="px-4 py-3">Cucu saya</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>祖父母<rt class="text-xs text-crimson">そふぼ</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">sofubo</td>
+                      <td class="px-4 py-3">Kakek nenek</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>祖父<rt class="text-xs text-crimson">そふ</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">sofu</td>
+                      <td class="px-4 py-3">Kakek saya</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>祖母<rt class="text-xs text-crimson">そぼ</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">sobo</td>
+                      <td class="px-4 py-3">Nenek saya</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>親戚<rt class="text-xs text-crimson">しんせき</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">shinseki</td>
+                      <td class="px-4 py-3">Sanak saudara / kerabat</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>叔父<rt class="text-xs text-crimson">おじ</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">oji</td>
+                      <td class="px-4 py-3">Paman saya</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>叔母<rt class="text-xs text-crimson">おば</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">oba</td>
+                      <td class="px-4 py-3">Bibi saya</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">いとこ</td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">itoko</td>
+                      <td class="px-4 py-3">Saudara sepupu</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Tabel 1.2: Panggilan Sendiri -->
+            <div class="mb-8">
+              <h3 class="mb-3 font-display text-lg font-bold text-slate-800">
+                1.2 Panggilan untuk Anggota Keluarga Sendiri (Di Rumah)
+              </h3>
+              <p class="mb-3 text-sm text-slate-600">
+                Saat memanggil anggota keluarga sendiri yang usianya lebih tua, orang Jepang menggunakan kata panggilan akrab berikut:
+              </p>
+              <div class="overflow-x-auto rounded-xl border border-slate-200">
+                <table class="w-full text-left text-sm">
+                  <thead class="bg-slate-50 text-xs uppercase tracking-wider text-slate-600 border-b border-slate-200">
+                    <tr>
+                      <th class="px-4 py-3">Kata Panggilan</th>
+                      <th class="px-4 py-3">Romaji</th>
+                      <th class="px-4 py-3">Sasaran Panggilan</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-100 text-slate-700">
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>お父さん<rt class="text-xs text-crimson">おとうさん</rt></ruby> / パパ</td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">otousan / papa</td>
+                      <td class="px-4 py-3">Memanggil Ayah sendiri</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>お母さん<rt class="text-xs text-crimson">おかあさん</rt></ruby> / ママ</td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">okaasan / mama</td>
+                      <td class="px-4 py-3">Memanggil Ibu sendiri</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>お兄ちゃん<rt class="text-xs text-crimson">おにいちゃん</rt></ruby> / <ruby>お兄さん<rt class="text-xs text-crimson">おにいさん</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">oniichan / oniisan</td>
+                      <td class="px-4 py-3">Memanggil Kakak laki-laki</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>お姉ちゃん<rt class="text-xs text-crimson">おねえちゃん</rt></ruby> / <ruby>お姉さん<rt class="text-xs text-crimson">おねえさん</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">oneechan / oneesan</td>
+                      <td class="px-4 py-3">Memanggil Kakak perempuan</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">おじいちゃん / おじいさん</td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">ojiichan / ojiisan</td>
+                      <td class="px-4 py-3">Memanggil Kakek</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">おばあちゃん / おばあさん</td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">obaachan / obaasan</td>
+                      <td class="px-4 py-3">Memanggil Nenek</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">おじさん / おじちゃん</td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">ojisan / ojichan</td>
+                      <td class="px-4 py-3">Memanggil Paman</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">おばさん / おばちゃん</td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">obasan / obachan</td>
+                      <td class="px-4 py-3">Memanggil Bibi</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="mt-2 text-xs text-slate-500 italic">
+                *Catatan: Untuk memanggil adik (otouto/imouto) atau anak sendiri, umumnya langsung dipanggil menggunakan nama aslinya, sering kali ditambah akhiran <em>-chan</em> atau <em>-kun</em>.
+              </p>
+            </div>
+
+            <!-- 1.3 Pola Memperkenalkan Keluarga Sendiri -->
+            <div>
+              <h3 class="mb-3 font-display text-lg font-bold text-slate-800">
+                1.3 Cara Memperkenalkan Anggota Keluarga Sendiri
+              </h3>
+              <div class="rounded-xl border border-rose-200 bg-rose-50/50 p-4 mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-crimson">Rumus Pola Dasar</span>
+                <p class="mt-1 font-display text-lg font-bold text-ink">
+                  わたしの [Anggota Keluarga Sendiri] です。
+                </p>
+                <p class="text-xs font-mono text-slate-600">
+                  Watashi no [Anggota Keluarga] desu. &rarr; (Ini) [Anggota Keluarga] saya.
+                </p>
+              </div>
+
+              <div class="grid gap-3 sm:grid-cols-2">
+                <div class="rounded-xl border border-slate-200 bg-white p-3.5">
+                  <p class="font-display text-base font-bold text-ink"><ruby>私<rt class="text-xs text-crimson">わたし</rt></ruby>の<ruby>父<rt class="text-xs text-crimson">ちち</rt></ruby>です。</p>
+                  <p class="text-xs font-mono text-slate-500">Watashi no chichi desu.</p>
+                  <p class="text-xs text-slate-600">Ini ayah saya.</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-white p-3.5">
+                  <p class="font-display text-base font-bold text-ink"><ruby>私<rt class="text-xs text-crimson">わたし</rt></ruby>の<ruby>母<rt class="text-xs text-crimson">はは</rt></ruby>です。</p>
+                  <p class="text-xs font-mono text-slate-500">Watashi no haha desu.</p>
+                  <p class="text-xs text-slate-600">Ini ibu saya.</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-white p-3.5">
+                  <p class="font-display text-base font-bold text-ink"><ruby>私<rt class="text-xs text-crimson">わたし</rt></ruby>の<ruby>兄<rt class="text-xs text-crimson">あに</rt></ruby>と<ruby>妹<rt class="text-xs text-crimson">いもうと</rt></ruby>です。</p>
+                  <p class="text-xs font-mono text-slate-500">Watashi no ani to imouto desu.</p>
+                  <p class="text-xs text-slate-600">Ini kakak laki-laki dan adik perempuan saya.</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-white p-3.5">
+                  <p class="font-display text-base font-bold text-ink"><ruby>私<rt class="text-xs text-crimson">わたし</rt></ruby>の<ruby>家族<rt class="text-xs text-crimson">かぞく</rt></ruby>です。</p>
+                  <p class="text-xs font-mono text-slate-500">Watashi no kazoku desu.</p>
+                  <p class="text-xs text-slate-600">Ini keluarga saya.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. Cara Menyebutkan Jumlah Anggota Keluarga atau Saudara -->
+          <section class="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+            <div class="border-b border-slate-200 pb-4 mb-6">
+              <span class="text-xs font-bold uppercase tracking-wider text-crimson">Bagian 2</span>
+              <h2 class="font-display text-2xl font-bold text-ink">
+                2. Cara Menyebutkan Jumlah Anggota Keluarga &amp; Saudara
+              </h2>
+              <p class="mt-1 text-sm text-slate-500">
+                Penyebutan jumlah orang dalam bahasa Jepang memiliki aturan khusus (pengecualian) yang wajib diingat.
+              </p>
+            </div>
+
+            <!-- 2.1 Menghitung Orang -->
+            <div class="mb-8">
+              <h3 class="mb-3 font-display text-lg font-bold text-slate-800">
+                2.1 Aturan Menghitung Orang (1 s.d. 10 Orang)
+              </h3>
+              <p class="mb-3 text-sm text-slate-600 leading-relaxed">
+                Secara umum, jumlah orang dihitung dengan pola <strong>Angka + にん (nin)</strong>. Namun, perhatikan <strong>3 pengecualian krusial</strong>:
+              </p>
+
+              <!-- Alert Pengecualian -->
+              <div class="mb-4 rounded-xl border border-amber-200 bg-amber-50/70 p-4 text-sm text-amber-900">
+                <p class="font-bold">⚠️ Perhatian Pengecualian Khusus:</p>
+                <ul class="mt-1 list-disc list-inside space-y-1 text-xs">
+                  <li><strong>1 orang</strong> dibaca <strong class="text-crimson">ひとり (hitori)</strong>, bukan <em>ichi-nin</em>.</li>
+                  <li><strong>2 orang</strong> dibaca <strong class="text-crimson">ふたり (futari)</strong>, bukan <em>ni-nin</em>.</li>
+                  <li><strong>4 orang</strong> dibaca <strong class="text-crimson">よにん (yo-nin)</strong>, bukan <em>yon-nin</em> atau <em>shi-nin</em>.</li>
+                </ul>
+              </div>
+
+              <!-- Grid Hitung Orang -->
+              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 text-center">
+                <div class="rounded-xl border-2 border-crimson/30 bg-rose-50/40 p-3">
+                  <span class="text-xs font-bold text-crimson">1 Orang (Spesial)</span>
+                  <p class="mt-1 font-display text-xl font-bold text-ink">ひとり</p>
+                  <p class="text-xs font-mono text-slate-500">hitori</p>
+                </div>
+                <div class="rounded-xl border-2 border-crimson/30 bg-rose-50/40 p-3">
+                  <span class="text-xs font-bold text-crimson">2 Orang (Spesial)</span>
+                  <p class="mt-1 font-display text-xl font-bold text-ink">ふたり</p>
+                  <p class="text-xs font-mono text-slate-500">futari</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50/60 p-3">
+                  <span class="text-xs font-bold text-slate-500">3 Orang</span>
+                  <p class="mt-1 font-display text-xl font-bold text-ink">三人 (さんにん)</p>
+                  <p class="text-xs font-mono text-slate-500">san-nin</p>
+                </div>
+                <div class="rounded-xl border-2 border-crimson/30 bg-rose-50/40 p-3">
+                  <span class="text-xs font-bold text-crimson">4 Orang (Spesial)</span>
+                  <p class="mt-1 font-display text-xl font-bold text-ink">四人 (よにん)</p>
+                  <p class="text-xs font-mono text-slate-500">yo-nin</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50/60 p-3">
+                  <span class="text-xs font-bold text-slate-500">5 Orang</span>
+                  <p class="mt-1 font-display text-xl font-bold text-ink">五人 (ごにん)</p>
+                  <p class="text-xs font-mono text-slate-500">go-nin</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50/60 p-3">
+                  <span class="text-xs font-bold text-slate-500">6 Orang</span>
+                  <p class="mt-1 font-display text-xl font-bold text-ink">六人 (ろくにん)</p>
+                  <p class="text-xs font-mono text-slate-500">roku-nin</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50/60 p-3">
+                  <span class="text-xs font-bold text-slate-500">7 Orang</span>
+                  <p class="mt-1 font-display text-xl font-bold text-ink">七人 (しちにん / ななにん)</p>
+                  <p class="text-xs font-mono text-slate-500">shichi / nana-nin</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50/60 p-3">
+                  <span class="text-xs font-bold text-slate-500">8 Orang</span>
+                  <p class="mt-1 font-display text-xl font-bold text-ink">八人 (はちにん)</p>
+                  <p class="text-xs font-mono text-slate-500">hachi-nin</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50/60 p-3">
+                  <span class="text-xs font-bold text-slate-500">9 Orang</span>
+                  <p class="mt-1 font-display text-xl font-bold text-ink">九人 (きゅうにん)</p>
+                  <p class="text-xs font-mono text-slate-500">kyuu-nin</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50/60 p-3">
+                  <span class="text-xs font-bold text-slate-500">10 Orang</span>
+                  <p class="mt-1 font-display text-xl font-bold text-ink">十人 (じゅうにん)</p>
+                  <p class="text-xs font-mono text-slate-500">juu-nin</p>
+                </div>
+                <div class="col-span-2 rounded-xl border border-crimson/40 bg-crimson/5 p-3">
+                  <span class="text-xs font-bold text-crimson">Kata Tanya: Berapa orang?</span>
+                  <p class="mt-1 font-display text-xl font-bold text-crimson">何人 (なんにん)</p>
+                  <p class="text-xs font-mono text-slate-600">nan-nin</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2.2 Jumlah Anggota Keluarga Sendiri -->
+            <div class="mb-8">
+              <h3 class="mb-3 font-display text-lg font-bold text-slate-800">
+                2.2 Cara Menyebutkan Jumlah Anggota Keluarga Sendiri
+              </h3>
+              <div class="rounded-xl border border-rose-200 bg-rose-50/50 p-4 mb-3">
+                <span class="text-xs font-bold uppercase tracking-wider text-crimson">Rumus Pola</span>
+                <p class="mt-1 font-display text-lg font-bold text-ink">
+                  [Jumlah orang] にん かぞくです。
+                </p>
+                <p class="text-xs font-mono text-slate-600">
+                  [Jumlah orang] nin kazoku desu. &rarr; Keluarga kami terdiri dari [Jumlah] orang. (Termasuk diri sendiri)
+                </p>
+              </div>
+              <ul class="list-disc list-inside space-y-1.5 text-sm text-slate-700">
+                <li><strong>三人家族です。</strong> (San-nin kazoku desu.) — Kami 3 orang sekeluarga.</li>
+                <li><strong>四人家族です。</strong> (Yo-nin kazoku desu.) — Kami 4 orang sekeluarga.</li>
+                <li><strong>五人家族です。</strong> (Go-nin kazoku desu.) — Kami 5 orang sekeluarga.</li>
+              </ul>
+            </div>
+
+            <!-- 2.3 Jumlah Saudara Kandung -->
+            <div class="mb-8">
+              <h3 class="mb-3 font-display text-lg font-bold text-slate-800">
+                2.3 Cara Menyebutkan Jumlah Saudara Kandung
+              </h3>
+              <div class="rounded-xl border border-rose-200 bg-rose-50/50 p-4 mb-3">
+                <span class="text-xs font-bold uppercase tracking-wider text-crimson">Rumus Pola</span>
+                <p class="mt-1 font-display text-lg font-bold text-ink">
+                  [Jumlah orang] にん きょうだいです。
+                </p>
+                <p class="text-xs font-mono text-slate-600">
+                  [Jumlah orang] nin kyoudai desu. &rarr; Kami [Jumlah orang] bersaudara. (Termasuk diri sendiri)
+                </p>
+              </div>
+              <div class="grid gap-3 sm:grid-cols-2 text-sm">
+                <div class="rounded-xl border border-slate-200 p-3 bg-white">
+                  <p class="font-bold text-crimson">Anak Tunggal (Tanpa Saudara):</p>
+                  <p class="font-display text-base font-bold text-ink mt-1">ひとりっこです。</p>
+                  <p class="text-xs font-mono text-slate-500">Hitorikko desu.</p>
+                  <p class="text-xs text-slate-600 mt-1">Saya anak tunggal. <em>(Bukan hitori kyoudai desu)</em></p>
+                </div>
+                <div class="rounded-xl border border-slate-200 p-3 bg-white">
+                  <p class="font-bold text-crimson">Dua Bersaudara (Pengecualian):</p>
+                  <p class="font-display text-base font-bold text-ink mt-1">ふたりきょうだいです。</p>
+                  <p class="text-xs font-mono text-slate-500">Futari kyoudai desu.</p>
+                  <p class="text-xs text-slate-600 mt-1">Kami 2 bersaudara. <em>(Bukan ni-nin kyoudai desu)</em></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2.4 Tanya Jawab Berapa Anggota Keluarga / Saudara -->
+            <div class="mb-8">
+              <h3 class="mb-3 font-display text-lg font-bold text-slate-800">
+                2.4 Tanya Jawab Jumlah Anggota Keluarga atau Saudara
+              </h3>
+              <div class="space-y-3 text-sm">
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <p class="font-bold text-crimson">Tanya Jumlah Anggota Keluarga:</p>
+                  <p class="mt-1 font-display text-base font-bold text-ink">
+                    Q: <ruby>何人<rt class="text-xs text-crimson">なんにん</rt></ruby><ruby>家族<rt class="text-xs text-crimson">かぞく</rt></ruby>ですか。
+                  </p>
+                  <p class="text-xs font-mono text-slate-500">Nan-nin kazoku desu ka? (Berapa jumlah anggota keluarga Anda?)</p>
+                  <p class="mt-2 font-display text-base font-bold text-slate-800">
+                    A: <ruby>四人<rt class="text-xs text-crimson">よにん</rt></ruby><ruby>家族<rt class="text-xs text-crimson">かぞく</rt></ruby>です。
+                  </p>
+                  <p class="text-xs font-mono text-slate-500">Yo-nin kazoku desu. (Empat orang sekeluarga.)</p>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <p class="font-bold text-crimson">Tanya Jumlah Bersaudara:</p>
+                  <p class="mt-1 font-display text-base font-bold text-ink">
+                    Q: <ruby>何人<rt class="text-xs text-crimson">なんにん</rt></ruby><ruby>兄弟<rt class="text-xs text-crimson">きょうだい</rt></ruby>ですか。
+                  </p>
+                  <p class="text-xs font-mono text-slate-500">Nan-nin kyoudai desu ka? (Berapa bersaudara?)</p>
+                  <p class="mt-2 font-display text-base font-bold text-slate-800">
+                    A: <ruby>三人<rt class="text-xs text-crimson">さんにん</rt></ruby><ruby>兄弟<rt class="text-xs text-crimson">きょうだい</rt></ruby>です。 / ひとりっこです。
+                  </p>
+                  <p class="text-xs font-mono text-slate-500">San-nin kyoudai desu (Tiga bersaudara) / Hitorikko desu (Anak tunggal).</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2.5 Menyebutkan Keberadaan Anggota Keluarga (~ ga imasu) -->
+            <div>
+              <h3 class="mb-3 font-display text-lg font-bold text-slate-800">
+                2.5 Menyebutkan Keberadaan Saudara (~ ga imasu) &amp; Penyambungan Partikel と
+              </h3>
+              <p class="mb-3 text-sm text-slate-600">
+                Gunakan kata kerja keberadaan makhluk hidup <strong>います (imasu)</strong> untuk menyatakan berapa saudara yang kita miliki:
+              </p>
+              <div class="rounded-xl border border-rose-200 bg-rose-50/50 p-4 mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-crimson">Rumus Pola</span>
+                <p class="mt-1 font-display text-lg font-bold text-ink">
+                  [Saudara] が [Jumlah] {り / にん} います。
+                </p>
+                <p class="text-xs font-mono text-slate-600">
+                  [Saudara] ga [Jumlah] {ri / nin} imasu. &rarr; Saya punya / ada [Saudara] [Jumlah] orang.
+                </p>
+              </div>
+
+              <div class="grid gap-3 sm:grid-cols-2 text-sm mb-4">
+                <div class="rounded-xl border border-slate-200 bg-white p-3.5">
+                  <p class="font-display text-base font-bold text-ink"><ruby>弟<rt class="text-xs text-crimson">おとうと</rt></ruby>がひとりいます。</p>
+                  <p class="text-xs font-mono text-slate-500">Otouto ga hitori imasu.</p>
+                  <p class="text-xs text-slate-600">Saya memiliki satu adik laki-laki.</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-white p-3.5">
+                  <p class="font-display text-base font-bold text-ink"><ruby>兄<rt class="text-xs text-crimson">あに</rt></ruby>がふたりいます。</p>
+                  <p class="text-xs font-mono text-slate-500">Ani ga futari imasu.</p>
+                  <p class="text-xs text-slate-600">Saya memiliki dua kakak laki-laki.</p>
+                </div>
+              </div>
+
+              <!-- Penyambungan Kalimat dengan to & soshite -->
+              <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                <p class="font-bold text-ink text-sm">Penyambungan dengan Partikel と (to) &amp; そして (soshite):</p>
+                <p class="mt-1 text-xs text-slate-600">
+                  Jika memiliki beberapa macam saudara, gabungkan dengan partikel <strong>と (to = dan)</strong> atau kata sambung <strong>そして (soshite = lalu/kemudian)</strong>:
+                </p>
+                <div class="mt-3 space-y-2 text-sm">
+                  <div class="rounded-lg bg-white p-2.5 border border-slate-200">
+                    <p class="font-display font-bold text-ink"><ruby>姉<rt class="text-xs text-crimson">あね</rt></ruby>がふたりと、<ruby>弟<rt class="text-xs text-crimson">おとうと</rt></ruby>がひとりいます。</p>
+                    <p class="text-xs font-mono text-slate-500">Ane ga futari to, otouto ga hitori imasu.</p>
+                    <p class="text-xs text-slate-600">Saya memiliki dua kakak perempuan dan satu adik laki-laki.</p>
+                  </div>
+                  <div class="rounded-lg bg-white p-2.5 border border-slate-200">
+                    <p class="font-display font-bold text-ink"><ruby>兄<rt class="text-xs text-crimson">あに</rt></ruby>がひとり、<ruby>弟<rt class="text-xs text-crimson">おとうと</rt></ruby>がひとり、そして<ruby>妹<rt class="text-xs text-crimson">いもうと</rt></ruby>がひとりいます。</p>
+                    <p class="text-xs font-mono text-slate-500">Ani ga hitori, otouto ga hitori, soshite imouto ga hitori imasu.</p>
+                    <p class="text-xs text-slate-600">Saya punya 1 kakak laki-laki, 1 adik laki-laki, dan 1 adik perempuan.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. Memperkenalkan atau Menanyakan Anggota Keluarga Orang Lain -->
+          <section class="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+            <div class="border-b border-slate-200 pb-4 mb-6">
+              <span class="text-xs font-bold uppercase tracking-wider text-crimson">Bagian 3</span>
+              <h2 class="font-display text-2xl font-bold text-ink">
+                3. Memperkenalkan &amp; Menanyakan Keluarga Orang Lain
+              </h2>
+              <p class="mt-1 text-sm text-slate-500">
+                Penyebutan penuh rasa hormat (Sonkeigo) saat menyapa atau membicarakan keluarga orang lain.
+              </p>
+            </div>
+
+            <!-- Tabel 3.1: Keluarga Orang Lain -->
+            <div class="mb-8">
+              <h3 class="mb-3 font-display text-lg font-bold text-slate-800">
+                3.1 Kosakata Anggota Keluarga Orang Lain (Sopan &amp; Hormat)
+              </h3>
+              <div class="overflow-x-auto rounded-xl border border-slate-200">
+                <table class="w-full text-left text-sm">
+                  <thead class="bg-slate-50 text-xs uppercase tracking-wider text-slate-600 border-b border-slate-200">
+                    <tr>
+                      <th class="px-4 py-3">Sebutan Keluarga Orang Lain</th>
+                      <th class="px-4 py-3">Romaji</th>
+                      <th class="px-4 py-3">Arti / Padanan Bahasa Indonesia</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-100 text-slate-700">
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">ご<ruby>家族<rt class="text-xs text-crimson">かぞく</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">gokazoku</td>
+                      <td class="px-4 py-3">Keluarga (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">ご<ruby>両親<rt class="text-xs text-crimson">りょうしん</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">goryoushin (goryooshin)</td>
+                      <td class="px-4 py-3">Kedua orang tua (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>お父さん<rt class="text-xs text-crimson">おとうさん</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">otousan (otoosan)</td>
+                      <td class="px-4 py-3">Ayah (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>お母さん<rt class="text-xs text-crimson">おかあさん</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">okaasan</td>
+                      <td class="px-4 py-3">Ibu (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">ご<ruby>兄弟<rt class="text-xs text-crimson">きょうだい</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">gokyoudai (gokyoodai)</td>
+                      <td class="px-4 py-3">Saudara kandung (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>お兄さん<rt class="text-xs text-crimson">おにいさん</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">oniisan</td>
+                      <td class="px-4 py-3">Kakak laki-laki (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>お姉さん<rt class="text-xs text-crimson">おねえさん</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">oneesan</td>
+                      <td class="px-4 py-3">Kakak perempuan (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>弟さん<rt class="text-xs text-crimson">おとうとさん</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">otoutosan (otootosan)</td>
+                      <td class="px-4 py-3">Adik laki-laki (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>妹さん<rt class="text-xs text-crimson">いもうとさん</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">imoutosan (imootosan)</td>
+                      <td class="px-4 py-3">Adik perempuan (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">ご<ruby>夫婦<rt class="text-xs text-crimson">ふうふ</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">gofuufu</td>
+                      <td class="px-4 py-3">Pasangan suami istri (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">ご<ruby>主人<rt class="text-xs text-crimson">しゅじん</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">goshujin</td>
+                      <td class="px-4 py-3">Suami (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>奥さん<rt class="text-xs text-crimson">おくさん</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">okusan</td>
+                      <td class="px-4 py-3">Istri (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">お<ruby>子さん<rt class="text-xs text-crimson">こさん</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">okosan</td>
+                      <td class="px-4 py-3">Anak (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>息子さん<rt class="text-xs text-crimson">むすこさん</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">musukosan</td>
+                      <td class="px-4 py-3">Putra / anak laki-laki (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink"><ruby>娘さん<rt class="text-xs text-crimson">むすめさん</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">musumesan</td>
+                      <td class="px-4 py-3">Putri / anak perempuan (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">お<ruby>孫さん<rt class="text-xs text-crimson">まごさん</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">omagosan</td>
+                      <td class="px-4 py-3">Cucu (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">ご<ruby>祖父母<rt class="text-xs text-crimson">そふぼ</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">gosofubo</td>
+                      <td class="px-4 py-3">Kakek nenek (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">おじいさん</td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">ojiisan</td>
+                      <td class="px-4 py-3">Kakek (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">おばあさん</td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">obaasan</td>
+                      <td class="px-4 py-3">Nenek (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">ご<ruby>親戚<rt class="text-xs text-crimson">しんせき</rt></ruby></td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">goshinseki</td>
+                      <td class="px-4 py-3">Kerabat (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">おじさん</td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">ojisan</td>
+                      <td class="px-4 py-3">Paman (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">おばさん</td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">obasan</td>
+                      <td class="px-4 py-3">Bibi (orang lain)</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/80">
+                      <td class="px-4 py-3 font-display text-base font-bold text-ink">いとこさん</td>
+                      <td class="px-4 py-3 font-mono text-xs text-slate-500">itokosan</td>
+                      <td class="px-4 py-3">Sepupu (orang lain)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 3.2 Cara Menyebutkan Anggota Keluarga Orang Lain -->
+            <div class="mb-8">
+              <h3 class="mb-3 font-display text-lg font-bold text-slate-800">
+                3.2 Cara Memperkenalkan Anggota Keluarga Orang Lain
+              </h3>
+              <div class="rounded-xl border border-rose-200 bg-rose-50/50 p-4 mb-3">
+                <span class="text-xs font-bold uppercase tracking-wider text-crimson">Rumus Pola</span>
+                <p class="mt-1 font-display text-lg font-bold text-ink">
+                  [Nama Orang]さんの [Keluarga Orang Lain] です。
+                </p>
+                <p class="text-xs font-mono text-slate-600">
+                  Kochira wa [Nama] no [Keluarga Orang Lain] desu. &rarr; (Ini adalah) [Keluarga Orang Lain] milik [Nama].
+                </p>
+              </div>
+              <div class="grid gap-3 sm:grid-cols-2 text-sm">
+                <div class="rounded-xl border border-slate-200 bg-white p-3.5">
+                  <p class="font-display text-base font-bold text-ink">こちらはデシさんのお<ruby>母さん<rt class="text-xs text-crimson">かあさん</rt></ruby>です。</p>
+                  <p class="text-xs font-mono text-slate-500">Kochira wa Desi-san no okaasan desu.</p>
+                  <p class="text-xs text-slate-600">Ini adalah ibu dari Desi.</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-white p-3.5">
+                  <p class="font-display text-base font-bold text-ink">こちらはスシさんのご<ruby>主人<rt class="text-xs text-crimson">しゅじん</rt></ruby>です。</p>
+                  <p class="text-xs font-mono text-slate-500">Kochira wa Susi-san no goshujin desu.</p>
+                  <p class="text-xs text-slate-600">Ini adalah suami dari Bu Susi.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3.3 Cara Menanyakan Siapa Dia -->
+            <div class="mb-8">
+              <h3 class="mb-3 font-display text-lg font-bold text-slate-800">
+                3.3 Cara Menanyakan "Siapa Dia / Orang Itu?"
+              </h3>
+              <div class="grid gap-4 sm:grid-cols-2 text-sm">
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <span class="rounded-full bg-slate-200 px-2.5 py-0.5 text-xs font-bold text-slate-700">Bentuk Standar / Netral</span>
+                  <p class="mt-2 font-display text-base font-bold text-ink">
+                    この／あの<ruby>人<rt class="text-xs text-crimson">ひと</rt></ruby>はだれですか。
+                  </p>
+                  <p class="text-xs font-mono text-slate-500">Kono / Ano hito wa dare desu ka?</p>
+                  <p class="mt-1 text-xs text-slate-600">Orang ini / itu siapa? <em>(Cocok untuk menanyakan foto atau pihak ketiga)</em></p>
+                </div>
+
+                <div class="rounded-xl border border-crimson/30 bg-rose-50/30 p-4">
+                  <span class="rounded-full bg-crimson px-2.5 py-0.5 text-xs font-bold text-white">Bentuk Sangat Sopan (Disarankan)</span>
+                  <p class="mt-2 font-display text-base font-bold text-ink">
+                    この／あの<ruby>方<rt class="text-xs text-crimson">かた</rt></ruby>はどなたですか。
+                  </p>
+                  <p class="text-xs font-mono text-slate-500">Kono / Ano kata wa donata desu ka?</p>
+                  <p class="mt-1 text-xs text-slate-600">Beliau ini / itu siapa? <em>(Menggunakan kata 'kata' dan 'donata' yang sangat santun)</em></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3.4 & 3.5 Jumlah & Keberadaan Keluarga Orang Lain -->
+            <div>
+              <h3 class="mb-3 font-display text-lg font-bold text-slate-800">
+                3.4 Menanyakan Jumlah &amp; Keberadaan Keluarga Orang Lain
+              </h3>
+              <div class="space-y-3 text-sm">
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <p class="font-bold text-crimson">Tanya Jumlah Bersaudara Orang Lain:</p>
+                  <p class="mt-1 font-display text-base font-bold text-ink">
+                    Q: アスカさんは<ruby>何人<rt class="text-xs text-crimson">なんにん</rt></ruby><ruby>兄弟<rt class="text-xs text-crimson">きょうだい</rt></ruby>ですか。
+                  </p>
+                  <p class="text-xs font-mono text-slate-500">Asuka-san wa nan-nin kyoudai desu ka?</p>
+                  <p class="mt-2 font-display text-base font-bold text-slate-800">
+                    A: <ruby>二人<rt class="text-xs text-crimson">ふたり</rt></ruby><ruby>兄弟<rt class="text-xs text-crimson">きょうだい</rt></ruby>です。 / ひとりっこです。
+                  </p>
+                  <p class="text-xs font-mono text-slate-500">Futari kyoudai desu (2 bersaudara) / Hitorikko desu (Anak tunggal).</p>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <p class="font-bold text-crimson">Tanya Jumlah Keberadaan Saudara Spesifik:</p>
+                  <p class="mt-1 font-display text-base font-bold text-ink">
+                    Q: プトゥさんはお<ruby>姉さん<rt class="text-xs text-crimson">ねえさん</rt></ruby>が<ruby>何人<rt class="text-xs text-crimson">なんにん</rt></ruby>いますか。
+                  </p>
+                  <p class="text-xs font-mono text-slate-500">Putu-san wa oneesan ga nan-nin imasu ka? (Putu punya berapa kakak perempuan?)</p>
+                  <div class="mt-2 space-y-1">
+                    <p class="font-display text-base font-bold text-slate-800">
+                      A1: ひとりいます。<span class="text-xs font-mono font-normal text-slate-500"> (Hitori imasu &rarr; Ada 1 orang.)</span>
+                    </p>
+                    <p class="font-display text-base font-bold text-slate-800">
+                      A2: ひとりもいません。<span class="text-xs font-mono font-normal text-slate-500"> (Hitori mo imasen &rarr; Tidak ada satu orang pun.)</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. Matriks Perbandingan Cepat JLPT N5 - N3 -->
+          <section class="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+            <div class="border-b border-slate-200 pb-4 mb-6">
+              <span class="text-xs font-bold uppercase tracking-wider text-crimson">Ringkasan Kilat</span>
+              <h2 class="font-display text-2xl font-bold text-ink">
+                4. Matriks Perbandingan: Keluarga Sendiri vs Orang Lain (JLPT)
+              </h2>
+              <p class="mt-1 text-sm text-slate-500">
+                Gunakan tabel ringkas ini untuk mengingat pasangan kata yang sering diujikan pada tes JLPT N5 &amp; N4.
+              </p>
+            </div>
+
+            <div class="overflow-x-auto rounded-xl border border-slate-200">
+              <table class="w-full text-left text-sm">
+                <thead class="bg-slate-50 text-xs uppercase tracking-wider text-slate-600 border-b border-slate-200">
+                  <tr>
+                    <th class="px-4 py-3">Peran Anggota</th>
+                    <th class="px-4 py-3 text-crimson font-bold">Keluarga Sendiri (Uchi)</th>
+                    <th class="px-4 py-3 text-emerald-700 font-bold">Keluarga Orang Lain (Soto)</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 text-slate-700">
+                  <tr class="hover:bg-slate-50/80">
+                    <td class="px-4 py-2.5 font-bold text-slate-800">Keluarga</td>
+                    <td class="px-4 py-2.5 font-display text-base text-ink"><ruby>家族<rt class="text-xs text-crimson">かぞく</rt></ruby> (kazoku)</td>
+                    <td class="px-4 py-2.5 font-display text-base text-emerald-800">ご<ruby>家族<rt class="text-xs text-crimson">かぞく</rt></ruby> (gokazoku)</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50/80">
+                    <td class="px-4 py-2.5 font-bold text-slate-800">Orang Tua</td>
+                    <td class="px-4 py-2.5 font-display text-base text-ink"><ruby>両親<rt class="text-xs text-crimson">りょうしん</rt></ruby> (ryoushin)</td>
+                    <td class="px-4 py-2.5 font-display text-base text-emerald-800">ご<ruby>両親<rt class="text-xs text-crimson">りょうしん</rt></ruby> (goryoushin)</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50/80">
+                    <td class="px-4 py-2.5 font-bold text-slate-800">Ayah</td>
+                    <td class="px-4 py-2.5 font-display text-base text-ink"><ruby>父<rt class="text-xs text-crimson">ちち</rt></ruby> (chichi)</td>
+                    <td class="px-4 py-2.5 font-display text-base text-emerald-800"><ruby>お父さん<rt class="text-xs text-crimson">おとうさん</rt></ruby> (otousan)</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50/80">
+                    <td class="px-4 py-2.5 font-bold text-slate-800">Ibu</td>
+                    <td class="px-4 py-2.5 font-display text-base text-ink"><ruby>母<rt class="text-xs text-crimson">はは</rt></ruby> (haha)</td>
+                    <td class="px-4 py-2.5 font-display text-base text-emerald-800"><ruby>お母さん<rt class="text-xs text-crimson">おかあさん</rt></ruby> (okaasan)</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50/80">
+                    <td class="px-4 py-2.5 font-bold text-slate-800">Kakak Laki-laki</td>
+                    <td class="px-4 py-2.5 font-display text-base text-ink"><ruby>兄<rt class="text-xs text-crimson">あに</rt></ruby> (ani)</td>
+                    <td class="px-4 py-2.5 font-display text-base text-emerald-800"><ruby>お兄さん<rt class="text-xs text-crimson">おにいさん</rt></ruby> (oniisan)</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50/80">
+                    <td class="px-4 py-2.5 font-bold text-slate-800">Kakak Perempuan</td>
+                    <td class="px-4 py-2.5 font-display text-base text-ink"><ruby>姉<rt class="text-xs text-crimson">あね</rt></ruby> (ane)</td>
+                    <td class="px-4 py-2.5 font-display text-base text-emerald-800"><ruby>お姉さん<rt class="text-xs text-crimson">おねえさん</rt></ruby> (oneesan)</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50/80">
+                    <td class="px-4 py-2.5 font-bold text-slate-800">Adik Laki-laki</td>
+                    <td class="px-4 py-2.5 font-display text-base text-ink"><ruby>弟<rt class="text-xs text-crimson">おとうと</rt></ruby> (otouto)</td>
+                    <td class="px-4 py-2.5 font-display text-base text-emerald-800"><ruby>弟さん<rt class="text-xs text-crimson">おとうとさん</rt></ruby> (otoutosan)</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50/80">
+                    <td class="px-4 py-2.5 font-bold text-slate-800">Adik Perempuan</td>
+                    <td class="px-4 py-2.5 font-display text-base text-ink"><ruby>妹<rt class="text-xs text-crimson">いもうと</rt></ruby> (imouto)</td>
+                    <td class="px-4 py-2.5 font-display text-base text-emerald-800"><ruby>妹さん<rt class="text-xs text-crimson">いもうとさん</rt></ruby> (imoutosan)</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50/80">
+                    <td class="px-4 py-2.5 font-bold text-slate-800">Suami</td>
+                    <td class="px-4 py-2.5 font-display text-base text-ink"><ruby>夫<rt class="text-xs text-crimson">おっと</rt></ruby> / <ruby>主人<rt class="text-xs text-crimson">しゅじん</rt></ruby> (otto / shujin)</td>
+                    <td class="px-4 py-2.5 font-display text-base text-emerald-800">ご<ruby>主人<rt class="text-xs text-crimson">しゅじん</rt></ruby> (goshujin)</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50/80">
+                    <td class="px-4 py-2.5 font-bold text-slate-800">Istri</td>
+                    <td class="px-4 py-2.5 font-display text-base text-ink"><ruby>妻<rt class="text-xs text-crimson">つま</rt></ruby> / <ruby>家内<rt class="text-xs text-crimson">かない</rt></ruby> (tsuma / kanai)</td>
+                    <td class="px-4 py-2.5 font-display text-base text-emerald-800"><ruby>奥さん<rt class="text-xs text-crimson">おくさん</rt></ruby> (okusan)</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50/80">
+                    <td class="px-4 py-2.5 font-bold text-slate-800">Anak</td>
+                    <td class="px-4 py-2.5 font-display text-base text-ink"><ruby>子供<rt class="text-xs text-crimson">こども</rt></ruby> (kodomo)</td>
+                    <td class="px-4 py-2.5 font-display text-base text-emerald-800">お<ruby>子さん<rt class="text-xs text-crimson">こさん</rt></ruby> (okosan)</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50/80">
+                    <td class="px-4 py-2.5 font-bold text-slate-800">Kakek</td>
+                    <td class="px-4 py-2.5 font-display text-base text-ink"><ruby>祖父<rt class="text-xs text-crimson">そふ</rt></ruby> (sofu)</td>
+                    <td class="px-4 py-2.5 font-display text-base text-emerald-800">おじいさん (ojiisan)</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50/80">
+                    <td class="px-4 py-2.5 font-bold text-slate-800">Nenek</td>
+                    <td class="px-4 py-2.5 font-display text-base text-ink"><ruby>祖母<rt class="text-xs text-crimson">そぼ</rt></ruby> (sobo)</td>
+                    <td class="px-4 py-2.5 font-display text-base text-emerald-800">おばあさん (obaasan)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- CTA Kuis Materi -->
+          <div class="rounded-2xl border-2 border-dashed border-sakura bg-white p-6 md:p-8 text-center shadow-sm">
+            <span class="inline-block rounded-full bg-crimson/10 px-4 py-1 text-xs font-bold uppercase tracking-wider text-crimson mb-2">
+              Uji Hafalan Kosakata
+            </span>
+            <h3 class="font-display text-2xl font-bold text-ink">
+              Sudah memahami kosakata &amp; pola keluarga?
+            </h3>
+            <p class="mt-2 text-slate-600 max-w-md mx-auto text-sm">
+              Uji pemahamanmu seputar keluarga, hitungan orang, dan kosakata lainnya melalui kuis interaktif Hongo Study.
+            </p>
+            <a
+              href="../kuis.html?kategori=campuran"
+              class="mt-5 inline-flex items-center gap-2 rounded-xl bg-crimson px-6 py-3 font-bold text-white shadow-md transition hover:bg-rose-700"
+            >
+              <span>Mulai Latihan Kuis Terpadu</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Subbab Pagination -->
+          <nav aria-label="Navigasi Subbab" class="flex flex-wrap items-center justify-between gap-4 border-t border-slate-200 pt-6">
+            <a
+              href="orang.html"
+              class="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-crimson"
+            >
+              &larr; Subbab 05: Kata Ganti &amp; Orang
+            </a>
+            <a
+              href="../kosakata.html"
+              class="rounded-xl bg-crimson px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-rose-700"
+            >
+              Kembali ke Indeks Kosakata &rarr;
+            </a>
+          </nav>
+        </div>
+      </div>
+    </main>
+
+    {{> footer }}
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

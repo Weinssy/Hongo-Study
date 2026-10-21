@@ -51,6 +51,7 @@
     },
     pekerjaan: { url: "kosakata/pekerjaan.html", label: "Materi Pekerjaan" },
     orang: { url: "kosakata/orang.html", label: "Materi Kosakata Orang" },
+    keluarga: { url: "kosakata/keluarga.html", label: "Materi Keluarga" },
     campuran: { url: "kosakata.html", label: "Semua Materi Kosakata" },
   };
 

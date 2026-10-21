@@ -9,7 +9,8 @@
     sekolah: { name: 'Sekolah & Kelas', link: 'kosakata/sekolah.html', badge: '学校' },
     'mata-pelajaran': { name: 'Mata Pelajaran', link: 'kosakata/mata-pelajaran.html', badge: '教科' },
     pekerjaan: { name: 'Pekerjaan & Profesi', link: 'kosakata/pekerjaan.html', badge: '仕事' },
-    orang: { name: 'Kata Ganti & Orang', link: 'kosakata/orang.html', badge: '人' }
+    orang: { name: 'Kata Ganti & Orang', link: 'kosakata/orang.html', badge: '人' },
+    keluarga: { name: 'Keluarga & Hubungan', link: 'kosakata/keluarga.html', badge: '家族' }
   };
 
   const allVocab = [];

@@ -37,6 +37,7 @@ export default defineConfig({
         kosakataMataPelajaran: resolve(import.meta.dirname, 'kosakata/mata-pelajaran.html'),
         kosakataPekerjaan: resolve(import.meta.dirname, 'kosakata/pekerjaan.html'),
         kosakataOrang: resolve(import.meta.dirname, 'kosakata/orang.html'),
+        kosakataKeluarga: resolve(import.meta.dirname, 'kosakata/keluarga.html'),
         kuis: resolve(import.meta.dirname, 'kuis.html'),
         menaraJepang: resolve(import.meta.dirname, 'menara-jepang.html'),
         japaneseTower: resolve(import.meta.dirname, 'japanese-tower.html'),
