@@ -43,15 +43,15 @@
 
   // Map category to material page link
   const materialLinks = {
-    waktu: { url: "kosakata-waktu.html", label: "Materi Waktu" },
-    sekolah: { url: "kosakata-sekolah.html", label: "Materi Sekolah" },
+    waktu: { url: "kosakata/waktu.html", label: "Materi Waktu" },
+    sekolah: { url: "kosakata/sekolah.html", label: "Materi Sekolah" },
     "mata-pelajaran": {
-      url: "kosakata-mata-pelajaran.html",
+      url: "kosakata/mata-pelajaran.html",
       label: "Materi Mata Pelajaran",
     },
-    pekerjaan: { url: "kosakata-pekerjaan.html", label: "Materi Pekerjaan" },
-    orang: { url: "kosakata-orang.html", label: "Materi Kosakata Orang" },
-    campuran: { url: "index.html#materi", label: "Semua Materi" },
+    pekerjaan: { url: "kosakata/pekerjaan.html", label: "Materi Pekerjaan" },
+    orang: { url: "kosakata/orang.html", label: "Materi Kosakata Orang" },
+    campuran: { url: "kosakata.html", label: "Semua Materi Kosakata" },
   };
 
   // Helper: Shuffle array

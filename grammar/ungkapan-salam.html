@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ungkapan & Salam (Aisatsu) | Hongo Study</title>
+    <link rel="stylesheet" href="../css/tailwind.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="font-sans bg-mist">
+    {{> header }}
+
+    <main class="wash min-h-screen">
+      <div class="mx-auto max-w-4xl px-5 py-12 md:py-20">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="mb-6">
+          <a
+            href="../kamus-grammar.html"
+            class="inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline"
+          >
+            &larr; Kembali ke Kamus & Indeks Grammar
+          </a>
+        </nav>
+
+        <!-- Header Subbab -->
+        <div class="mb-10 border-b border-slate-200/80 pb-8">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span class="rounded-full bg-crimson px-3 py-1 text-xs font-bold text-white">Kategori Khusus · Komunikasi</span>
+              <h1 class="mt-3 font-display text-3xl md:text-5xl font-bold text-ink">
+                Ungkapan &amp; Salam (挨拶 - Aisatsu)
+              </h1>
+            </div>
+            <button
+              id="furiganaToggle"
+              type="button"
+              role="switch"
+              aria-checked="true"
+              class="flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold shadow-sm transition hover:border-crimson"
+            >
+              <span id="furiganaDot" class="h-4 w-4 rounded-full bg-crimson"></span>
+              Furigana: <span id="furiganaState">ON</span>
+            </button>
+          </div>
+          <p class="mt-4 text-base leading-relaxed text-slate-600">
+            Berbeda dengan aturan tata bahasa (grammar), salam dan ungkapan situasi adalah frasa komunikasi tetap (<em>set phrases</em>)
+            yang sangat dijunjung tinggi dalam etika sosial masyarakat Jepang.
+          </p>
+        </div>
+
+        <!-- Content Area -->
+        <div class="space-y-12 rounded-2xl border border-slate-200 bg-white p-6 md:p-10 shadow-sm">
+          <!-- 1. Salam Berdasarkan Waktu -->
+          <section>
+            <h2 class="mb-4 font-display text-2xl font-bold text-crimson border-b border-slate-200 pb-2">
+              1. Salam Berdasarkan Waktu
+            </h2>
+            <div class="grid gap-4 md:grid-cols-3">
+              <!-- Ohayou -->
+              <div class="example-box rounded-xl p-4">
+                <span class="rounded bg-rose-100 px-2 py-0.5 text-[11px] font-bold text-crimson">Pagi Hari</span>
+                <p class="mt-2 font-display text-xl text-ink">おはようございます</p>
+                <p class="text-xs text-slate-500 mt-0.5">Ohayou gozaimasu</p>
+                <p class="text-xs text-slate-700 font-semibold mt-2">Selamat pagi (sopan).</p>
+                <p class="text-[11px] text-slate-500 mt-1">Bentuk kasual sesama teman sebaya: <em>おはよう (ohayou)</em>.</p>
+              </div>
+
+              <!-- Konnichiwa -->
+              <div class="example-box rounded-xl p-4">
+                <span class="rounded bg-rose-100 px-2 py-0.5 text-[11px] font-bold text-crimson">Siang / Sore</span>
+                <p class="mt-2 font-display text-xl text-ink">こんにちは</p>
+                <p class="text-xs text-slate-500 mt-0.5">Konnichiwa</p>
+                <p class="text-xs text-slate-700 font-semibold mt-2">Selamat siang / Halo umum.</p>
+                <p class="text-[11px] text-slate-500 mt-1">Huruf akhir ditulis hiragana <code>は</code> (wa), bukan <code>わ</code>.</p>
+              </div>
+
+              <!-- Konbanwa -->
+              <div class="example-box rounded-xl p-4">
+                <span class="rounded bg-rose-100 px-2 py-0.5 text-[11px] font-bold text-crimson">Malam Hari</span>
+                <p class="mt-2 font-display text-xl text-ink">こんばんは</p>
+                <p class="text-xs text-slate-500 mt-0.5">Konbanwa</p>
+                <p class="text-xs text-slate-700 font-semibold mt-2">Selamat malam.</p>
+                <p class="text-[11px] text-slate-500 mt-1">Digunakan saat berpapasan/bertemu setelah hari gelap.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. Perpisahan & Istirahat -->
+          <section>
+            <h2 class="mb-4 font-display text-2xl font-bold text-crimson border-b border-slate-200 pb-2">
+              2. Perpisahan &amp; Beristirahat
+            </h2>
+            <div class="grid gap-4 md:grid-cols-2">
+              <!-- Sayounara -->
+              <div class="rounded-xl border border-slate-200 p-4">
+                <strong class="font-display text-lg text-ink">さようなら (Sayounara)</strong>
+                <p class="text-xs text-slate-500">Selamat tinggal / Sampai jumpa.</p>
+                <p class="text-xs text-slate-600 mt-2">
+                  Umumnya dipakai saat perpisahan formal atau ketika tidak akan bertemu lagi dalam kurun waktu yang lama.
+                </p>
+              </div>
+
+              <!-- Mata ashita -->
+              <div class="rounded-xl border border-slate-200 p-4">
+                <strong class="font-display text-lg text-ink">また<ruby>明日<rt>あした</rt></ruby> (Mata ashita)</strong>
+                <p class="text-xs text-slate-500">Sampai jumpa besok.</p>
+                <p class="text-xs text-slate-600 mt-2">
+                  Salam perpisahan santai yang sering dipakai oleh siswa dan rekan kerja yang akan bertemu kembali esok hari.
+                </p>
+              </div>
+
+              <!-- Oyasuminasai -->
+              <div class="rounded-xl border border-slate-200 p-4">
+                <strong class="font-display text-lg text-ink">おやすみなさい (Oyasuminasai)</strong>
+                <p class="text-xs text-slate-500">Selamat tidur / Selamat beristirahat malam.</p>
+                <p class="text-xs text-slate-600 mt-2">
+                  Diucapkan sebelum tidur atau saat pamit berpisah pada larut malam. Bentuk akrab: <em>おやすみ (oyasumi)</em>.
+                </p>
+              </div>
+
+              <!-- Shitsurei shimasu -->
+              <div class="rounded-xl border border-slate-200 p-4">
+                <strong class="font-display text-lg text-ink"><ruby>失礼<rt>しつれい</rt></ruby>します (Shitsurei shimasu)</strong>
+                <p class="text-xs text-slate-500">Permisi / Maaf atas kelancangan saya.</p>
+                <p class="text-xs text-slate-600 mt-2">
+                  Diucapkan saat masuk atau keluar dari ruang guru, ruang kepala sekolah, atau meninggalkan kantor.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. Rasa Syukur, Santun, & Maaf -->
+          <section>
+            <h2 class="mb-4 font-display text-2xl font-bold text-crimson border-b border-slate-200 pb-2">
+              3. Ungkapan Santun, Terima Kasih, &amp; Permohonan Maaf
+            </h2>
+            <div class="grid gap-4 md:grid-cols-2">
+              <!-- Arigatou -->
+              <div class="example-box rounded-xl p-4">
+                <p class="font-display text-xl text-ink">ありがとうございます</p>
+                <p class="text-xs text-slate-500 mt-0.5">Arigatou gozaimasu</p>
+                <p class="text-xs text-slate-700 font-semibold mt-1">Terima kasih banyak (sopan).</p>
+                <p class="text-[11px] text-slate-500 mt-1">Bentuk lampau setelah bantuan selesai: <em>ありがとうございました</em>.</p>
+              </div>
+
+              <!-- Douitashimashite -->
+              <div class="example-box rounded-xl p-4">
+                <p class="font-display text-xl text-ink">どういたしまして</p>
+                <p class="text-xs text-slate-500 mt-0.5">Douitashimashite</p>
+                <p class="text-xs text-slate-700 font-semibold mt-1">Sama-sama / Kembali.</p>
+                <p class="text-[11px] text-slate-500 mt-1">Jawaban santun ketika menerima ucapan terima kasih.</p>
+              </div>
+
+              <!-- Sumimasen -->
+              <div class="example-box rounded-xl p-4">
+                <p class="font-display text-xl text-ink">すみません</p>
+                <p class="text-xs text-slate-500 mt-0.5">Sumimasen</p>
+                <p class="text-xs text-slate-700 font-semibold mt-1">Maaf / Permisi.</p>
+                <p class="text-[11px] text-slate-500 mt-1">Sangat serbaguna: meminta maaf ringan, berterima kasih, atau memanggil pelayan.</p>
+              </div>
+
+              <!-- Gomennasai -->
+              <div class="example-box rounded-xl p-4">
+                <p class="font-display text-xl text-ink">ごめんなさい</p>
+                <p class="text-xs text-slate-500 mt-0.5">Gomennasai</p>
+                <p class="text-xs text-slate-700 font-semibold mt-1">Mohon maaf.</p>
+                <p class="text-[11px] text-slate-500 mt-1">Ungkapan meminta maaf yang lebih personal dan tulus kepada keluarga atau sahabat.</p>
+              </div>
+
+              <!-- Douzo -->
+              <div class="example-box rounded-xl p-4">
+                <p class="font-display text-xl text-ink">どうぞ</p>
+                <p class="text-xs text-slate-500 mt-0.5">Douzo</p>
+                <p class="text-xs text-slate-700 font-semibold mt-1">Silakan.</p>
+                <p class="text-[11px] text-slate-500 mt-1">Dipakai saat mempersilakan seseorang duduk, masuk ruangan, atau mengambil makanan.</p>
+              </div>
+
+              <!-- Doumo -->
+              <div class="example-box rounded-xl p-4">
+                <p class="font-display text-xl text-ink">どうも</p>
+                <p class="text-xs text-slate-500 mt-0.5">Doumo</p>
+                <p class="text-xs text-slate-700 font-semibold mt-1">Terima kasih (singkat) / Salam santai.</p>
+                <p class="text-[11px] text-slate-500 mt-1">Bentuk ringkas yang ramah digunakan dalam situasi cepat sehari-hari.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. Ungkapan Makan & Bepergian -->
+          <section>
+            <h2 class="mb-4 font-display text-2xl font-bold text-crimson border-b border-slate-200 pb-2">
+              4. Etika Ungkapan Makan &amp; Bepergian
+            </h2>
+            <div class="grid gap-4 md:grid-cols-2">
+              <!-- Itadakimasu -->
+              <div class="formula-box rounded-xl p-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-crimson">Sebelum Makan</span>
+                <p class="mt-1 font-display text-xl font-bold text-ink">いただきます (Itadakimasu)</p>
+                <p class="text-xs text-slate-600 mt-1">
+                  Ungkapan rasa hormat dan syukur atas makanan, petani, dan orang yang memasak sebelum mulai bersantap.
+                </p>
+              </div>
+
+              <!-- Gochisousama -->
+              <div class="formula-box rounded-xl p-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-crimson">Sesudah Makan</span>
+                <p class="mt-1 font-display text-xl font-bold text-ink">ごちそうさまでした (Gochisousama deshita)</p>
+                <p class="text-xs text-slate-600 mt-1">
+                  Ungkapan apresiasi dan terima kasih setelah selesai menikmati hidangan.
+                </p>
+              </div>
+
+              <!-- Ittekimasu & Itterasshai -->
+              <div class="formula-box rounded-xl p-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-crimson">Saat Berangkat Dari Rumah / Kantor</span>
+                <p class="mt-1 font-display text-base font-bold text-ink">
+                  <ruby>行<rt>い</rt></ruby>ってきます (Ittekimasu)
+                </p>
+                <p class="text-xs text-slate-600">"Saya berangkat!" (oleh orang yang pergi).</p>
+                <p class="mt-2 font-display text-base font-bold text-ink">
+                  <ruby>行<rt>い</rt></ruby>ってらっしゃい (Itterasshai)
+                </p>
+                <p class="text-xs text-slate-600">"Hati-hati di jalan!" (jawaban orang yang tinggal).</p>
+              </div>
+
+              <!-- Tadaima & Okaerinasai -->
+              <div class="formula-box rounded-xl p-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-crimson">Saat Kembali Pulang</span>
+                <p class="mt-1 font-display text-base font-bold text-ink">ただいま (Tadaima)</p>
+                <p class="text-xs text-slate-600">"Saya pulang!" (oleh orang yang baru tiba).</p>
+                <p class="mt-2 font-display text-base font-bold text-ink">おかえりなさい (Okaerinasai)</p>
+                <p class="text-xs text-slate-600">"Selamat datang kembali!" (sambutan orang di rumah).</p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Subbab Pagination -->
+        <nav aria-label="Navigasi Subbab" class="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-slate-200 pt-6">
+          <a
+            href="keberadaan-lokasi.html"
+            class="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-crimson"
+          >
+            &larr; Subbab 07: Keberadaan & Lokasi
+          </a>
+          <a
+            href="../kamus-grammar.html"
+            class="rounded-xl bg-crimson px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-rose-700"
+          >
+            Kembali ke Indeks Kamus &rarr;
+          </a>
+        </nav>
+      </div>
+    </main>
+
+    {{> footer }}
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

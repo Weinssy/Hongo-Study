@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kamus & Kumpulan Kosakata | Hongo Study</title>
+    <script type="module" crossorigin src="./assets/kosakata-QkFSFCVB.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/main-3e7HLf6T.js">
+    <link rel="modulepreload" crossorigin href="./assets/quiz-data-Bw8epalx.js">
+    <link rel="stylesheet" crossorigin href="./assets/main-B_tY23Ci.css">
+  </head>
+  <body class="font-sans bg-mist">
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+        <a href="./index.html" class="flex items-center gap-3">
+          <span class="grid h-10 w-10 place-items-center rounded-full bg-crimson text-xl text-white">日</span>
+          <span>
+            <strong class="block font-display text-lg">Hongo Study</strong>
+            <small class="text-xs text-slate-500">Belajar sedikit, setiap hari.</small>
+          </span>
+        </a>
+        <button id="menuButton" class="rounded-lg border border-slate-200 p-2 text-xl md:hidden" aria-label="Buka menu" aria-expanded="false">
+          ☰
+        </button>
+        <nav id="mainNav" class="absolute left-0 top-full hidden w-full border-b border-slate-200 bg-white px-5 py-4 md:static md:block md:w-auto md:border-0 md:bg-transparent md:p-0">
+          <ul class="flex flex-col gap-4 text-sm font-bold md:flex-row md:gap-7">
+            <li>
+              <a class="nav-link hover:text-crimson" href="./index.html">Beranda</a>
+            </li>
+            <li>
+              <a class="nav-link hover:text-crimson" href="./index.html#latihan">Latihan</a>
+            </li>
+            <li>
+              <a class="nav-link hover:text-crimson" href="./index.html#materi">Materi</a>
+            </li>
+            <li>
+              <a class="nav-link hover:text-crimson " href="./menara-jepang.html" >Menara</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wash min-h-screen">
+      <div class="mx-auto max-w-6xl px-5 py-12 md:py-20">
+        <!-- Hero Header -->
+        <div class="mb-12 flex flex-wrap items-end justify-between gap-6 border-b border-slate-200/80 pb-8">
+          <div>
+            <p class="font-bold uppercase tracking-widest text-crimson">
+              04 · Pusat Kosakata Terpadu
+            </p>
+            <h1 class="mt-2 font-display text-4xl leading-tight md:text-5xl">
+              Kamus &amp; Kumpulan Kosakata
+            </h1>
+            <p class="mt-3 max-w-2xl text-base leading-relaxed text-slate-600">
+              Pelajari kosakata bahasa Jepang secara tematik melalui subbab terstruktur (waktu, sekolah, mata pelajaran, profesi, dan orang),
+              atau gunakan fitur pencarian terpusat di bawah untuk menemukan kata secara instan.
+            </p>
+          </div>
+          <button
+            id="furiganaToggle"
+            type="button"
+            role="switch"
+            aria-checked="true"
+            class="flex items-center gap-3 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-bold shadow-sm transition hover:border-crimson"
+          >
+            <span id="furiganaDot" class="h-4 w-4 rounded-full bg-crimson"></span>
+            Furigana: <span id="furiganaState">ON</span>
+          </button>
+        </div>
+
+        <!-- Section: Statistik & Ringkasan Cepat -->
+        <div class="mb-12 grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm">
+            <span class="font-display text-3xl md:text-4xl font-bold text-crimson">300+</span>
+            <p class="mt-1 text-xs font-bold uppercase tracking-wider text-slate-500">Total Kosakata</p>
+            <p class="mt-1 text-[11px] text-slate-400">Kanji, romaji, &amp; furigana</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm">
+            <span class="font-display text-3xl md:text-4xl font-bold text-ink">5</span>
+            <p class="mt-1 text-xs font-bold uppercase tracking-wider text-slate-500">Subbab Tematik</p>
+            <p class="mt-1 text-xs text-slate-400">Waktu, sekolah, profesi, dll.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm">
+            <span class="font-display text-3xl md:text-4xl font-bold text-emerald-600">100%</span>
+            <p class="mt-1 text-xs font-bold uppercase tracking-wider text-slate-500">Akurasi Makna</p>
+            <p class="mt-1 text-xs text-slate-400">Standar SMA &amp; JLPT</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm">
+            <span class="font-display text-3xl md:text-4xl font-bold text-rose-500">Kuis</span>
+            <p class="mt-1 text-xs font-bold uppercase tracking-wider text-slate-500">Uji Daya Ingat</p>
+            <p class="mt-1 text-xs text-slate-400">Tersedia di tiap subbab</p>
+          </div>
+        </div>
+
+        <!-- Section: 5 Kartu Subbab Kosakata -->
+        <section class="mb-16">
+          <div class="mb-8 flex flex-wrap items-baseline justify-between gap-3">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-crimson">Modul Tematik</span>
+              <h2 class="font-display text-2xl font-bold text-ink md:text-3xl">Subbab Kosakata</h2>
+            </div>
+            <p class="text-sm text-slate-500">Pilih kategori untuk melihat tabel kosakata lengkap dan contoh penggunaannya.</p>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Subbab 1: Waktu -->
+            <a
+              href="kosakata/waktu.html"
+              class="feature-card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-crimson focus:outline-none focus:ring-2 focus:ring-crimson"
+            >
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson">Subbab 01</span>
+                  <span class="font-display text-2xl text-slate-400">時間</span>
+                </div>
+                <h3 class="mt-4 font-display text-xl font-bold text-ink">Keterangan Waktu</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Daftar kosakata hari, pekan, bulan, tahun, tanggal penanggalan khusus, jam, menit, musim, dan intensitas frekuensi.
+                </p>
+                <div class="mt-4 space-y-1 text-xs text-slate-500">
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Hari ini, kemarin, besok, lusa</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Tanggal istimewa (1日, 2日, 20日)</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Nama-nama hari &amp; bulan kalender</p>
+                </div>
+              </div>
+              <div class="mt-6 border-t border-slate-100 pt-4">
+                <span class="inline-flex items-center font-bold text-xs text-crimson group-hover:underline">
+                  Buka Kosakata Waktu &rarr;
+                </span>
+              </div>
+            </a>
+
+            <!-- Subbab 2: Sekolah -->
+            <a
+              href="kosakata/sekolah.html"
+              class="feature-card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-crimson focus:outline-none focus:ring-2 focus:ring-crimson"
+            >
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson">Subbab 02</span>
+                  <span class="font-display text-2xl text-slate-400">学校</span>
+                </div>
+                <h3 class="mt-4 font-display text-xl font-bold text-ink">Kosakata Sekolah &amp; Kelas</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Fasilitas sekolah, ruangan kelas, perlengkapan belajar tulis, jenjang pendidikan (SD-SMP-SMA-Kuliah), dan warga sekolah.
+                </p>
+                <div class="mt-4 space-y-1 text-xs text-slate-500">
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Ruangan: 教室, 図書館, 職員室</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Alat tulis: 鉛筆, 消しゴム, 定規</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Warga: 先生, 先輩, 後輩, 校長</p>
+                </div>
+              </div>
+              <div class="mt-6 border-t border-slate-100 pt-4">
+                <span class="inline-flex items-center font-bold text-xs text-crimson group-hover:underline">
+                  Buka Kosakata Sekolah &rarr;
+                </span>
+              </div>
+            </a>
+
+            <!-- Subbab 3: Mata Pelajaran -->
+            <a
+              href="kosakata/mata-pelajaran.html"
+              class="feature-card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-crimson focus:outline-none focus:ring-2 focus:ring-crimson"
+            >
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson">Subbab 03</span>
+                  <span class="font-display text-2xl text-slate-400">教科</span>
+                </div>
+                <h3 class="mt-4 font-display text-xl font-bold text-ink">Mata Pelajaran &amp; Jurusan</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Kosakata mata pelajaran umum tingkat SD/SMP/SMA serta daftar fakultas dan jurusan program studi universitas.
+                </p>
+                <div class="mt-4 space-y-1 text-xs text-slate-500">
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Mapel pokok: 数学, 英語, 理科, 社会</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Sains &amp; Seni: 物理, 化学, 音楽, 美術</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Fakultas: 医学部, 工学部, 経済学部</p>
+                </div>
+              </div>
+              <div class="mt-6 border-t border-slate-100 pt-4">
+                <span class="inline-flex items-center font-bold text-xs text-crimson group-hover:underline">
+                  Buka Kosakata Mapel &rarr;
+                </span>
+              </div>
+            </a>
+
+            <!-- Subbab 4: Pekerjaan -->
+            <a
+              href="kosakata/pekerjaan.html"
+              class="feature-card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-crimson focus:outline-none focus:ring-2 focus:ring-crimson"
+            >
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson">Subbab 04</span>
+                  <span class="font-display text-2xl text-slate-400">仕事</span>
+                </div>
+                <h3 class="mt-4 font-display text-xl font-bold text-ink">Pekerjaan &amp; Profesi</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Kosakata profesi, karier, bidang medis, hukum, teknologi informasi, seni kreatif, serta status dunia kerja.
+                </p>
+                <div class="mt-4 space-y-1 text-xs text-slate-500">
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Kesehatan: 医者, 看護師, 薬剤師</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Bisnis &amp; TI: 会社員, エンジニア, 社長</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Publik &amp; Seni: 警察官, 弁護士, 漫画家</p>
+                </div>
+              </div>
+              <div class="mt-6 border-t border-slate-100 pt-4">
+                <span class="inline-flex items-center font-bold text-xs text-crimson group-hover:underline">
+                  Buka Kosakata Profesi &rarr;
+                </span>
+              </div>
+            </a>
+
+            <!-- Subbab 5: Orang -->
+            <a
+              href="kosakata/orang.html"
+              class="feature-card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-crimson focus:outline-none focus:ring-2 focus:ring-crimson md:col-span-2 lg:col-span-1"
+            >
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson">Subbab 05</span>
+                  <span class="font-display text-2xl text-slate-400">人</span>
+                </div>
+                <h3 class="mt-4 font-display text-xl font-bold text-ink">Kata Ganti &amp; Kosakata Orang</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Pronomina persona (saya, Anda, dia, mereka), tingkatan usia, relasi keluarga &amp; teman, serta warga negara dunia.
+                </p>
+                <div class="mt-4 space-y-1 text-xs text-slate-500">
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Pronomina: 私, あなた, 彼, 彼女, 誰</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Usia &amp; Relasi: 赤ちゃん, 子供, 友達</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Bangsa: 日本人, インドネシア人</p>
+                </div>
+              </div>
+              <div class="mt-6 border-t border-slate-100 pt-4">
+                <span class="inline-flex items-center font-bold text-xs text-crimson group-hover:underline">
+                  Buka Kosakata Orang &rarr;
+                </span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- Section: Pencarian Kosakata Terpusat -->
+        <section class="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+          <div class="mb-6 flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-crimson">Katalog Terpadu</span>
+              <h2 class="font-display text-2xl font-bold text-ink">Pencarian Cepat Kosakata</h2>
+              <p class="mt-1 text-sm text-slate-500">
+                Cari kata berdasarkan bahasa Indonesia, romaji, kanji, atau hiragana di seluruh kategori.
+              </p>
+            </div>
+            <span id="vocabResultCount" class="text-xs font-bold text-slate-500"></span>
+          </div>
+
+          <!-- Kategori Filter Pills -->
+          <div class="mb-5 flex flex-wrap gap-2">
+            <button
+              type="button"
+              data-category="all"
+              class="category-filter-btn rounded-full bg-crimson px-4 py-1.5 text-xs font-bold text-white shadow-sm transition hover:opacity-90"
+            >
+              Semua Kosakata
+            </button>
+            <button
+              type="button"
+              data-category="waktu"
+              class="category-filter-btn rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
+            >
+              時間 Waktu
+            </button>
+            <button
+              type="button"
+              data-category="sekolah"
+              class="category-filter-btn rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
+            >
+              学校 Sekolah
+            </button>
+            <button
+              type="button"
+              data-category="mata-pelajaran"
+              class="category-filter-btn rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
+            >
+              教科 Mapel
+            </button>
+            <button
+              type="button"
+              data-category="pekerjaan"
+              class="category-filter-btn rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
+            >
+              仕事 Profesi
+            </button>
+            <button
+              type="button"
+              data-category="orang"
+              class="category-filter-btn rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
+            >
+              人 Orang
+            </button>
+          </div>
+
+          <!-- Input Pencarian -->
+          <label class="block">
+            <span class="sr-only">Cari kosakata</span>
+            <input
+              id="vocabSearch"
+              type="search"
+              placeholder="Cari kata: kemarin, sensei, sekolah, dokter, watashi, dll..."
+              class="w-full rounded-xl border border-slate-200 bg-white px-5 py-4 text-base outline-none transition focus:border-crimson focus:ring-1 focus:ring-crimson"
+            />
+          </label>
+
+          <!-- Hasil Pencarian -->
+          <div id="vocabResults" class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="bg-white px-5 py-8 ">
+      <div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 text-sm text-slate-500">
+        <p>© 2026 Hongo Study · Belajar bersama.</p>
+        <p class="font-bold text-crimson">がんばって! Terus semangat!</p>
+      </div>
+    </footer>
+  </body>
+</html>

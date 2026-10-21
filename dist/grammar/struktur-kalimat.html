@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Struktur Kalimat & です | Hongo Study</title>
+    <script type="module" crossorigin src="../assets/main-3e7HLf6T.js"></script>
+    <link rel="stylesheet" crossorigin href="../assets/main-B_tY23Ci.css">
+  </head>
+  <body class="font-sans bg-mist">
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+        <a href="../index.html" class="flex items-center gap-3">
+          <span class="grid h-10 w-10 place-items-center rounded-full bg-crimson text-xl text-white">日</span>
+          <span>
+            <strong class="block font-display text-lg">Hongo Study</strong>
+            <small class="text-xs text-slate-500">Belajar sedikit, setiap hari.</small>
+          </span>
+        </a>
+        <button id="menuButton" class="rounded-lg border border-slate-200 p-2 text-xl md:hidden" aria-label="Buka menu" aria-expanded="false">
+          ☰
+        </button>
+        <nav id="mainNav" class="absolute left-0 top-full hidden w-full border-b border-slate-200 bg-white px-5 py-4 md:static md:block md:w-auto md:border-0 md:bg-transparent md:p-0">
+          <ul class="flex flex-col gap-4 text-sm font-bold md:flex-row md:gap-7">
+            <li>
+              <a class="nav-link hover:text-crimson" href="../index.html">Beranda</a>
+            </li>
+            <li>
+              <a class="nav-link hover:text-crimson" href="../index.html#latihan">Latihan</a>
+            </li>
+            <li>
+              <a class="nav-link hover:text-crimson" href="../index.html#materi">Materi</a>
+            </li>
+            <li>
+              <a class="nav-link hover:text-crimson " href="../menara-jepang.html" >Menara</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wash min-h-screen">
+      <div class="mx-auto max-w-4xl px-5 py-12 md:py-20">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="mb-6">
+          <a
+            href="../kamus-grammar.html"
+            class="inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline"
+          >
+            &larr; Kembali ke Kamus & Indeks Grammar
+          </a>
+        </nav>
+
+        <!-- Header Subbab -->
+        <div class="mb-10 border-b border-slate-200/80 pb-8">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span class="rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson">Subbab 01 · Konsep Dasar</span>
+              <h1 class="mt-3 font-display text-3xl md:text-5xl font-bold text-ink">
+                Struktur Kalimat &amp; です
+              </h1>
+            </div>
+            <button
+              id="furiganaToggle"
+              type="button"
+              role="switch"
+              aria-checked="true"
+              class="flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold shadow-sm transition hover:border-crimson"
+            >
+              <span id="furiganaDot" class="h-4 w-4 rounded-full bg-crimson"></span>
+              Furigana: <span id="furiganaState">ON</span>
+            </button>
+          </div>
+          <p class="mt-4 text-base leading-relaxed text-slate-600">
+            Pelajari susunan dasar kalimat bahasa Jepang (SOV), peran partikel topik は (wa),
+            serta fungsi kopula です (desu) untuk menyatakan identitas, profesi, dan keadaan dalam bentuk positif, negatif, dan lampau.
+          </p>
+        </div>
+
+        <!-- Content Area -->
+        <div class="space-y-12 rounded-2xl border border-slate-200 bg-white p-6 md:p-10 shadow-sm">
+          <!-- 1. Konsep Susunan Kalimat (SOV) -->
+          <section>
+            <h2 class="mb-4 font-display text-2xl font-bold text-crimson border-b border-slate-200 pb-2">
+              1. Susunan Kalimat: Bahasa Indonesia vs Bahasa Jepang
+            </h2>
+            <p class="text-sm leading-relaxed text-slate-600 mb-4">
+              Bahasa Indonesia menggunakan susunan <strong>SPO (Subjek - Predikat - Objek)</strong>. Sebaliknya, bahasa Jepang secara umum menganut susunan <strong>SOV (Subjek - Objek - Predikat)</strong>. Ciri terpenting bahasa Jepang adalah bahwa <em>predikat (kata kerja, kata sifat, atau kopula) selalu berada di ujung kalimat</em>.
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-2">
+              <div class="example-box rounded-xl p-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Bahasa Indonesia (SPO)</span>
+                <p class="mt-2 text-base font-bold text-ink">Saya makan apel.</p>
+                <p class="text-xs text-slate-500 mt-1">Saya (S) + makan (P) + apel (O)</p>
+              </div>
+              <div class="example-box rounded-xl p-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-crimson">Bahasa Jepang (SOV)</span>
+                <p class="mt-2 text-base font-bold text-ink">
+                  <ruby>私<rt>わたし</rt></ruby>はリンゴを<ruby>食<rt>た</rt></ruby>べます。
+                </p>
+                <p class="text-xs text-slate-500 mt-1">Watashi (S) + ringo (O) + tabemasu (P)</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. Pola Dasar A は B です -->
+          <section>
+            <h2 class="mb-4 font-display text-2xl font-bold text-crimson border-b border-slate-200 pb-2">
+              2. Pola Dasar: A は B です (A adalah B)
+            </h2>
+            <p class="text-sm leading-relaxed text-slate-600 mb-4">
+              Pola paling mendasar untuk menyatakan identitas, nama, kebangsaan, pekerjaan, atau keadaan dengan sopan.
+            </p>
+
+            <div class="formula-box rounded-xl p-4 mb-6">
+              <span class="text-xs font-bold uppercase tracking-wider text-crimson">Rumus / Pola Struktur</span>
+              <p class="mt-1 font-display text-xl font-bold text-ink">
+                [Topik / Subjek A] は [Kata Benda B] です
+              </p>
+              <p class="mt-2 text-xs text-slate-600">
+                <strong>Catatan penting:</strong> Partikel penanda topik ditulis menggunakan huruf hiragana <code>は</code> (ha), namun ketika berfungsi sebagai partikel penanda topik dilafalkan sebagai <strong>"wa"</strong>.
+              </p>
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500">Contoh Kalimat</h3>
+              <div class="example-box rounded-xl p-4">
+                <p class="font-display text-xl text-ink">
+                  <ruby>私<rt>わたし</rt></ruby>は<ruby>高校生<rt>こうこうせい</rt></ruby>です。
+                </p>
+                <p class="mt-1 text-xs text-slate-500">Watashi wa koukousei desu.</p>
+                <p class="mt-2 text-sm text-slate-700"><strong>Arti:</strong> Saya adalah siswa SMA.</p>
+              </div>
+
+              <div class="example-box rounded-xl p-4">
+                <p class="font-display text-xl text-ink">
+                  <ruby>田中<rt>たなか</rt></ruby>さんは<ruby>日本人<rt>にほんじん</rt></ruby>です。
+                </p>
+                <p class="mt-1 text-xs text-slate-500">Tanaka-san wa nihonjin desu.</p>
+                <p class="mt-2 text-sm text-slate-700"><strong>Arti:</strong> Tanaka-san adalah orang Jepang.</p>
+              </div>
+
+              <div class="example-box rounded-xl p-4">
+                <p class="font-display text-xl text-ink">
+                  <ruby>今日<rt>きょう</rt></ruby>は<ruby>月曜日<rt>げつようび</rt></ruby>です。
+                </p>
+                <p class="mt-1 text-xs text-slate-500">Kyou wa getsuyoubi desu.</p>
+                <p class="mt-2 text-sm text-slate-700"><strong>Arti:</strong> Hari ini adalah hari Senin.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. Bentuk Negatif A は B ではありません / じゃありません -->
+          <section>
+            <h2 class="mb-4 font-display text-2xl font-bold text-crimson border-b border-slate-200 pb-2">
+              3. Bentuk Negatif: A は B ではありません (A bukan B)
+            </h2>
+            <p class="text-sm leading-relaxed text-slate-600 mb-4">
+              Untuk menyangkal identitas atau menyatakan "bukan", kata <strong>です</strong> diganti menjadi <strong>ではありません</strong> (formal/tertulis) atau <strong>じゃありません</strong> (percakapan sopan santai).
+            </p>
+
+            <div class="formula-box rounded-xl p-4 mb-6">
+              <span class="text-xs font-bold uppercase tracking-wider text-crimson">Rumus / Pola Struktur</span>
+              <p class="mt-1 font-display text-xl font-bold text-ink">
+                [Topik A] は [Kata Benda B] ではありません / じゃありません
+              </p>
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500">Contoh Kalimat</h3>
+              <div class="example-box rounded-xl p-4">
+                <p class="font-display text-xl text-ink">
+                  <ruby>私<rt>わたし</rt></ruby>は<ruby>先生<rt>せんせい</rt></ruby>ではありません。
+                </p>
+                <p class="mt-1 text-xs text-slate-500">Watashi wa sensei dewa arimasen.</p>
+                <p class="mt-2 text-sm text-slate-700"><strong>Arti:</strong> Saya bukan seorang guru.</p>
+              </div>
+
+              <div class="example-box rounded-xl p-4">
+                <p class="font-display text-xl text-ink">
+                  これは<ruby>私<rt>わたし</rt></ruby>の<ruby>傘<rt>かさ</rt></ruby>じゃありません。
+                </p>
+                <p class="mt-1 text-xs text-slate-500">Kore wa watashi no kasa ja arimasen.</p>
+                <p class="mt-2 text-sm text-slate-700"><strong>Arti:</strong> Ini bukan payung milik saya.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. Bentuk Lampau & Negatif Lampau -->
+          <section>
+            <h2 class="mb-4 font-display text-2xl font-bold text-crimson border-b border-slate-200 pb-2">
+              4. Bentuk Lampau: でした &amp; ではありませんでした
+            </h2>
+            <p class="text-sm leading-relaxed text-slate-600 mb-4">
+              Jika menyatakan keadaan atau identitas yang terjadi pada waktu lampau (kemarin, minggu lalu, dulunya), akhiran <strong>です</strong> diubah sesuai bentuk waktunya:
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-2 mb-6">
+              <div class="formula-box rounded-xl p-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-crimson">Lampau Positif</span>
+                <p class="mt-1 font-display text-lg font-bold text-ink">A は B でした</p>
+                <p class="text-xs text-slate-600 mt-1">Menyatakan "(dulunya / kemarin) adalah B".</p>
+              </div>
+              <div class="formula-box rounded-xl p-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-crimson">Lampau Negatif</span>
+                <p class="mt-1 font-display text-lg font-bold text-ink">A は B ではありませんでした</p>
+                <p class="text-xs text-slate-600 mt-1">Menyatakan "(kemarin / dulunya) bukan B".</p>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500">Contoh Kalimat</h3>
+              <div class="example-box rounded-xl p-4">
+                <p class="font-display text-xl text-ink">
+                  <ruby>昨日<rt>きのう</rt></ruby>は<ruby>休<rt>やす</rt></ruby>みでした。
+                </p>
+                <p class="mt-1 text-xs text-slate-500">Kinou wa yasumi deshita.</p>
+                <p class="mt-2 text-sm text-slate-700"><strong>Arti:</strong> Kemarin adalah hari libur.</p>
+              </div>
+
+              <div class="example-box rounded-xl p-4">
+                <p class="font-display text-xl text-ink">
+                  <ruby>昨日<rt>きのう</rt></ruby>は<ruby>日曜日<rt>にちようび</rt></ruby>ではありませんでした。
+                </p>
+                <p class="mt-1 text-xs text-slate-500">Kinou wa nichiyoubi dewa arimasen deshita.</p>
+                <p class="mt-2 text-sm text-slate-700"><strong>Arti:</strong> Kemarin bukan hari Minggu.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 5. Tabel Rangkuman Konjugasi です -->
+          <section>
+            <h2 class="mb-4 font-display text-2xl font-bold text-crimson border-b border-slate-200 pb-2">
+              5. Tabel Rangkuman Perubahan Bentuk です
+            </h2>
+            <div class="overflow-x-auto">
+              <table class="vocab-table">
+                <thead>
+                  <tr>
+                    <th>Waktu / Bentuk</th>
+                    <th>Positif (Ya)</th>
+                    <th>Negatif (Bukan / Tidak)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-bold">Sekarang / Masa Depan</td>
+                    <td>
+                      <span class="font-bold text-crimson">です</span> (desu)
+                      <span class="block text-xs text-slate-500">adalah</span>
+                    </td>
+                    <td>
+                      <span class="font-bold text-crimson">ではありません / じゃありません</span>
+                      <span class="block text-xs text-slate-500">bukan</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold">Masa Lampau (Kemarin / Dulu)</td>
+                    <td>
+                      <span class="font-bold text-crimson">でした</span> (deshita)
+                      <span class="block text-xs text-slate-500">dulunya / kemarin adalah</span>
+                    </td>
+                    <td>
+                      <span class="font-bold text-crimson">ではありませんでした / じゃありませんでした</span>
+                      <span class="block text-xs text-slate-500">kemarin / dulunya bukan</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <!-- Subbab Pagination -->
+        <nav aria-label="Navigasi Subbab" class="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-slate-200 pt-6">
+          <a
+            href="../kamus-grammar.html"
+            class="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-crimson"
+          >
+            &larr; Indeks Kamus
+          </a>
+          <a
+            href="partikel-dasar.html"
+            class="rounded-xl bg-crimson px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-rose-700"
+          >
+            Subbab 02: Partikel Dasar &rarr;
+          </a>
+        </nav>
+      </div>
+    </main>
+
+    <footer class="bg-white px-5 py-8 ">
+      <div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 text-sm text-slate-500">
+        <p>© 2026 Hongo Study · Belajar bersama.</p>
+        <p class="font-bold text-crimson">がんばって! Terus semangat!</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kata Sifat (い & な) | Hongo Study</title>
+    <link rel="stylesheet" href="../css/tailwind.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="font-sans bg-mist">
+    {{> header }}
+
+    <main class="wash min-h-screen">
+      <div class="mx-auto max-w-4xl px-5 py-12 md:py-20">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="mb-6">
+          <a
+            href="../kamus-grammar.html"
+            class="inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline"
+          >
+            &larr; Kembali ke Kamus & Indeks Grammar
+          </a>
+        </nav>
+
+        <!-- Header Subbab -->
+        <div class="mb-10 border-b border-slate-200/80 pb-8">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span class="rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson">Subbab 04 · Adjektiva</span>
+              <h1 class="mt-3 font-display text-3xl md:text-5xl font-bold text-ink">
+                Kata Sifat (形容詞)
+              </h1>
+            </div>
+            <button
+              id="furiganaToggle"
+              type="button"
+              role="switch"
+              aria-checked="true"
+              class="flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold shadow-sm transition hover:border-crimson"
+            >
+              <span id="furiganaDot" class="h-4 w-4 rounded-full bg-crimson"></span>
+              Furigana: <span id="furiganaState">ON</span>
+            </button>
+          </div>
+          <p class="mt-4 text-base leading-relaxed text-slate-600">
+            Kata sifat dalam bahasa Jepang terbagi menjadi dua golongan besar: <strong>Kata Sifat い (I-keiyoushi)</strong> dan <strong>Kata Sifat な (Na-keiyoushi)</strong>.
+            Keduanya memiliki aturan perubahan bentuk positif, negatif, dan lampau yang berbeda.
+          </p>
+        </div>
+
+        <!-- Content Area -->
+        <div class="space-y-12 rounded-2xl border border-slate-200 bg-white p-6 md:p-10 shadow-sm">
+          <!-- 1. Kata Sifat い (I-keiyoushi) -->
+          <section>
+            <h2 class="mb-4 font-display text-2xl font-bold text-crimson border-b border-slate-200 pb-2">
+              1. Kata Sifat い (I-keiyoushi)
+            </h2>
+            <p class="text-sm leading-relaxed text-slate-600 mb-4">
+              Ciri khasnya berakhiran huruf vokal <code>い</code> (i) asli, seperti <ruby>高<rt>たか</rt></ruby>い (mahal/tinggi), <ruby>大<rt>おお</rt></ruby>きい (besar), <ruby>新<rt>あたら</rt></ruby>しい (baru), dan <ruby>暑<rt>あつ</rt></ruby>い (panas).
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-2 mb-6">
+              <!-- Positif Sekarang -->
+              <div class="example-box rounded-xl p-4">
+                <span class="text-xs font-bold text-emerald-600">Positif Sekarang: 〜い です</span>
+                <p class="mt-1 font-display text-lg text-ink">
+                  この<ruby>車<rt>くるま</rt></ruby>は<ruby>新<rt>あたら</rt></ruby>しいです。
+                </p>
+                <p class="text-xs text-slate-500 mt-0.5">Kono kuruma wa atarashii desu.</p>
+                <p class="text-xs text-slate-700 font-semibold mt-1">Mobil ini baru.</p>
+              </div>
+
+              <!-- Negatif Sekarang -->
+              <div class="example-box rounded-xl p-4">
+                <span class="text-xs font-bold text-rose-600">Negatif Sekarang: 〜くない です (Hapus い + くない)</span>
+                <p class="mt-1 font-display text-lg text-ink">
+                  この<ruby>車<rt>くるま</rt></ruby>は<ruby>新<rt>あたら</rt></ruby>しくないです。
+                </p>
+                <p class="text-xs text-slate-500 mt-0.5">Kono kuruma wa atarashikunai desu.</p>
+                <p class="text-xs text-slate-700 font-semibold mt-1">Mobil ini tidak baru.</p>
+              </div>
+
+              <!-- Positif Lampau -->
+              <div class="example-box rounded-xl p-4">
+                <span class="text-xs font-bold text-blue-600">Positif Lampau: 〜かった です (Hapus い + かった)</span>
+                <p class="mt-1 font-display text-lg text-ink">
+                  <ruby>昨日<rt>きのう</rt></ruby>は<ruby>暑<rt>あつ</rt></ruby>かったです。
+                </p>
+                <p class="text-xs text-slate-500 mt-0.5">Kinou wa atsukatta desu.</p>
+                <p class="text-xs text-slate-700 font-semibold mt-1">Kemarin panas.</p>
+              </div>
+
+              <!-- Negatif Lampau -->
+              <div class="example-box rounded-xl p-4">
+                <span class="text-xs font-bold text-amber-600">Negatif Lampau: 〜くなかった です (Hapus い + くなかった)</span>
+                <p class="mt-1 font-display text-lg text-ink">
+                  <ruby>昨日<rt>きのう</rt></ruby>は<ruby>暑<rt>あつ</rt></ruby>くなかったです。
+                </p>
+                <p class="text-xs text-slate-500 mt-0.5">Kinou wa atsukunakatta desu.</p>
+                <p class="text-xs text-slate-700 font-semibold mt-1">Kemarin tidak panas.</p>
+              </div>
+            </div>
+
+            <!-- Pengecualian Kata "ii" -->
+            <div class="formula-box rounded-xl p-4">
+              <strong class="text-crimson text-sm block">Perhatian Khusus Kata いい (Bagus / Baik):</strong>
+              <p class="text-xs text-slate-600 mt-1">
+                Kata <strong>いい</strong> (ii) berasal dari bentuk klasik <strong>よい</strong> (yoi). Oleh karena itu, semua konjugasinya mengikuti akar kata <em>yoi</em>:
+              </p>
+              <ul class="mt-2 list-disc list-inside text-xs text-slate-700 space-y-1">
+                <li>Positif: <strong>いいです</strong> (bagus)</li>
+                <li>Negatif: <strong>よくないです</strong> (tidak bagus, bukan *ikunai*)</li>
+                <li>Lampau: <strong>よかったです</strong> (kemarin/tadi bagus)</li>
+                <li>Negatif Lampau: <strong>よくなかったです</strong> (kemarin/tadi tidak bagus)</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- 2. Kata Sifat な (Na-keiyoushi) -->
+          <section>
+            <h2 class="mb-4 font-display text-2xl font-bold text-crimson border-b border-slate-200 pb-2">
+              2. Kata Sifat な (Na-keiyoushi)
+            </h2>
+            <p class="text-sm leading-relaxed text-slate-600 mb-4">
+              Secara struktur konjugasi mirip dengan kata benda: tidak berubah kata dasarnya, melainkan akhiran <strong>です</strong> yang berkonjugasi. Contoh kata: <ruby>静<rt>しず</rt></ruby>か (tenang), <ruby>有名<rt>ゆうめい</rt></ruby> (terkenal), <ruby>親切<rt>しんせつ</rt></ruby> (ramah), <ruby>簡単<rt>かんたん</rt></ruby> (mudah/sederhana), dan <ruby>好<rt>す</rt></ruby>き (suka).
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-2 mb-6">
+              <!-- Positif Sekarang -->
+              <div class="example-box rounded-xl p-4">
+                <span class="text-xs font-bold text-emerald-600">Positif Sekarang: 〜 です</span>
+                <p class="mt-1 font-display text-lg text-ink">
+                  この<ruby>町<rt>まち</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かです。
+                </p>
+                <p class="text-xs text-slate-500 mt-0.5">Kono machi wa shizuka desu.</p>
+                <p class="text-xs text-slate-700 font-semibold mt-1">Kota ini tenang.</p>
+              </div>
+
+              <!-- Negatif Sekarang -->
+              <div class="example-box rounded-xl p-4">
+                <span class="text-xs font-bold text-rose-600">Negatif Sekarang: 〜 ではありません / じゃありません</span>
+                <p class="mt-1 font-display text-lg text-ink">
+                  この<ruby>部屋<rt>へや</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かじゃありません。
+                </p>
+                <p class="text-xs text-slate-500 mt-0.5">Kono heya wa shizuka ja arimasen.</p>
+                <p class="text-xs text-slate-700 font-semibold mt-1">Kamar ini tidak tenang.</p>
+              </div>
+
+              <!-- Positif Lampau -->
+              <div class="example-box rounded-xl p-4">
+                <span class="text-xs font-bold text-blue-600">Positif Lampau: 〜 でした</span>
+                <p class="mt-1 font-display text-lg text-ink">
+                  その<ruby>公園<rt>こうえん</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かでした。
+                </p>
+                <p class="text-xs text-slate-500 mt-0.5">Sono kouen wa shizuka deshita.</p>
+                <p class="text-xs text-slate-700 font-semibold mt-1">Taman itu dulunya tenang.</p>
+              </div>
+
+              <!-- Negatif Lampau -->
+              <div class="example-box rounded-xl p-4">
+                <span class="text-xs font-bold text-amber-600">Negatif Lampau: 〜 じゃありませんでした</span>
+                <p class="mt-1 font-display text-lg text-ink">
+                  テストは<ruby>簡単<rt>かんたん</rt></ruby>じゃありませんでした。
+                </p>
+                <p class="text-xs text-slate-500 mt-0.5">Tesuto wa kantan ja arimasen deshita.</p>
+                <p class="text-xs text-slate-700 font-semibold mt-1">Ujiannya tidak mudah.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. Menerangkan Kata Benda -->
+          <section>
+            <h2 class="mb-4 font-display text-2xl font-bold text-crimson border-b border-slate-200 pb-2">
+              3. Cara Menerangkan Kata Benda (Di Depan Kata Benda)
+            </h2>
+            <p class="text-sm leading-relaxed text-slate-600 mb-4">
+              Ketika kata sifat diletakkan langsung sebelum kata benda untuk menerangkannya ("buku yang mahal", "kamar yang tenang"):
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-2">
+              <div class="formula-box rounded-xl p-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-crimson">Kata Sifat い + Kata Benda Langsung</span>
+                <p class="mt-2 font-display text-lg text-ink">
+                  <ruby>大<rt>おお</rt></ruby>きい<ruby>家<rt>いえ</rt></ruby>
+                </p>
+                <p class="text-xs text-slate-500 mt-0.5">ookii ie</p>
+                <p class="text-xs text-slate-700 font-semibold mt-1">Rumah (yang) besar (tanpa partikel tambahan).</p>
+              </div>
+
+              <div class="formula-box rounded-xl p-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-crimson">Kata Sifat な + な + Kata Benda</span>
+                <p class="mt-2 font-display text-lg text-ink">
+                  <ruby>静<rt>しず</rt></ruby>かな<ruby>部屋<rt>へや</rt></ruby>
+                </p>
+                <p class="text-xs text-slate-500 mt-0.5">shizuka na heya</p>
+                <p class="text-xs text-slate-700 font-semibold mt-1">Kamar (yang) tenang (wajib memakai な).</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. Tabel Perbandingan Matriks -->
+          <section>
+            <h2 class="mb-4 font-display text-2xl font-bold text-crimson border-b border-slate-200 pb-2">
+              4. Tabel Perbandingan I-keiyoushi vs Na-keiyoushi
+            </h2>
+            <div class="overflow-x-auto">
+              <table class="vocab-table">
+                <thead>
+                  <tr>
+                    <th>Bentuk</th>
+                    <th>Kata Sifat い (Contoh: 高い takai)</th>
+                    <th>Kata Sifat な (Contoh: 静か shizuka)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Positif Sekarang</strong></td>
+                    <td>高いです (mahal)</td>
+                    <td>静かです (tenang)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Negatif Sekarang</strong></td>
+                    <td>高<span class="text-crimson font-bold">くないです</span> (tidak mahal)</td>
+                    <td>静か<span class="text-crimson font-bold">じゃありません</span> (tidak tenang)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Positif Lampau</strong></td>
+                    <td>高<span class="text-crimson font-bold">かったです</span> (dulunya mahal)</td>
+                    <td>静か<span class="text-crimson font-bold">でした</span> (dulunya tenang)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Negatif Lampau</strong></td>
+                    <td>高<span class="text-crimson font-bold">くなかったです</span> (dulu tidak mahal)</td>
+                    <td>静か<span class="text-crimson font-bold">じゃありませんでした</span> (dulu tidak tenang)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Menerangkan Benda</strong></td>
+                    <td>高い本 (buku mahal)</td>
+                    <td>静か<span class="text-crimson font-bold">な</span>部屋 (kamar tenang)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <!-- Subbab Pagination -->
+        <nav aria-label="Navigasi Subbab" class="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-slate-200 pt-6">
+          <a
+            href="kata-kerja.html"
+            class="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-crimson"
+          >
+            &larr; Subbab 03: Kata Kerja
+          </a>
+          <a
+            href="pertanyaan-negatif.html"
+            class="rounded-xl bg-crimson px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-rose-700"
+          >
+            Subbab 05: Pertanyaan &rarr;
+          </a>
+        </nav>
+      </div>
+    </main>
+
+    {{> footer }}
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
