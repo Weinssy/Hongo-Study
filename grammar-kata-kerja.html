@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kata Kerja & Perubahannya | Hongo Study</title>
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="font-sans bg-mist">
+    {{> header }}
+
+    <main class="wash min-h-screen">
+      <div class="mx-auto max-w-4xl px-5 py-12 md:py-20">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="mb-6">
+          <a
+            href="kamus-grammar.html"
+            class="inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline"
+          >
+            &larr; Kembali ke Kamus & Indeks Grammar
+          </a>
+        </nav>
+
+        <!-- Header Subbab -->
+        <div class="mb-10 border-b border-slate-200/80 pb-8">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span class="rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson">Subbab 03 · Verba</span>
+              <h1 class="mt-3 font-display text-3xl md:text-5xl font-bold text-ink">
+                Kata Kerja &amp; Perubahannya (動詞)
+              </h1>
+            </div>
+            <button
+              id="furiganaToggle"
+              type="button"
+              role="switch"
+              aria-checked="true"
+              class="flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold shadow-sm transition hover:border-crimson"
+            >
+              <span id="furiganaDot" class="h-4 w-4 rounded-full bg-crimson"></span>
+              Furigana: <span id="furiganaState">ON</span>
+            </button>
+          </div>
+          <p class="mt-4 text-base leading-relaxed text-slate-600">
+            Kata kerja bahasa Jepang mengalami konjugasi pada bagian akhirnya untuk menyatakan waktu (sekarang, lampau) dan penolakan (negatif).
+            Bagi pemula, bentuk sopan berakhiran <strong>〜ます</strong> (丁寧語 - <em>teineigo</em>) adalah fondasi terpenting untuk berkomunikasi santun.
+          </p>
+        </div>
+
+        <!-- Content Area -->
+        <div class="space-y-12 rounded-2xl border border-slate-200 bg-white p-6 md:p-10 shadow-sm">
+          <!-- 1. Empat Pilar Konjugasi Bentuk Sopan -->
+          <section>
+            <h2 class="mb-4 font-display text-2xl font-bold text-crimson border-b border-slate-200 pb-2">
+              1. Empat Pilar Konjugasi Bentuk Sopan (ます・ません・ました・ませんでした)
+            </h2>
+            <p class="text-sm leading-relaxed text-slate-600 mb-6">
+              Setiap kata kerja bentuk sopan memiliki empat variasi dasar berdasarkan waktu pelaksanaan tindakan dan status penolakannya:
+            </p>
+
+            <div class="grid gap-4 md:grid-cols-2">
+              <!-- Masu -->
+              <div class="example-box rounded-xl p-5 border-l-4 border-l-emerald-500">
+                <span class="rounded bg-emerald-100 px-2 py-0.5 text-xs font-bold text-emerald-800">Sekarang / Positif</span>
+                <h3 class="mt-2 font-display text-lg font-bold text-ink">〜ます (-masu)</h3>
+                <p class="text-xs text-slate-600 mt-1">Menyatakan kebiasaan saat ini atau aktivitas yang akan dilakukan di masa depan.</p>
+                <div class="mt-3 rounded-lg bg-white p-3 border border-slate-200">
+                  <p class="font-display text-lg text-ink"><ruby>毎日<rt>まいにち</rt></ruby><ruby>勉強<rt>べんきょう</rt></ruby>します。</p>
+                  <p class="text-xs text-slate-500 mt-1">Mainichi benkyou shimasu.</p>
+                  <p class="text-xs text-slate-700 font-semibold mt-1">Saya belajar setiap hari.</p>
+                </div>
+              </div>
+
+              <!-- Masen -->
+              <div class="example-box rounded-xl p-5 border-l-4 border-l-rose-500">
+                <span class="rounded bg-rose-100 px-2 py-0.5 text-xs font-bold text-rose-800">Sekarang / Negatif</span>
+                <h3 class="mt-2 font-display text-lg font-bold text-ink">〜ません (-masen)</h3>
+                <p class="text-xs text-slate-600 mt-1">Menyatakan tidak melakukan kegiatan pada saat ini atau di masa depan.</p>
+                <div class="mt-3 rounded-lg bg-white p-3 border border-slate-200">
+                  <p class="font-display text-lg text-ink"><ruby>明日<rt>あした</rt></ruby>は<ruby>勉強<rt>べんきょう</rt></ruby>しません。</p>
+                  <p class="text-xs text-slate-500 mt-1">Ashita wa benkyou shimasen.</p>
+                  <p class="text-xs text-slate-700 font-semibold mt-1">Besok saya tidak belajar.</p>
+                </div>
+              </div>
+
+              <!-- Mashita -->
+              <div class="example-box rounded-xl p-5 border-l-4 border-l-blue-500">
+                <span class="rounded bg-blue-100 px-2 py-0.5 text-xs font-bold text-blue-800">Lampau / Positif</span>
+                <h3 class="mt-2 font-display text-lg font-bold text-ink">〜ました (-mashita)</h3>
+                <p class="text-xs text-slate-600 mt-1">Menyatakan bahwa tindakan telah selesai dilakukan di masa lampau (sudah / kemarin).</p>
+                <div class="mt-3 rounded-lg bg-white p-3 border border-slate-200">
+                  <p class="font-display text-lg text-ink"><ruby>昨日<rt>きのう</rt></ruby>、<ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>みました。</p>
+                  <p class="text-xs text-slate-500 mt-1">Kinou, hon o yomimashita.</p>
+                  <p class="text-xs text-slate-700 font-semibold mt-1">Kemarin saya sudah membaca buku.</p>
+                </div>
+              </div>
+
+              <!-- Masen deshita -->
+              <div class="example-box rounded-xl p-5 border-l-4 border-l-amber-500">
+                <span class="rounded bg-amber-100 px-2 py-0.5 text-xs font-bold text-amber-800">Lampau / Negatif</span>
+                <h3 class="mt-2 font-display text-lg font-bold text-ink">〜ませんでした (-masen deshita)</h3>
+                <p class="text-xs text-slate-600 mt-1">Menyatakan bahwa suatu tindakan tidak dilakukan di masa lampau (tadi / kemarin tidak).</p>
+                <div class="mt-3 rounded-lg bg-white p-3 border border-slate-200">
+                  <p class="font-display text-lg text-ink"><ruby>朝ご飯<rt>あさごはん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べませんでした。</p>
+                  <p class="text-xs text-slate-500 mt-1">Asagohan o tabemasen deshita.</p>
+                  <p class="text-xs text-slate-700 font-semibold mt-1">Tadi pagi saya tidak sarapan.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. Bentuk Ajakan & Tawaran Sopan -->
+          <section>
+            <h2 class="mb-4 font-display text-2xl font-bold text-crimson border-b border-slate-200 pb-2">
+              2. Bentuk Ajakan &amp; Tawaran: 〜ましょう &amp; 〜ませんか
+            </h2>
+            <p class="text-sm leading-relaxed text-slate-600 mb-6">
+              Selain menyatakan perbuatan diri sendiri, bentuk <em>masu</em> dapat divariasikan menjadi ajakan yang sangat sering digunakan dalam komunikasi sehari-hari:
+            </p>
+
+            <div class="space-y-4">
+              <!-- Mashou -->
+              <div class="rounded-xl border border-slate-200 p-5">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-display text-lg font-bold text-crimson">A. Ajakan Langsung: 〜ましょう (Mari kita / Ayo)</h3>
+                  <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-bold text-slate-600">Ajakan tegas</span>
+                </div>
+                <p class="mt-2 text-sm text-slate-600">
+                  Mengajak lawan bicara melakukan sesuatu bersama-sama ketika pembicara yakin bahwa lawan bicara akan setuju.
+                </p>
+                <div class="formula-box mt-3 rounded-xl p-3">
+                  <p class="text-xs font-bold text-crimson">Rumus: Stem Kata Kerja (tanpa masu) + ましょう</p>
+                </div>
+                <div class="example-box mt-3 rounded-xl p-3">
+                  <p class="font-display text-lg text-ink"><ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>行<rt>い</rt></ruby>きましょう。</p>
+                  <p class="text-xs text-slate-500 mt-0.5">Issho ni ikimashou.</p>
+                  <p class="text-xs text-slate-700 font-semibold mt-1">Ayo kita pergi bersama.</p>
+                </div>
+              </div>
+
+              <!-- Masenka -->
+              <div class="rounded-xl border border-slate-200 p-5">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-display text-lg font-bold text-crimson">B. Tawaran Santun: 〜ませんか (Maukah Anda...?)</h3>
+                  <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-bold text-slate-600">Ajakan halus</span>
+                </div>
+                <p class="mt-2 text-sm text-slate-600">
+                  Mengajak dengan menanyakan kesediaan lawan bicara terlebih dahulu secara santun dan tidak memaksa.
+                </p>
+                <div class="formula-box mt-3 rounded-xl p-3">
+                  <p class="text-xs font-bold text-crimson">Rumus: Stem Kata Kerja (tanpa masu) + ませんか</p>
+                </div>
+                <div class="example-box mt-3 rounded-xl p-3">
+                  <p class="font-display text-lg text-ink"><ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>昼ご飯<rt>ひるごはん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べませんか。</p>
+                  <p class="text-xs text-slate-500 mt-0.5">Issho ni hirugohan o tabemasen ka.</p>
+                  <p class="text-xs text-slate-700 font-semibold mt-1">Maukah makan siang bersama?</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. Tabel Konjugasi Kata Kerja Populer -->
+          <section>
+            <h2 class="mb-4 font-display text-2xl font-bold text-crimson border-b border-slate-200 pb-2">
+              3. Tabel Konjugasi Kata Kerja Sopan Populer
+            </h2>
+            <div class="overflow-x-auto">
+              <table class="vocab-table">
+                <thead>
+                  <tr>
+                    <th>Arti</th>
+                    <th>Positif (〜ます)</th>
+                    <th>Negatif (〜ません)</th>
+                    <th>Lampau (〜ました)</th>
+                    <th>Negatif Lampau (〜ませんでした)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Pergi</strong></td>
+                    <td>行きます (ikimasu)</td>
+                    <td>行きません</td>
+                    <td>行きました</td>
+                    <td>行きませんでした</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Makan</strong></td>
+                    <td>食べます (tabemasu)</td>
+                    <td>食べません</td>
+                    <td>食べました</td>
+                    <td>食べませんでした</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Minum</strong></td>
+                    <td>飲みます (nomimasu)</td>
+                    <td>飲みません</td>
+                    <td>飲みました</td>
+                    <td>飲みませんでした</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Melihat</strong></td>
+                    <td>見ます (mimasu)</td>
+                    <td>見ません</td>
+                    <td>見ました</td>
+                    <td>見ませんでした</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Membaca</strong></td>
+                    <td>読 みます (yomimasu)</td>
+                    <td>読みません</td>
+                    <td>読みました</td>
+                    <td>読みませんでした</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Belajar</strong></td>
+                    <td>勉強します (benkyou shimasu)</td>
+                    <td>勉強しません</td>
+                    <td>勉強しました</td>
+                    <td>勉強しませんでした</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Membeli</strong></td>
+                    <td>買います (kaimasu)</td>
+                    <td>買いません</td>
+                    <td>買いました</td>
+                    <td>買いませんでした</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <!-- Subbab Pagination -->
+        <nav aria-label="Navigasi Subbab" class="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-slate-200 pt-6">
+          <a
+            href="grammar-partikel-dasar.html"
+            class="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-crimson"
+          >
+            &larr; Subbab 02: Partikel Dasar
+          </a>
+          <a
+            href="grammar-kata-sifat.html"
+            class="rounded-xl bg-crimson px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-rose-700"
+          >
+            Subbab 04: Kata Sifat &rarr;
+          </a>
+        </nav>
+      </div>
+    </main>
+
+    {{> footer }}
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

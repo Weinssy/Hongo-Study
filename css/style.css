@@ -96,3 +96,30 @@ button, input { min-height: 2.75rem; }
 	background-color: #2a3037;
 }
 
+/* Grammar Specific Styles */
+.formula-box {
+	background-color: #fff1f3;
+	border-left: 4px solid #BC002D;
+}
+.dark-mode .formula-box {
+	background-color: #2e1d24 !important;
+	border-left-color: #ff718c !important;
+}
+.example-box {
+	background-color: #f8fafc;
+	border: 1px solid #e2e8f0;
+}
+.dark-mode .example-box {
+	background-color: #1a1e24 !important;
+	border-color: #333d48 !important;
+}
+.key-badge {
+	background-color: #fff1f3;
+	color: #BC002D;
+	font-weight: 700;
+}
+.dark-mode .key-badge {
+	background-color: #381c25 !important;
+	color: #ff8fa3 !important;
+}
+

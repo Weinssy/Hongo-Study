@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Kamus Grammar | Hongo Study</title>
-    <script type="module" crossorigin src="./assets/main-DCkr0tC5.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/main-DJ8q6SSJ.css">
+    <title>Kamus & Indeks Grammar | Hongo Study</title>
+    <script type="module" crossorigin src="./assets/main-BvEoOlxE.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-DWRxkyZa.css">
   </head>
-  <body class="font-sans">
+  <body class="font-sans bg-mist">
     <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
       <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         <a href="index.html" class="flex items-center gap-3">
@@ -38,39 +38,291 @@
         </nav>
       </div>
     </header>
-    <main class="mx-auto max-w-6xl px-5 py-20">
-      <div class="mb-10 flex flex-wrap items-end justify-between gap-5">
-        <div>
-          <p class="font-bold uppercase tracking-widest text-crimson">
-            03 · Referensi cepat
-          </p>
-          <h1 class="mt-2 font-display text-5xl">Kamus tata bahasa</h1>
-          <p class="mt-4 max-w-xl leading-7 text-slate-500">
-            Cari pola grammar dasar SMA dan pelajari contoh kalimatnya tanpa
-            membuka halaman baru.
-          </p>
+
+    <main class="wash min-h-screen">
+      <div class="mx-auto max-w-6xl px-5 py-12 md:py-20">
+        <!-- Hero Header -->
+        <div class="mb-12 flex flex-wrap items-end justify-between gap-6 border-b border-slate-200/80 pb-8">
+          <div>
+            <p class="font-bold uppercase tracking-widest text-crimson">
+              03 · Referensi & Panduan Tata Bahasa
+            </p>
+            <h1 class="mt-2 font-display text-4xl leading-tight md:text-5xl">
+              Kamus & Panduan Grammar
+            </h1>
+            <p class="mt-3 max-w-2xl text-base leading-relaxed text-slate-600">
+              Pelajari tata bahasa Jepang secara sistematis melalui subbab konsep dasar,
+              atau gunakan fitur pencarian cepat di bawah untuk menemukan pola kalimat yang kamu inginkan.
+            </p>
+          </div>
+          <button
+            id="furiganaToggle"
+            type="button"
+            role="switch"
+            aria-checked="true"
+            class="flex items-center gap-3 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-bold shadow-sm transition hover:border-crimson"
+          >
+            <span id="furiganaDot" class="h-4 w-4 rounded-full bg-crimson"></span>
+            Furigana: <span id="furiganaState">ON</span>
+          </button>
         </div>
-        <button
-          id="furiganaToggle"
-          type="button"
-          role="switch"
-          aria-checked="true"
-          class="flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold shadow-sm"
-        >
-          <span id="furiganaDot" class="h-4 w-4 rounded-full bg-crimson"></span>
-          Furigana: <span id="furiganaState">ON</span>
-        </button>
+
+        <!-- Section: Daftar Subbab Grammar -->
+        <section class="mb-16">
+          <div class="mb-8 flex flex-wrap items-baseline justify-between gap-3">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-crimson">Modul Pembelajaran</span>
+              <h2 class="font-display text-2xl font-bold text-ink md:text-3xl">Subbab Tata Bahasa</h2>
+            </div>
+            <p class="text-sm text-slate-500">Pilih subbab untuk melihat rumus, contoh, dan penjelasan lengkap.</p>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Subbab 1 -->
+            <a
+              href="grammar-struktur-kalimat.html"
+              class="feature-card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-crimson focus:outline-none focus:ring-2 focus:ring-crimson"
+            >
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson">Subbab 01</span>
+                  <span class="font-display text-2xl text-slate-400">文型</span>
+                </div>
+                <h3 class="mt-4 font-display text-xl font-bold text-ink">Struktur Kalimat & です</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Konsep susunan kalimat (SOV), partikel topik は (wa), pola kalimat A は B です, identitas, dan bentuk lampau/negasi dasar.
+                </p>
+                <div class="mt-4 space-y-1 text-xs text-slate-500">
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Pola dasar A は B です</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Bentuk negatif ではありません</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Keadaan lampau でした</p>
+                </div>
+              </div>
+              <div class="mt-6 border-t border-slate-100 pt-4">
+                <span class="inline-flex items-center font-bold text-xs text-crimson group-hover:underline">
+                  Pelajari Subbab 1 &rarr;
+                </span>
+              </div>
+            </a>
+
+            <!-- Subbab 2 -->
+            <a
+              href="grammar-partikel-dasar.html"
+              class="feature-card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-crimson focus:outline-none focus:ring-2 focus:ring-crimson"
+            >
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson">Subbab 02</span>
+                  <span class="font-display text-2xl text-slate-400">助詞</span>
+                </div>
+                <h3 class="mt-4 font-display text-xl font-bold text-ink">Partikel Dasar</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Panduan lengkap 8 partikel vital: は, が, を, に, で, と, から, dan まで dengan contoh yang mudah dibedakan.
+                </p>
+                <div class="mt-4 space-y-1 text-xs text-slate-500">
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> は vs が (Topik vs Subjek)</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> に vs で (Tujuan vs Tempat Aksi)</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Pola rentang 〜から〜まで</p>
+                </div>
+              </div>
+              <div class="mt-6 border-t border-slate-100 pt-4">
+                <span class="inline-flex items-center font-bold text-xs text-crimson group-hover:underline">
+                  Pelajari Subbab 2 &rarr;
+                </span>
+              </div>
+            </a>
+
+            <!-- Subbab 3 -->
+            <a
+              href="grammar-kata-kerja.html"
+              class="feature-card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-crimson focus:outline-none focus:ring-2 focus:ring-crimson"
+            >
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson">Subbab 03</span>
+                  <span class="font-display text-2xl text-slate-400">動詞</span>
+                </div>
+                <h3 class="mt-4 font-display text-xl font-bold text-ink">Kata Kerja & Perubahannya</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Konjugasi bentuk sopan dasar (丁寧語): 〜ます, 〜ません, 〜ました, 〜ませんでした, serta bentuk ajakan.
+                </p>
+                <div class="mt-4 space-y-1 text-xs text-slate-500">
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Bentuk kini / masa depan (ます)</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Bentuk lampau & negasi lampau</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Ajakan sopan 〜ましょう / ませんか</p>
+                </div>
+              </div>
+              <div class="mt-6 border-t border-slate-100 pt-4">
+                <span class="inline-flex items-center font-bold text-xs text-crimson group-hover:underline">
+                  Pelajari Subbab 3 &rarr;
+                </span>
+              </div>
+            </a>
+
+            <!-- Subbab 4 -->
+            <a
+              href="grammar-kata-sifat.html"
+              class="feature-card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-crimson focus:outline-none focus:ring-2 focus:ring-crimson"
+            >
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson">Subbab 04</span>
+                  <span class="font-display text-2xl text-slate-400">形容詞</span>
+                </div>
+                <h3 class="mt-4 font-display text-xl font-bold text-ink">Kata Sifat (い & な)</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Karakteristik I-keiyoushi dan Na-keiyoushi, perubahan positif, negatif, lampau, serta fungsi menerangkan kata benda.
+                </p>
+                <div class="mt-4 space-y-1 text-xs text-slate-500">
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Perubahan 〜くない & 〜かった</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Kata sifat na + な + Benda</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Pengecualian bentuk kata いい (bagus)</p>
+                </div>
+              </div>
+              <div class="mt-6 border-t border-slate-100 pt-4">
+                <span class="inline-flex items-center font-bold text-xs text-crimson group-hover:underline">
+                  Pelajari Subbab 4 &rarr;
+                </span>
+              </div>
+            </a>
+
+            <!-- Subbab 5 -->
+            <a
+              href="grammar-pertanyaan-negatif.html"
+              class="feature-card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-crimson focus:outline-none focus:ring-2 focus:ring-crimson"
+            >
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson">Subbab 05</span>
+                  <span class="font-display text-2xl text-slate-400">疑問</span>
+                </div>
+                <h3 class="mt-4 font-display text-xl font-bold text-ink">Pertanyaan & Kalimat Negatif</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Kalimat tanya dengan partikel か, kata tanya 5W1H (何, どこ, だれ, いつ, dll.), jawaban ya/tidak, dan pola negasi total.
+                </p>
+                <div class="mt-4 space-y-1 text-xs text-slate-500">
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Partikel tanya verbal か</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Kosakata tanya dasar & contoh</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Negasi total (何も / どこも)</p>
+                </div>
+              </div>
+              <div class="mt-6 border-t border-slate-100 pt-4">
+                <span class="inline-flex items-center font-bold text-xs text-crimson group-hover:underline">
+                  Pelajari Subbab 5 &rarr;
+                </span>
+              </div>
+            </a>
+
+            <!-- Subbab 6 -->
+            <a
+              href="grammar-kebutuhan-sehari-hari.html"
+              class="feature-card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-crimson focus:outline-none focus:ring-2 focus:ring-crimson"
+            >
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson">Subbab 06</span>
+                  <span class="font-display text-2xl text-slate-400">日常</span>
+                </div>
+                <h3 class="mt-4 font-display text-xl font-bold text-ink">Pola Kebutuhan Sehari-hari</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Pola praktis sehari-hari: meminta barang (〜をください), menyatakan keinginan (〜たいです), dan instruksi santun.
+                </p>
+                <div class="mt-4 space-y-1 text-xs text-slate-500">
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Meminta barang dengan 〜をください</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Keinginan pribadi dengan 〜たいです</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Permohonan tindakan 〜てください</p>
+                </div>
+              </div>
+              <div class="mt-6 border-t border-slate-100 pt-4">
+                <span class="inline-flex items-center font-bold text-xs text-crimson group-hover:underline">
+                  Pelajari Subbab 6 &rarr;
+                </span>
+              </div>
+            </a>
+
+            <!-- Subbab 7 -->
+            <a
+              href="grammar-keberadaan-lokasi.html"
+              class="feature-card flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-crimson focus:outline-none focus:ring-2 focus:ring-crimson"
+            >
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson">Subbab 07</span>
+                  <span class="font-display text-2xl text-slate-400">存在</span>
+                </div>
+                <h3 class="mt-4 font-display text-xl font-bold text-ink">Keberadaan & Lokasi</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Perbedaan あります vs います, pola tempat 〜に〜があります／います, menyatakan letak posisi, dan kosakata arah ruang.
+                </p>
+                <div class="mt-4 space-y-1 text-xs text-slate-500">
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> あります (Benda mati) vs います (Bernyawa)</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Pola keberadaan Tempat に Objek が</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Posisi ruang (atas, bawah, dalam, depan)</p>
+                </div>
+              </div>
+              <div class="mt-6 border-t border-slate-100 pt-4">
+                <span class="inline-flex items-center font-bold text-xs text-crimson group-hover:underline">
+                  Pelajari Subbab 7 &rarr;
+                </span>
+              </div>
+            </a>
+
+            <!-- Kategori Khusus: Ungkapan & Salam -->
+            <a
+              href="ungkapan-salam.html"
+              class="feature-card flex flex-col justify-between rounded-2xl border border-rose-200 bg-white p-6 shadow-sm transition-all hover:border-crimson focus:outline-none focus:ring-2 focus:ring-crimson md:col-span-2 lg:col-span-1"
+            >
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-crimson px-3 py-1 text-xs font-bold text-white">Kategori Khusus</span>
+                  <span class="font-display text-2xl text-crimson">挨拶</span>
+                </div>
+                <h3 class="mt-4 font-display text-xl font-bold text-ink">Ungkapan & Salam (Aisatsu)</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Frasa salam harian, ucapan terima kasih, permohonan maaf, perpisahan, serta etika ungkapan makan dan bepergian.
+                </p>
+                <div class="mt-4 space-y-1 text-xs text-slate-500">
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Salam waktu (pagi, siang, malam)</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Terima kasih & maaf santun</p>
+                  <p class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-crimson"></span> Ungkapan makan & berangkat/pulang</p>
+                </div>
+              </div>
+              <div class="mt-6 border-t border-slate-100 pt-4">
+                <span class="inline-flex items-center font-bold text-xs text-crimson group-hover:underline">
+                  Lihat Ungkapan & Salam &rarr;
+                </span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- Section: Pencarian Cepat Grammar -->
+        <section class="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+          <div class="mb-6 flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-crimson">Referensi Cepat</span>
+              <h2 class="font-display text-2xl font-bold text-ink">Pencarian Pola Tata Bahasa</h2>
+              <p class="mt-1 text-sm text-slate-500">
+                Ketik nama partikel, rumus, atau arti untuk mencari secara instan di seluruh kumpulan materi.
+              </p>
+            </div>
+          </div>
+
+          <label class="block">
+            <span class="sr-only">Cari tata bahasa</span>
+            <input
+              id="grammarSearch"
+              type="search"
+              placeholder="Cari wa, desu, pergi, kata sifat, lokasi, salam..."
+              class="w-full rounded-xl border border-slate-200 bg-white px-5 py-4 text-base outline-none transition focus:border-crimson focus:ring-1 focus:ring-crimson"
+            />
+          </label>
+
+          <div id="grammarResults" class="mt-8 grid gap-4 md:grid-cols-2"></div>
+        </section>
       </div>
-      <label class="block"
-        ><span class="sr-only">Cari tata bahasa</span
-        ><input
-          id="grammarSearch"
-          type="search"
-          placeholder="Cari wa, desu, pergi, masen..."
-          class="w-full rounded-xl border border-slate-200 bg-white px-5 py-4 text-lg outline-none focus:border-crimson"
-      /></label>
-      <div id="grammarResults" class="mt-6 grid gap-4 md:grid-cols-2"></div>
     </main>
+
     <footer class="bg-white px-5 py-8 ">
       <div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 text-sm text-slate-500">
         <p>© 2026 Hongo Study · Belajar bersama.</p>
