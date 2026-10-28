@@ -119,6 +119,74 @@ body {
   border-color: #E8503E !important;
 }
 
+/* Navigation Links */
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.875rem;
+  border-radius: 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover {
+  background-color: #FCEEEF;
+  color: #D33827;
+}
+
+.nav-link.active,
+.nav-link[aria-current="page"] {
+  background-color: #FCEEEF;
+  color: #D33827;
+  font-weight: 700;
+}
+
+/* Dark Mode Navigation Links & Header Overrides */
+.dark-mode .nav-link {
+  color: #CBD5E1 !important;
+}
+
+.dark-mode .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: #FFFFFF !important;
+}
+
+.dark-mode .nav-link.active,
+.dark-mode .nav-link[aria-current="page"] {
+  background-color: rgba(211, 56, 39, 0.25) !important;
+  color: #FF8A7A !important;
+}
+
+.dark-mode a.group:hover strong {
+  color: #FF8A7A !important;
+}
+
+.dark-mode #menuButton {
+  border-color: #2D313B !important;
+  color: #EDF1F5 !important;
+}
+
+.dark-mode #menuButton:hover {
+  border-color: #E8503E !important;
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark-mode #themeToggle {
+  border-color: #2D313B !important;
+  color: #EDF1F5 !important;
+  background-color: #1A1C22 !important;
+  transition: all 0.2s ease;
+}
+
+.dark-mode #themeToggle:hover {
+  border-color: #E8503E !important;
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
 /* Light Mode Backgrounds */
 .wash {
   background: radial-gradient(circle at 86% 20%, rgba(252, 238, 239, 0.9), transparent 35%), linear-gradient(135deg, #FAF8F5 0%, #FFF5F6 56%, #F5F1EB 100%);
