@@ -5,6 +5,7 @@
   applyTheme(localStorage.getItem('nihongo-theme') === 'dark');
   themeToggle?.addEventListener('click', () => { const dark = !document.documentElement.classList.contains('dark-mode'); applyTheme(dark); localStorage.setItem('nihongo-theme', dark ? 'dark' : 'light'); });
   if (menuButton) menuButton.addEventListener('click', () => { const closed = nav.classList.toggle('hidden'); menuButton.setAttribute('aria-expanded', String(!closed)); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav && !nav.classList.contains('hidden')) { nav.classList.add('hidden'); menuButton?.setAttribute('aria-expanded', 'false'); menuButton?.focus(); } });
   const navList = nav?.querySelector('ul');
   document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', () => { nav?.classList.add('hidden'); menuButton?.setAttribute('aria-expanded','false'); }));
   const toggle = document.querySelector('#furiganaToggle');
