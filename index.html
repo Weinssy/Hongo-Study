@@ -3,157 +3,291 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Hongo Study | Belajar Bahasa Jepang</title>
+    <title>Hongo Study | Portal Belajar Bahasa Jepang Interaktif</title>
     <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="font-sans">
+  <body class="font-sans text-ink bg-mist selection:bg-crimson selection:text-white">
     {{> header }}
+    
     <main>
-      <section class="wash grid-paper">
-        <div
-          class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:grid-cols-[1.1fr_.9fr] md:py-28"
-        >
+      <!-- Hero Section -->
+      <section class="wash grid-paper border-b border-slate-200/70">
+        <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-[1.15fr_0.85fr] md:py-24">
           <div>
-            <p class="mb-5 font-bold uppercase tracking-[.22em] text-crimson">
-              Level dasar-menengah · JLPT N5-N4
-            </p>
-            <h1 class="font-display text-5xl leading-tight md:text-7xl">
-              こんにちは,<br /><span class="text-crimson"
-                >calon pembelajar.</span
-              >
+            <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-crimson/20 bg-sakura/60 px-3.5 py-1 text-xs font-bold tracking-wide text-crimson">
+              <span class="h-2 w-2 rounded-full bg-crimson animate-pulse"></span>
+              Level Dasar–Menengah · JLPT N5–N4
+            </div>
+            
+            <h1 class="font-display text-4xl leading-[1.15] md:text-6xl text-ink">
+              こんにちは、<br />
+              <span class="text-crimson font-semibold">calon pembelajar.</span>
             </h1>
-            <p class="mt-7 max-w-xl text-lg leading-8 text-slate-600">
-              Ruang belajar bahasa Jepang yang ringkas dan ramah untuk siswa
-              SMA. Kenali aksara, berlatih percakapan, lalu temukan pola
-              grammar.
+            
+            <p class="mt-6 max-w-xl text-base leading-relaxed text-slate-600 md:text-lg">
+              Ruang belajar bahasa Jepang yang terstruktur, fokus, dan ramah untuk siswa.
+              Kuasai aksara Kana, bangun kosakata tematik, pahami tata bahasa, dan latih refleks percakapan harian.
             </p>
-            <div class="mt-9 flex flex-wrap gap-3">
+            
+            <div class="mt-8 flex flex-wrap items-center gap-3">
               <a
                 href="tebak-huruf.html"
-                class="rounded-full bg-crimson px-6 py-3 font-bold text-white hover:bg-red-900"
-                >Mulai bermain →</a
-              ><a
-                href="kamus-grammar.html"
-                class="rounded-full border border-slate-300 bg-white px-6 py-3 font-bold hover:border-crimson hover:text-crimson"
-                >Cari grammar</a
+                class="rounded-full bg-crimson px-7 py-3.5 font-bold text-white shadow-sm transition hover:bg-[#B3291B] active:translate-y-0.5"
               >
+                Mulai Berlatih &rarr;
+              </a>
+              <a
+                href="kamus-grammar.html"
+                class="rounded-full border border-slate-300 bg-white px-6 py-3.5 font-semibold text-slate-700 shadow-sm transition hover:border-crimson hover:text-crimson active:translate-y-0.5"
+              >
+                Cari Pola Grammar
+              </a>
             </div>
           </div>
+
+          <!-- Featured Kanji Display Card -->
           <div class="mx-auto w-full max-w-sm">
-            <div
-              class="rotate-3 rounded-[2rem] border border-white bg-white p-3 shadow-2xl"
-            >
-              <div class="rounded-[1.5rem] bg-crimson p-8 text-white">
-                <p
-                  class="text-sm font-bold uppercase tracking-widest text-sakura"
-                >
-                  Catatan hari ini
-                </p>
-                <p class="mt-12 font-display text-8xl">学</p>
-                <p class="mt-4 text-2xl font-bold">まなぶ</p>
-                <p class="text-sakura">manabu · belajar</p>
+            <div class="rounded-3xl border border-slate-200/90 bg-white p-3.5 shadow-whisper transition-transform duration-300 hover:scale-[1.01]">
+              <div class="relative overflow-hidden rounded-2xl bg-crimson p-8 text-white">
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-white/20 px-3 py-1 font-mono text-xs font-semibold uppercase tracking-wider text-white">
+                    Fokus Kanji Hari Ini
+                  </span>
+                  <span class="font-mono text-xs text-white/80">JLPT N5</span>
+                </div>
+
+                <div class="my-10 text-center">
+                  <p class="font-display text-8xl font-bold tracking-tight text-white select-none">学</p>
+                  <p class="mt-4 font-japanese text-2xl font-bold tracking-wider">まなぶ · ガク</p>
+                  <p class="mt-1 font-mono text-sm text-sakura">manabu · gaku</p>
+                </div>
+
+                <div class="rounded-xl border border-white/20 bg-black/15 p-3.5 text-center backdrop-blur-sm">
+                  <p class="text-xs font-medium text-white/90">
+                    Makna: <strong class="font-bold text-white">Belajar / Menuntut Ilmu</strong>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="latihan" class="mx-auto max-w-6xl px-5 py-10 pt-20">
-        <div class="mb-9">
-          <p class="font-bold uppercase tracking-widest text-crimson">
-            Belajar lewat praktik
+      <!-- Ruang Latihan: Asymmetric Bento Layout -->
+      <section id="latihan" class="mx-auto max-w-6xl px-5 py-16 md:py-20">
+        <div class="mb-10 flex flex-wrap items-end justify-between gap-4 border-b border-slate-200/70 pb-6">
+          <div>
+            <span class="font-mono text-xs font-bold uppercase tracking-widest text-crimson">Modul Praktik 01</span>
+            <h2 class="mt-1 font-display text-3xl font-bold md:text-4xl text-ink">Ruang Latihan Interaktif</h2>
+          </div>
+          <p class="max-w-md text-sm text-slate-600">
+            Latih kecepatan membaca karakter, refleks merespons percakapan, dan ketelitian pemahaman kosakata secara aktif.
           </p>
-          <h2 class="mt-2 font-display text-4xl">Ruang Latihan</h2>
         </div>
-        <div class="grid gap-5 md:grid-cols-3">
+
+        <div class="grid gap-6 md:grid-cols-12">
+          <!-- Spotlight Card: Tebak Huruf (Spans 7 cols) -->
           <a
             href="tebak-huruf.html"
-            class="feature-card rounded-2xl border border-slate-200 bg-white p-6"
-            ><span class="text-3xl">あ</span>
-            <h3 class="mt-8 text-xl font-bold">Tebak Huruf</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-500">
-              Baca karakter acak dan ketik romajinya untuk mengasah ingatan.
-            </p>
-            <span class="mt-6 inline-block text-sm font-bold text-crimson"
-              >Mulai game &rarr;</span
-            ></a
+            class="feature-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-7 shadow-sm md:col-span-7"
           >
-          <a
-            href="percakapan.html"
-            class="feature-card rounded-2xl border border-slate-200 bg-white p-6"
-            ><span class="text-3xl">会話</span>
-            <h3 class="mt-8 text-xl font-bold">Roleplay Chat</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-500">
-              Pilih balasan paling tepat dalam skenario sekolah sehari-hari.
-            </p>
-            <span class="mt-6 inline-block text-sm font-bold text-crimson"
-              >Buka percakapan &rarr;</span
-            ></a
-          >
-          <a
-            href="kuis.html"
-            class="feature-card rounded-2xl border border-slate-200 bg-white p-6"
-            ><span class="text-3xl">問</span>
-            <h3 class="mt-8 text-xl font-bold">Kuis Materi</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-500">
-              Uji pemahaman kosakata waktu, sekolah, mapel, & profesi dengan
-              pilihan ganda.
-            </p>
-            <span class="mt-6 inline-block text-sm font-bold text-crimson"
-              >Mulai kuis &rarr;</span
-            ></a
-          >
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="rounded-full bg-sakura px-3 py-1 text-xs font-bold text-crimson">Aksara Hiragana & Katakana</span>
+                <span class="font-kanji text-3xl font-bold text-crimson">あ</span>
+              </div>
+              <h3 class="mt-6 font-display text-2xl font-bold text-ink group-hover:text-crimson transition-colors">
+                Tebak Huruf (Speed Drill)
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                Uji kecepatan mengingat karakter acak dengan mengetik romajinya langsung. Dilengkapi sistem skor bertahap dan deteksi otomatis huruf vokal & konsonan.
+              </p>
+              
+              <!-- Interactive Visual Badge Preview -->
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="rounded-lg border border-slate-200 bg-mist px-3 py-1.5 font-kanji text-base font-bold text-ink">あ a</span>
+                <span class="rounded-lg border border-slate-200 bg-mist px-3 py-1.5 font-kanji text-base font-bold text-ink">か ka</span>
+                <span class="rounded-lg border border-slate-200 bg-mist px-3 py-1.5 font-kanji text-base font-bold text-ink">サ sa</span>
+                <span class="rounded-lg border border-slate-200 bg-mist px-3 py-1.5 font-kanji text-base font-bold text-ink">ネ ne</span>
+                <span class="rounded-lg border border-slate-200 bg-mist px-3 py-1.5 font-kanji text-base font-bold text-ink">ん n</span>
+              </div>
+            </div>
+
+            <div class="mt-8 flex items-center justify-between border-t border-slate-100 pt-4">
+              <span class="font-mono text-xs text-slate-500">Mendukung 100+ suku kata dasar</span>
+              <span class="inline-flex items-center text-sm font-bold text-crimson group-hover:translate-x-1 transition-transform">
+                Mulai Drill &rarr;
+              </span>
+            </div>
+          </a>
+
+          <!-- Stacked Column (Spans 5 cols) -->
+          <div class="flex flex-col gap-6 md:col-span-5">
+            <!-- Roleplay Chat Card -->
+            <a
+              href="percakapan.html"
+              class="feature-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+            >
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">Simulasi Dialog</span>
+                  <span class="font-kanji text-2xl font-bold text-slate-400 group-hover:text-crimson transition-colors">会話</span>
+                </div>
+                <h3 class="mt-4 font-display text-xl font-bold text-ink group-hover:text-crimson transition-colors">
+                  Roleplay Percakapan
+                </h3>
+                <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                  Pilih balasan paling tepat dalam berbagai skenario harian di sekolah dan lingkungan sosial.
+                </p>
+              </div>
+              <div class="mt-5 border-t border-slate-100 pt-3 flex justify-end">
+                <span class="text-xs font-bold text-crimson group-hover:translate-x-1 transition-transform">
+                  Buka Percakapan &rarr;
+                </span>
+              </div>
+            </a>
+
+            <!-- Kuis Pilihan Ganda -->
+            <a
+              href="kuis.html"
+              class="feature-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+            >
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">Evaluasi Menyeluruh</span>
+                  <span class="font-kanji text-2xl font-bold text-slate-400 group-hover:text-crimson transition-colors">問題</span>
+                </div>
+                <h3 class="mt-4 font-display text-xl font-bold text-ink group-hover:text-crimson transition-colors">
+                  Kuis Materi Tematik
+                </h3>
+                <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                  Evaluasi kosakata waktu, nama sekolah, mapel, dan profesi dengan format pilihan ganda interaktif.
+                </p>
+              </div>
+              <div class="mt-5 border-t border-slate-100 pt-3 flex justify-end">
+                <span class="text-xs font-bold text-crimson group-hover:translate-x-1 transition-transform">
+                  Uji Pemahaman &rarr;
+                </span>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
 
-      <section id="materi" class="mx-auto max-w-6xl px-5 py-10 pb-20">
-        <div class="mb-9">
-          <p class="font-bold uppercase tracking-widest text-crimson">
-            Referensi Belajar
+      <!-- Materi Pembelajaran: Asymmetric Bento Layout -->
+      <section id="materi" class="mx-auto max-w-6xl px-5 py-12 pb-24">
+        <div class="mb-10 flex flex-wrap items-end justify-between gap-4 border-b border-slate-200/70 pb-6">
+          <div>
+            <span class="font-mono text-xs font-bold uppercase tracking-widest text-crimson">Modul Referensi 02</span>
+            <h2 class="mt-1 font-display text-3xl font-bold md:text-4xl text-ink">Materi & Ensiklopedia Belajar</h2>
+          </div>
+          <p class="max-w-md text-sm text-slate-600">
+            Kumpulan referensi terstruktur yang dirancang untuk pendamping belajar mandiri maupun persiapan ujian JLPT.
           </p>
-          <h2 class="mt-2 font-display text-4xl">Materi Pembelajaran</h2>
         </div>
-        <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+
+        <div class="grid gap-6 md:grid-cols-12">
+          <!-- Card 1: Kamus Grammar (Spans 6 cols) -->
           <a
             href="kamus-grammar.html"
-            class="feature-card rounded-2xl border border-slate-200 bg-white p-6"
-            ><span class="text-3xl">文法</span>
-            <h3 class="mt-8 text-xl font-bold">Kamus &amp; Tata Bahasa</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-500">
-              Cari pola kalimat dasar, partikel, kata kerja, dan kata sifat lengkap dengan rumus, arti, dan furigana.
-            </p>
-            <span class="mt-6 inline-block text-sm font-bold text-crimson"
-              >Buka Kamus Grammar &rarr;</span
-            ></a
+            class="feature-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-7 shadow-sm md:col-span-6"
           >
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="rounded-full bg-sakura px-3 py-1 text-xs font-bold text-crimson">Tata Bahasa & Rumus</span>
+                <span class="font-kanji text-3xl font-bold text-crimson">文法</span>
+              </div>
+              <h3 class="mt-5 font-display text-2xl font-bold text-ink group-hover:text-crimson transition-colors">
+                Kamus & Pola Tata Bahasa
+              </h3>
+              <p class="mt-2.5 text-sm leading-relaxed text-slate-600">
+                Pola kalimat dasar, fungsi partikel (は, が, を, に, で), konjugasi kata kerja (~masu, ~mashita), serta kata sifat lengkap dengan formula dan contoh kalimat.
+              </p>
+              
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-md bg-mist px-2.5 py-1 font-mono text-xs font-semibold text-slate-700">~ wa ~ desu</span>
+                <span class="rounded-md bg-mist px-2.5 py-1 font-mono text-xs font-semibold text-slate-700">Partikel に vs で</span>
+                <span class="rounded-md bg-mist px-2.5 py-1 font-mono text-xs font-semibold text-slate-700">Bentuk ~tai desu</span>
+              </div>
+            </div>
+
+            <div class="mt-8 border-t border-slate-100 pt-4 flex items-center justify-between">
+              <span class="font-mono text-xs text-slate-500">20+ Pola Dasar N5-N4</span>
+              <span class="text-sm font-bold text-crimson group-hover:translate-x-1 transition-transform">
+                Eksplorasi Grammar &rarr;
+              </span>
+            </div>
+          </a>
+
+          <!-- Card 2: Kumpulan Kosakata (Spans 6 cols) -->
           <a
             href="kosakata.html"
-            class="feature-card rounded-2xl border border-slate-200 bg-white p-6"
-            ><span class="text-3xl">単語</span>
-            <h3 class="mt-8 text-xl font-bold">Kumpulan Kosakata</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-500">
-              Kuasai 300+ kosakata tematik terpadu: keterangan waktu, sekolah, mata pelajaran, profesi, dan orang.
-            </p>
-            <span class="mt-6 inline-block text-sm font-bold text-crimson"
-              >Jelajahi Kosakata &rarr;</span
-            ></a
+            class="feature-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-7 shadow-sm md:col-span-6"
           >
-          <a
-            href="anatomy/"
-            class="feature-card rounded-2xl border border-slate-200 bg-white p-6"
-            ><span class="text-3xl">体</span>
-            <h3 class="mt-8 text-xl font-bold">Anatomi Manusia</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-500">
-              Eksplorasi bagian tubuh dan organ manusia dalam model 3D interaktif.
-            </p>
-            <span class="mt-6 inline-block text-sm font-bold text-crimson"
-              >Jelajahi anatomi &rarr;</span
-            ></a
-          >
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Tematik & Terpadu</span>
+                <span class="font-kanji text-3xl font-bold text-slate-400 group-hover:text-crimson transition-colors">単語</span>
+              </div>
+              <h3 class="mt-5 font-display text-2xl font-bold text-ink group-hover:text-crimson transition-colors">
+                Pusat Kumpulan Kosakata
+              </h3>
+              <p class="mt-2.5 text-sm leading-relaxed text-slate-600">
+                Kuasai ratusan kosakata tematik penting: keterangan waktu, kalender, perlengkapan sekolah, mata pelajaran, profesi, serta sebutan orang dan anggota keluarga.
+              </p>
+
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-md bg-mist px-2.5 py-1 text-xs font-medium text-slate-700">Waktu & Tanggal</span>
+                <span class="rounded-md bg-mist px-2.5 py-1 text-xs font-medium text-slate-700">Sekolah & Kelas</span>
+                <span class="rounded-md bg-mist px-2.5 py-1 text-xs font-medium text-slate-700">Keluarga (Kazoku)</span>
+              </div>
+            </div>
+
+            <div class="mt-8 border-t border-slate-100 pt-4 flex items-center justify-between">
+              <span class="font-mono text-xs text-slate-500">6 Kategori Lengkap</span>
+              <span class="text-sm font-bold text-crimson group-hover:translate-x-1 transition-transform">
+                Buka Kosakata &rarr;
+              </span>
+            </div>
+          </a>
+
+          <!-- Card 3: Anatomi 3D & Eksplorasi Visual (Full row / Spans 12 cols) -->
+          <div class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm md:col-span-12">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div class="max-w-xl">
+                <div class="flex items-center gap-2">
+                  <span class="rounded-full bg-emerald-50 px-3 py-1 font-mono text-xs font-bold text-emerald-700">Visual 3D Lab</span>
+                  <span class="font-kanji text-xl font-bold text-slate-400">体 · 塔</span>
+                </div>
+                <h3 class="mt-3 font-display text-2xl font-bold text-ink">
+                  Eksplorasi Model 3D &amp; Bangunan Budaya
+                </h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Perluas wawasan dengan visualisasi anatomi tubuh manusia dalam model 3D serta jelajahi Menara Tradisional Jepang secara interaktif.
+                </p>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-3">
+                <a
+                  href="anatomy/"
+                  class="rounded-xl border border-slate-200 bg-mist px-5 py-3 text-sm font-bold text-slate-700 transition hover:border-crimson hover:text-crimson"
+                >
+                  Anatomi Tubuh (体) &rarr;
+                </a>
+                <a
+                  href="menara-jepang.html"
+                  class="rounded-xl bg-crimson px-5 py-3 text-sm font-bold text-white transition hover:bg-[#B3291B]"
+                >
+                  Menara Jepang (塔) &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
+
     {{> footer }}
     <script type="module" src="/js/main.js"></script>
   </body>

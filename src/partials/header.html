@@ -1,28 +1,28 @@
-<header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-    <a href="{{rootPath}}index.html" class="flex items-center gap-3">
-      <span class="grid h-10 w-10 place-items-center rounded-full bg-crimson text-xl text-white">日</span>
+<header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur transition-colors">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
+    <a href="{{rootPath}}index.html" class="group flex items-center gap-3">
+      <span class="grid h-10 w-10 place-items-center rounded-xl bg-crimson font-kanji text-xl font-bold text-white shadow-sm transition-transform group-hover:scale-105">日</span>
       <span>
-        <strong class="block font-display text-lg">Hongo Study</strong>
-        <small class="text-xs text-slate-500">Belajar sedikit, setiap hari.</small>
+        <strong class="block font-display text-lg tracking-tight text-ink transition-colors group-hover:text-crimson">Hongo Study</strong>
+        <small class="text-xs text-slate-500 font-medium">日本語スタディ · Belajar sedikit setiap hari</small>
       </span>
     </a>
-    <button id="menuButton" class="rounded-lg border border-slate-200 p-2 text-xl md:hidden" aria-label="Buka menu" aria-expanded="false">
+    <button id="menuButton" class="rounded-xl border border-slate-200 p-2 text-xl md:hidden transition hover:border-crimson" aria-label="Buka menu" aria-expanded="false">
       ☰
     </button>
-    <nav id="mainNav" class="absolute left-0 top-full hidden w-full border-b border-slate-200 bg-white px-5 py-4 md:static md:block md:w-auto md:border-0 md:bg-transparent md:p-0">
-      <ul class="flex flex-col gap-4 text-sm font-bold md:flex-row md:gap-7">
+    <nav id="mainNav" class="absolute left-0 top-full hidden w-full border-b border-slate-200 bg-white px-5 py-4 shadow-lg md:static md:block md:w-auto md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+      <ul class="flex flex-col gap-3 text-sm font-semibold md:flex-row md:items-center md:gap-6">
         <li>
-          <a class="nav-link hover:text-crimson" href="{{rootPath}}index.html">Beranda</a>
+          <a class="nav-link rounded-lg px-2.5 py-1.5 text-slate-700 transition hover:bg-sakura/50 hover:text-crimson" href="{{rootPath}}index.html">Beranda</a>
         </li>
         <li>
-          <a class="nav-link hover:text-crimson" href="{{rootPath}}index.html#latihan">Latihan</a>
+          <a class="nav-link rounded-lg px-2.5 py-1.5 text-slate-700 transition hover:bg-sakura/50 hover:text-crimson" href="{{rootPath}}index.html#latihan">Ruang Latihan</a>
         </li>
         <li>
-          <a class="nav-link hover:text-crimson" href="{{rootPath}}index.html#materi">Materi</a>
+          <a class="nav-link rounded-lg px-2.5 py-1.5 text-slate-700 transition hover:bg-sakura/50 hover:text-crimson" href="{{rootPath}}index.html#materi">Materi Pelajaran</a>
         </li>
         <li>
-          <a class="nav-link hover:text-crimson {{#if isMenara}}text-crimson{{/if}}" href="{{rootPath}}menara-jepang.html" {{#if isMenara}}aria-current="page"{{/if}}>Menara</a>
+          <a class="nav-link rounded-lg px-2.5 py-1.5 transition hover:bg-sakura/50 hover:text-crimson {{#if isMenara}}text-crimson font-bold{{else}}text-slate-700{{/if}}" href="{{rootPath}}menara-jepang.html" {{#if isMenara}}aria-current="page"{{/if}}>Menara 3D</a>
         </li>
       </ul>
     </nav>

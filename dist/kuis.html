@@ -4,37 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Kuis Interaktif Materi | Hongo Study</title>
-    <script type="module" crossorigin src="./assets/kuis-D-qn8PIj.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/main-Y6On9zBn.js">
+    <script type="module" crossorigin src="./assets/kuis-Da3EsKrL.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/main-Bykyf9HZ.js">
     <link rel="modulepreload" crossorigin href="./assets/quiz-data-BNbsWXo_.js">
-    <link rel="stylesheet" crossorigin href="./assets/main-CLyee4Xt.css">
+    <link rel="stylesheet" crossorigin href="./assets/main-Dp1P-Mlh.css">
   </head>
   <body class="font-sans bg-mist min-h-screen flex flex-col justify-between">
-    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
-      <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <a href="./index.html" class="flex items-center gap-3">
-          <span class="grid h-10 w-10 place-items-center rounded-full bg-crimson text-xl text-white">日</span>
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur transition-colors">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
+        <a href="./index.html" class="group flex items-center gap-3">
+          <span class="grid h-10 w-10 place-items-center rounded-xl bg-crimson font-kanji text-xl font-bold text-white shadow-sm transition-transform group-hover:scale-105">日</span>
           <span>
-            <strong class="block font-display text-lg">Hongo Study</strong>
-            <small class="text-xs text-slate-500">Belajar sedikit, setiap hari.</small>
+            <strong class="block font-display text-lg tracking-tight text-ink transition-colors group-hover:text-crimson">Hongo Study</strong>
+            <small class="text-xs text-slate-500 font-medium">日本語スタディ · Belajar sedikit setiap hari</small>
           </span>
         </a>
-        <button id="menuButton" class="rounded-lg border border-slate-200 p-2 text-xl md:hidden" aria-label="Buka menu" aria-expanded="false">
+        <button id="menuButton" class="rounded-xl border border-slate-200 p-2 text-xl md:hidden transition hover:border-crimson" aria-label="Buka menu" aria-expanded="false">
           ☰
         </button>
-        <nav id="mainNav" class="absolute left-0 top-full hidden w-full border-b border-slate-200 bg-white px-5 py-4 md:static md:block md:w-auto md:border-0 md:bg-transparent md:p-0">
-          <ul class="flex flex-col gap-4 text-sm font-bold md:flex-row md:gap-7">
+        <nav id="mainNav" class="absolute left-0 top-full hidden w-full border-b border-slate-200 bg-white px-5 py-4 shadow-lg md:static md:block md:w-auto md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+          <ul class="flex flex-col gap-3 text-sm font-semibold md:flex-row md:items-center md:gap-6">
             <li>
-              <a class="nav-link hover:text-crimson" href="./index.html">Beranda</a>
+              <a class="nav-link rounded-lg px-2.5 py-1.5 text-slate-700 transition hover:bg-sakura/50 hover:text-crimson" href="./index.html">Beranda</a>
             </li>
             <li>
-              <a class="nav-link hover:text-crimson" href="./index.html#latihan">Latihan</a>
+              <a class="nav-link rounded-lg px-2.5 py-1.5 text-slate-700 transition hover:bg-sakura/50 hover:text-crimson" href="./index.html#latihan">Ruang Latihan</a>
             </li>
             <li>
-              <a class="nav-link hover:text-crimson" href="./index.html#materi">Materi</a>
+              <a class="nav-link rounded-lg px-2.5 py-1.5 text-slate-700 transition hover:bg-sakura/50 hover:text-crimson" href="./index.html#materi">Materi Pelajaran</a>
             </li>
             <li>
-              <a class="nav-link hover:text-crimson " href="./menara-jepang.html" >Menara</a>
+              <a class="nav-link rounded-lg px-2.5 py-1.5 transition hover:bg-sakura/50 hover:text-crimson text-slate-700" href="./menara-jepang.html" >Menara 3D</a>
             </li>
           </ul>
         </nav>
@@ -67,42 +67,42 @@
             data-category="waktu"
             class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
           >
-            ⏱️ Waktu
+            <span class="font-kanji font-bold text-crimson mr-1">時</span> Waktu
           </button>
           <button
             type="button"
             data-category="sekolah"
             class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
           >
-            🏫 Sekolah & Kelas
+            <span class="font-kanji font-bold text-crimson mr-1">校</span> Sekolah
           </button>
           <button
             type="button"
             data-category="mata-pelajaran"
             class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
           >
-            📚 Mata Pelajaran
+            <span class="font-kanji font-bold text-crimson mr-1">科</span> Mata Pelajaran
           </button>
           <button
             type="button"
             data-category="pekerjaan"
             class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
           >
-            💼 Pekerjaan
+            <span class="font-kanji font-bold text-crimson mr-1">職</span> Profesi
           </button>
           <button
             type="button"
             data-category="orang"
             class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
           >
-            👥 Orang
+            <span class="font-kanji font-bold text-crimson mr-1">人</span> Orang
           </button>
           <button
             type="button"
             data-category="campuran"
             class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
           >
-            🔀 Mode Campuran
+            <span class="font-kanji font-bold text-crimson mr-1">全</span> Mode Campuran
           </button>
         </div>
 
@@ -233,10 +233,16 @@
       </div>
     </main>
 
-    <footer class="bg-white px-5 py-8 border-t border-slate-200/80">
-      <div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 text-sm text-slate-500">
-        <p>© 2026 Hongo Study · Belajar bersama.</p>
-        <p class="font-bold text-crimson">がんばって! Terus semangat!</p>
+    <footer class="border-t border-slate-200/80 bg-white px-5 py-8 transition-colors border-t border-slate-200/80">
+      <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 text-sm text-slate-500">
+        <div class="flex items-center gap-2">
+          <span class="font-kanji font-bold text-crimson">日本語</span>
+          <span>© 2026 Hongo Study · Portal Belajar Bahasa Jepang Interaktif</span>
+        </div>
+        <div class="flex items-center gap-2 font-medium">
+          <span class="font-kanji text-base text-crimson">がんばって！</span>
+          <span>Semangat belajar setiap hari.</span>
+        </div>
       </div>
     </footer>
 
