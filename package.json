@@ -1,7 +1,7 @@
 {
   "name": "hongo-study",
   "version": "1.0.0",
-  "description": "**Website pembelajaran bahasa Jepang yang ringkas, interaktif, dan ramah untuk siswa SMA.**",
+  "description": "Portal interaktif pembelajaran bahasa Jepang dasar-menengah (JLPT N5-N4) dengan sistem aksara Kana, kosakata tematik, kamus tata bahasa, dan simulasi percakapan.",
   "main": "index.js",
   "scripts": {
     "dev": "vite",

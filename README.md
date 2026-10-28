@@ -1,95 +1,110 @@
-# 🇯🇵 Hongo-Study
+# Hongo Study
 
-**Website pembelajaran bahasa Jepang yang ringkas, interaktif, dan ramah untuk siswa SMA.**
+Portal pembelajaran bahasa Jepang interaktif berbasis web yang memadukan kurikulum dasar–menengah (JLPT N5–N4), latihan refleks aksara Kana, ensiklopedia kosakata tematik, dan panduan tata bahasa terstruktur dalam antarmuka tipografi modern.
 
----
-
-## 📚 Tentang Hongo-Study
-
-Hongo-Study adalah platform pembelajaran bahasa Jepang yang dirancang khusus untuk siswa sekolah menengah atas. Website ini menyediakan pendekatan terpadu untuk menguasai bahasa Jepang mulai dari dasar hingga menengah, dengan fokus pada tiga pilar pembelajaran:
-
-1. **Kenali Aksara** - Pelajari Hiragana, Katakana, dan Kanji dengan metode yang mudah dipahami
-2. **Berlatih Percakapan** - Latihan dialog praktis untuk komunikasi sehari-hari
-3. **Temukan Pola Grammar** - Pahami struktur bahasa Jepang secara sistematis
+Demo langsung: [https://weinssy.github.io/Hongo-Study/](https://weinssy.github.io/Hongo-Study/)
 
 ---
 
-## ✨ Fitur Utama
+## Ikhtisar
 
-- 🗣️ **Pembelajaran Interaktif** - Metode belajar yang engaging dan tidak membosankan
-- 📝 **Materi Terstruktur** - Kurikulum yang logis dari pemula hingga tingkat menengah
-- 🎯 **Fokus pada Praktik** - Percakapan dan latihan soal untuk penguatan materi
-- 📱 **User-Friendly Interface** - Desain yang intuitif dan mudah digunakan
-- 🎨 **Visual Learning** - Konten visual yang membantu pemahaman
+Hongo Study dirancang untuk memberikan pengalaman belajar mandiri yang sistematis, bersih, dan bebas distraksi. Platform ini mengintegrasikan pemrosesan teks bahasa Jepang berbasis standar input romaji, sistem tata bahasa berformula, serta modul visual interaktif.
 
----
+### Karakteristik Utama
 
-## 🚀 Mulai Belajar
-
-Kunjungi website kami dan mulai perjalanan belajar bahasa Jepang Anda hari ini!
-
-### Langkah Pertama:
-1. Buka website Hongo-Study
-2. Pilih modul pembelajaran (Aksara, Percakapan, atau Grammar)
-3. Ikuti panduan dan selesaikan latihan
-4. Tingkatkan level Anda secara bertahap
+- **Tipografi Terkalibrasi**: Penggunaan font kanji *Shippori Mincho* dan *Zen Kaku Gothic New* yang menjamin proporsi dan akhiran goresan aksara sesuai standar ortografi Jepang.
+- **Sistem Furigana Global**: Pembacaan cara baca aksara Kanji menggunakan elemen semantik `<ruby>` dan `<rt>` yang dapat diaktifkan atau dinonaktifkan secara instan.
+- **Evaluasi Berulang**: Sistem kuis tematik dengan retensi memori berbasis spaced repetition lokal untuk memprioritaskan soal yang sebelumnya salah dijawab.
+- **Desain Asimetris**: Tata letak Bento Grid yang menonjolkan modul latihan utama tanpa beban visual berlebih.
 
 ---
 
-## 🎓 Target Pengguna
+## Modul Pembelajaran
 
-- 👨‍🎓 Siswa SMA yang tertarik belajar bahasa Jepang
-- 🌱 Pemula tanpa latar belakang bahasa Jepang sebelumnya
-- 📚 Siapa saja yang ingin belajar bahasa Jepang dengan cara yang menyenangkan
+### 1. Ruang Latihan
+- **Tebak Huruf (Speed Drill)**: Latihan membaca karakter acak Hiragana dan Katakana dengan konversi otomatis romaji menggunakan Wanakana.
+- **Roleplay Percakapan**: Simulasi skenario dialog situasional di lingkungan sekolah dan sosial sehari-hari.
+- **Kuis Tematik**: Uji pemahaman materi pilihan ganda dengan 6 kategori spesifik (Waktu, Sekolah, Mata Pelajaran, Profesi, Orang, dan Mode Campuran).
 
----
-
-## 📋 Struktur Pembelajaran
-
-### Level 1: Kenali Aksara
-- Hiragana (基本・濁音・半濁音)
-- Katakana (基本・濁音・半濁音)
-- Kanji Dasar
-- Latihan Penulisan
-
-### Level 2: Berlatih Percakapan
-- Sapaan & Perkenalan
-- Percakapan Sehari-hari
-- Situasi Sosial
-- Dialog Interaktif
-
-### Level 3: Temukan Pola Grammar
-- Struktur Dasar Kalimat
-- Partikel (は, を, に, で, dll)
-- Tense dan Aspek Verba
-- Pola Kalimat Umum
+### 2. Referensi & Materi
+- **Kamus & Pola Tata Bahasa**: Katalog pola kalimat dasar (~wa ~desu, ~tai desu, partikel は, が, を, に, で), konjugasi kata kerja (~masu, ~mashita), dan pembagian kata sifat dengan formula visual.
+- **Pusat Kosakata Tematik**: Kumpulan 350+ kosakata terstruktur yang mencakup keterangan waktu, kalender, perlengkapan belajar, profesi, serta sebutan keluarga (*kazoku*).
+- **Visual 3D Lab**: Eksplorasi interaktif model anatomi tubuh manusia dan arsitektur menara tradisional Jepang berbasis WebGL/Three.js.
 
 ---
 
-## 🛠️ Teknologi
+## Tumpukan Teknologi
 
-- **HTML5** - Struktur konten yang semantik
-- **CSS** - Styling responsif dan modern
-- **JavaScript** - Interaktivitas dan dinamika konten
-
----
-
-## 📞 Kontak & Dukungan
-
-Jika Anda memiliki pertanyaan, saran, atau menemukan masalah, silakan hubungi kami melalui:
-- 📧 Issues di GitHub repository ini
-- 💬 Diskusi di GitHub Discussions
+| Komponen | Teknologi | Keterangan |
+| :--- | :--- | :--- |
+| Core Engine | Vite 8 | Build tool dan server pengembangan lokal |
+| Styling | Tailwind CSS 3.4 & PostCSS | Utilitas layout, variabel warna semantik, dan tipografi |
+| Templating | Handlebars | Modularisasi komponen header, footer, dan konteks path |
+| Teks Jepang | Wanakana 5.3 | Deteksi dan konversi Hiragana, Katakana, dan Romaji |
+| Grafis 3D | Three.js & WebGL | Rendering model interaktif anatomi dan lanskap arsitektur |
+| Deployment | GitHub Actions & Pages | Pipeline CI/CD otomatis pada branch utama |
 
 ---
 
-## 📄 Lisensi
+## Memulai Proyek
 
-Project ini tersedia di bawah lisensi open source. Silakan lihat file LICENSE untuk detail lebih lanjut.
+### Prasyarat
+- Node.js versi 18 atau lebih baru
+- npm versi 9 atau lebih baru
+
+### Instalasi
+
+1. Kloning repositori:
+   ```bash
+   git clone https://github.com/Weinssy/Hongo-Study.git
+   cd Hongo-Study
+   ```
+
+2. Pasang dependensi:
+   ```bash
+   npm install
+   ```
+
+3. Jalankan server pengembangan lokal:
+   ```bash
+   npm run dev
+   ```
+   Akses antarmuka melalui alamat lokal yang ditampilkan di terminal (default: `http://localhost:5173`).
+
+### Build untuk Produksi
+
+Kompilasi seluruh modul statis ke dalam direktori `dist/`:
+```bash
+npm run build
+```
+
+Untuk menguji hasil kompilasi produksi secara lokal:
+```bash
+npm run preview
+```
 
 ---
 
-**Happy Learning! 頑張ってください！(Ganba tte kudasai!)**
+## Struktur Direktori
+
+```text
+Hongo-Study/
+├── .github/workflows/     Alur kerja otomatisasi deployment GitHub Actions
+├── css/                   File sumber Tailwind dan stylesheet kustom
+├── grammar/               Halaman materi pola kalimat dan tata bahasa
+├── js/                    Logika aplikasi (kuis, data kosakata, tebak huruf)
+├── kosakata/              Halaman materi kosakata tematik
+├── public/                Aset statis, tekstur 3D, dan data pendukung
+├── src/partials/          Komponen modular Handlebars (header, footer)
+├── DESIGN.md              Spesifikasi sistem desain dan panduan tipografi
+├── index.html             Halaman beranda utama
+├── package.json           Manifes proyek dan dependensi
+├── tailwind.config.cjs    Konfigurasi tema, warna, dan ekstensi font
+└── vite.config.js         Konfigurasi bundler Vite dan plugin Handlebars
+```
 
 ---
 
-*Terakhir diperbarui: 2026*
+## Lisensi
+
+Proyek ini dirilis di bawah lisensi [ISC](LICENSE).
