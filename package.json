@@ -10,16 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Weinssy/Website-Belajar-Bahasa-Jepang.git"
+    "url": "git+https://github.com/Weinssy/Hongo-Study.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/Weinssy/Website-Belajar-Bahasa-Jepang/issues"
+    "url": "https://github.com/Weinssy/Hongo-Study/issues"
   },
-  "homepage": "https://github.com/Weinssy/Website-Belajar-Bahasa-Jepang#readme",
+  "homepage": "https://weinssy.github.io/Hongo-Study/",
   "devDependencies": {
     "autoprefixer": "^10.6.1",
     "handlebars": "^4.7.9",
