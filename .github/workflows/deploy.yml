@@ -23,12 +23,18 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
+      - name: Test learning logic and content
+        run: npm test
       - name: Build project
         run: npm run build
+      - name: Check links in production build
+        run: npm run check:links
+      - name: Check delivery budgets
+        run: npm run check:budget
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

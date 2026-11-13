@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Kosa Kata Waktu | Hongo Study</title>
     <link rel="icon" type="image/svg+xml" href="{{rootPath}}favicon.svg" />
+    {{> head }}
     <link rel="stylesheet" href="../css/tailwind.css" />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body class="font-sans bg-mist">
     {{> header }}
 
-    <main class="wash min-h-screen">
+    <main id="main-content" tabindex="-1" class="wash min-h-screen">
       <div class="mx-auto max-w-4xl px-5 py-12 md:py-20">
 
         <!-- Breadcrumb Navigation -->
@@ -787,21 +788,6 @@
         </div>
       </div>
     
-        <!-- Subbab Pagination -->
-        <nav aria-label="Navigasi Subbab" class="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-slate-200 pt-6">
-          <a
-            href="../kosakata.html"
-            class="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-crimson"
-          >
-            &larr; Indeks Kosakata
-          </a>
-          <a
-            href="sekolah.html"
-            class="rounded-xl bg-crimson px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-rose-700"
-          >
-            Subbab 02: Kosakata Sekolah &rarr;
-          </a>
-        </nav>
       
         <!-- Subbab Pagination -->
         <nav aria-label="Navigasi Subbab" class="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-slate-200 pt-6">

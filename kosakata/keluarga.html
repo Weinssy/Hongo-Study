@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Keluarga & Memperkenalkan Anggota Keluarga | Hongo Study</title>
     <link rel="icon" type="image/svg+xml" href="{{rootPath}}favicon.svg" />
+    {{> head }}
     <link rel="stylesheet" href="../css/tailwind.css" />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body class="font-sans bg-mist">
     {{> header }}
 
-    <main class="wash min-h-screen">
+    <main id="main-content" tabindex="-1" class="wash min-h-screen">
       <div class="mx-auto max-w-4xl px-5 py-12 md:py-20">
         <!-- Breadcrumb & Control Bar -->
         <nav aria-label="Breadcrumb" class="mb-6 flex flex-wrap items-center justify-between gap-4">
@@ -24,6 +25,7 @@
           <button
             id="furiganaToggle"
             type="button"
+            role="switch"
             class="furigana-toggle-btn inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-xs font-bold shadow-sm transition hover:border-crimson"
             aria-checked="true"
           >

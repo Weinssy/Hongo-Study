@@ -643,6 +643,11 @@
     </style>
   </head>
   <body>
+    <script>
+      window.addEventListener('error', () => {
+        if (window.parent !== window) window.parent.postMessage({ type: 'hongo-viewer-error' }, '*');
+      });
+    </script>
     <div id="app">
       <div class="bg-wash"></div>
       <canvas id="stage"></canvas>
@@ -663,8 +668,8 @@
           <button class="tbtn" id="timeBtn" aria-label="TIME: MORNING">
             <b>TIME</b><span>MORNING</span>
           </button>
-          <button class="tbtn" id="soundBtn" aria-label="SOUND: ON">
-            <b>SOUND</b><span>ON</span>
+          <button class="tbtn" id="soundBtn" aria-label="SOUND: OFF">
+            <b>SOUND</b><span>OFF</span>
           </button>
           <button class="tbtn" id="rebuildBtn">↻ REBUILD</button>
         </div>
@@ -28771,8 +28776,10 @@
           (t.sRGBEncoding = ht));
       });
     </script>
-    <script src="japanese-tower-data.js"></script>
     <script>
+      const towerAssets = document.createElement('script');
+      towerAssets.src = './japanese-tower-data.js';
+      towerAssets.addEventListener('load', () => {
       /* =====================================================================
    普請 · 天守生長 — CONSTRUCTION STUDY / 01
    A procedurally generated Japanese castle keep (天守) assembling itself
@@ -28781,6 +28788,8 @@
       (function () {
         "use strict";
         const T = THREE;
+        const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+        let motionPaused = motionPreference.matches;
 
         /* ------------------------------------------------------------------ *
          * 0.  deterministic noise
@@ -34989,8 +34998,8 @@
           setBtn(sb, st.id);
           if (started) playMusic(st.aud.music);
           lastStage = -1;
-          playing = true;
-          applyTime(0);
+          playing = !(motionPaused || motionPreference.matches);
+          applyTime(playing ? 0 : DUR);
         }
 
         const _v = new T.Vector3();
@@ -35062,7 +35071,7 @@
          * 10.  sound
          * ------------------------------------------------------------------ */
         let actx = null,
-          soundOn = true,
+          soundOn = false,
           musicBus = null,
           sfxBus = null,
           wxBus = null,
@@ -35313,6 +35322,7 @@
         );
         document.addEventListener("visibilitychange", () => {
           if (!document.hidden && soundOn) autoStartAudio();
+          if (document.hidden && actx) actx.suspend();
         });
 
         /* ------------------------------------------------------------------ *
@@ -35320,8 +35330,8 @@
          * ------------------------------------------------------------------ */
         function restart() {
           lastStage = -1;
-          playing = true;
-          applyTime(0);
+          playing = !(motionPaused || motionPreference.matches);
+          applyTime(playing ? 0 : DUR);
         }
         document.getElementById("rebuildBtn").addEventListener("click", () => {
           resumeAudio();
@@ -35340,13 +35350,13 @@
         });
         /* time of day */
         const timeBtn = document.getElementById("timeBtn");
-        timeBtn.addEventListener("click", () => applyTheme(themeIdx + 1));
+        timeBtn.addEventListener("click", () => applyTheme(themeIdx + 1, motionPaused || motionPreference.matches));
         document
           .getElementById("styleBtn")
           .addEventListener("click", () => applyStyle(styleIdx + 1));
         document
           .getElementById("wxBtn")
-          .addEventListener("click", () => applyWeather(wxIdx + 1));
+          .addEventListener("click", () => applyWeather(wxIdx + 1, motionPaused || motionPreference.matches));
 
         /* drag to orbit, hover for parallax, two fingers to zoom */
         const ZMIN = 0.5,
@@ -35503,11 +35513,18 @@
         layout();
         applyTime(0);
 
+        let frameRequest = null;
         let prev = performance.now();
-        (function frame(now) {
-          const dt = Math.min(0.05, (now - prev) / 1000);
+        function requestRender() {
+          if (frameRequest === null && !document.hidden) frameRequest = requestAnimationFrame(frame);
+        }
+        function frame(now) {
+          frameRequest = null;
+          if (document.hidden) return;
+          const frozen = motionPaused || motionPreference.matches;
+          const dt = frozen ? 0 : Math.min(0.05, (now - prev) / 1000);
           prev = now;
-          if (playing) {
+          if (playing && !frozen) {
             let nt = t + dt;
             if (nt >= DUR) {
               nt = DUR;
@@ -35515,16 +35532,35 @@
             }
             applyTime(nt);
           }
-          stepTheme(dt);
-          stepWeather(dt);
-          stepWeatherAudio();
-          stepSplash(dt, wxRain);
-          grassUni.uTime.value = now * 0.001;
-          placeCamera(1 - Math.pow(0.0012, dt));
+          if (!frozen) {
+            stepTheme(dt);
+            stepWeather(dt);
+            stepWeatherAudio();
+            stepSplash(dt, wxRain);
+            grassUni.uTime.value = now * 0.001;
+          }
+          placeCamera(frozen ? 1 : 1 - Math.pow(0.0012, dt));
           placePlaque();
           renderer.render(scene, camera);
-          requestAnimationFrame(frame);
-        })(performance.now());
+          if (!frozen) requestRender();
+        }
+        if (motionPreference.matches) { playing = false; applyTime(DUR); }
+        ['pointermove', 'pointerdown', 'pointerup', 'wheel', 'keydown', 'click', 'resize'].forEach(type => window.addEventListener(type, requestRender, { passive: true }));
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden && frameRequest !== null) { cancelAnimationFrame(frameRequest); frameRequest = null; }
+          else { prev = performance.now(); requestRender(); }
+        });
+        motionPreference.addEventListener('change', () => {
+          motionPaused = motionPreference.matches;
+          if (motionPaused) { playing = false; applyTime(DUR); }
+          requestRender();
+        });
+        window.addEventListener('message', event => {
+          if (event.source !== parent || event.data?.type !== 'hongo-viewer-motion') return;
+          motionPaused = event.data.paused === true;
+          requestRender();
+        });
+        requestRender();
 
         window.__seek = (v) => {
           lastStage = -1;
@@ -35598,7 +35634,13 @@
         window.__scene = scene;
         window.__camera = camera;
         window.__renderer = renderer;
+        if (window.parent !== window) window.parent.postMessage({ type: 'hongo-viewer-ready' }, '*');
       })();
+      });
+      towerAssets.addEventListener('error', () => {
+        if (window.parent !== window) window.parent.postMessage({ type: 'hongo-viewer-error' }, '*');
+      });
+      document.body.append(towerAssets);
     </script>
   </body>
 </html>

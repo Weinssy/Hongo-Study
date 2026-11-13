@@ -1,15 +1,121 @@
+import { storage } from './storage.js';
+import { annotateJapanese } from './language.js';
+import { exportProgress, getProgress, getWrongAnswers, recordVisit } from './progress.js';
+
 (() => {
-  const menuButton = document.querySelector('#menuButton'); const nav = document.querySelector('#mainNav');
-  const themeToggle = document.querySelector('#themeToggle') || (() => { if (!menuButton) return null; const button = document.createElement('button'); button.id = 'themeToggle'; button.type = 'button'; button.className = 'rounded-lg border border-slate-200 px-3 py-2 text-sm font-bold'; button.setAttribute('aria-label', 'Ubah tema'); menuButton.parentElement.insertBefore(button, menuButton); return button; })();
-  const applyTheme = dark => { document.documentElement.classList.toggle('dark-mode', dark); if (themeToggle) { themeToggle.setAttribute('aria-pressed', String(dark)); themeToggle.textContent = dark ? '☀ Terang' : '☾ Gelap'; } };
-  applyTheme(localStorage.getItem('nihongo-theme') === 'dark');
-  themeToggle?.addEventListener('click', () => { const dark = !document.documentElement.classList.contains('dark-mode'); applyTheme(dark); localStorage.setItem('nihongo-theme', dark ? 'dark' : 'light'); });
-  if (menuButton) menuButton.addEventListener('click', () => { const closed = nav.classList.toggle('hidden'); menuButton.setAttribute('aria-expanded', String(!closed)); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav && !nav.classList.contains('hidden')) { nav.classList.add('hidden'); menuButton?.setAttribute('aria-expanded', 'false'); menuButton?.focus(); } });
-  const navList = nav?.querySelector('ul');
-  document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', () => { nav?.classList.add('hidden'); menuButton?.setAttribute('aria-expanded','false'); }));
+  const menuButton = document.querySelector('#menuButton');
+  const nav = document.querySelector('#mainNav');
+  const themeToggle = document.querySelector('#themeToggle');
+  const systemTheme = matchMedia('(prefers-color-scheme: dark)');
+  const applyTheme = dark => {
+    document.documentElement.classList.toggle('dark-mode', dark);
+    themeToggle?.setAttribute('aria-pressed', String(dark));
+  };
+  const savedTheme = storage.get('nihongo-theme');
+  applyTheme(savedTheme ? savedTheme === 'dark' : systemTheme.matches);
+  systemTheme.addEventListener('change', event => {
+    if (!storage.get('nihongo-theme')) applyTheme(event.matches);
+  });
+  themeToggle?.addEventListener('click', () => {
+    const dark = !document.documentElement.classList.contains('dark-mode');
+    applyTheme(dark);
+    storage.set('nihongo-theme', dark ? 'dark' : 'light');
+  });
+  const closeMenu = () => {
+    nav?.classList.add('hidden');
+    menuButton?.setAttribute('aria-expanded', 'false');
+  };
+  menuButton?.addEventListener('click', () => {
+    const closed = nav.classList.toggle('hidden');
+    menuButton.setAttribute('aria-expanded', String(!closed));
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && menuButton?.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+      menuButton.focus();
+    }
+  });
+  document.addEventListener('click', event => {
+    if (!event.target.closest('header')) closeMenu();
+  });
+  document.querySelectorAll('.nav-link').forEach(link => {
+    if (new URL(link.href).pathname.replace(/index\.html$/, '') === location.pathname.replace(/index\.html$/, '') && !link.hash) link.setAttribute('aria-current', 'page');
+    link.addEventListener('click', closeMenu);
+  });
+
+  const storageStatus = document.querySelector('#storageStatus');
+  const showStorageStatus = () => { if (storageStatus) storageStatus.hidden = storage.available; };
+  window.addEventListener('study-storage-unavailable', showStorageStatus);
+
   const toggle = document.querySelector('#furiganaToggle');
-  if (toggle) toggle.addEventListener('click', () => { const off = document.body.classList.toggle('furigana-off'); toggle.setAttribute('aria-checked', String(!off)); document.querySelector('#furiganaState').textContent = off ? 'OFF' : 'ON'; document.querySelector('#furiganaDot').classList.toggle('bg-crimson', !off); document.querySelector('#furiganaDot').classList.toggle('bg-slate-400', off); });
+  const applyFurigana = enabled => {
+    document.body.classList.toggle('furigana-off', !enabled);
+    toggle?.setAttribute('aria-checked', String(enabled));
+    toggle?.setAttribute('aria-label', 'Furigana');
+    document.querySelectorAll('rt').forEach(rt => rt.setAttribute('aria-hidden', String(!enabled)));
+    if (toggle) {
+      document.querySelector('#furiganaState').textContent = enabled ? 'ON' : 'OFF';
+      document.querySelector('#furiganaDot').classList.toggle('bg-crimson', enabled);
+      document.querySelector('#furiganaDot').classList.toggle('bg-slate-400', !enabled);
+    }
+  };
+  applyFurigana(storage.get('hongo-furigana', 'on') !== 'off');
+  toggle?.addEventListener('click', () => {
+    const enabled = document.body.classList.contains('furigana-off');
+    applyFurigana(enabled);
+    storage.set('hongo-furigana', enabled ? 'on' : 'off');
+  });
+
+  document.querySelectorAll('table').forEach((table, index) => {
+    table.querySelectorAll('thead th').forEach(th => { th.scope = 'col'; });
+    const heading = table.closest('section')?.querySelector('h2, h3');
+    if (!table.caption) {
+      const caption = table.createCaption();
+      caption.className = 'sr-only';
+      caption.textContent = `${heading?.textContent.trim() || 'Daftar kosakata'}, tabel ${index + 1}`;
+    }
+    table.caption.id ||= `table-caption-${index}`;
+    const wrapper = table.parentElement;
+    if (wrapper.classList.contains('overflow-x-auto')) {
+      wrapper.tabIndex = 0;
+      wrapper.setAttribute('role', 'region');
+      wrapper.setAttribute('aria-labelledby', table.caption.id);
+    }
+  });
+  annotateJapanese();
+  const materialCategory = location.pathname.match(/\/(grammar|kosakata)\/([^/]+)\.html$/);
+  if (materialCategory) recordVisit(materialCategory[1], materialCategory[2]);
+
+  const resumeLink = document.querySelector('#resumeStudy');
+  if (resumeLink) {
+    const progress = getProgress();
+    const due = getWrongAnswers().length;
+    const last = progress.last;
+    const destinations = { drill: 'tebak-huruf.html', quiz: 'kuis.html', grammar: 'kamus-grammar.html', kosakata: 'kosakata.html', conversation: 'percakapan.html' };
+    const vocabularyCategories = ['waktu', 'sekolah', 'mata-pelajaran', 'pekerjaan', 'orang', 'keluarga'];
+    const grammarCategories = ['struktur-kalimat', 'partikel-dasar', 'kata-kerja', 'kata-sifat', 'pertanyaan-negatif', 'kebutuhan-sehari-hari', 'keberadaan-lokasi', 'ungkapan-salam'];
+    if (last && Object.hasOwn(destinations, last.kind)) {
+      let href = destinations[last.kind];
+      if (last.kind === 'quiz' && [...vocabularyCategories, 'campuran'].includes(last.category)) href += `?kategori=${last.category}`;
+      if ((last.kind === 'grammar' && grammarCategories.includes(last.category)) || (last.kind === 'kosakata' && vocabularyCategories.includes(last.category))) href = `${last.kind}/${last.category}.html`;
+      resumeLink.href = href;
+      resumeLink.textContent = 'Lanjutkan belajar';
+    }
+    document.querySelector('#studyProgress').textContent = progress.answered
+      ? `${progress.correct} jawaban benar dari ${progress.answered} soal kuis. ${due} kosakata perlu diulang.`
+      : 'Mulai dengan 10 huruf Kana. Hasil latihan disimpan di browser ini.';
+    document.querySelector('#exportProgress').addEventListener('click', () => {
+      const url = URL.createObjectURL(new Blob([JSON.stringify(exportProgress(), null, 2)], { type: 'application/json' }));
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'hongo-study-progres.json';
+      document.body.append(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    });
+  }
+  showStorageStatus();
   const entries = [
     // 1. Struktur Kalimat & です
     { keys:'wa desu は です identitas kalimat struktur pola dasar predikat sopan', title:'~ wa ~ desu', meaning:'Menyatakan identitas, profesi, atau keadaan dengan sopan.', formula:'A は B です', example:'<ruby>私<rt>わたし</rt></ruby>は<ruby>高校生<rt>こうこうせい</rt></ruby>です。', translation:'Saya adalah siswa SMA.', category:'1. Struktur Kalimat & です', link:'grammar/struktur-kalimat.html' },
@@ -70,7 +176,7 @@
             ${entry.category ? `<span class="mt-2 inline-block rounded-md bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-600">${entry.category}</span>` : ''}
             <p class="mt-2 text-sm text-slate-600 leading-relaxed">${entry.meaning}</p>
             <div class="mt-3 rounded-lg bg-mist p-3">
-              <p class="font-display text-xl text-ink">${entry.example}</p>
+              <p lang="ja" class="font-display text-xl text-ink">${entry.example}</p>
               <p class="mt-1 text-xs text-slate-500">${entry.translation}</p>
             </div>
           </div>
@@ -78,7 +184,17 @@
         </article>
       `).join('') : '<p class="col-span-full rounded-xl border border-slate-200 bg-white p-6 text-center text-sm text-slate-500">Pola tata bahasa tidak ditemukan. Coba kata kunci lain seperti <em>wa, desu, pergi, kata sifat, atau salam</em>.</p>';
     };
-    search.addEventListener('input', render);
-    render();
+    const count = document.querySelector('#grammarResultCount');
+    let announcement;
+    const update = () => {
+      render();
+      clearTimeout(announcement);
+      announcement = setTimeout(() => {
+        if (count) count.textContent = `${results.querySelectorAll('article').length} pola ditemukan.`;
+      }, 300);
+      applyFurigana(!document.body.classList.contains('furigana-off'));
+    };
+    search.addEventListener('input', update);
+    update();
   }
 })();

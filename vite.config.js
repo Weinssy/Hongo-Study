@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
 import { resolve } from 'path';
+import { vocabularyCount } from './js/quiz-data.js';
 
 export default defineConfig({
   base: './',
@@ -11,6 +12,7 @@ export default defineConfig({
         const isNested = pagePath.includes('/grammar/') || pagePath.includes('\\grammar\\') ||
                          pagePath.includes('/kosakata/') || pagePath.includes('\\kosakata\\');
         return {
+          vocabularyCount,
           isMenara: pagePath.includes('menara-jepang.html'),
           rootPath: isNested ? '../' : './'
         };

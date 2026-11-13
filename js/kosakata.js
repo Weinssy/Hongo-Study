@@ -1,3 +1,6 @@
+import { quizData, vocabularyCount } from './quiz-data.js';
+import { escapeHtml } from './study-core.js';
+
 (() => {
   const searchInput = document.querySelector('#vocabSearch');
   const resultsContainer = document.querySelector('#vocabResults');
@@ -17,7 +20,6 @@
 
   function initVocab() {
     if (allVocab.length > 0) return;
-    const quizData = window.HONGO_QUIZ_DATA || {};
     Object.keys(categoryMap).forEach(catKey => {
       const group = quizData[catKey];
       if (group && group.items) {
@@ -38,6 +40,7 @@
   }
 
   let currentCategory = 'all';
+  let announcement;
 
   const render = () => {
     initVocab();
@@ -49,11 +52,12 @@
       if (!matchCat) return false;
       if (!query) return true;
       const haystack = `${item.kanji} ${item.romaji} ${item.furigana} ${item.meaning}`.toLowerCase();
-      return haystack.includes(query);
+    return haystack.includes(query);
     });
 
     if (resultCount) {
-      resultCount.textContent = `Menampilkan ${filtered.length} dari ${allVocab.length} kosakata`;
+      clearTimeout(announcement);
+      announcement = setTimeout(() => { resultCount.textContent = `Menampilkan ${filtered.length} dari ${allVocab.length} kosakata`; }, 300);
     }
 
     if (filtered.length === 0) {
@@ -70,13 +74,13 @@
         <div>
           <div class="flex items-center justify-between gap-2 border-b border-slate-100 pb-2">
             <span class="rounded-full bg-sakura/30 px-2.5 py-0.5 text-xs font-bold text-crimson">
-              ${item.categoryBadge} ${item.categoryName}
+              <span lang="ja">${item.categoryBadge}</span> ${item.categoryName}
             </span>
             <span class="text-xs font-semibold text-slate-400">${item.romaji}</span>
           </div>
           <div class="mt-3">
             <p class="font-display text-2xl font-bold text-ink">
-              <ruby>${item.kanji}<rt class="text-sm font-normal text-crimson">${item.furigana}</rt></ruby>
+              <ruby lang="ja">${escapeHtml(item.kanji)}<rt aria-hidden="${document.body.classList.contains('furigana-off')}" class="text-sm font-normal text-crimson">${escapeHtml(item.furigana)}</rt></ruby>
             </p>
             <p class="mt-1 text-sm font-semibold text-slate-700">${item.meaning}</p>
           </div>
@@ -100,6 +104,7 @@
         btn.classList.add('bg-crimson', 'text-white');
         btn.classList.remove('bg-white', 'text-slate-700');
         currentCategory = btn.getAttribute('data-category') || 'all';
+        filterButtons.forEach(button => button.setAttribute('aria-pressed', String(button === btn)));
         render();
       });
     });
@@ -109,7 +114,8 @@
     searchInput.addEventListener('input', render);
   }
 
-  document.addEventListener('DOMContentLoaded', render);
-  window.addEventListener('load', render);
+  const total = document.querySelector('#vocabularyTotal');
+  if (total) total.textContent = vocabularyCount;
+  filterButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.category === 'all')));
   render();
 })();

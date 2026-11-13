@@ -84,6 +84,12 @@ Bilingual typography pairing authentic Japanese character anatomy with clean Eur
 
 ## 7. Anti-Patterns (Banned AI Slop)
 
+### Accessibility implementation, November 2026
+
+Direction for the current implementation: ENERGY 2 / RHYTHM 2 / MOTION 2. Japanese typography and torii red remain the identity; the next learning action is the focal point. Torii red `#D33827` is the filled-action color. Small accent text uses `#B52D20` in light mode and `#FF9A8D` in dark mode. Muted text uses `#526176` / `#B5C0D0`. Semantic surface, success, error, and focus tokens live in `css/style.css`.
+
+Card movement is enabled only with no reduced-motion preference. Color feedback remains available in reduced motion. Borders distinguish control boundaries, and text labels communicate correctness. The 3D viewer is optional and starts only after an explicit action.
+
 1. **No Emojis** as UI iconography — use authentic Japanese kanji glyphs (e.g. `問` for quiz, `単` for vocab, `文` for grammar) or clean SVG icons.
 2. **No Generic Blue/Purple Gradients** — stick strictly to the calibrated Washi & Torii Red palette.
 3. **No 3-Column Identical Feature Grids** — break uniformity with visual hierarchy.

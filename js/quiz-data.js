@@ -1,5 +1,5 @@
 // Bank data kosakata terstruktur untuk Kuis Hongo Study
-window.HONGO_QUIZ_DATA = {
+export const quizData = {
   waktu: {
     title: "Kosa Kata Waktu",
     badge: "時間",
@@ -41,7 +41,7 @@ window.HONGO_QUIZ_DATA = {
       { q: "火曜日", r: "ka-youbi", f: "かようび", a: "Selasa" },
       { q: "水曜日", r: "sui-youbi", f: "すいようび", a: "Rabu" },
       { q: "木曜日", r: "moku-youbi", f: "もくようび", a: "Kamis" },
-      { q: "金曜日", r: "kin-youbi", f: "きにょうび", a: "Jumat" },
+      { q: "金曜日", r: "kin-youbi", f: "きんようび", a: "Jumat" },
       { q: "土曜日", r: "do-youbi", f: "どようび", a: "Sabtu" },
       { q: "日曜日", r: "nichi-youbi", f: "にちようび", a: "Minggu" },
       { q: "4月", r: "shi-gatsu", f: "しがつ", a: "April" },
@@ -78,7 +78,7 @@ window.HONGO_QUIZ_DATA = {
       { q: "椅子", r: "isu", f: "いす", a: "Kursi / Bangku" },
       { q: "黒板", r: "kokuban", f: "こくばん", a: "Papan Tulis Hitam" },
       { q: "教科書", r: "kyookasho", f: "きょうかしょ", a: "Buku Pelajaran" },
-      { q: "ノート", r: "nooto", f: "のうと", a: "Buku Tulis / Catatan" },
+      { q: "ノート", r: "nooto", f: "ノート", a: "Buku Tulis / Catatan" },
       { q: "えんぴつ", r: "enpitsu", f: "えんぴつ", a: "Pensil" },
       { q: "消しゴム", r: "keshigomu", f: "けしごむ", a: "Penghapus" },
       { q: "定規", r: "joogi", f: "じょうぎ", a: "Penggaris" },
@@ -247,3 +247,12 @@ window.HONGO_QUIZ_DATA = {
     ],
   },
 };
+
+for (const [category, group] of Object.entries(quizData)) {
+  group.items.forEach(item => { item.id = `${category}:${item.q}`; });
+}
+
+export const vocabularyCount = Object.values(quizData).reduce((total, group) => total + group.items.length, 0);
+
+// Keep the existing public data contract for the embedded catalogue consumers.
+if (typeof window !== 'undefined') window.HONGO_QUIZ_DATA = quizData;

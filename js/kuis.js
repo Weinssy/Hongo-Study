@@ -1,6 +1,8 @@
+import { quizData } from './quiz-data.js';
+import { escapeHtml, isCorrectChoice, shuffle } from './study-core.js';
+import { getWrongAnswers, recordAnswer, recordVisit } from './progress.js';
+
 (() => {
-  const quizData = window.HONGO_QUIZ_DATA;
-  if (!quizData) return;
 
   // DOM Elements
   const categorySelector = document.querySelector("#categorySelector");
@@ -55,29 +57,6 @@
     campuran: { url: "kosakata.html", label: "Semua Materi Kosakata" },
   };
 
-  // Helper: Shuffle array
-  function shuffle(arr) {
-    const copy = [...arr];
-    for (let i = copy.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [copy[i], copy[j]] = [copy[j], copy[i]];
-    }
-    return copy;
-  }
-
-  // LocalStorage Helper for Wrong Answers
-  function getWrongAnswers() {
-    try {
-      return JSON.parse(localStorage.getItem("hongo_wrong_answers")) || [];
-    } catch {
-      return [];
-    }
-  }
-
-  function saveWrongAnswers(wrongList) {
-    localStorage.setItem("hongo_wrong_answers", JSON.stringify(wrongList));
-  }
-
   // Prepare questions for category
   function prepareQuestions(catKey) {
     let pool = [];
@@ -119,6 +98,7 @@
       const allChoices = shuffle([item.a, ...distractors]);
 
       return {
+        id: item.id,
         question: item.q,
         romaji: item.r,
         furigana: item.f,
@@ -129,28 +109,30 @@
   }
 
   // Render question at currentIndex
-  function renderQuestion() {
+  function renderQuestion(moveFocus = false) {
     answered = false;
-    feedbackBox.classList.add("hidden");
+    feedbackBox.replaceChildren();
+    feedbackBox.className = 'mt-4';
     nextButton.classList.add("hidden");
 
     const total = questions.length;
     const current = questions[currentIndex];
+    questionJapanese.lang = 'ja';
 
     // Update Progress & Badges
     questionNumber.textContent = `Soal ${currentIndex + 1} dari ${total}`;
-    const percent = (currentIndex / total) * 100;
-    progressBar.style.width = `${percent}%`;
+    progressBar.max = total;
+    progressBar.value = currentIndex;
 
     const catBadge =
       currentCategory === "campuran"
-        ? "Mode Campuran 🔀"
+        ? "Mode Campuran"
         : `${quizData[currentCategory]?.badge || ""} ${quizData[currentCategory]?.title || ""}`;
     quizCategoryBadge.textContent = catBadge;
 
     // Question content
     if (current.furigana) {
-      questionJapanese.innerHTML = `<ruby>${current.question}<rt class="text-3xl md:text-4xl text-crimson mb-1 font-normal tracking-normal">${current.furigana}</rt></ruby>`;
+      questionJapanese.innerHTML = `<ruby lang="ja">${escapeHtml(current.question)}<rt aria-hidden="${document.body.classList.contains('furigana-off')}">${escapeHtml(current.furigana)}</rt></ruby>`;
     } else {
       questionJapanese.textContent = current.question;
     }
@@ -161,19 +143,21 @@
     current.choices.forEach((choice, idx) => {
       const btn = document.createElement("button");
       btn.type = "button";
+      btn.dataset.choice = choice;
       btn.className =
         "choice-btn text-left p-4 rounded-xl border-2 border-slate-200 bg-white font-bold text-ink transition hover:border-crimson hover:bg-slate-50 focus:outline-none flex items-center justify-between gap-3";
       btn.innerHTML = `
         <span class="flex items-center gap-3">
           <span class="grid h-7 w-7 flex-shrink-0 place-items-center rounded-lg bg-slate-100 text-xs font-bold text-slate-500">${String.fromCharCode(65 + idx)}</span>
-          <span class="text-sm md:text-base">${choice}</span>
+          <span class="text-sm md:text-base">${escapeHtml(choice)}</span>
         </span>
-        <span class="choice-icon text-lg"></span>
+        <span class="choice-icon text-lg" aria-hidden="true"></span>
       `;
 
       btn.addEventListener("click", () => handleChoice(choice, btn));
       optionsGrid.appendChild(btn);
     });
+    if (moveFocus) questionJapanese.focus();
   }
 
   // Handle user answer
@@ -182,7 +166,8 @@
     answered = true;
 
     const current = questions[currentIndex];
-    const isCorrect = selectedChoice === current.answer;
+    const isCorrect = isCorrectChoice(selectedChoice, current.answer);
+    recordAnswer(current.question, isCorrect, currentCategory);
 
     // Save answer history
     userAnswers.push({
@@ -196,7 +181,7 @@
 
     allButtons.forEach((btn) => {
       btn.disabled = true;
-      btn.classList.add("cursor-default");
+      btn.classList.add("cursor-not-allowed");
     });
 
     if (isCorrect) {
@@ -206,44 +191,30 @@
         "bg-white",
         "hover:border-crimson",
       );
-      selectedBtn.classList.add(
-        "border-emerald-500",
-        "bg-emerald-50",
-        "text-emerald-900",
-      );
+      selectedBtn.classList.add('answer-correct');
       selectedBtn.querySelector(".choice-icon").textContent = "✓";
-      feedbackBox.className =
-        "mt-4 p-3 rounded-xl bg-emerald-100 text-emerald-800 text-sm font-bold flex items-center gap-2";
-      feedbackBox.innerHTML = `<span>✓ Benar sekali!</span>`;
+      feedbackBox.className = 'mt-4 feedback feedback-correct';
+      feedbackBox.textContent = 'Benar. Jawabanmu tepat.';
     } else {
       selectedBtn.classList.remove(
         "border-slate-200",
         "bg-white",
         "hover:border-crimson",
       );
-      selectedBtn.classList.add(
-        "border-rose-500",
-        "bg-rose-50",
-        "text-rose-900",
-      );
+      selectedBtn.classList.add('answer-incorrect');
       selectedBtn.querySelector(".choice-icon").textContent = "✕";
 
       // Highlight the correct answer
       allButtons.forEach((btn) => {
-        if (btn.textContent.includes(current.answer)) {
+        if (isCorrectChoice(btn.dataset.choice, current.answer)) {
           btn.classList.remove("border-slate-200");
-          btn.classList.add(
-            "border-emerald-500",
-            "bg-emerald-50",
-            "text-emerald-900",
-          );
+          btn.classList.add('answer-correct');
           btn.querySelector(".choice-icon").textContent = "✓";
         }
       });
 
-      feedbackBox.className =
-        "mt-4 p-3 rounded-xl bg-rose-100 text-rose-800 text-sm font-bold flex items-center gap-2";
-      feedbackBox.innerHTML = `<span>✕ Kurang tepat. Jawaban yang benar adalah: <u>${current.answer}</u></span>`;
+      feedbackBox.className = 'mt-4 feedback feedback-incorrect';
+      feedbackBox.textContent = `Belum tepat. Jawaban yang benar: ${current.answer}.`;
     }
 
     feedbackBox.classList.remove("hidden");
@@ -251,7 +222,7 @@
     nextButton.textContent =
       currentIndex + 1 < questions.length
         ? "Soal Berikutnya →"
-        : "Lihat Hasil Kuis ✨";
+        : "Lihat Hasil Kuis";
     nextButton.focus();
   }
 
@@ -259,7 +230,8 @@
   function showSummary() {
     quizCard.classList.add("hidden");
     quizSummary.classList.remove("hidden");
-    progressBar.style.width = "100%";
+    progressBar.value = questions.length;
+    document.querySelector('#summaryHeading').focus();
 
     const total = questions.length;
     finalScoreText.textContent = `${score} / ${total}`;
@@ -269,38 +241,29 @@
     let msg = "";
     if (percent === 100) {
       msg =
-        "🎉 Luar Biasa! (完璧 - Kanpeki!) Kamu berhasil menjawab seluruh soal dengan benar!";
+        "Seluruh jawabanmu benar. Coba kategori lain untuk melanjutkan latihan.";
     } else if (percent >= 70) {
       msg =
-        "👏 Hebat! (よくできました - Yoku dekimashita!) Pemahamanmu terhadap materi ini sudah sangat kuat!";
+        "Sebagian besar jawabanmu benar. Tinjau kembali kosakata yang masih keliru.";
     } else if (percent >= 50) {
       msg =
-        "👍 Bagus! (がんばりました - Gambarimashita!) Kamu sudah cukup paham, ulangi lagi agar semakin mahir!";
+        "Kamu sudah mengenali sebagian kosakata. Baca rekap lalu coba kembali.";
     } else {
       msg =
-        "💪 Terus Semangat! (あきらめないで - Akiramenaide!) Buka kembali materi kosakata dan coba lagi ya!";
+        "Buka materi kosakata, pelajari beberapa kata, lalu ulangi latihan ini.";
     }
     finalFeedbackMessage.textContent = msg;
 
-    // Render Review List and handle Spaced Repetition (LocalStorage)
-    let wrongHistory = getWrongAnswers();
     if (quizReviewList) {
       quizReviewList.innerHTML = userAnswers
         .map((ans) => {
-          // Update spaced repetition storage
-          if (!ans.isCorrect && !wrongHistory.includes(ans.question)) {
-            wrongHistory.push(ans.question);
-          } else if (ans.isCorrect && wrongHistory.includes(ans.question)) {
-            wrongHistory = wrongHistory.filter((q) => q !== ans.question);
-          }
-
           return `
-          <div class="rounded-xl border ${ans.isCorrect ? "border-emerald-200 bg-emerald-50" : "border-rose-200 bg-rose-50"} p-4 flex gap-4 items-start">
+          <div class="rounded-xl border ${ans.isCorrect ? 'answer-correct' : 'answer-incorrect'} p-4 flex gap-4 items-start">
             <div class="mt-1 flex-shrink-0 grid h-6 w-6 place-items-center rounded-full ${ans.isCorrect ? "bg-emerald-200 text-emerald-800" : "bg-rose-200 text-rose-800"} font-bold text-xs">
               ${ans.isCorrect ? "✓" : "✕"}
             </div>
             <div>
-              <p class="font-bold text-ink">${ans.question} <span class="text-xs text-slate-500 font-normal">(${ans.romaji})</span></p>
+              <p class="font-bold"><span lang="ja">${escapeHtml(ans.question)}</span> <span class="text-xs font-normal">(${escapeHtml(ans.romaji)})</span></p>
               ${
                 !ans.isCorrect
                   ? `<p class="text-sm text-rose-700 mt-1">Jawabanmu: <span class="line-through">${ans.userAnswer}</span></p>
@@ -312,7 +275,6 @@
         `;
         })
         .join("");
-      saveWrongAnswers(wrongHistory);
     }
 
     // Setup back to material button
@@ -322,17 +284,19 @@
   }
 
   // Start / Restart Quiz
-  function startQuiz(catKey) {
+  function startQuiz(catKey, moveFocus = false) {
     currentCategory = catKey;
     questions = prepareQuestions(catKey);
     currentIndex = 0;
     score = 0;
     userAnswers = [];
+    recordVisit('quiz', catKey);
 
     // Update active tab button
     if (categorySelector) {
       categorySelector.querySelectorAll("[data-category]").forEach((btn) => {
         const isCurrent = btn.dataset.category === catKey;
+        btn.setAttribute('aria-pressed', String(isCurrent));
         btn.classList.toggle("bg-crimson", isCurrent);
         btn.classList.toggle("text-white", isCurrent);
         btn.classList.toggle("bg-white", !isCurrent);
@@ -344,28 +308,36 @@
     quizCard.classList.remove("hidden");
 
     if (questions.length === 0) {
+      nextButton.classList.add('hidden');
+      feedbackBox.replaceChildren();
+      progressBar.max = 1;
+      progressBar.value = 0;
+      questionNumber.textContent = 'Belum ada soal';
+      questionJapanese.lang = 'id';
       questionJapanese.textContent = "Data belum tersedia";
       questionRomaji.textContent = "";
       optionsGrid.innerHTML =
-        "<p class='text-sm text-slate-500'>Soal untuk kategori ini belum tersedia.</p>";
+        "<p class='text-sm text-slate-500'>Soal untuk kategori ini belum tersedia. Pilih kategori lain untuk melanjutkan latihan.</p>";
+      if (moveFocus) questionJapanese.focus();
       return;
     }
 
-    renderQuestion();
+    renderQuestion(moveFocus);
   }
 
   // Event Listeners
   nextButton.addEventListener("click", () => {
+    if (!answered) return;
     if (currentIndex + 1 < questions.length) {
       currentIndex++;
-      renderQuestion();
+      renderQuestion(true);
     } else {
       showSummary();
     }
   });
 
   restartQuizBtn.addEventListener("click", () => {
-    startQuiz(currentCategory);
+    startQuiz(currentCategory, true);
   });
 
   if (categorySelector) {
@@ -378,7 +350,7 @@
       newUrl.searchParams.set("kategori", cat);
       window.history.replaceState({}, "", newUrl);
 
-      startQuiz(cat);
+      startQuiz(cat, true);
     });
   }
 

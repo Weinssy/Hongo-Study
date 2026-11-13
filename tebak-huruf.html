@@ -5,22 +5,46 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Tebak Huruf | Hongo Study</title>
     <link rel="icon" type="image/svg+xml" href="{{rootPath}}favicon.svg" />
+    {{> head }}
     <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="font-sans">
     {{> header }}
-    <main class="mx-auto max-w-6xl px-5 py-20">
+    <main id="main-content" tabindex="-1" class="mx-auto max-w-6xl px-5 py-20">
       <div class="mb-10">
         <p class="font-bold uppercase tracking-widest text-crimson">
           01 · Game latihan
         </p>
         <h1 class="mt-2 font-display text-5xl">Tebak huruf</h1>
         <p class="mt-4 max-w-xl leading-7 text-slate-500">
-          Tulis cara baca karakter yang muncul. Jawab sepuluh ronde dan lihat
-          skor terbaikmu.
+          Mulai dengan 10 huruf Kana, atau atur karakter dan panjang sesimu.
+          Setiap karakter muncul sekali dalam satu sesi. Skor terbaik disimpan di browser ini.
         </p>
       </div>
+      <section id="letterSetup" class="study-panel mb-8" aria-labelledby="setupHeading">
+        <h2 id="setupHeading" class="font-display text-2xl">Atur latihan</h2>
+        <div class="mt-4 flex flex-wrap gap-4">
+          <label class="flex flex-col gap-2 text-sm font-bold" for="letterPreset">Pilihan karakter
+            <select id="letterPreset" class="rounded-xl border px-3 py-2">
+              <option value="hiragana">10 Hiragana pertama</option><option value="katakana">10 Katakana pertama</option><option value="custom">Pilih sendiri</option>
+            </select>
+          </label>
+          <label class="flex flex-col gap-2 text-sm font-bold" for="letterRounds">Jumlah soal
+            <select id="letterRounds" class="rounded-xl border px-3 py-2"><option value="10">Maksimal 10</option><option value="20">Maksimal 20</option><option value="all">Semua pilihan</option></select>
+          </label>
+        </div>
+        <fieldset class="mt-5"><legend class="text-sm font-bold">Mode latihan</legend>
+          <div class="mt-2 flex flex-wrap gap-3">
+            <label class="option flex items-center gap-2"><input type="radio" name="letterMode" value="single" checked> Satu huruf</label>
+            <label class="option flex items-center gap-2"><input type="radio" name="letterMode" value="word"> Kata</label>
+          </div>
+        </fieldset>
+        <details class="mt-4"><summary class="py-3 font-bold">Lihat dan pilih karakter sendiri</summary><div id="letterMenus" class="space-y-4"></div></details>
+        <p class="mt-4 text-sm text-slate-600">Variasi shi/si, chi/ti, tsu/tu, fu/hu, serta vokal panjang ou/oo dan ei/ee diterima. Untuk kanji, gunakan bacaan yang ditampilkan pada daftar pilihan.</p>
+        <p id="selectionHint" role="status" class="mt-3 text-sm"></p>
+        <div class="mt-4 flex flex-wrap gap-3"><button id="startLetterGame" class="primary-button" type="button">Mulai latihan</button><button id="refreshLetterGame" class="secondary-button" type="button">Atur ulang</button></div>
+      </section>
       <div class="grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:items-center">
         <div>
           <div class="flex gap-3 text-sm">
@@ -33,42 +57,46 @@
           <p class="mt-6 text-slate-500">
             Karakter dapat berasal dari Hiragana, Katakana, atau Kanji dasar.
           </p>
+          <p id="letterBest" class="mt-3 text-sm text-slate-600"></p>
         </div>
         <div
           id="letterGame"
-          class="rounded-[2rem] bg-ink p-6 text-white shadow-xl md:p-10"
+          hidden class="study-panel"
         >
           <div
-            class="flex justify-between text-xs font-bold uppercase tracking-widest text-sakura"
+            class="flex flex-wrap justify-between gap-3 text-xs font-bold"
           >
             <span id="letterType">Hiragana</span
-            ><span id="letterFeedback" aria-live="polite">Siap?</span>
+            ><span id="letterFeedback" role="status" tabindex="-1" aria-live="polite">Siap?</span>
           </div>
           <div
             id="letterCharacter"
+            lang="ja"
             class="my-8 text-center font-display text-8xl"
           >
             あ
           </div>
+          <label for="letterInput" class="mb-2 block text-sm font-bold">Jawaban romaji</label>
           <form id="letterForm" class="flex gap-2">
             <input
               id="letterInput"
               required
               autocomplete="off"
-              aria-label="Jawaban romaji"
+              autocapitalize="none" spellcheck="false" inputmode="text"
               placeholder="Ketik romaji..."
               class="min-w-0 flex-1 rounded-xl px-4 py-3 text-ink outline-none focus:ring-2 focus:ring-sakura"
-            /><button class="rounded-xl bg-sakura px-5 py-3 font-bold text-ink">
-              Enter
+            /><button class="primary-button">
+              Periksa jawaban
             </button>
           </form>
           <button
             id="letterNext"
             type="button"
-            class="mt-3 hidden w-full rounded-xl border border-sakura px-4 py-3 font-bold text-sakura"
+            hidden class="primary-button mt-3 w-full"
           >
-            Lanjut →
+            Soal berikutnya
           </button>
+          <div class="mt-4 flex flex-wrap gap-3"><button id="backLetterGame" class="secondary-button" type="button">Pilih karakter lain</button><button id="refreshActiveLetterGame" class="secondary-button" type="button">Ulangi latihan</button></div>
         </div>
       </div>
     </main>

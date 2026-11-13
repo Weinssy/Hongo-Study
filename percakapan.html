@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Roleplay Percakapan | Hongo Study</title>
     <link rel="icon" type="image/svg+xml" href="{{rootPath}}favicon.svg" />
+    {{> head }}
     <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="font-sans">
     {{> header }}
-    <main class="mx-auto max-w-4xl px-5 py-20">
+    <main id="main-content" tabindex="-1" class="mx-auto max-w-4xl px-5 py-20">
       <div class="mb-10 text-center">
         <p class="font-bold uppercase tracking-widest text-crimson">
           02 · Roleplay chat
@@ -24,9 +25,11 @@
       <section
         class="mx-auto max-w-2xl rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
       >
-        <div
+        <h2 id="chatHistoryLabel" class="mb-3 text-sm font-bold">Riwayat percakapan</h2>
+        <p id="chatProgress" class="mb-3 text-sm text-slate-600"></p>
+        <div tabindex="0" role="region" aria-labelledby="chatHistoryLabel"
           id="chatLog"
-          class="min-h-40 space-y-3 rounded-xl bg-mist p-5"
+          class="chat-history"
         ></div>
         <div id="chatOptions" class="mt-5 grid gap-3"></div>
         <p
@@ -34,6 +37,8 @@
           class="mt-4 text-sm font-bold text-crimson"
           aria-live="polite"
         ></p>
+        <button id="chatNext" type="button" class="primary-button mt-4" hidden>Lanjutkan dialog</button>
+        <button id="chatRestart" type="button" class="primary-button mt-4" hidden>Ulangi percakapan</button>
       </section>
     </main>
     {{> footer }}

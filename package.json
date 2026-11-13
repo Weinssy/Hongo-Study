@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --test",
+    "check:links": "node scripts/check-links.mjs",
+    "check:budget": "node scripts/check-budget.mjs",
+    "check": "npm run test && npm run build && npm run check:links && npm run check:budget"
   },
   "repository": {
     "type": "git",
@@ -16,6 +20,7 @@
   "author": "",
   "license": "ISC",
   "type": "module",
+  "engines": { "node": "^20.19.0 || >=22.12.0" },
   "bugs": {
     "url": "https://github.com/Weinssy/Hongo-Study/issues"
   },

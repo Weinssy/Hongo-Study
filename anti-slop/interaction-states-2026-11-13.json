@@ -1,0 +1,244 @@
+[
+  {
+    "state": "quiz-summary",
+    "dark": "false",
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 49,
+        "incomplete": 1,
+        "passes": 40,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 18,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<strong class=\"block font-display text-lg tracking-tight text-ink transition-colors group-hover:text-crimson\">Hongo Study</strong>",
+              "target": [
+                ".block"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<small class=\"brand-tagline text-xs text-slate-500 font-medium\"><span lang=\"ja\">日本語スタディ</span> · Belajar sedikit setiap hari</small>",
+              "target": [
+                "small"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">日本語スタディ</span>",
+              "target": [
+                "small > span[lang=\"ja\"]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mb-2 font-bold uppercase tracking-widest text-crimson\">\n            Evaluasi Belajar\n          </p>",
+              "target": [
+                ".mb-2"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-3xl md:text-5xl\">\n            Kuis Materi Interaktif\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 text-slate-600\">\n            Pilih topik materi yang ingin diuji, lalu jawab 10 pertanyaan\n            pilihan ganda.\n          </p>",
+              "target": [
+                ".mt-3.text-slate-600"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span id=\"questionNumber\">Soal 10 dari 10</span>",
+              "target": [
+                "#questionNumber"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span id=\"quizCategoryBadge\" class=\"text-crimson\">時間 Kosa Kata Waktu</span>",
+              "target": [
+                "#quizCategoryBadge"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<div class=\"mt-1 flex-shrink-0 grid h-6 w-6 place-items-center rounded-full bg-rose-200 text-rose-800 font-bold text-xs\">\n              ✕\n            </div>",
+              "target": [
+                ".items-start.answer-incorrect.gap-4:nth-child(1) > .h-6.w-6.bg-rose-200"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<div class=\"mt-1 flex-shrink-0 grid h-6 w-6 place-items-center rounded-full bg-rose-200 text-rose-800 font-bold text-xs\">\n              ✕\n            </div>",
+              "target": [
+                ".items-start.answer-incorrect.gap-4:nth-child(2) > .h-6.w-6.bg-rose-200"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kuis.html",
+      "violations": []
+    }
+  },
+  {
+    "state": "quiz-summary",
+    "dark": "true",
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 49,
+        "incomplete": 1,
+        "passes": 40,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 18,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<strong class=\"block font-display text-lg tracking-tight text-ink transition-colors group-hover:text-crimson\">Hongo Study</strong>",
+              "target": [
+                ".block"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<small class=\"brand-tagline text-xs text-slate-500 font-medium\"><span lang=\"ja\">日本語スタディ</span> · Belajar sedikit setiap hari</small>",
+              "target": [
+                "small"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">日本語スタディ</span>",
+              "target": [
+                "small > span[lang=\"ja\"]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mb-2 font-bold uppercase tracking-widest text-crimson\">\n            Evaluasi Belajar\n          </p>",
+              "target": [
+                ".mb-2"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-3xl md:text-5xl\">\n            Kuis Materi Interaktif\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 text-slate-600\">\n            Pilih topik materi yang ingin diuji, lalu jawab 10 pertanyaan\n            pilihan ganda.\n          </p>",
+              "target": [
+                ".mt-3.text-slate-600"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span id=\"questionNumber\">Soal 10 dari 10</span>",
+              "target": [
+                "#questionNumber"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span id=\"quizCategoryBadge\" class=\"text-crimson\">時間 Kosa Kata Waktu</span>",
+              "target": [
+                "#quizCategoryBadge"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<div class=\"mt-1 flex-shrink-0 grid h-6 w-6 place-items-center rounded-full bg-rose-200 text-rose-800 font-bold text-xs\">\n              ✕\n            </div>",
+              "target": [
+                ".items-start.answer-incorrect.gap-4:nth-child(1) > .h-6.w-6.bg-rose-200"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<div class=\"mt-1 flex-shrink-0 grid h-6 w-6 place-items-center rounded-full bg-rose-200 text-rose-800 font-bold text-xs\">\n              ✕\n            </div>",
+              "target": [
+                ".items-start.answer-incorrect.gap-4:nth-child(2) > .h-6.w-6.bg-rose-200"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kuis.html",
+      "violations": []
+    }
+  }
+]

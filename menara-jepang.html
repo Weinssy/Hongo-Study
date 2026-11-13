@@ -6,17 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Menara 3D | Hongo Study</title>
   <link rel="icon" type="image/svg+xml" href="{{rootPath}}favicon.svg" />
+  {{> head }}
   <link rel="stylesheet" href="css/tailwind.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body class="font-sans">
   {{> header }}
-  <main class="tower-page">
-    <iframe class="tower-page__frame" title="Japanese tenshu in a procedural landscape"
-      src="japanese-tower.html?country=japan" sandbox="allow-scripts" loading="lazy"></iframe>
+  <main id="main-content" tabindex="-1" class="tower-page">
+    <section class="tower-intro" aria-labelledby="towerHeading">
+      <h1 id="towerHeading" class="font-display text-3xl">Menara Jepang</h1>
+      <p class="mt-3 text-slate-600">Kenali kosakata bangunan sambil melihat model menara. Model 3D dimuat setelah kamu membukanya dan memerlukan WebGL.</p>
+      <dl class="mt-5 flex flex-wrap gap-4 text-sm">
+        <div><dt lang="ja" class="font-bold">城（しろ）</dt><dd>Kastel</dd></div>
+        <div><dt lang="ja" class="font-bold">塔（とう）</dt><dd>Menara</dd></div>
+        <div><dt lang="ja" class="font-bold">屋根（やね）</dt><dd>Atap</dd></div>
+        <div><dt lang="ja" class="font-bold">石（いし）</dt><dd>Batu</dd></div>
+      </dl>
+      <div class="tower-controls">
+        <button id="loadTower" type="button" class="primary-button" aria-controls="towerFrame" aria-expanded="false">Buka model 3D</button>
+        <button id="pauseTower" type="button" class="secondary-button" aria-pressed="false" hidden>Jeda gerakan</button>
+        <button id="closeTower" type="button" class="secondary-button" hidden>Tutup model</button>
+      </div>
+      <p id="towerStatus" role="status" class="mb-4 text-sm text-slate-600">Kosakata tetap dapat dipelajari tanpa membuka model.</p>
+      <progress id="towerLoading" aria-label="Memuat model menara" hidden></progress>
+      <iframe id="towerFrame" class="tower-page__frame" title="Model interaktif menara Jepang" width="1280" height="850" sandbox="allow-scripts" hidden></iframe>
+      <p class="mt-3 text-sm text-slate-600">Di dalam model: seret untuk memutar, gunakan roda gulir untuk zoom, dan tombol C untuk mengembalikan kamera. Tombol Space mengatur timeline konstruksi. Tombol jeda di atas menghentikan seluruh gerakan.</p>
+    </section>
   </main>
+  {{> footer }}
   <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/visual-lab.js"></script>
 </body>
 
 </html>

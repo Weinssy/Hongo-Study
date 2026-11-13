@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Kamus & Indeks Grammar | Hongo Study</title>
     <link rel="icon" type="image/svg+xml" href="{{rootPath}}favicon.svg" />
+    {{> head }}
     <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="font-sans bg-mist">
     {{> header }}
 
-    <main class="wash min-h-screen">
+    <main id="main-content" tabindex="-1" class="wash min-h-screen">
       <div class="mx-auto max-w-6xl px-5 py-12 md:py-20">
         <!-- Hero Header -->
         <div class="mb-12 flex flex-wrap items-end justify-between gap-6 border-b border-slate-200/80 pb-8">
@@ -289,6 +290,7 @@
             />
           </label>
 
+          <p id="grammarResultCount" role="status" class="mt-4 text-sm text-slate-600"></p>
           <div id="grammarResults" class="mt-8 grid gap-4 md:grid-cols-2"></div>
         </section>
       </div>

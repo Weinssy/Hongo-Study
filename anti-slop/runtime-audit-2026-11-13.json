@@ -1,0 +1,3687 @@
+[
+  {
+    "route": "index.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "overflows": [],
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 59,
+        "incomplete": 1,
+        "passes": 30,
+        "violations": 1
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"font-kanji font-bold text-sm text-crimson\">初級 · 中級</span>",
+              "target": [
+                ".font-kanji.text-crimson.text-sm"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"text-xs font-semibold uppercase tracking-wider text-slate-500\">Silabus SMA · JLPT N5–N4</span>",
+              "target": [
+                ".tracking-wider.uppercase.text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-4xl leading-[1.15] md:text-6xl text-ink\">\n              こんにちは、<br>\n              <span class=\"text-crimson font-semibold\">calon pembelajar.</span>\n            </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"text-crimson font-semibold\">calon pembelajar.</span>",
+              "target": [
+                ".font-semibold.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-6 max-w-xl text-base leading-relaxed text-slate-600 md:text-lg\">\n              Ruang belajar bahasa Jepang yang terstruktur, fokus, dan ramah untuk siswa.\n              Kuasai aksara Kana, bangun kosakata tematik, pahami tata bahasa, dan latih refleks percakapan harian.\n            </p>",
+              "target": [
+                ".md\\:text-lg"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/index.html",
+      "violations": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 9,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #ffffff, background color: #dc6052, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded-full bg-white/20 px-3 py-1 font-mono text-xs font-semibold uppercase tracking-wider text-white\">\n                    Fokus Kanji Hari Ini\n                  </span>",
+              "target": [
+                ".bg-white\\/20"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.57 (foreground color: #f6d7d4, background color: #d33827, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"font-mono text-xs text-white/80\">JLPT N5</span>",
+              "target": [
+                ".text-white\\/80"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #fceeef, background color: #d33827, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"mt-1 font-mono text-sm text-sakura\">manabu · gaku</p>",
+              "target": [
+                ".text-sakura"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #d33827, background color: #fceeef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded-full bg-sakura px-3 py-1 text-xs font-bold text-crimson\">Aksara Hiragana &amp; Katakana</span>",
+              "target": [
+                ".md\\:col-span-7 > div:nth-child(1) > .justify-between.items-center.flex > .bg-sakura.rounded-full.px-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 18.0pt (24px), font weight: bold). Expected contrast ratio of 3:1",
+              "html": "<span class=\"font-kanji text-2xl font-bold text-slate-400 group-hover:text-crimson transition-colors\">会話</span>",
+              "target": [
+                "a[href$=\"percakapan.html\"] > div:nth-child(1) > .justify-between.items-center.flex > .text-slate-400.text-2xl.group-hover\\:text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 18.0pt (24px), font weight: bold). Expected contrast ratio of 3:1",
+              "html": "<span class=\"font-kanji text-2xl font-bold text-slate-400 group-hover:text-crimson transition-colors\">問題</span>",
+              "target": [
+                "a[href$=\"kuis.html\"] > div:nth-child(1) > .justify-between.items-center.flex > .text-slate-400.text-2xl.group-hover\\:text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #d33827, background color: #fceeef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded-full bg-sakura px-3 py-1 text-xs font-bold text-crimson\">Tata Bahasa &amp; Rumus</span>",
+              "target": [
+                ".md\\:col-span-6.p-7[href$=\"kamus-grammar.html\"] > div:nth-child(1) > .justify-between.items-center.flex > .bg-sakura.rounded-full.px-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 22.5pt (30px), font weight: bold). Expected contrast ratio of 3:1",
+              "html": "<span class=\"font-kanji text-3xl font-bold text-slate-400 group-hover:text-crimson transition-colors\">単語</span>",
+              "target": [
+                ".text-slate-400.text-3xl.group-hover\\:text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 15.0pt (20px), font weight: bold). Expected contrast ratio of 3:1",
+              "html": "<span class=\"font-kanji text-xl font-bold text-slate-400\">体 · 塔</span>",
+              "target": [
+                ".text-slate-400.text-xl.font-kanji"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "index.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "overflows": [],
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 59,
+        "incomplete": 1,
+        "passes": 30,
+        "violations": 1
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"font-kanji font-bold text-sm text-crimson\">初級 · 中級</span>",
+              "target": [
+                ".font-kanji.text-crimson.text-sm"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"text-xs font-semibold uppercase tracking-wider text-slate-500\">Silabus SMA · JLPT N5–N4</span>",
+              "target": [
+                ".tracking-wider.uppercase.text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-4xl leading-[1.15] md:text-6xl text-ink\">\n              こんにちは、<br>\n              <span class=\"text-crimson font-semibold\">calon pembelajar.</span>\n            </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"text-crimson font-semibold\">calon pembelajar.</span>",
+              "target": [
+                ".font-semibold.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-6 max-w-xl text-base leading-relaxed text-slate-600 md:text-lg\">\n              Ruang belajar bahasa Jepang yang terstruktur, fokus, dan ramah untuk siswa.\n              Kuasai aksara Kana, bangun kosakata tematik, pahami tata bahasa, dan latih refleks percakapan harian.\n            </p>",
+              "target": [
+                ".md\\:text-lg"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/index.html",
+      "violations": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 14,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #ffffff, background color: #dc6052, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded-full bg-white/20 px-3 py-1 font-mono text-xs font-semibold uppercase tracking-wider text-white\">\n                    Fokus Kanji Hari Ini\n                  </span>",
+              "target": [
+                ".bg-white\\/20"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.57 (foreground color: #f6d7d4, background color: #d33827, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"font-mono text-xs text-white/80\">JLPT N5</span>",
+              "target": [
+                ".text-white\\/80"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #fceeef, background color: #d33827, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"mt-1 font-mono text-sm text-sakura\">manabu · gaku</p>",
+              "target": [
+                ".text-sakura"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.13 (foreground color: #d33827, background color: #232630, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"font-mono text-xs font-bold uppercase tracking-widest text-crimson\">Modul Praktik 01</span>",
+              "target": [
+                "#latihan > .mb-10.items-end.pb-6 > div > .tracking-widest.uppercase.font-mono"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #d33827, background color: #fceeef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded-full bg-sakura px-3 py-1 text-xs font-bold text-crimson\">Aksara Hiragana &amp; Katakana</span>",
+              "target": [
+                ".md\\:col-span-7 > div:nth-child(1) > .justify-between.items-center.flex > .bg-sakura.rounded-full.px-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"inline-flex items-center text-sm font-bold text-crimson group-hover:translate-x-0.5 transition-transform\">\n                Mulai Drill\n              </span>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold text-crimson group-hover:translate-x-0.5 transition-transform\">\n                  Buka Percakapan\n                </span>",
+              "target": [
+                "a[href$=\"percakapan.html\"] > .pt-3.justify-end.border-slate-100 > .group-hover\\:translate-x-0\\.5.transition-transform.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold text-crimson group-hover:translate-x-0.5 transition-transform\">\n                  Uji Pemahaman\n                </span>",
+              "target": [
+                "a[href$=\"kuis.html\"] > .pt-3.justify-end.border-slate-100 > .group-hover\\:translate-x-0\\.5.transition-transform.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.13 (foreground color: #d33827, background color: #232630, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"font-mono text-xs font-bold uppercase tracking-widest text-crimson\">Modul Referensi 02</span>",
+              "target": [
+                "#materi > .mb-10.items-end.pb-6 > div > .tracking-widest.uppercase.font-mono"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #d33827, background color: #fceeef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded-full bg-sakura px-3 py-1 text-xs font-bold text-crimson\">Tata Bahasa &amp; Rumus</span>",
+              "target": [
+                ".md\\:col-span-6.p-7[href$=\"kamus-grammar.html\"] > div:nth-child(1) > .justify-between.items-center.flex > .bg-sakura.rounded-full.px-3"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "kuis.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "overflows": [],
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 59,
+        "incomplete": 1,
+        "passes": 30,
+        "violations": 1
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 10,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mb-2 font-bold uppercase tracking-widest text-crimson\">\n            Evaluasi Belajar\n          </p>",
+              "target": [
+                ".mb-2"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-3xl md:text-5xl\">\n            Kuis Materi Interaktif\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 text-slate-600\">\n            Pilih topik materi yang ingin diuji, lalu jawab 10 pertanyaan\n            pilihan ganda.\n          </p>",
+              "target": [
+                ".mt-3.text-slate-600"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has a 1:1 contrast ratio with the background",
+              "html": "<span class=\"font-kanji font-bold text-crimson mr-1\">時</span>",
+              "target": [
+                "button[data-category=\"waktu\"] > .mr-1.font-kanji.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span id=\"questionNumber\">Soal 1 dari 10</span>",
+              "target": [
+                "#questionNumber"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span id=\"quizCategoryBadge\" class=\"text-crimson\">時間 Kosa Kata Waktu</span>",
+              "target": [
+                "#quizCategoryBadge"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"grid h-7 w-7 flex-shrink-0 place-items-center rounded-lg bg-slate-100 text-xs font-bold text-slate-500\">A</span>",
+              "target": [
+                ".choice-btn.p-4.border-2:nth-child(1) > .gap-3.items-center.flex > .h-7.w-7.flex-shrink-0"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"grid h-7 w-7 flex-shrink-0 place-items-center rounded-lg bg-slate-100 text-xs font-bold text-slate-500\">B</span>",
+              "target": [
+                ".choice-btn.p-4.border-2:nth-child(2) > .gap-3.items-center.flex > .h-7.w-7.flex-shrink-0"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"grid h-7 w-7 flex-shrink-0 place-items-center rounded-lg bg-slate-100 text-xs font-bold text-slate-500\">C</span>",
+              "target": [
+                ".choice-btn.p-4.border-2:nth-child(3) > .gap-3.items-center.flex > .h-7.w-7.flex-shrink-0"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"grid h-7 w-7 flex-shrink-0 place-items-center rounded-lg bg-slate-100 text-xs font-bold text-slate-500\">D</span>",
+              "target": [
+                ".choice-btn.p-4.border-2:nth-child(4) > .gap-3.items-center.flex > .h-7.w-7.flex-shrink-0"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kuis.html",
+      "violations": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 1,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<p id=\"questionRomaji\" class=\"mt-3 text-lg font-bold text-slate-400\">kongetsu</p>",
+              "target": [
+                "#questionRomaji"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "kuis.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "overflows": [],
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 59,
+        "incomplete": 1,
+        "passes": 30,
+        "violations": 1
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 11,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mb-2 font-bold uppercase tracking-widest text-crimson\">\n            Evaluasi Belajar\n          </p>",
+              "target": [
+                ".mb-2"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-3xl md:text-5xl\">\n            Kuis Materi Interaktif\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 text-slate-600\">\n            Pilih topik materi yang ingin diuji, lalu jawab 10 pertanyaan\n            pilihan ganda.\n          </p>",
+              "target": [
+                ".mt-3.text-slate-600"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has a 1:1 contrast ratio with the background",
+              "html": "<span class=\"font-kanji font-bold text-crimson mr-1\">時</span>",
+              "target": [
+                "button[data-category=\"waktu\"] > .mr-1.font-kanji.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"font-kanji font-bold text-crimson mr-1\">校</span>",
+              "target": [
+                "button[data-category=\"sekolah\"] > .mr-1.font-kanji.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"font-kanji font-bold text-crimson mr-1\">科</span>",
+              "target": [
+                "button[data-category=\"mata-pelajaran\"] > .mr-1.font-kanji.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"font-kanji font-bold text-crimson mr-1\">職</span>",
+              "target": [
+                "button[data-category=\"pekerjaan\"] > .mr-1.font-kanji.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"font-kanji font-bold text-crimson mr-1\">人</span>",
+              "target": [
+                "button[data-category=\"orang\"] > .mr-1.font-kanji.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"font-kanji font-bold text-crimson mr-1\">全</span>",
+              "target": [
+                "button[data-category=\"campuran\"] > .mr-1.font-kanji.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span id=\"questionNumber\">Soal 1 dari 10</span>",
+              "target": [
+                "#questionNumber"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kuis.html",
+      "violations": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 3,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.38 (foreground color: #d33827, background color: #5e5b60, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"inline-block rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson mb-3\">Apa arti kosakata ini?</span>",
+              "target": [
+                ".inline-block"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"font-kanji font-bold text-crimson\">日本語</span>",
+              "target": [
+                ".gap-2.items-center.flex:nth-child(1) > .font-kanji.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"font-kanji text-base text-crimson\">がんばって！</span>",
+              "target": [
+                ".text-base.font-kanji.text-crimson"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "kosakata.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "overflows": [],
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 52,
+        "incomplete": 1,
+        "passes": 37,
+        "violations": 1
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 7,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"font-bold uppercase tracking-widest text-crimson\">\n              04 · Pusat Kosakata Terpadu\n            </p>",
+              "target": [
+                ".tracking-widest"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-2 font-display text-4xl leading-tight md:text-5xl\">\n              Kamus &amp; Kumpulan Kosakata\n            </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 max-w-2xl text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".max-w-2xl"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Modul Tematik</span>",
+              "target": [
+                ".mb-8 > div > .tracking-wider.uppercase"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h2 class=\"font-display text-2xl font-bold text-ink md:text-3xl\">Subbab Kosakata</h2>",
+              "target": [
+                ".mb-8 > div > h2"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"text-sm text-slate-500\">Pilih kategori untuk melihat tabel kosakata lengkap dan contoh penggunaannya.</p>",
+              "target": [
+                ".mb-8 > .text-slate-500.text-sm"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"font-display text-2xl text-slate-400\">人</span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(5) > div:nth-child(1) > .justify-between.items-center.flex > .text-2xl.text-slate-400.font-display"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata.html",
+      "violations": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 203,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"mt-1 text-[11px] text-slate-400\">Kanji, romaji, &amp; furigana</p>",
+              "target": [
+                ".text-\\[11px\\]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"mt-1 text-xs text-slate-400\">Waktu, sekolah, keluarga, dll.</p>",
+              "target": [
+                ".p-5.text-center.rounded-2xl:nth-child(2) > .mt-1.text-slate-400"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"mt-1 text-xs text-slate-400\">Standar SMA &amp; JLPT</p>",
+              "target": [
+                ".p-5.text-center.rounded-2xl:nth-child(3) > .mt-1.text-slate-400"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"mt-1 text-xs text-slate-400\">Tersedia di tiap modul</p>",
+              "target": [
+                ".p-5.text-center.rounded-2xl:nth-child(4) > .mt-1.text-slate-400"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+              "html": "<span class=\"font-display text-2xl text-slate-400\">時間</span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(1) > div:nth-child(1) > .justify-between.items-center.flex > .text-2xl.text-slate-400.font-display"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+              "html": "<span class=\"font-display text-2xl text-slate-400\">学校</span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(2) > div:nth-child(1) > .justify-between.items-center.flex > .text-2xl.text-slate-400.font-display"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+              "html": "<span class=\"font-display text-2xl text-slate-400\">教科</span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(3) > div:nth-child(1) > .justify-between.items-center.flex > .text-2xl.text-slate-400.font-display"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+              "html": "<span class=\"font-display text-2xl text-slate-400\">仕事</span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(4) > div:nth-child(1) > .justify-between.items-center.flex > .text-2xl.text-slate-400.font-display"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+              "html": "<span class=\"font-display text-2xl text-slate-400\">家族</span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(6) > div:nth-child(1) > .justify-between.items-center.flex > .text-2xl.text-slate-400.font-display"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-semibold text-slate-400\">kyou</span>",
+              "target": [
+                "article:nth-child(1) > div:nth-child(1) > .pb-2.gap-2.border-b > .text-slate-400.font-semibold"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "kosakata.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "overflows": [],
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 52,
+        "incomplete": 1,
+        "passes": 37,
+        "violations": 1
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 6,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"font-bold uppercase tracking-widest text-crimson\">\n              04 · Pusat Kosakata Terpadu\n            </p>",
+              "target": [
+                ".tracking-widest"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-2 font-display text-4xl leading-tight md:text-5xl\">\n              Kamus &amp; Kumpulan Kosakata\n            </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 max-w-2xl text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".max-w-2xl"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Modul Tematik</span>",
+              "target": [
+                ".mb-8 > div > .tracking-wider.uppercase"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h2 class=\"font-display text-2xl font-bold text-ink md:text-3xl\">Subbab Kosakata</h2>",
+              "target": [
+                ".mb-8 > div > h2"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"text-sm text-slate-500\">Pilih kategori untuk melihat tabel kosakata lengkap dan contoh penggunaannya.</p>",
+              "target": [
+                ".mb-8 > .text-slate-500.text-sm"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata.html",
+      "violations": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 403,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.38 (foreground color: #d33827, background color: #5e5b60, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson\">Subbab 01</span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(1) > div:nth-child(1) > .justify-between.items-center.flex > .py-1.px-3.bg-sakura\\/30"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"inline-flex items-center font-bold text-xs text-crimson group-hover:underline\">\n                  Buka Kosakata Waktu →\n                </span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(1) > .mt-6.pt-4.border-t > .group-hover\\:underline.inline-flex.items-center"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.38 (foreground color: #d33827, background color: #5e5b60, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson\">Subbab 02</span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(2) > div:nth-child(1) > .justify-between.items-center.flex > .py-1.px-3.bg-sakura\\/30"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"inline-flex items-center font-bold text-xs text-crimson group-hover:underline\">\n                  Buka Kosakata Sekolah →\n                </span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(2) > .mt-6.pt-4.border-t > .group-hover\\:underline.inline-flex.items-center"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.38 (foreground color: #d33827, background color: #5e5b60, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson\">Subbab 03</span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(3) > div:nth-child(1) > .justify-between.items-center.flex > .py-1.px-3.bg-sakura\\/30"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"inline-flex items-center font-bold text-xs text-crimson group-hover:underline\">\n                  Buka Kosakata Mapel →\n                </span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(3) > .mt-6.pt-4.border-t > .group-hover\\:underline.inline-flex.items-center"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.38 (foreground color: #d33827, background color: #5e5b60, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson\">Subbab 04</span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(4) > div:nth-child(1) > .justify-between.items-center.flex > .py-1.px-3.bg-sakura\\/30"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"inline-flex items-center font-bold text-xs text-crimson group-hover:underline\">\n                  Buka Kosakata Profesi →\n                </span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(4) > .mt-6.pt-4.border-t > .group-hover\\:underline.inline-flex.items-center"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.38 (foreground color: #d33827, background color: #5e5b60, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson\">Subbab 05</span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(5) > div:nth-child(1) > .justify-between.items-center.flex > .py-1.px-3.bg-sakura\\/30"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"inline-flex items-center font-bold text-xs text-crimson group-hover:underline\">\n                  Buka Kosakata Orang →\n                </span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(5) > .mt-6.pt-4.border-t > .group-hover\\:underline.inline-flex.items-center"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "kamus-grammar.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "overflows": [],
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 52,
+        "incomplete": 1,
+        "passes": 37,
+        "violations": 1
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 12,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"font-bold uppercase tracking-widest text-crimson\">\n              03 · Referensi &amp; Panduan Tata Bahasa\n            </p>",
+              "target": [
+                ".tracking-widest"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-2 font-display text-4xl leading-tight md:text-5xl\">\n              Kamus &amp; Panduan Grammar\n            </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 max-w-2xl text-base leading-relaxed text-slate-600\">\n              Pelajari tata bahasa Jepang secara sistematis melalui subbab konsep dasar,\n              atau gunakan fitur pencarian cepat di bawah untuk menemukan pola kalimat yang kamu inginkan.\n            </p>",
+              "target": [
+                ".max-w-2xl"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Modul Pembelajaran</span>",
+              "target": [
+                ".mb-8 > div > .tracking-wider.uppercase.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h2 class=\"font-display text-2xl font-bold text-ink md:text-3xl\">Subbab Tata Bahasa</h2>",
+              "target": [
+                ".md\\:text-3xl"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"text-sm text-slate-500\">Pilih subbab untuk melihat rumus, contoh, dan penjelasan lengkap.</p>",
+              "target": [
+                ".mb-8 > .text-slate-500.text-sm"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<rt>ふ</rt>",
+              "target": [
+                "article:nth-child(4) > div:nth-child(1) > .p-3.mt-3.rounded-lg > .text-xl.text-ink.font-display > ruby:nth-child(2) > rt"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<rt>よ</rt>",
+              "target": [
+                "article:nth-child(5) > div:nth-child(1) > .p-3.mt-3.rounded-lg > .text-xl.text-ink.font-display > ruby:nth-child(2) > rt"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<rt>い</rt>",
+              "target": [
+                "article:nth-child(6) > div:nth-child(1) > .p-3.mt-3.rounded-lg > .text-xl.text-ink.font-display > ruby:nth-child(2) > rt"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<rt>よ</rt>",
+              "target": [
+                "article:nth-child(12) > div:nth-child(1) > .p-3.mt-3.rounded-lg > .text-xl.text-ink.font-display > ruby:nth-child(3) > rt"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kamus-grammar.html",
+      "violations": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 73,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+              "html": "<span class=\"font-display text-2xl text-slate-400\">文型</span>",
+              "target": [
+                ".feature-card.transition-all[href$=\"struktur-kalimat.html\"] > div:nth-child(1) > .justify-between.items-center.flex > .text-slate-400.text-2xl.font-display"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+              "html": "<span class=\"font-display text-2xl text-slate-400\">助詞</span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(2) > div:nth-child(1) > .justify-between.items-center.flex > .text-slate-400.text-2xl.font-display"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+              "html": "<span class=\"font-display text-2xl text-slate-400\">動詞</span>",
+              "target": [
+                ".feature-card.transition-all[href$=\"kata-kerja.html\"] > div:nth-child(1) > .justify-between.items-center.flex > .text-slate-400.text-2xl.font-display"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+              "html": "<span class=\"font-display text-2xl text-slate-400\">形容詞</span>",
+              "target": [
+                ".feature-card.transition-all[href$=\"kata-sifat.html\"] > div:nth-child(1) > .justify-between.items-center.flex > .text-slate-400.text-2xl.font-display"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+              "html": "<span class=\"font-display text-2xl text-slate-400\">疑問</span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(5) > div:nth-child(1) > .justify-between.items-center.flex > .text-slate-400.text-2xl.font-display"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+              "html": "<span class=\"font-display text-2xl text-slate-400\">日常</span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(6) > div:nth-child(1) > .justify-between.items-center.flex > .text-slate-400.text-2xl.font-display"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+              "html": "<span class=\"font-display text-2xl text-slate-400\">存在</span>",
+              "target": [
+                ".feature-card.transition-all[href$=\"keberadaan-lokasi.html\"] > div:nth-child(1) > .justify-between.items-center.flex > .text-slate-400.text-2xl.font-display"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #64748b, background color: #faf8f5, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<rt>わたし</rt>",
+              "target": [
+                "article:nth-child(1) > div:nth-child(1) > .p-3.mt-3.rounded-lg > .text-xl.text-ink.font-display > ruby:nth-child(1) > rt"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #64748b, background color: #faf8f5, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<rt>こうこうせい</rt>",
+              "target": [
+                "article:nth-child(1) > div:nth-child(1) > .p-3.mt-3.rounded-lg > .text-xl.text-ink.font-display > ruby:nth-child(2) > rt"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #64748b, background color: #faf8f5, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"mt-1 text-xs text-slate-500\">Saya adalah siswa SMA.</p>",
+              "target": [
+                "article:nth-child(1) > div:nth-child(1) > .p-3.mt-3.rounded-lg > .mt-1.text-slate-500"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "kamus-grammar.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "overflows": [],
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 52,
+        "incomplete": 1,
+        "passes": 37,
+        "violations": 1
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 6,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"font-bold uppercase tracking-widest text-crimson\">\n              03 · Referensi &amp; Panduan Tata Bahasa\n            </p>",
+              "target": [
+                ".tracking-widest"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-2 font-display text-4xl leading-tight md:text-5xl\">\n              Kamus &amp; Panduan Grammar\n            </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 max-w-2xl text-base leading-relaxed text-slate-600\">\n              Pelajari tata bahasa Jepang secara sistematis melalui subbab konsep dasar,\n              atau gunakan fitur pencarian cepat di bawah untuk menemukan pola kalimat yang kamu inginkan.\n            </p>",
+              "target": [
+                ".max-w-2xl"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Modul Pembelajaran</span>",
+              "target": [
+                ".mb-8 > div > .tracking-wider.uppercase.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h2 class=\"font-display text-2xl font-bold text-ink md:text-3xl\">Subbab Tata Bahasa</h2>",
+              "target": [
+                ".md\\:text-3xl"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"text-sm text-slate-500\">Pilih subbab untuk melihat rumus, contoh, dan penjelasan lengkap.</p>",
+              "target": [
+                ".mb-8 > .text-slate-500.text-sm"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kamus-grammar.html",
+      "violations": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 102,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.38 (foreground color: #d33827, background color: #5e5b60, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson\">Subbab 01</span>",
+              "target": [
+                ".feature-card.transition-all[href$=\"struktur-kalimat.html\"] > div:nth-child(1) > .justify-between.items-center.flex > .bg-sakura\\/30.py-1.px-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"inline-flex items-center font-bold text-xs text-crimson group-hover:underline\">\n                  Pelajari Subbab 1 →\n                </span>",
+              "target": [
+                ".feature-card.transition-all[href$=\"struktur-kalimat.html\"] > .mt-6.pt-4.border-slate-100 > .group-hover\\:underline.inline-flex.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.38 (foreground color: #d33827, background color: #5e5b60, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson\">Subbab 02</span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(2) > div:nth-child(1) > .justify-between.items-center.flex > .bg-sakura\\/30.py-1.px-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"inline-flex items-center font-bold text-xs text-crimson group-hover:underline\">\n                  Pelajari Subbab 2 →\n                </span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(2) > .mt-6.pt-4.border-slate-100 > .group-hover\\:underline.inline-flex.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.38 (foreground color: #d33827, background color: #5e5b60, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson\">Subbab 03</span>",
+              "target": [
+                ".feature-card.transition-all[href$=\"kata-kerja.html\"] > div:nth-child(1) > .justify-between.items-center.flex > .bg-sakura\\/30.py-1.px-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"inline-flex items-center font-bold text-xs text-crimson group-hover:underline\">\n                  Pelajari Subbab 3 →\n                </span>",
+              "target": [
+                ".feature-card.transition-all[href$=\"kata-kerja.html\"] > .mt-6.pt-4.border-slate-100 > .group-hover\\:underline.inline-flex.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.38 (foreground color: #d33827, background color: #5e5b60, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson\">Subbab 04</span>",
+              "target": [
+                ".feature-card.transition-all[href$=\"kata-sifat.html\"] > div:nth-child(1) > .justify-between.items-center.flex > .bg-sakura\\/30.py-1.px-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"inline-flex items-center font-bold text-xs text-crimson group-hover:underline\">\n                  Pelajari Subbab 4 →\n                </span>",
+              "target": [
+                ".feature-card.transition-all[href$=\"kata-sifat.html\"] > .mt-6.pt-4.border-slate-100 > .group-hover\\:underline.inline-flex.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.38 (foreground color: #d33827, background color: #5e5b60, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson\">Subbab 05</span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(5) > div:nth-child(1) > .justify-between.items-center.flex > .bg-sakura\\/30.py-1.px-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"inline-flex items-center font-bold text-xs text-crimson group-hover:underline\">\n                  Pelajari Subbab 5 →\n                </span>",
+              "target": [
+                ".feature-card.transition-all.focus\\:outline-none:nth-child(5) > .mt-6.pt-4.border-slate-100 > .group-hover\\:underline.inline-flex.text-crimson"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "tebak-huruf.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "overflows": [],
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 56,
+        "incomplete": 1,
+        "passes": 33,
+        "violations": 1
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 12,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"text-slate-500\">a</span>",
+              "target": [
+                ".p-5[data-type=\"Hiragana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(1) > span > .text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"text-slate-500\">i</span>",
+              "target": [
+                ".p-5[data-type=\"Hiragana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(2) > span > .text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"text-slate-500\">u</span>",
+              "target": [
+                ".p-5[data-type=\"Hiragana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(3) > span > .text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"text-slate-500\">e</span>",
+              "target": [
+                ".p-5[data-type=\"Hiragana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(4) > span > .text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"text-slate-500\">o</span>",
+              "target": [
+                ".p-5[data-type=\"Hiragana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(5) > span > .text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"text-slate-500\">n</span>",
+              "target": [
+                ".p-5[data-type=\"Hiragana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(46) > span > .text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"text-slate-500\">a</span>",
+              "target": [
+                ".p-5[data-type=\"Katakana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(1) > span > .text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"text-slate-500\">i</span>",
+              "target": [
+                ".p-5[data-type=\"Katakana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(2) > span > .text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"text-slate-500\">u</span>",
+              "target": [
+                ".p-5[data-type=\"Katakana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(3) > span > .text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"text-slate-500\">e</span>",
+              "target": [
+                ".p-5[data-type=\"Katakana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(4) > span > .text-slate-500"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/tebak-huruf.html",
+      "violations": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 191,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #64748b, background color: #faf8f5, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"mt-4 max-w-xl leading-7 text-slate-500\">\n          Tulis cara baca karakter yang muncul. Jawab sepuluh ronde dan lihat\n          skor terbaikmu.\n        </p>",
+              "target": [
+                ".max-w-xl"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #64748b, background color: #fceeef, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-slate-500\">ka</span>",
+              "target": [
+                ".p-5[data-type=\"Hiragana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(6) > span > .text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #64748b, background color: #fceeef, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-slate-500\">ki</span>",
+              "target": [
+                ".p-5[data-type=\"Hiragana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(7) > span > .text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #64748b, background color: #fceeef, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-slate-500\">ku</span>",
+              "target": [
+                ".p-5[data-type=\"Hiragana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(8) > span > .text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #64748b, background color: #fceeef, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-slate-500\">ke</span>",
+              "target": [
+                ".p-5[data-type=\"Hiragana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(9) > span > .text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #64748b, background color: #fceeef, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-slate-500\">ko</span>",
+              "target": [
+                ".p-5[data-type=\"Hiragana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(10) > span > .text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #64748b, background color: #fceeef, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-slate-500\">sa</span>",
+              "target": [
+                ".p-5[data-type=\"Hiragana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(11) > span > .text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #64748b, background color: #fceeef, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-slate-500\">shi</span>",
+              "target": [
+                ".p-5[data-type=\"Hiragana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(12) > span > .text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #64748b, background color: #fceeef, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-slate-500\">su</span>",
+              "target": [
+                ".p-5[data-type=\"Hiragana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(13) > span > .text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #64748b, background color: #fceeef, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-slate-500\">se</span>",
+              "target": [
+                ".p-5[data-type=\"Hiragana\"] > .sm\\:grid-cols-4.grid-cols-2.grid > label:nth-child(14) > span > .text-slate-500"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "tebak-huruf.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "overflows": [],
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 56,
+        "incomplete": 0,
+        "passes": 33,
+        "violations": 1
+      },
+      "incomplete": [],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/tebak-huruf.html",
+      "violations": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 4,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.86 (foreground color: #d33827, background color: #121316, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"font-bold uppercase tracking-widest text-crimson\">\n          01 · Game latihan\n        </p>",
+              "target": [
+                ".uppercase.tracking-widest.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p id=\"selectionHint\" class=\"mt-4 text-sm text-crimson\" aria-live=\"polite\">201 pilihan dipilih.</p>",
+              "target": [
+                "#selectionHint"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"font-kanji font-bold text-crimson\">日本語</span>",
+              "target": [
+                ".font-kanji.text-crimson.font-bold"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"font-kanji text-base text-crimson\">がんばって！</span>",
+              "target": [
+                ".text-base"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "percakapan.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "overflows": [],
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 59,
+        "incomplete": 0,
+        "passes": 30,
+        "violations": 1
+      },
+      "incomplete": [],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/percakapan.html",
+      "violations": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 1,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #64748b, background color: #faf8f5, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"mt-4 text-slate-500\">\n          Pilih balasan bahasa Jepang yang paling tepat untuk melanjutkan\n          percakapan.\n        </p>",
+              "target": [
+                ".mt-4.text-slate-500"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "percakapan.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "overflows": [],
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 59,
+        "incomplete": 0,
+        "passes": 30,
+        "violations": 1
+      },
+      "incomplete": [],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/percakapan.html",
+      "violations": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 4,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.86 (foreground color: #d33827, background color: #121316, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"font-bold uppercase tracking-widest text-crimson\">\n          02 · Roleplay chat\n        </p>",
+              "target": [
+                ".uppercase"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<p id=\"chatStatus\" class=\"mt-4 text-sm font-bold text-crimson\" aria-live=\"polite\">Pilih balasan paling tepat.</p>",
+              "target": [
+                "#chatStatus"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"font-kanji font-bold text-crimson\">日本語</span>",
+              "target": [
+                ".gap-2.items-center.flex:nth-child(1) > .font-kanji.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"font-kanji text-base text-crimson\">がんばって！</span>",
+              "target": [
+                ".text-base"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "grammar/struktur-kalimat.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "overflows": [
+          {
+            "class": "vocab-table",
+            "id": "",
+            "tag": "TABLE",
+            "text": "Waktu / Bentuk\n                    Positif (Ya)\n                    Ne"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "THEAD",
+            "text": "Waktu / Bentuk\n                    Positif (Ya)\n                    Ne"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TR",
+            "text": "Waktu / Bentuk\n                    Positif (Ya)\n                    Ne"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TH",
+            "text": "Negatif (Bukan / Tidak)"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TBODY",
+            "text": "Sekarang / Masa Depan\n                    \n                      です (d"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TR",
+            "text": "Sekarang / Masa Depan\n                    \n                      です (d"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TD",
+            "text": "ではありません / じゃありません\n                      bukan"
+          },
+          {
+            "class": "font-bold text-crimson",
+            "id": "",
+            "tag": "SPAN",
+            "text": "ではありません / じゃありません"
+          }
+        ],
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 51,
+        "incomplete": 1,
+        "passes": 38,
+        "violations": 1
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 4,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson\">Subbab 01 · Konsep Dasar</span>",
+              "target": [
+                ".bg-sakura\\/30"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Struktur Kalimat &amp; です\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">\n            Pelajari susunan dasar kalimat bahasa Jepang (SOV), peran partikel topik は (wa),\n            serta fungsi kopula です (desu) untuk menyatakan identitas, profesi, dan keadaan dalam bentuk positif, negatif, dan lampau.\n          </p>",
+              "target": [
+                ".mt-4"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/struktur-kalimat.html",
+      "violations": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 4,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #d33827, background color: #fceeef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Rumus / Pola Struktur</span>",
+              "target": [
+                "section:nth-child(2) > .formula-box.mb-6.p-4 > .uppercase.tracking-wider.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #d33827, background color: #fceeef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Rumus / Pola Struktur</span>",
+              "target": [
+                "section:nth-child(3) > .formula-box.mb-6.p-4 > .uppercase.tracking-wider.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #d33827, background color: #fceeef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Lampau Positif</span>",
+              "target": [
+                ".formula-box.p-4.rounded-xl:nth-child(1) > .uppercase.tracking-wider.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #d33827, background color: #fceeef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Lampau Negatif</span>",
+              "target": [
+                ".formula-box.p-4.rounded-xl:nth-child(2) > .uppercase.tracking-wider.text-crimson"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "grammar/struktur-kalimat.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "overflows": [
+          {
+            "class": "vocab-table",
+            "id": "",
+            "tag": "TABLE",
+            "text": "Waktu / Bentuk\n                    Positif (Ya)\n                    Ne"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "THEAD",
+            "text": "Waktu / Bentuk\n                    Positif (Ya)\n                    Ne"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TR",
+            "text": "Waktu / Bentuk\n                    Positif (Ya)\n                    Ne"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TH",
+            "text": "Negatif (Bukan / Tidak)"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TBODY",
+            "text": "Sekarang / Masa Depan\n                    \n                      です (d"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TR",
+            "text": "Sekarang / Masa Depan\n                    \n                      です (d"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TD",
+            "text": "ではありません / じゃありません\n                      bukan"
+          },
+          {
+            "class": "font-bold text-crimson",
+            "id": "",
+            "tag": "SPAN",
+            "text": "ではありません / じゃありません"
+          }
+        ],
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 51,
+        "incomplete": 1,
+        "passes": 38,
+        "violations": 1
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 4,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson\">Subbab 01 · Konsep Dasar</span>",
+              "target": [
+                ".bg-sakura\\/30"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Struktur Kalimat &amp; です\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">\n            Pelajari susunan dasar kalimat bahasa Jepang (SOV), peran partikel topik は (wa),\n            serta fungsi kopula です (desu) untuk menyatakan identitas, profesi, dan keadaan dalam bentuk positif, negatif, dan lampau.\n          </p>",
+              "target": [
+                ".mt-4"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/struktur-kalimat.html",
+      "violations": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 11,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.69 (foreground color: #d33827, background color: #16181d, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Bahasa Jepang (SOV)</span>",
+              "target": [
+                ".example-box.p-4.rounded-xl:nth-child(2) > .uppercase.tracking-wider.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.41 (foreground color: #d33827, background color: #2d1a1f, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Rumus / Pola Struktur</span>",
+              "target": [
+                "section:nth-child(2) > .formula-box.mb-6.p-4 > .uppercase.tracking-wider.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.41 (foreground color: #d33827, background color: #2d1a1f, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Rumus / Pola Struktur</span>",
+              "target": [
+                "section:nth-child(3) > .formula-box.mb-6.p-4 > .uppercase.tracking-wider.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.41 (foreground color: #d33827, background color: #2d1a1f, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Lampau Positif</span>",
+              "target": [
+                ".formula-box.p-4.rounded-xl:nth-child(1) > .uppercase.tracking-wider.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.41 (foreground color: #d33827, background color: #2d1a1f, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Lampau Negatif</span>",
+              "target": [
+                ".formula-box.p-4.rounded-xl:nth-child(2) > .uppercase.tracking-wider.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"font-bold text-crimson\">です</span>",
+              "target": [
+                "tr:nth-child(1) > td:nth-child(2) > .text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"font-bold text-crimson\">ではありません / じゃありません</span>",
+              "target": [
+                "tr:nth-child(1) > td:nth-child(3) > .text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"font-bold text-crimson\">でした</span>",
+              "target": [
+                "tr:nth-child(2) > td:nth-child(2) > .text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"font-bold text-crimson\">ではありませんでした / じゃありませんでした</span>",
+              "target": [
+                "tr:nth-child(2) > td:nth-child(3) > .text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"font-kanji font-bold text-crimson\">日本語</span>",
+              "target": [
+                ".gap-2.flex.items-center:nth-child(1) > .font-kanji.text-crimson"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "kosakata/keluarga.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "overflows": [
+          {
+            "class": "vocab-table",
+            "id": "",
+            "tag": "TABLE",
+            "text": "Bahasa Jepang\n                      Romaji\n                      Arti "
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "THEAD",
+            "text": "Bahasa Jepang\n                      Romaji\n                      Arti "
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TR",
+            "text": "Bahasa Jepang\n                      Romaji\n                      Arti "
+          },
+          {
+            "class": "w-1/3",
+            "id": "",
+            "tag": "TH",
+            "text": "Arti Bahasa Indonesia"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TBODY",
+            "text": "家族かぞく\n                      kazoku\n                      Keluarga\n    "
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TR",
+            "text": "家族かぞく\n                      kazoku\n                      Keluarga"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TD",
+            "text": "Keluarga"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TR",
+            "text": "両親りょうしん\n                      ryoushin (ryooshin)\n                    "
+          }
+        ],
+        "scrollWidth": 329,
+        "width": 320
+      },
+      {
+        "overflows": [
+          {
+            "class": "vocab-table",
+            "id": "",
+            "tag": "TABLE",
+            "text": "Kata Panggilan\n                      Romaji\n                      Sasa"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "THEAD",
+            "text": "Kata Panggilan\n                      Romaji\n                      Sasa"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TR",
+            "text": "Kata Panggilan\n                      Romaji\n                      Sasa"
+          },
+          {
+            "class": "w-1/3",
+            "id": "",
+            "tag": "TH",
+            "text": "Sasaran Panggilan"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TBODY",
+            "text": "お父さんおとうさん / パパ\n                      otousan / papa\n                  "
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TR",
+            "text": "お父さんおとうさん / パパ\n                      otousan / papa\n                  "
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TD",
+            "text": "Memanggil Ayah sendiri"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TR",
+            "text": "お母さんおかあさん / ママ\n                      okaasan / mama\n                  "
+          }
+        ],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 55,
+        "incomplete": 1,
+        "passes": 34,
+        "violations": 2
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kosakata.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Indeks Kosakata\n          </a>",
+              "target": [
+                ".hover\\:underline"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"inline-block rounded-full bg-sakura/40 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-crimson\">\n            Subbab 06 · Materi SMA Kelas X &amp; XI · JLPT N5\n          </span>",
+              "target": [
+                ".bg-sakura\\/40"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-4xl leading-tight md:text-5xl text-ink\">\n            Keluarga &amp; Memperkenalkan Diri\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 text-base md:text-lg text-slate-600 max-w-2xl mx-auto\">\n            Pelajari perbedaan penyebutan keluarga sendiri (uchi) vs keluarga orang lain (soto), aturan menghitung jumlah orang, serta pola percakapan memperkenalkan anggota keluarga.\n          </p>",
+              "target": [
+                ".md\\:text-lg"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<span>→</span>",
+              "target": [
+                ".mt-5 > span:nth-child(2)"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata/keluarga.html",
+      "violations": [
+        {
+          "help": "Elements must only use supported ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-allowed-attr?application=axeAPI",
+          "id": "aria-allowed-attr",
+          "impact": "critical",
+          "nodeCount": 1,
+          "nodes": [
+            {
+              "failureSummary": "Fix all of the following:\n  ARIA attribute is not allowed: aria-checked=\"true\"",
+              "html": "<button id=\"furiganaToggle\" type=\"button\" class=\"furigana-toggle-btn inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-xs font-bold shadow-sm transition hover:border-crimson\" aria-checked=\"true\">",
+              "target": [
+                "#furiganaToggle"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ]
+        },
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 13,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #d33827, background color: #fceeef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Konsep Budaya Penting</span>",
+              "target": [
+                ".p-5 > .uppercase.tracking-wider"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #d33827, background color: #fceeef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Rumus Pola</span>",
+              "target": [
+                "section:nth-child(2) > div:nth-child(5) > .formula-box.mb-4.md\\:p-5 > .uppercase.tracking-wider"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #d33827, background color: #fceeef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Aturan Pokok Hitungan</span>",
+              "target": [
+                ".mb-8:nth-child(3) > .formula-box.mb-4.md\\:p-5 > .uppercase.tracking-wider"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #d33827, background color: #fceeef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Rumus Pola</span>",
+              "target": [
+                "section:nth-child(3) > .mb-8:nth-child(4) > .formula-box.mb-4.md\\:p-5 > .uppercase.tracking-wider"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #d33827, background color: #fceeef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Rumus Pola</span>",
+              "target": [
+                ".mb-8:nth-child(5) > .formula-box.mb-4.md\\:p-5 > .uppercase.tracking-wider"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #d33827, background color: #faf4f6, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded bg-sakura/50 px-2 py-0.5 text-xs font-bold text-crimson\">Anak Tunggal</span>",
+              "target": [
+                ".example-box.p-4.rounded-xl:nth-child(1) > .bg-sakura\\/50.rounded.px-2"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #d33827, background color: #faf4f6, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded bg-sakura/50 px-2 py-0.5 text-xs font-bold text-crimson\">Dua Bersaudara</span>",
+              "target": [
+                "section:nth-child(3) > .mb-8:nth-child(5) > .space-y-3 > .example-box.p-4.rounded-xl:nth-child(2) > .bg-sakura\\/50.rounded.px-2"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #d33827, background color: #faf4f6, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded bg-sakura/50 px-2 py-0.5 text-xs font-bold text-crimson\">Tiga Bersaudara</span>",
+              "target": [
+                ".example-box.p-4.rounded-xl:nth-child(3) > .bg-sakura\\/50.rounded.px-2"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #d33827, background color: #fceeef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Rumus Keberadaan</span>",
+              "target": [
+                "div:nth-child(7) > .formula-box.mb-4.md\\:p-5:nth-child(2) > .uppercase.tracking-wider"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #d33827, background color: #fceeef, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Pola Penyambungan</span>",
+              "target": [
+                ".formula-box.mb-4.md\\:p-5:nth-child(4) > .uppercase.tracking-wider"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "kosakata/keluarga.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "overflows": [
+          {
+            "class": "vocab-table",
+            "id": "",
+            "tag": "TABLE",
+            "text": "Bahasa Jepang\n                      Romaji\n                      Arti "
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "THEAD",
+            "text": "Bahasa Jepang\n                      Romaji\n                      Arti "
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TR",
+            "text": "Bahasa Jepang\n                      Romaji\n                      Arti "
+          },
+          {
+            "class": "w-1/3",
+            "id": "",
+            "tag": "TH",
+            "text": "Arti Bahasa Indonesia"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TBODY",
+            "text": "家族かぞく\n                      kazoku\n                      Keluarga\n    "
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TR",
+            "text": "家族かぞく\n                      kazoku\n                      Keluarga"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TD",
+            "text": "Keluarga"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TR",
+            "text": "両親りょうしん\n                      ryoushin (ryooshin)\n                    "
+          }
+        ],
+        "scrollWidth": 329,
+        "width": 320
+      },
+      {
+        "overflows": [
+          {
+            "class": "vocab-table",
+            "id": "",
+            "tag": "TABLE",
+            "text": "Kata Panggilan\n                      Romaji\n                      Sasa"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "THEAD",
+            "text": "Kata Panggilan\n                      Romaji\n                      Sasa"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TR",
+            "text": "Kata Panggilan\n                      Romaji\n                      Sasa"
+          },
+          {
+            "class": "w-1/3",
+            "id": "",
+            "tag": "TH",
+            "text": "Sasaran Panggilan"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TBODY",
+            "text": "お父さんおとうさん / パパ\n                      otousan / papa\n                  "
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TR",
+            "text": "お父さんおとうさん / パパ\n                      otousan / papa\n                  "
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TD",
+            "text": "Memanggil Ayah sendiri"
+          },
+          {
+            "class": "",
+            "id": "",
+            "tag": "TR",
+            "text": "お母さんおかあさん / ママ\n                      okaasan / mama\n                  "
+          }
+        ],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 55,
+        "incomplete": 1,
+        "passes": 34,
+        "violations": 2
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kosakata.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Indeks Kosakata\n          </a>",
+              "target": [
+                ".hover\\:underline"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"inline-block rounded-full bg-sakura/40 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-crimson\">\n            Subbab 06 · Materi SMA Kelas X &amp; XI · JLPT N5\n          </span>",
+              "target": [
+                ".bg-sakura\\/40"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-4xl leading-tight md:text-5xl text-ink\">\n            Keluarga &amp; Memperkenalkan Diri\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 text-base md:text-lg text-slate-600 max-w-2xl mx-auto\">\n            Pelajari perbedaan penyebutan keluarga sendiri (uchi) vs keluarga orang lain (soto), aturan menghitung jumlah orang, serta pola percakapan memperkenalkan anggota keluarga.\n          </p>",
+              "target": [
+                ".md\\:text-lg"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<span>→</span>",
+              "target": [
+                ".mt-5 > span:nth-child(2)"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata/keluarga.html",
+      "violations": [
+        {
+          "help": "Elements must only use supported ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-allowed-attr?application=axeAPI",
+          "id": "aria-allowed-attr",
+          "impact": "critical",
+          "nodeCount": 1,
+          "nodes": [
+            {
+              "failureSummary": "Fix all of the following:\n  ARIA attribute is not allowed: aria-checked=\"true\"",
+              "html": "<button id=\"furiganaToggle\" type=\"button\" class=\"furigana-toggle-btn inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-xs font-bold shadow-sm transition hover:border-crimson\" aria-checked=\"true\">",
+              "target": [
+                "#furiganaToggle"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ]
+        },
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 51,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span id=\"furiganaState\" class=\"font-mono text-crimson\">ON</span>",
+              "target": [
+                "#furiganaState"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.41 (foreground color: #d33827, background color: #2d1a1f, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Konsep Budaya Penting</span>",
+              "target": [
+                ".p-5 > .uppercase.tracking-wider"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.69 (foreground color: #d33827, background color: #16181d, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"font-bold text-crimson\">1. Keluarga Sendiri (Uchi / 内)</p>",
+              "target": [
+                ".mt-4 > .example-box.p-4.rounded-xl:nth-child(1) > .text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.69 (foreground color: #d33827, background color: #16181d, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"font-bold text-crimson\">2. Keluarga Orang Lain (Soto / 外)</p>",
+              "target": [
+                ".mt-4 > .example-box.p-4.rounded-xl:nth-child(2) > .text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.41 (foreground color: #d33827, background color: #2d1a1f, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Rumus Pola</span>",
+              "target": [
+                "section:nth-child(2) > div:nth-child(5) > .formula-box.mb-4.md\\:p-5 > .uppercase.tracking-wider"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.41 (foreground color: #d33827, background color: #2d1a1f, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Aturan Pokok Hitungan</span>",
+              "target": [
+                ".mb-8:nth-child(3) > .formula-box.mb-4.md\\:p-5 > .uppercase.tracking-wider"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<td class=\"font-bold text-crimson\">1 Orang</td>",
+              "target": [
+                ".mb-8:nth-child(3) > .overflow-x-auto > table > tbody > tr:nth-child(1) > .text-crimson.font-bold"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.33 (foreground color: #d33827, background color: #8b8589, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded bg-sakura/50 px-2 py-0.5 text-xs font-bold text-crimson\">Pengecualian</span>",
+              "target": [
+                "tr:nth-child(1) > td:nth-child(4) > .bg-sakura\\/50.rounded.px-2"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.53 (foreground color: #d33827, background color: #1a1c22, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<td class=\"font-bold text-crimson\">2 Orang</td>",
+              "target": [
+                ".mb-8:nth-child(3) > .overflow-x-auto > table > tbody > tr:nth-child(2) > .text-crimson.font-bold"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.33 (foreground color: #d33827, background color: #8b8589, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"rounded bg-sakura/50 px-2 py-0.5 text-xs font-bold text-crimson\">Pengecualian</span>",
+              "target": [
+                "tr:nth-child(2) > td:nth-child(4) > .bg-sakura\\/50.rounded.px-2"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "menara-jepang.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "overflows": [],
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 57,
+        "incomplete": 1,
+        "passes": 32,
+        "violations": 2
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 27,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<div class=\"brand\">TOWERS</div>",
+              "target": [
+                "iframe",
+                ".brand"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<div class=\"top-mid\">CONSTRUCTION&nbsp;STUDY&nbsp;/&nbsp;01</div>",
+              "target": [
+                "iframe",
+                ".top-mid"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<b>STYLE</b>",
+              "target": [
+                "iframe",
+                "#styleBtn > b"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<span>JAPAN</span>",
+              "target": [
+                "iframe",
+                "#styleBtn > span"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<b>WEATHER</b>",
+              "target": [
+                "iframe",
+                "#wxBtn > b"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<span>CLEAR</span>",
+              "target": [
+                "iframe",
+                "#wxBtn > span"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<b>TIME</b>",
+              "target": [
+                "iframe",
+                "#timeBtn > b"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<span>MORNING</span>",
+              "target": [
+                "iframe",
+                "#timeBtn > span"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<b>SOUND</b>",
+              "target": [
+                "iframe",
+                "#soundBtn > b"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<span>ON</span>",
+              "target": [
+                "iframe",
+                "#soundBtn > span"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/menara-jepang.html",
+      "violations": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 1,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #d33827, background color: #fceeef, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<a class=\"nav-link active\" href=\"./menara-jepang.html\" aria-current=\"page\">Menara 3D</a>",
+              "target": [
+                ".active"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        },
+        {
+          "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-unique?application=axeAPI",
+          "id": "landmark-unique",
+          "impact": "moderate",
+          "nodeCount": 1,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable",
+              "html": "<header class=\"sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur transition-colors\">",
+              "target": [
+                "header"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "route": "menara-jepang.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "overflows": [],
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "overflows": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 57,
+        "incomplete": 1,
+        "passes": 32,
+        "violations": 1
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 27,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<div class=\"brand\">TOWERS</div>",
+              "target": [
+                "iframe",
+                ".brand"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<div class=\"top-mid\">CONSTRUCTION&nbsp;STUDY&nbsp;/&nbsp;01</div>",
+              "target": [
+                "iframe",
+                ".top-mid"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<b>STYLE</b>",
+              "target": [
+                "iframe",
+                "#styleBtn > b"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<span>JAPAN</span>",
+              "target": [
+                "iframe",
+                "#styleBtn > span"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<b>WEATHER</b>",
+              "target": [
+                "iframe",
+                "#wxBtn > b"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<span>CLEAR</span>",
+              "target": [
+                "iframe",
+                "#wxBtn > span"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<b>TIME</b>",
+              "target": [
+                "iframe",
+                "#timeBtn > b"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<span>MORNING</span>",
+              "target": [
+                "iframe",
+                "#timeBtn > span"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<b>SOUND</b>",
+              "target": [
+                "iframe",
+                "#soundBtn > b"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+              "html": "<span>ON</span>",
+              "target": [
+                "iframe",
+                "#soundBtn > span"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/menara-jepang.html",
+      "violations": [
+        {
+          "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-unique?application=axeAPI",
+          "id": "landmark-unique",
+          "impact": "moderate",
+          "nodeCount": 1,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable",
+              "html": "<header class=\"sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur transition-colors\">",
+              "target": [
+                "header"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.semantics",
+            "best-practice"
+          ]
+        }
+      ]
+    }
+  }
+]

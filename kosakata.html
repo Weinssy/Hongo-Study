@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Kamus & Kumpulan Kosakata | Hongo Study</title>
     <link rel="icon" type="image/svg+xml" href="{{rootPath}}favicon.svg" />
+    {{> head }}
     <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="font-sans bg-mist">
     {{> header }}
 
-    <main class="wash min-h-screen">
+    <main id="main-content" tabindex="-1" class="wash min-h-screen">
       <div class="mx-auto max-w-6xl px-5 py-12 md:py-20">
         <!-- Hero Header -->
         <div class="mb-12 flex flex-wrap items-end justify-between gap-6 border-b border-slate-200/80 pb-8">
@@ -42,8 +43,8 @@
         <!-- Section: Ringkasan Silabus & Fitur -->
         <div class="mb-12 grid grid-cols-2 gap-4 md:grid-cols-4">
           <div class="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm">
-            <span class="font-display text-3xl md:text-4xl font-bold text-crimson">350+</span>
-            <p class="mt-1 text-xs font-bold uppercase tracking-wider text-slate-500">Total Kosakata</p>
+            <span id="vocabularyTotal" class="font-display text-3xl md:text-4xl font-bold text-crimson">{{vocabularyCount}}</span>
+            <p class="mt-1 text-xs font-bold uppercase tracking-wider text-slate-500">Kosakata Katalog & Kuis</p>
             <p class="mt-1 text-[11px] text-slate-400">Kanji, romaji, &amp; furigana</p>
           </div>
           <div class="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm">
@@ -248,7 +249,7 @@
                 Cari kata berdasarkan bahasa Indonesia, romaji, kanji, atau hiragana di seluruh kategori.
               </p>
             </div>
-            <span id="vocabResultCount" class="text-xs font-bold text-slate-500"></span>
+            <span id="vocabResultCount" role="status" aria-live="polite" class="text-xs font-bold text-slate-500"></span>
           </div>
 
           <!-- Kategori Filter Pills -->

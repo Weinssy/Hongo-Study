@@ -1,0 +1,4350 @@
+[
+  {
+    "route": "index.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 53,
+        "incomplete": 1,
+        "passes": 36,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 7,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"font-kanji font-bold text-sm text-crimson\"><span lang=\"ja\">初級</span> · <span lang=\"ja\">中級</span></span>",
+              "target": [
+                ".font-kanji.text-crimson.text-sm"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">初級</span>",
+              "target": [
+                ".font-kanji.text-crimson.text-sm > span[lang=\"ja\"]:nth-child(1)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">中級</span>",
+              "target": [
+                ".font-kanji.text-crimson.text-sm > span[lang=\"ja\"]:nth-child(2)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"text-xs font-semibold uppercase tracking-wider text-slate-500\">Silabus SMA · JLPT N5–N4</span>",
+              "target": [
+                ".tracking-wider.uppercase.text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">こんにちは、</span>",
+              "target": [
+                "h1 > span[lang=\"ja\"]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"text-crimson font-semibold\">calon pembelajar.</span>",
+              "target": [
+                ".font-semibold.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-6 max-w-xl text-base leading-relaxed text-slate-600 md:text-lg\">\n              Ruang belajar bahasa Jepang yang terstruktur, fokus, dan ramah untuk siswa.\n              Kuasai aksara Kana, bangun kosakata tematik, pahami tata bahasa, dan latih refleks percakapan harian.\n            </p>",
+              "target": [
+                ".md\\:text-lg"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/index.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "index.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 53,
+        "incomplete": 1,
+        "passes": 36,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 7,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span class=\"font-kanji font-bold text-sm text-crimson\"><span lang=\"ja\">初級</span> · <span lang=\"ja\">中級</span></span>",
+              "target": [
+                ".font-kanji.text-crimson.text-sm"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">初級</span>",
+              "target": [
+                ".font-kanji.text-crimson.text-sm > span[lang=\"ja\"]:nth-child(1)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">中級</span>",
+              "target": [
+                ".font-kanji.text-crimson.text-sm > span[lang=\"ja\"]:nth-child(2)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"text-xs font-semibold uppercase tracking-wider text-slate-500\">Silabus SMA · JLPT N5–N4</span>",
+              "target": [
+                ".tracking-wider.uppercase.text-slate-500"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">こんにちは、</span>",
+              "target": [
+                "h1 > span[lang=\"ja\"]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"text-crimson font-semibold\">calon pembelajar.</span>",
+              "target": [
+                ".font-semibold.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-6 max-w-xl text-base leading-relaxed text-slate-600 md:text-lg\">\n              Ruang belajar bahasa Jepang yang terstruktur, fokus, dan ramah untuk siswa.\n              Kuasai aksara Kana, bangun kosakata tematik, pahami tata bahasa, dan latih refleks percakapan harian.\n            </p>",
+              "target": [
+                ".md\\:text-lg"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/index.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kamus-grammar.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 47,
+        "incomplete": 1,
+        "passes": 42,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 6,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"font-bold uppercase tracking-widest text-crimson\">\n              03 · Referensi &amp; Panduan Tata Bahasa\n            </p>",
+              "target": [
+                ".tracking-widest"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-2 font-display text-4xl leading-tight md:text-5xl\">\n              Kamus &amp; Panduan Grammar\n            </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 max-w-2xl text-base leading-relaxed text-slate-600\">\n              Pelajari tata bahasa Jepang secara sistematis melalui subbab konsep dasar,\n              atau gunakan fitur pencarian cepat di bawah untuk menemukan pola kalimat yang kamu inginkan.\n            </p>",
+              "target": [
+                ".max-w-2xl"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Modul Pembelajaran</span>",
+              "target": [
+                ".mb-8 > div > .tracking-wider.uppercase.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h2 class=\"font-display text-2xl font-bold text-ink md:text-3xl\">Subbab Tata Bahasa</h2>",
+              "target": [
+                ".md\\:text-3xl"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"text-sm text-slate-500\">Pilih subbab untuk melihat rumus, contoh, dan penjelasan lengkap.</p>",
+              "target": [
+                ".mb-8 > .text-slate-500.text-sm"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kamus-grammar.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kamus-grammar.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 47,
+        "incomplete": 1,
+        "passes": 42,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 6,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"font-bold uppercase tracking-widest text-crimson\">\n              03 · Referensi &amp; Panduan Tata Bahasa\n            </p>",
+              "target": [
+                ".tracking-widest"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-2 font-display text-4xl leading-tight md:text-5xl\">\n              Kamus &amp; Panduan Grammar\n            </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 max-w-2xl text-base leading-relaxed text-slate-600\">\n              Pelajari tata bahasa Jepang secara sistematis melalui subbab konsep dasar,\n              atau gunakan fitur pencarian cepat di bawah untuk menemukan pola kalimat yang kamu inginkan.\n            </p>",
+              "target": [
+                ".max-w-2xl"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Modul Pembelajaran</span>",
+              "target": [
+                ".mb-8 > div > .tracking-wider.uppercase.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h2 class=\"font-display text-2xl font-bold text-ink md:text-3xl\">Subbab Tata Bahasa</h2>",
+              "target": [
+                ".md\\:text-3xl"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"text-sm text-slate-500\">Pilih subbab untuk melihat rumus, contoh, dan penjelasan lengkap.</p>",
+              "target": [
+                ".mb-8 > .text-slate-500.text-sm"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kamus-grammar.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kosakata.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 47,
+        "incomplete": 1,
+        "passes": 42,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 6,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"font-bold uppercase tracking-widest text-crimson\">\n              04 · Pusat Kosakata Terpadu\n            </p>",
+              "target": [
+                ".tracking-widest"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-2 font-display text-4xl leading-tight md:text-5xl\">\n              Kamus &amp; Kumpulan Kosakata\n            </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 max-w-2xl text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".max-w-2xl"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Modul Tematik</span>",
+              "target": [
+                ".mb-8 > div > .tracking-wider.uppercase.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h2 class=\"font-display text-2xl font-bold text-ink md:text-3xl\">Subbab Kosakata</h2>",
+              "target": [
+                ".mb-8 > div > h2"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"text-sm text-slate-500\">Pilih kategori untuk melihat tabel kosakata lengkap dan contoh penggunaannya.</p>",
+              "target": [
+                ".mb-8 > .text-slate-500.text-sm"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kosakata.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 47,
+        "incomplete": 1,
+        "passes": 42,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 6,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"font-bold uppercase tracking-widest text-crimson\">\n              04 · Pusat Kosakata Terpadu\n            </p>",
+              "target": [
+                ".tracking-widest"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-2 font-display text-4xl leading-tight md:text-5xl\">\n              Kamus &amp; Kumpulan Kosakata\n            </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 max-w-2xl text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".max-w-2xl"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span class=\"text-xs font-bold uppercase tracking-wider text-crimson\">Modul Tematik</span>",
+              "target": [
+                ".mb-8 > div > .tracking-wider.uppercase.text-crimson"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h2 class=\"font-display text-2xl font-bold text-ink md:text-3xl\">Subbab Kosakata</h2>",
+              "target": [
+                ".mb-8 > div > h2"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"text-sm text-slate-500\">Pilih kategori untuk melihat tabel kosakata lengkap dan contoh penggunaannya.</p>",
+              "target": [
+                ".mb-8 > .text-slate-500.text-sm"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kuis.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 50,
+        "incomplete": 1,
+        "passes": 39,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mb-2 font-bold uppercase tracking-widest text-crimson\">\n            Evaluasi Belajar\n          </p>",
+              "target": [
+                ".mb-2"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-3xl md:text-5xl\">\n            Kuis Materi Interaktif\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 text-slate-600\">\n            Pilih topik materi yang ingin diuji, lalu jawab 10 pertanyaan\n            pilihan ganda.\n          </p>",
+              "target": [
+                ".mt-3.text-slate-600"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span id=\"questionNumber\">Soal 1 dari 10</span>",
+              "target": [
+                "#questionNumber"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span id=\"quizCategoryBadge\" class=\"text-crimson\">時間 Kosa Kata Waktu</span>",
+              "target": [
+                "#quizCategoryBadge"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kuis.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kuis.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 50,
+        "incomplete": 1,
+        "passes": 39,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mb-2 font-bold uppercase tracking-widest text-crimson\">\n            Evaluasi Belajar\n          </p>",
+              "target": [
+                ".mb-2"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-3xl md:text-5xl\">\n            Kuis Materi Interaktif\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 text-slate-600\">\n            Pilih topik materi yang ingin diuji, lalu jawab 10 pertanyaan\n            pilihan ganda.\n          </p>",
+              "target": [
+                ".mt-3.text-slate-600"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span id=\"questionNumber\">Soal 1 dari 10</span>",
+              "target": [
+                "#questionNumber"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span id=\"quizCategoryBadge\" class=\"text-crimson\">時間 Kosa Kata Waktu</span>",
+              "target": [
+                "#quizCategoryBadge"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kuis.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "menara-jepang.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 48,
+        "incomplete": 0,
+        "passes": 41,
+        "violations": 0
+      },
+      "incomplete": [],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/menara-jepang.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "menara-jepang.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 48,
+        "incomplete": 0,
+        "passes": 41,
+        "violations": 0
+      },
+      "incomplete": [],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/menara-jepang.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "percakapan.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 50,
+        "incomplete": 0,
+        "passes": 39,
+        "violations": 0
+      },
+      "incomplete": [],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/percakapan.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "percakapan.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 50,
+        "incomplete": 0,
+        "passes": 39,
+        "violations": 0
+      },
+      "incomplete": [],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/percakapan.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "tebak-huruf.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 45,
+        "incomplete": 0,
+        "passes": 44,
+        "violations": 0
+      },
+      "incomplete": [],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/tebak-huruf.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "tebak-huruf.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 45,
+        "incomplete": 0,
+        "passes": 44,
+        "violations": 0
+      },
+      "incomplete": [],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/tebak-huruf.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "grammar/kata-kerja.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 45,
+        "incomplete": 1,
+        "passes": 44,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 8,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Kata Kerja &amp; Perubahannya (<span lang=\"ja\">動詞</span>)\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">動詞</span>",
+              "target": [
+                "h1 > span[lang=\"ja\"]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<strong>〜<span lang=\"ja\">ます</span></strong>",
+              "target": [
+                ".mt-4 > strong"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">ます</span>",
+              "target": [
+                "strong > span[lang=\"ja\"]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">丁寧語</span>",
+              "target": [
+                ".mt-4 > span[lang=\"ja\"]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<em>teineigo</em>",
+              "target": [
+                ".mt-4 > em"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/kata-kerja.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "grammar/kata-kerja.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 45,
+        "incomplete": 1,
+        "passes": 44,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 8,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Kata Kerja &amp; Perubahannya (<span lang=\"ja\">動詞</span>)\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">動詞</span>",
+              "target": [
+                "h1 > span[lang=\"ja\"]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<strong>〜<span lang=\"ja\">ます</span></strong>",
+              "target": [
+                ".mt-4 > strong"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">ます</span>",
+              "target": [
+                "strong > span[lang=\"ja\"]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">丁寧語</span>",
+              "target": [
+                ".mt-4 > span[lang=\"ja\"]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<em>teineigo</em>",
+              "target": [
+                ".mt-4 > em"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/kata-kerja.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "grammar/kata-sifat.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 45,
+        "incomplete": 1,
+        "passes": 44,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 8,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Kata Sifat (<span lang=\"ja\">形容詞</span>)\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">形容詞</span>",
+              "target": [
+                "h1 > span"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<strong>Kata Sifat <span lang=\"ja\">い</span> (I-keiyoushi)</strong>",
+              "target": [
+                ".mt-4 > strong:nth-child(1)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span lang=\"ja\">い</span>",
+              "target": [
+                ".mt-4 > strong:nth-child(1) > span"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<strong>Kata Sifat <span lang=\"ja\">な</span> (Na-keiyoushi)</strong>",
+              "target": [
+                ".mt-4 > strong:nth-child(2)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span lang=\"ja\">な</span>",
+              "target": [
+                ".mt-4 > strong:nth-child(2) > span"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/kata-sifat.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "grammar/kata-sifat.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 45,
+        "incomplete": 1,
+        "passes": 44,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 8,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Kata Sifat (<span lang=\"ja\">形容詞</span>)\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">形容詞</span>",
+              "target": [
+                "h1 > span"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<strong>Kata Sifat <span lang=\"ja\">い</span> (I-keiyoushi)</strong>",
+              "target": [
+                ".mt-4 > strong:nth-child(1)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span lang=\"ja\">い</span>",
+              "target": [
+                ".mt-4 > strong:nth-child(1) > span"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<strong>Kata Sifat <span lang=\"ja\">な</span> (Na-keiyoushi)</strong>",
+              "target": [
+                ".mt-4 > strong:nth-child(2)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span lang=\"ja\">な</span>",
+              "target": [
+                ".mt-4 > strong:nth-child(2) > span"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/kata-sifat.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "grammar/keberadaan-lokasi.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 50,
+        "incomplete": 1,
+        "passes": 39,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 7,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Keberadaan &amp; Lokasi (<span lang=\"ja\">存在</span>・<span lang=\"ja\">位置</span>)\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">存在</span>",
+              "target": [
+                "h1 > span:nth-child(1)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">位置</span>",
+              "target": [
+                "h1 > span:nth-child(2)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">あります</span>",
+              "target": [
+                ".mt-4 > strong:nth-child(1) > span"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">います</span>",
+              "target": [
+                ".mt-4 > strong:nth-child(2) > span"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/keberadaan-lokasi.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "grammar/keberadaan-lokasi.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 50,
+        "incomplete": 1,
+        "passes": 39,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 7,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Keberadaan &amp; Lokasi (<span lang=\"ja\">存在</span>・<span lang=\"ja\">位置</span>)\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">存在</span>",
+              "target": [
+                "h1 > span:nth-child(1)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">位置</span>",
+              "target": [
+                "h1 > span:nth-child(2)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">あります</span>",
+              "target": [
+                ".mt-4 > strong:nth-child(1) > span"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">います</span>",
+              "target": [
+                ".mt-4 > strong:nth-child(2) > span"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/keberadaan-lokasi.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "grammar/kebutuhan-sehari-hari.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 50,
+        "incomplete": 1,
+        "passes": 39,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 3,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Pola untuk Kebutuhan Sehari-hari\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".mt-4"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/kebutuhan-sehari-hari.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "grammar/kebutuhan-sehari-hari.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 50,
+        "incomplete": 1,
+        "passes": 39,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 3,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Pola untuk Kebutuhan Sehari-hari\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".mt-4"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/kebutuhan-sehari-hari.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "grammar/partikel-dasar.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 45,
+        "incomplete": 1,
+        "passes": 44,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Partikel Dasar (<span lang=\"ja\">助詞</span>)\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">助詞</span>",
+              "target": [
+                "h1 > span[lang=\"ja\"]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<em>joshi</em>",
+              "target": [
+                ".mt-4 > em"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/partikel-dasar.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "grammar/partikel-dasar.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 45,
+        "incomplete": 1,
+        "passes": 44,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Partikel Dasar (<span lang=\"ja\">助詞</span>)\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">助詞</span>",
+              "target": [
+                "h1 > span[lang=\"ja\"]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<em>joshi</em>",
+              "target": [
+                ".mt-4 > em"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/partikel-dasar.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "grammar/pertanyaan-negatif.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 50,
+        "incomplete": 1,
+        "passes": 39,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 6,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Pertanyaan &amp; Kalimat Negatif (<span lang=\"ja\">疑問</span>・<span lang=\"ja\">否定</span>)\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">疑問</span>",
+              "target": [
+                "h1 > span[lang=\"ja\"]:nth-child(1)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">否定</span>",
+              "target": [
+                "h1 > span[lang=\"ja\"]:nth-child(2)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span lang=\"ja\">か</span>",
+              "target": [
+                ".mt-4 > strong > span[lang=\"ja\"]"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/pertanyaan-negatif.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "grammar/pertanyaan-negatif.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 50,
+        "incomplete": 1,
+        "passes": 39,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 6,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Pertanyaan &amp; Kalimat Negatif (<span lang=\"ja\">疑問</span>・<span lang=\"ja\">否定</span>)\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">疑問</span>",
+              "target": [
+                "h1 > span[lang=\"ja\"]:nth-child(1)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">否定</span>",
+              "target": [
+                "h1 > span[lang=\"ja\"]:nth-child(2)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span lang=\"ja\">か</span>",
+              "target": [
+                ".mt-4 > strong > span[lang=\"ja\"]"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/pertanyaan-negatif.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "grammar/struktur-kalimat.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 45,
+        "incomplete": 1,
+        "passes": 44,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 6,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Struktur Kalimat &amp; <span lang=\"ja\">です</span>\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">です</span>",
+              "target": [
+                "h1 > span[lang=\"ja\"]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span lang=\"ja\">は</span>",
+              "target": [
+                ".mt-4 > span[lang=\"ja\"]:nth-child(1)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">です</span>",
+              "target": [
+                ".mt-4 > span[lang=\"ja\"]:nth-child(2)"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/struktur-kalimat.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "grammar/struktur-kalimat.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 45,
+        "incomplete": 1,
+        "passes": 44,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 6,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Struktur Kalimat &amp; <span lang=\"ja\">です</span>\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">です</span>",
+              "target": [
+                "h1 > span[lang=\"ja\"]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
+              "html": "<span lang=\"ja\">は</span>",
+              "target": [
+                ".mt-4 > span[lang=\"ja\"]:nth-child(1)"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">です</span>",
+              "target": [
+                ".mt-4 > span[lang=\"ja\"]:nth-child(2)"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/struktur-kalimat.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "grammar/ungkapan-salam.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 50,
+        "incomplete": 1,
+        "passes": 39,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Ungkapan &amp; Salam (<span lang=\"ja\">挨拶</span> - Aisatsu)\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">挨拶</span>",
+              "target": [
+                "h1 > span[lang=\"ja\"]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">\n            Berbeda dengan aturan tata bahasa (grammar), salam dan ungkapan situasi adalah frasa komunikasi tetap (<em>set phrases</em>)\n            yang sangat dijunjung tinggi dalam etika sosial masyarakat Jepang.\n          </p>",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<em>set phrases</em>",
+              "target": [
+                ".mt-4 > em"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/ungkapan-salam.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "grammar/ungkapan-salam.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 50,
+        "incomplete": 1,
+        "passes": 39,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kamus-grammar.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Kamus &amp; Indeks Grammar\n          </a>",
+              "target": [
+                ".inline-flex"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-3xl md:text-5xl font-bold text-ink\">\n                Ungkapan &amp; Salam (<span lang=\"ja\">挨拶</span> - Aisatsu)\n              </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<span lang=\"ja\">挨拶</span>",
+              "target": [
+                "h1 > span[lang=\"ja\"]"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-base leading-relaxed text-slate-600\">\n            Berbeda dengan aturan tata bahasa (grammar), salam dan ungkapan situasi adalah frasa komunikasi tetap (<em>set phrases</em>)\n            yang sangat dijunjung tinggi dalam etika sosial masyarakat Jepang.\n          </p>",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<em>set phrases</em>",
+              "target": [
+                ".mt-4 > em"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/grammar/ungkapan-salam.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kosakata/keluarga.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 45,
+        "incomplete": 1,
+        "passes": 44,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 4,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kosakata.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Indeks Kosakata\n          </a>",
+              "target": [
+                ".hover\\:underline"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-4xl leading-tight md:text-5xl text-ink\">\n            Keluarga &amp; Memperkenalkan Diri\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 text-base md:text-lg text-slate-600 max-w-2xl mx-auto\">\n            Pelajari perbedaan penyebutan keluarga sendiri (uchi) vs keluarga orang lain (soto), aturan menghitung jumlah orang, serta pola percakapan memperkenalkan anggota keluarga.\n          </p>",
+              "target": [
+                ".md\\:text-lg"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<span>→</span>",
+              "target": [
+                ".mt-5 > span:nth-child(2)"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata/keluarga.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kosakata/keluarga.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 45,
+        "incomplete": 1,
+        "passes": 44,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 4,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kosakata.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Indeks Kosakata\n          </a>",
+              "target": [
+                ".hover\\:underline"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"mt-3 font-display text-4xl leading-tight md:text-5xl text-ink\">\n            Keluarga &amp; Memperkenalkan Diri\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-3 text-base md:text-lg text-slate-600 max-w-2xl mx-auto\">\n            Pelajari perbedaan penyebutan keluarga sendiri (uchi) vs keluarga orang lain (soto), aturan menghitung jumlah orang, serta pola percakapan memperkenalkan anggota keluarga.\n          </p>",
+              "target": [
+                ".md\\:text-lg"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<span>→</span>",
+              "target": [
+                ".mt-5 > span:nth-child(2)"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata/keluarga.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kosakata/mata-pelajaran.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 53,
+        "incomplete": 1,
+        "passes": 36,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kosakata.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Indeks Kosakata\n          </a>",
+              "target": [
+                ".hover\\:underline"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mb-3 font-bold uppercase tracking-widest text-crimson\">\n            Kosakata Dasar\n          </p>",
+              "target": [
+                ".mb-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-4xl leading-tight md:text-6xl\">\n            Mata Pelajaran &amp; Jurusan\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-lg text-slate-600\">\n            Daftar lengkap mata pelajaran sekolah (SD, SMP, SMA) dan program\n            studi/jurusan perkuliahan dalam bahasa Jepang.\n          </p>",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<span>→</span>",
+              "target": [
+                ".mt-5 > span:nth-child(2)"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata/mata-pelajaran.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kosakata/mata-pelajaran.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 53,
+        "incomplete": 1,
+        "passes": 36,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kosakata.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Indeks Kosakata\n          </a>",
+              "target": [
+                ".hover\\:underline"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mb-3 font-bold uppercase tracking-widest text-crimson\">\n            Kosakata Dasar\n          </p>",
+              "target": [
+                ".mb-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-4xl leading-tight md:text-6xl\">\n            Mata Pelajaran &amp; Jurusan\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-lg text-slate-600\">\n            Daftar lengkap mata pelajaran sekolah (SD, SMP, SMA) dan program\n            studi/jurusan perkuliahan dalam bahasa Jepang.\n          </p>",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<span>→</span>",
+              "target": [
+                ".mt-5 > span:nth-child(2)"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata/mata-pelajaran.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kosakata/orang.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 53,
+        "incomplete": 1,
+        "passes": 36,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kosakata.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Indeks Kosakata\n          </a>",
+              "target": [
+                ".hover\\:underline"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mb-3 font-bold uppercase tracking-widest text-crimson\">\n            Kosakata Dasar\n          </p>",
+              "target": [
+                ".mb-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-4xl leading-tight md:text-6xl\">\n            Orang &amp; Kata Ganti\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-lg text-slate-600\">\n            Daftar lengkap kata ganti orang (pronomina), sebutan usia/sosial,\n            serta kewarganegaraan dalam bahasa Jepang.\n          </p>",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<span>→</span>",
+              "target": [
+                ".mt-5 > span:nth-child(2)"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata/orang.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kosakata/orang.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 53,
+        "incomplete": 1,
+        "passes": 36,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kosakata.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Indeks Kosakata\n          </a>",
+              "target": [
+                ".hover\\:underline"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mb-3 font-bold uppercase tracking-widest text-crimson\">\n            Kosakata Dasar\n          </p>",
+              "target": [
+                ".mb-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-4xl leading-tight md:text-6xl\">\n            Orang &amp; Kata Ganti\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-lg text-slate-600\">\n            Daftar lengkap kata ganti orang (pronomina), sebutan usia/sosial,\n            serta kewarganegaraan dalam bahasa Jepang.\n          </p>",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<span>→</span>",
+              "target": [
+                ".mt-5 > span:nth-child(2)"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata/orang.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kosakata/pekerjaan.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 53,
+        "incomplete": 1,
+        "passes": 36,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kosakata.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Indeks Kosakata\n          </a>",
+              "target": [
+                ".hover\\:underline"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mb-3 font-bold uppercase tracking-widest text-crimson\">\n            Kosakata Dasar\n          </p>",
+              "target": [
+                ".mb-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-4xl leading-tight md:text-6xl\">\n            Pekerjaan &amp; Profesi\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-lg text-slate-600\">\n            Daftar lengkap kosakata profesi, karier, status pekerjaan, dan dunia\n            kerja dalam bahasa Jepang.\n          </p>",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<span>→</span>",
+              "target": [
+                ".mt-5 > span:nth-child(2)"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata/pekerjaan.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kosakata/pekerjaan.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 53,
+        "incomplete": 1,
+        "passes": 36,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kosakata.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Indeks Kosakata\n          </a>",
+              "target": [
+                ".hover\\:underline"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mb-3 font-bold uppercase tracking-widest text-crimson\">\n            Kosakata Dasar\n          </p>",
+              "target": [
+                ".mb-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-4xl leading-tight md:text-6xl\">\n            Pekerjaan &amp; Profesi\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-lg text-slate-600\">\n            Daftar lengkap kosakata profesi, karier, status pekerjaan, dan dunia\n            kerja dalam bahasa Jepang.\n          </p>",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<span>→</span>",
+              "target": [
+                ".mt-5 > span:nth-child(2)"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata/pekerjaan.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kosakata/sekolah.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 53,
+        "incomplete": 1,
+        "passes": 36,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kosakata.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Indeks Kosakata\n          </a>",
+              "target": [
+                ".hover\\:underline"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mb-3 font-bold uppercase tracking-widest text-crimson\">\n            Kosakata Dasar\n          </p>",
+              "target": [
+                ".mb-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-4xl leading-tight md:text-6xl\">\n            Sekolah &amp; Kelas\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-lg text-slate-600\">\n            Daftar kosakata seputar lingkungan sekolah, ruangan, fasilitas\n            kelas, dan aktivitas belajar dalam bahasa Jepang.\n          </p>",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<span>→</span>",
+              "target": [
+                ".mt-5 > span:nth-child(2)"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata/sekolah.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kosakata/sekolah.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 53,
+        "incomplete": 1,
+        "passes": 36,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kosakata.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Indeks Kosakata\n          </a>",
+              "target": [
+                ".hover\\:underline"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mb-3 font-bold uppercase tracking-widest text-crimson\">\n            Kosakata Dasar\n          </p>",
+              "target": [
+                ".mb-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-4xl leading-tight md:text-6xl\">\n            Sekolah &amp; Kelas\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-lg text-slate-600\">\n            Daftar kosakata seputar lingkungan sekolah, ruangan, fasilitas\n            kelas, dan aktivitas belajar dalam bahasa Jepang.\n          </p>",
+              "target": [
+                ".mt-4"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<span>→</span>",
+              "target": [
+                ".mt-5 > span:nth-child(2)"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata/sekolah.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kosakata/waktu.html",
+    "theme": "light",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 53,
+        "incomplete": 1,
+        "passes": 36,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kosakata.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Indeks Kosakata\n          </a>",
+              "target": [
+                ".hover\\:underline"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mb-3 font-bold uppercase tracking-widest text-crimson\">\n            Kosakata Dasar\n          </p>",
+              "target": [
+                ".mb-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-4xl leading-tight md:text-6xl\">\n            Keterangan Waktu\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-lg text-slate-600\">\n            Daftar lengkap kosakata waktu dalam bahasa Jepang untuk persiapan\n            JLPT.\n          </p>",
+              "target": [
+                ".mb-10 > .text-slate-600"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<span>→</span>",
+              "target": [
+                ".mt-5 > span:nth-child(2)"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata/waktu.html",
+      "violations": []
+    }
+  },
+  {
+    "route": "kosakata/waktu.html",
+    "theme": "dark",
+    "sizes": [
+      {
+        "scrollWidth": 320,
+        "width": 320
+      },
+      {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "scrollWidth": 1440,
+        "width": 1440
+      }
+    ],
+    "a11y": {
+      "axeVersion": "4.12.1",
+      "counts": {
+        "inapplicable": 53,
+        "incomplete": 1,
+        "passes": 36,
+        "violations": 0
+      },
+      "incomplete": [
+        {
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodeCount": 5,
+          "nodes": [
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<a href=\"../kosakata.html\" class=\"inline-flex items-center gap-2 text-sm font-bold text-crimson hover:underline\">\n            ← Kembali ke Indeks Kosakata\n          </a>",
+              "target": [
+                ".hover\\:underline"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mb-3 font-bold uppercase tracking-widest text-crimson\">\n            Kosakata Dasar\n          </p>",
+              "target": [
+                ".mb-3"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<h1 class=\"font-display text-4xl leading-tight md:text-6xl\">\n            Keterangan Waktu\n          </h1>",
+              "target": [
+                "h1"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+              "html": "<p class=\"mt-4 text-lg text-slate-600\">\n            Daftar lengkap kosakata waktu dalam bahasa Jepang untuk persiapan\n            JLPT.\n          </p>",
+              "target": [
+                ".mb-10 > .text-slate-600"
+              ]
+            },
+            {
+              "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+              "html": "<span>→</span>",
+              "target": [
+                ".mt-5 > span:nth-child(2)"
+              ]
+            }
+          ],
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ]
+        }
+      ],
+      "lifecycle": {
+        "effectiveLaunch": {
+          "browserLaunched": true,
+          "engine": "chrome",
+          "launchHash": 11677035664275010974
+        },
+        "launched": false,
+        "relaunchedBrowser": false,
+        "restartedBackground": false,
+        "restoreStatus": "not_configured",
+        "reused": true,
+        "saveStatus": "not_attempted"
+      },
+      "url": "http://127.0.0.1:4174/kosakata/waktu.html",
+      "violations": []
+    }
+  }
+]
