@@ -2,7 +2,7 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
     <title>Hongo Study | Portal Belajar Bahasa Jepang Interaktif</title>
     <link rel="icon" type="image/svg+xml" href="{{rootPath}}favicon.svg" />
     {{> head }}
@@ -13,6 +13,10 @@
     {{> header }}
     
     <main id="main-content" tabindex="-1">
+      {{#if isAndroid}}
+      <div id="updateBannerSlot" class="mx-auto max-w-6xl px-5 pt-4"></div>
+      {{/if}}
+      {{#unless isAndroid}}
       <!-- Hero Section -->
       <section class="wash border-b border-slate-200/70">
         <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-[1.15fr_0.85fr] md:py-24">
@@ -20,7 +24,7 @@
             <div class="mb-5 flex items-center gap-2.5">
               <span class="font-kanji font-bold text-sm text-crimson">初級 · 中級</span>
               <span class="h-3 w-px bg-slate-300"></span>
-              <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Silabus SMA · JLPT N5–N4</span>
+              <span class="text-xs font-semibold text-slate-500">Silabus SMA · JLPT N5–N4</span>
             </div>
             
             <h1 class="font-display text-4xl leading-[1.15] md:text-6xl text-ink">
@@ -76,8 +80,9 @@
           </div>
         </div>
       </section>
+      {{/unless}}
 
-      <section class="mx-auto max-w-6xl px-5 pt-10" aria-labelledby="studyHeading">
+      <section class="mx-auto max-w-6xl px-5 {{#if isAndroid}}pt-4{{else}}pt-10{{/if}}" aria-labelledby="studyHeading">
         <div class="study-panel">
           <h2 id="studyHeading" class="font-display text-2xl">Langkah belajar berikutnya</h2>
           <p id="studyProgress" class="mt-3 text-sm text-slate-600">Mulai dengan 10 huruf Kana. Hasil latihan disimpan di browser ini.</p>
@@ -92,10 +97,10 @@
       </section>
 
       <!-- Ruang Latihan: Asymmetric Bento Layout -->
-      <section id="latihan" class="mx-auto max-w-6xl px-5 py-16 md:py-20">
+      <section id="latihan" class="mx-auto max-w-6xl px-5 {{#if isAndroid}}py-10{{else}}py-16 md:py-20{{/if}}">
         <div class="mb-10 flex flex-wrap items-end justify-between gap-4 border-b border-slate-200/70 pb-6">
           <div>
-            <span class="font-mono text-xs font-bold uppercase tracking-widest text-crimson">Modul Praktik 01</span>
+            <span class="font-mono text-xs font-bold text-crimson">Modul Praktik 01</span>
             <h2 class="mt-1 font-display text-3xl font-bold md:text-4xl text-ink">Ruang Latihan Interaktif</h2>
           </div>
           <p class="max-w-md text-sm text-slate-600">
@@ -193,10 +198,10 @@
       </section>
 
       <!-- Materi Pembelajaran: Asymmetric Bento Layout -->
-      <section id="materi" class="mx-auto max-w-6xl px-5 py-12 pb-24">
+      <section id="materi" class="mx-auto max-w-6xl px-5 {{#if isAndroid}}py-8 pb-12{{else}}py-12 pb-24{{/if}}">
         <div class="mb-10 flex flex-wrap items-end justify-between gap-4 border-b border-slate-200/70 pb-6">
           <div>
-            <span class="font-mono text-xs font-bold uppercase tracking-widest text-crimson">Modul Referensi 02</span>
+            <span class="font-mono text-xs font-bold text-crimson">Modul Referensi 02</span>
             <h2 class="mt-1 font-display text-3xl font-bold md:text-4xl text-ink">Materi & Ensiklopedia Belajar</h2>
           </div>
           <p class="max-w-md text-sm text-slate-600">
@@ -269,6 +274,7 @@
             </div>
           </a>
 
+          {{#unless isAndroid}}
           <!-- Card 3: Anatomi 3D & Eksplorasi Visual (Full row / Spans 12 cols) -->
           <div class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm md:col-span-12">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
@@ -302,6 +308,7 @@
               </div>
             </div>
           </div>
+          {{/unless}}
         </div>
       </section>
     </main>

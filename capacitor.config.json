@@ -1,0 +1,22 @@
+{
+  "appId": "io.github.weinssy.hongostudy",
+  "appName": "Hongo Study",
+  "webDir": "dist-android",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 400,
+      "launchAutoHide": false,
+      "backgroundColor": "#FAF8F5",
+      "androidScaleType": "CENTER_INSIDE",
+      "showSpinner": false
+    },
+    "StatusBar": {
+      "overlaysWebView": false,
+      "style": "LIGHT",
+      "backgroundColor": "#FAF8F5"
+    }
+  }
+}

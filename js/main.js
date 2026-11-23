@@ -3,6 +3,7 @@ import { annotateJapanese } from './language.js';
 import { exportProgress, getProgress, getWrongAnswers, recordVisit } from './progress.js';
 
 (() => {
+  const isAndroidBuild = typeof __ANDROID_APP__ !== 'undefined' && __ANDROID_APP__;
   const menuButton = document.querySelector('#menuButton');
   const nav = document.querySelector('#mainNav');
   const themeToggle = document.querySelector('#themeToggle');
@@ -10,6 +11,7 @@ import { exportProgress, getProgress, getWrongAnswers, recordVisit } from './pro
   const applyTheme = dark => {
     document.documentElement.classList.toggle('dark-mode', dark);
     themeToggle?.setAttribute('aria-pressed', String(dark));
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#121316' : '#FAF8F5');
   };
   const savedTheme = storage.get('nihongo-theme');
   applyTheme(savedTheme ? savedTheme === 'dark' : systemTheme.matches);
@@ -103,8 +105,14 @@ import { exportProgress, getProgress, getWrongAnswers, recordVisit } from './pro
     }
     document.querySelector('#studyProgress').textContent = progress.answered
       ? `${progress.correct} jawaban benar dari ${progress.answered} soal kuis. ${due} kosakata perlu diulang.`
-      : 'Mulai dengan 10 huruf Kana. Hasil latihan disimpan di browser ini.';
-    document.querySelector('#exportProgress').addEventListener('click', () => {
+      : isAndroidBuild
+        ? 'Mulai dengan 10 huruf Kana. Hasil latihan disimpan di perangkat ini.'
+        : 'Mulai dengan 10 huruf Kana. Hasil latihan disimpan di browser ini.';
+    document.querySelector('#exportProgress').addEventListener('click', async () => {
+      if (typeof __ANDROID_APP__ !== 'undefined' && __ANDROID_APP__) {
+        const { exportProgressNative } = await import('./android-bridge.js');
+        if (await exportProgressNative()) return;
+      }
       const url = URL.createObjectURL(new Blob([JSON.stringify(exportProgress(), null, 2)], { type: 'application/json' }));
       const link = document.createElement('a');
       link.href = url;
@@ -116,6 +124,16 @@ import { exportProgress, getProgress, getWrongAnswers, recordVisit } from './pro
     });
   }
   showStorageStatus();
+  if (typeof __ANDROID_APP__ !== 'undefined' && __ANDROID_APP__) {
+    document.body.classList.add('has-bottom-nav');
+    import('./android-fonts.js');
+    import('./android-bridge.js').then(({ initAndroidBridge }) => {
+      initAndroidBridge({
+        closeMenu,
+        isMenuOpen: () => menuButton?.getAttribute('aria-expanded') === 'true',
+      });
+    });
+  }
   const entries = [
     // 1. Struktur Kalimat & です
     { keys:'wa desu は です identitas kalimat struktur pola dasar predikat sopan', title:'~ wa ~ desu', meaning:'Menyatakan identitas, profesi, atau keadaan dengan sopan.', formula:'A は B です', example:'<ruby>私<rt>わたし</rt></ruby>は<ruby>高校生<rt>こうこうせい</rt></ruby>です。', translation:'Saya adalah siswa SMA.', category:'1. Struktur Kalimat & です', link:'grammar/struktur-kalimat.html' },
@@ -186,6 +204,7 @@ import { exportProgress, getProgress, getWrongAnswers, recordVisit } from './pro
     };
     const count = document.querySelector('#grammarResultCount');
     let announcement;
+    let searchTimer;
     const update = () => {
       render();
       clearTimeout(announcement);
@@ -194,7 +213,10 @@ import { exportProgress, getProgress, getWrongAnswers, recordVisit } from './pro
       }, 300);
       applyFurigana(!document.body.classList.contains('furigana-off'));
     };
-    search.addEventListener('input', update);
+    search.addEventListener('input', () => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(update, 150);
+    });
     update();
   }
 })();

@@ -10,7 +10,13 @@
     "test": "node --test",
     "check:links": "node scripts/check-links.mjs",
     "check:budget": "node scripts/check-budget.mjs",
-    "check": "npm run test && npm run build && npm run check:links && npm run check:budget"
+    "check": "npm run test && npm run build && npm run check:links && npm run check:budget",
+    "build:android": "node scripts/build-android.mjs",
+    "check:android": "node scripts/check-android.mjs",
+    "cap:sync": "npm run build:android && npx cap sync android",
+    "android:apk": "npm run cap:sync && node scripts/run-gradle.mjs assembleGithubDebug",
+    "android:apk:release": "npm run cap:sync && node scripts/run-gradle.mjs assembleGithubRelease",
+    "android:aab": "npm run cap:sync && node scripts/run-gradle.mjs bundlePlaystoreRelease"
   },
   "repository": {
     "type": "git",
@@ -20,12 +26,21 @@
   "author": "",
   "license": "ISC",
   "type": "module",
-  "engines": { "node": "^20.19.0 || >=22.12.0" },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
   "bugs": {
     "url": "https://github.com/Weinssy/Hongo-Study/issues"
   },
   "homepage": "https://weinssy.github.io/Hongo-Study/",
   "devDependencies": {
+    "@capacitor/android": "^8.6.2",
+    "@capacitor/assets": "^4.0.0",
+    "@capacitor/cli": "^8.6.2",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/plus-jakarta-sans": "^5.3.0",
+    "@fontsource/shippori-mincho": "^5.3.0",
+    "@fontsource/zen-kaku-gothic-new": "^5.3.1",
     "autoprefixer": "^10.6.1",
     "handlebars": "^4.7.9",
     "postcss": "^8.5.28",
@@ -34,6 +49,12 @@
     "vite-plugin-handlebars": "^2.0.3"
   },
   "dependencies": {
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/core": "^8.6.2",
+    "@capacitor/filesystem": "^8.1.5",
+    "@capacitor/share": "^8.0.3",
+    "@capacitor/splash-screen": "^8.0.2",
+    "@capacitor/status-bar": "^8.0.4",
     "wanakana": "^5.3.1"
   }
 }

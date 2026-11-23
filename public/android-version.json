@@ -1,0 +1,8 @@
+{
+  "versionCode": 2,
+  "versionName": "1.0.1",
+  "tag": "android-v1.0.1",
+  "apkUrl": "https://github.com/Weinssy/Hongo-Study/releases/download/android-v1.0.1/hongo-study-v1.0.1.apk",
+  "sha256": "5cca3ff7437726cb2e2cba07ca830cb6ca93a943631ff498f8ce69dc2a2f20e2",
+  "notes": "Navigasi tab bawah khusus Android, perbaikan keyboard Tebak Huruf, dan pembaruan dalam aplikasi."
+}

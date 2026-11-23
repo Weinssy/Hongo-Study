@@ -1,3 +1,4 @@
+{{#unless isAndroid}}
 <footer class="border-t border-slate-200/80 bg-white px-5 py-8 transition-colors {{footerClass}}">
   <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 text-sm text-slate-500">
     <div class="flex items-center gap-2">
@@ -10,3 +11,5 @@
     </div>
   </div>
 </footer>
+{{/unless}}
+{{> bottom-nav }}

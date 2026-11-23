@@ -9,6 +9,7 @@
       </span>
     </a>
     <button id="themeToggle" type="button" class="header-action rounded-xl border border-slate-200 px-3 py-2 text-xs font-bold" aria-pressed="false">Tema gelap</button>
+    {{#unless isAndroid}}
     <button id="menuButton" type="button" class="header-action rounded-xl border border-slate-200 px-3 py-2 text-xs font-bold lg:hidden" aria-controls="mainNav" aria-expanded="false">
       <span aria-hidden="true">☰</span> Menu
     </button>
@@ -28,6 +29,7 @@
         </li>
       </ul>
     </nav>
+    {{/unless}}
   </div>
 </header>
 <p id="storageStatus" class="storage-notice" role="status" hidden>Progres tidak dapat disimpan di browser ini. Latihan tetap bisa digunakan selama halaman terbuka.</p>

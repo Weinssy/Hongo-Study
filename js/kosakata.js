@@ -40,11 +40,16 @@ import { escapeHtml } from './study-core.js';
   }
 
   let currentCategory = 'all';
+  let visibleLimit = 30;
   let announcement;
+  let searchTimer;
+  const PAGE_SIZE = 30;
+  const pagination = document.querySelector('#vocabPagination');
 
-  const render = () => {
+  const render = (resetLimit = true) => {
     initVocab();
     if (!searchInput || !resultsContainer) return;
+    if (resetLimit) visibleLimit = PAGE_SIZE;
     const query = searchInput.value.toLowerCase().trim();
 
     const filtered = allVocab.filter(item => {
@@ -52,12 +57,12 @@ import { escapeHtml } from './study-core.js';
       if (!matchCat) return false;
       if (!query) return true;
       const haystack = `${item.kanji} ${item.romaji} ${item.furigana} ${item.meaning}`.toLowerCase();
-    return haystack.includes(query);
+      return haystack.includes(query);
     });
 
     if (resultCount) {
       clearTimeout(announcement);
-      announcement = setTimeout(() => { resultCount.textContent = `Menampilkan ${filtered.length} dari ${allVocab.length} kosakata`; }, 300);
+      announcement = setTimeout(() => { resultCount.textContent = `Menampilkan ${Math.min(visibleLimit, filtered.length)} dari ${filtered.length} kosakata`; }, 300);
     }
 
     if (filtered.length === 0) {
@@ -66,11 +71,13 @@ import { escapeHtml } from './study-core.js';
           <p class="text-base font-bold text-slate-700">Kosakata tidak ditemukan</p>
           <p class="mt-1 text-sm text-slate-500">Coba gunakan kata kunci bahasa Indonesia, romaji, atau kanji lainnya.</p>
         </div>`;
+      pagination?.replaceChildren();
       return;
     }
 
-    resultsContainer.innerHTML = filtered.map(item => `
-      <article class="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition hover:shadow-md hover:border-crimson/50">
+    const visibleItems = filtered.slice(0, visibleLimit);
+    resultsContainer.innerHTML = visibleItems.map(item => `
+      <article class="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-colors hover:border-crimson/50">
         <div>
           <div class="flex items-center justify-between gap-2 border-b border-slate-100 pb-2">
             <span class="rounded-full bg-sakura/30 px-2.5 py-0.5 text-xs font-bold text-crimson">
@@ -92,6 +99,22 @@ import { escapeHtml } from './study-core.js';
         </div>
       </article>
     `).join('');
+
+    if (pagination) {
+      pagination.replaceChildren();
+      const remaining = filtered.length - visibleItems.length;
+      if (remaining > 0) {
+        const moreBtn = document.createElement('button');
+        moreBtn.type = 'button';
+        moreBtn.className = 'secondary-button';
+        moreBtn.textContent = `Tampilkan ${Math.min(PAGE_SIZE, remaining)} kosakata lagi (${remaining} tersisa)`;
+        moreBtn.addEventListener('click', () => {
+          visibleLimit += PAGE_SIZE;
+          render(false);
+        });
+        pagination.append(moreBtn);
+      }
+    }
   };
 
   if (filterButtons.length) {
@@ -105,13 +128,16 @@ import { escapeHtml } from './study-core.js';
         btn.classList.remove('bg-white', 'text-slate-700');
         currentCategory = btn.getAttribute('data-category') || 'all';
         filterButtons.forEach(button => button.setAttribute('aria-pressed', String(button === btn)));
-        render();
+        render(true);
       });
     });
   }
 
   if (searchInput) {
-    searchInput.addEventListener('input', render);
+    searchInput.addEventListener('input', () => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(() => render(true), 150);
+    });
   }
 
   const total = document.querySelector('#vocabularyTotal');

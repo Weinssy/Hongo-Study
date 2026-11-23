@@ -99,13 +99,25 @@ function showQuestion() {
   character.textContent = current[0];
   document.querySelector('#letterType').textContent = current[2];
   input.value = '';
-  input.disabled = false;
+  input.readOnly = false;
   form.querySelector('button').disabled = false;
   next.hidden = true;
   feedback.textContent = 'Tulis bacaan yang dipelajari pada pilihan karakter.';
   feedback.className = 'text-sm';
   remaining.textContent = queue.length - round;
   input.focus();
+}
+function closeGame() {
+  game.hidden = true;
+  setup.hidden = false;
+  startButton.focus();
+}
+if (typeof window !== 'undefined') {
+  window.__hongoBackHandler = () => {
+    if (game.hidden) return false;
+    closeGame();
+    return true;
+  };
 }
 function start() {
   if (!selectedItems.length) return;
@@ -126,24 +138,7 @@ document.querySelector('#refreshLetterGame').addEventListener('click', () => {
   setup.querySelector('input[value="single"]').checked = true;
   renderMenus();
 });
-form.addEventListener('submit', event => {
-  event.preventDefault();
-  if (answered || finished || !input.value.trim()) return;
-  answered = true;
-  const current = queue[round];
-  const correct = acceptsReading(input.value, current[1], current[0]);
-  if (correct) score++;
-  scoreText.textContent = `${score}/${queue.length}`;
-  remaining.textContent = queue.length - round - 1;
-  feedback.textContent = correct ? 'Benar. Bacaanmu tepat.' : `Belum tepat. Bacaan yang dilatih: ${current[1]}.`;
-  feedback.className = `feedback ${correct ? 'feedback-correct' : 'feedback-incorrect'}`;
-  input.disabled = true;
-  form.querySelector('button').disabled = true;
-  next.textContent = round === queue.length - 1 ? 'Lihat hasil latihan' : 'Soal berikutnya';
-  next.hidden = false;
-  next.focus();
-});
-next.addEventListener('click', () => {
+function advanceRound() {
   if (!answered || finished) return;
   if (++round < queue.length) return showQuestion();
   finished = true;
@@ -153,8 +148,35 @@ next.addEventListener('click', () => {
   feedback.textContent = `Latihan selesai. Skor ${score} dari ${queue.length}. Ulangi latihan atau pilih karakter lain.`;
   feedback.className = 'feedback feedback-correct';
   next.hidden = true;
+  input.blur();
   feedback.focus();
+}
+form.addEventListener('submit', event => {
+  event.preventDefault();
+  if (finished) return;
+  if (answered) return advanceRound();
+  if (!input.value.trim()) return;
+  answered = true;
+  const current = queue[round];
+  const correct = acceptsReading(input.value, current[1], current[0]);
+  if (correct) score++;
+  scoreText.textContent = `${score}/${queue.length}`;
+  remaining.textContent = queue.length - round - 1;
+  feedback.textContent = correct ? 'Benar. Bacaanmu tepat.' : `Belum tepat. Bacaan yang dilatih: ${current[1]}.`;
+  feedback.className = `feedback ${correct ? 'feedback-correct' : 'feedback-incorrect'}`;
+  input.readOnly = true;
+  form.querySelector('button').disabled = true;
+  next.textContent = round === queue.length - 1 ? 'Lihat hasil latihan' : 'Soal berikutnya';
+  next.hidden = false;
+  if (document.activeElement !== input) next.focus();
 });
-document.querySelector('#backLetterGame').addEventListener('click', () => { game.hidden = true; setup.hidden = false; startButton.focus(); });
+input.addEventListener('keydown', event => {
+  if (event.key === 'Enter' && answered && !finished) {
+    event.preventDefault();
+    advanceRound();
+  }
+});
+next.addEventListener('click', advanceRound);
+document.querySelector('#backLetterGame').addEventListener('click', closeGame);
 document.querySelector('#refreshActiveLetterGame').addEventListener('click', start);
 renderMenus();

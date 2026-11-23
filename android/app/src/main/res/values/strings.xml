@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Hongo Study</string>
+    <string name="title_activity_main">Hongo Study</string>
+    <string name="package_name">io.github.weinssy.hongostudy</string>
+    <string name="custom_url_scheme">io.github.weinssy.hongostudy</string>
+</resources>

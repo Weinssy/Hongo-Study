@@ -2,7 +2,7 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
     <title>Kuis Interaktif Materi | Hongo Study</title>
     <link rel="icon" type="image/svg+xml" href="{{rootPath}}favicon.svg" />
     {{> head }}
@@ -16,7 +16,7 @@
       <div class="mx-auto max-w-3xl px-5">
         <!-- Header Info -->
         <div class="mb-8 text-center">
-          <p class="mb-2 font-bold uppercase tracking-widest text-crimson">
+          <p class="mb-2 text-sm font-bold text-crimson">
             Evaluasi Belajar
           </p>
           <h1 class="font-display text-3xl md:text-5xl">
@@ -96,7 +96,7 @@
         <!-- Active Question Card -->
         <div
           id="quizCard"
-          class="rounded-3xl border border-slate-200 bg-white p-6 md:p-10 shadow-xl transition-all"
+          class="rounded-3xl border border-slate-200 bg-white p-6 md:p-10 shadow-xl transition-colors"
         >
           <div class="text-center py-4">
             <span
@@ -146,7 +146,7 @@
           >
             <span lang="ja" aria-hidden="true">学</span>
           </div>
-          <p class="font-bold uppercase tracking-widest text-crimson text-sm">
+          <p class="font-bold text-crimson text-sm">
             Hasil Latihan
           </p>
           <h2 id="summaryHeading" tabindex="-1" class="mt-2 font-display text-4xl md:text-5xl font-bold text-ink">

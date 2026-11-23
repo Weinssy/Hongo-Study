@@ -2,7 +2,7 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
     <title>Tebak Huruf | Hongo Study</title>
     <link rel="icon" type="image/svg+xml" href="{{rootPath}}favicon.svg" />
     {{> head }}
@@ -13,13 +13,13 @@
     {{> header }}
     <main id="main-content" tabindex="-1" class="mx-auto max-w-6xl px-5 py-20">
       <div class="mb-10">
-        <p class="font-bold uppercase tracking-widest text-crimson">
+        <p class="text-sm font-bold text-crimson">
           01 · Game latihan
         </p>
         <h1 class="mt-2 font-display text-5xl">Tebak huruf</h1>
         <p class="mt-4 max-w-xl leading-7 text-slate-500">
           Mulai dengan 10 huruf Kana, atau atur karakter dan panjang sesimu.
-          Setiap karakter muncul sekali dalam satu sesi. Skor terbaik disimpan di browser ini.
+          Setiap karakter muncul sekali dalam satu sesi. {{#if isAndroid}}Skor terbaik disimpan di perangkat ini.{{else}}Skor terbaik disimpan di browser ini.{{/if}}
         </p>
       </div>
       <section id="letterSetup" class="study-panel mb-8" aria-labelledby="setupHeading">
@@ -82,7 +82,11 @@
               id="letterInput"
               required
               autocomplete="off"
-              autocapitalize="none" spellcheck="false" inputmode="text"
+              autocapitalize="none"
+              autocorrect="off"
+              spellcheck="false"
+              inputmode="text"
+              enterkeyhint="done"
               placeholder="Ketik romaji..."
               class="min-w-0 flex-1 rounded-xl px-4 py-3 text-ink outline-none focus:ring-2 focus:ring-sakura"
             /><button class="primary-button">

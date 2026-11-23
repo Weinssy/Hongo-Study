@@ -1,0 +1,30 @@
+{{#if isAndroid}}
+<nav class="bottom-nav" aria-label="Navigasi utama">
+  <ul class="bottom-nav__list">
+    <li>
+      <a href="{{rootPath}}index.html" class="bottom-nav__item" {{#if isHomeTab}}aria-current="page"{{/if}}>
+        <span class="bottom-nav__kanji" lang="ja" aria-hidden="true">日</span>
+        <span class="bottom-nav__label">Belajar</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{rootPath}}kuis.html" class="bottom-nav__item" {{#if isKuisTab}}aria-current="page"{{/if}}>
+        <span class="bottom-nav__kanji" lang="ja" aria-hidden="true">問</span>
+        <span class="bottom-nav__label">Kuis</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{rootPath}}kamus-grammar.html" class="bottom-nav__item" {{#if isGrammarTab}}aria-current="page"{{/if}}>
+        <span class="bottom-nav__kanji" lang="ja" aria-hidden="true">文</span>
+        <span class="bottom-nav__label">Grammar</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{rootPath}}kosakata.html" class="bottom-nav__item" {{#if isKosakataTab}}aria-current="page"{{/if}}>
+        <span class="bottom-nav__kanji" lang="ja" aria-hidden="true">単</span>
+        <span class="bottom-nav__label">Kosakata</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+{{/if}}
