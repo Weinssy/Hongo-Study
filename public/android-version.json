@@ -1,8 +1,8 @@
 {
-  "versionCode": 4,
-  "versionName": "1.0.3",
-  "tag": "android-v1.0.3",
-  "apkUrl": "https://github.com/Weinssy/Hongo-Study/releases/download/android-v1.0.3/hongo-study-v1.0.3.apk",
-  "sha256": "d47b6ed4577c0e673ea43451b181c780aedcadbc470e74f151167228ee28757e",
-  "notes": "Perbaikan transisi halaman lebih mulus & anti zoom-in di Latihan, Audio TTS bahasa Jepang (ja-JP), Flashcard SRS (SM-2) + Streak Harian, Impor/Pulihkan Progres JSON, dan 4 skenario Roleplay Percakapan."
+  "versionCode": 5,
+  "versionName": "1.0.4",
+  "tag": "android-v1.0.4",
+  "apkUrl": "https://github.com/Weinssy/Hongo-Study/releases/download/android-v1.0.4/hongo-study-v1.0.4.apk",
+  "sha256": "5e61a732a10aa954c5ebd940962317c161233dc26d9214a263221fa382ea7c97",
+  "notes": "Perbaikan Audio TTS Android 11+ (ja-JP), tombol audio di halaman detail Grammar & Kosakata, Modul 100 Kanji Dasar N5, panduan Perubahan Kata Kerja (Kamus/て/ない/た), dan halaman Pengaturan khusus dengan menu Cek Update."
 }

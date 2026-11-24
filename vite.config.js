@@ -26,7 +26,7 @@ function androidFontsVirtualPlugin() {
 function getActiveTab(pagePath) {
   const normalized = pagePath.replaceAll('\\', '/').replace(/^(?!\/)/, '/');
   if (normalized.includes('/grammar/') || normalized.endsWith('/kamus-grammar.html')) return 'grammar';
-  if (normalized.includes('/kosakata/') || normalized.endsWith('/kosakata.html')) return 'kosakata';
+  if (normalized.includes('/kosakata/') || normalized.endsWith('/kosakata.html') || normalized.endsWith('/kanji.html')) return 'kosakata';
   if (LATIHAN_PAGES.some(page => normalized.endsWith(page))) return 'latihan';
   return 'home';
 }
@@ -77,6 +77,7 @@ export default defineConfig({
         return {
           vocabularyCount,
           isMenara: pagePath.includes('menara-jepang.html'),
+          isPengaturan: pagePath.includes('pengaturan.html'),
           isAndroid,
           activeTab,
           isHomeTab: activeTab === 'home',
@@ -113,6 +114,8 @@ export default defineConfig({
         kosakataKeluarga: resolve(import.meta.dirname, 'kosakata/keluarga.html'),
         kuis: resolve(import.meta.dirname, 'kuis.html'),
         flashcard: resolve(import.meta.dirname, 'flashcard.html'),
+        kanji: resolve(import.meta.dirname, 'kanji.html'),
+        pengaturan: resolve(import.meta.dirname, 'pengaturan.html'),
         latihan: resolve(import.meta.dirname, 'latihan.html'),
         labVisual: resolve(import.meta.dirname, 'lab-visual.html'),
         ...(isAndroid ? {} : {

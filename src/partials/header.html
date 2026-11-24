@@ -12,6 +12,9 @@
     <div class="flex shrink-0 items-center gap-1.5 sm:gap-2">
       <button id="furiganaToggle" type="button" role="switch" aria-checked="true" class="header-action header-furigana-chip" aria-label="Furigana"><span id="furiganaDot" class="header-furigana-dot bg-crimson" aria-hidden="true"></span><span lang="ja">ふりがな</span> <span id="furiganaState">ON</span></button>
       <button id="themeToggle" type="button" class="header-action rounded-xl border border-slate-200 px-3 py-2 text-xs font-bold" aria-pressed="false">Tema gelap</button>
+      <a href="{{rootPath}}pengaturan.html" class="header-action grid h-11 w-11 place-items-center rounded-xl border border-slate-200 text-ink hover:border-crimson hover:text-crimson" aria-label="Pengaturan" {{#if isPengaturan}}aria-current="page"{{/if}}>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </a>
     </div>
     {{/if}}
     {{#unless isAndroid}}
@@ -32,6 +35,9 @@
         </li>
         <li>
           <a class="nav-link {{#if isMenara}}active{{/if}}" href="{{rootPath}}menara-jepang.html" {{#if isMenara}}aria-current="page"{{/if}}>Menara 3D</a>
+        </li>
+        <li>
+          <a class="nav-link {{#if isPengaturan}}active{{/if}}" href="{{rootPath}}pengaturan.html" {{#if isPengaturan}}aria-current="page"{{/if}}>Pengaturan</a>
         </li>
       </ul>
     </nav>

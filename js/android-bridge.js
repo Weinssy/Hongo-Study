@@ -148,6 +148,18 @@ export function initAndroidBridge({ closeMenu, isMenuOpen } = {}) {
   }).catch(() => {});
 
   SplashScreen.hide().catch(() => {});
+  const appVersionLabel = document.getElementById('appVersionLabel');
+  if (appVersionLabel) {
+    App.getInfo()
+      .then((info) => {
+        if (info?.version) {
+          appVersionLabel.textContent = info.build
+            ? `Hongo Study v${info.version} (build ${info.build})`
+            : `Hongo Study v${info.version}`;
+        }
+      })
+      .catch(() => {});
+  }
   if (isRootPath(location.pathname)) {
     initAndroidUpdater();
   }

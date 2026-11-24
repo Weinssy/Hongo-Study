@@ -19,10 +19,15 @@ import { getEffectiveStreak } from './srs-core.js';
   const menuButton = document.querySelector('#menuButton');
   const nav = document.querySelector('#mainNav');
   const themeToggle = document.querySelector('#themeToggle');
+  const settingsThemeToggle = document.querySelector('#settingsThemeToggle');
   const systemTheme = matchMedia('(prefers-color-scheme: dark)');
   const applyTheme = dark => {
     document.documentElement.classList.toggle('dark-mode', dark);
     themeToggle?.setAttribute('aria-pressed', String(dark));
+    if (settingsThemeToggle) {
+      settingsThemeToggle.setAttribute('aria-pressed', String(dark));
+      settingsThemeToggle.textContent = dark ? 'Mode gelap aktif' : 'Mode terang aktif';
+    }
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#121316' : '#FAF8F5');
   };
   const savedTheme = storage.get('nihongo-theme');
@@ -30,11 +35,13 @@ import { getEffectiveStreak } from './srs-core.js';
   systemTheme.addEventListener('change', event => {
     if (!storage.get('nihongo-theme')) applyTheme(event.matches);
   });
-  themeToggle?.addEventListener('click', () => {
+  const toggleThemeAction = () => {
     const dark = !document.documentElement.classList.contains('dark-mode');
     applyTheme(dark);
     storage.set('nihongo-theme', dark ? 'dark' : 'light');
-  });
+  };
+  themeToggle?.addEventListener('click', toggleThemeAction);
+  settingsThemeToggle?.addEventListener('click', toggleThemeAction);
   const closeMenu = () => {
     nav?.classList.add('hidden');
     menuButton?.setAttribute('aria-expanded', 'false');
@@ -62,10 +69,15 @@ import { getEffectiveStreak } from './srs-core.js';
   window.addEventListener('study-storage-unavailable', showStorageStatus);
 
   const toggle = document.querySelector('#furiganaToggle');
+  const settingsFuriganaToggle = document.querySelector('#settingsFuriganaToggle');
   const applyFurigana = enabled => {
     document.body.classList.toggle('furigana-off', !enabled);
     toggle?.setAttribute('aria-checked', String(enabled));
     toggle?.setAttribute('aria-label', 'Furigana');
+    if (settingsFuriganaToggle) {
+      settingsFuriganaToggle.setAttribute('aria-checked', String(enabled));
+      settingsFuriganaToggle.textContent = enabled ? 'Furigana: ON' : 'Furigana: OFF';
+    }
     document.querySelectorAll('rt').forEach(rt => rt.setAttribute('aria-hidden', String(!enabled)));
     if (toggle) {
       const stateEl = document.querySelector('#furiganaState');
@@ -78,11 +90,29 @@ import { getEffectiveStreak } from './srs-core.js';
     }
   };
   applyFurigana(storage.get('hongo-furigana', 'on') !== 'off');
-  toggle?.addEventListener('click', () => {
+  const toggleFuriganaAction = () => {
     const enabled = document.body.classList.contains('furigana-off');
     applyFurigana(enabled);
     storage.set('hongo-furigana', enabled ? 'on' : 'off');
     document.dispatchEvent(new CustomEvent('hongo-furigana-change', { detail: { enabled } }));
+  };
+  toggle?.addEventListener('click', toggleFuriganaAction);
+  settingsFuriganaToggle?.addEventListener('click', toggleFuriganaAction);
+
+  const testTtsBtn = document.querySelector('#testTtsBtn');
+  const testTtsStatus = document.querySelector('#testTtsStatus');
+  testTtsBtn?.addEventListener('click', async () => {
+    const { speakJapanese } = await import('./speech.js');
+    if (testTtsStatus) {
+      testTtsStatus.hidden = false;
+      testTtsStatus.textContent = 'Memutar contoh suara: こんにちは、ほんごスタディです。';
+    }
+    const ok = await speakJapanese('こんにちは、ほんごスタディです。', { button: testTtsBtn });
+    if (testTtsStatus) {
+      testTtsStatus.textContent = ok
+        ? 'Audio berhasil dikirim ke layanan Text-to-Speech (ja-JP). Jika belum terdengar, naikkan volume Media dan pastikan paket suara Jepang aktif di Pengaturan HP.'
+        : 'Audio gagal diputar. Pastikan layanan Google Text-to-Speech dan data suara Jepang (ja-JP) aktif di Pengaturan HP.';
+    }
   });
 
   document.querySelectorAll('table').forEach((table, index) => {
@@ -330,6 +360,10 @@ import { getEffectiveStreak } from './srs-core.js';
     { keys:'masen tidak negasi masa depan sekarang ません', title:'Bentuk ~ masen', meaning:'Bentuk negatif sopan untuk kegiatan yang tidak dilakukan saat ini atau masa depan.', formula:'Stem Kata kerja + ません', example:'<ruby>明日<rt>あした</rt></ruby>は<ruby>勉強<rt>べんきょう</rt></ruby>しません。', translation:'Besok saya tidak belajar.', category:'3. Kata Kerja & Perubahannya', link:'grammar/kata-kerja.html' },
     { keys:'mashita lampau sudah selesai positif ました', title:'Bentuk ~ mashita', meaning:'Bentuk positif sopan untuk kegiatan yang sudah selesai di masa lampau.', formula:'Stem Kata kerja + ました', example:'<ruby>昨日<rt>きのう</rt></ruby>、<ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>みました。', translation:'Kemarin saya membaca buku.', category:'3. Kata Kerja & Perubahannya', link:'grammar/kata-kerja.html' },
     { keys:'masen deshita lampau tidak negasi ませんでした', title:'Bentuk ~ masen deshita', meaning:'Bentuk negatif sopan untuk perbuatan yang tidak dilakukan di masa lampau.', formula:'Stem Kata kerja + ませんでした', example:'テレビを<ruby>見<rt>み</rt></ruby>ませんでした。', translation:'Saya tidak menonton TV.', category:'3. Kata Kerja & Perubahannya', link:'grammar/kata-kerja.html' },
+    { keys:'kamus jishokei dasar kasual bentuk kamus 辞書形 る う', title:'Bentuk Kamus (辞書形)', meaning:'Bentuk dasar kata kerja di kamus, dipakai untuk kalimat kasual dan pola seperti 〜ことができます.', formula:'Akhiran -u (Gol. 1) / -ru (Gol. 2) / する・くる', example:'<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>話<rt>はな</rt></ruby>すことができます。', translation:'Saya bisa berbicara bahasa Jepang.', category:'3. Kata Kerja & Perubahannya', link:'grammar/kata-kerja.html#perubahan-dasar' },
+    { keys:'te form te-form sambung permintaan tolong sedang て で ください います', title:'Bentuk 〜て (Te-form)', meaning:'Bentuk sambung serbaguna untuk permintaan sopan (〜てください), aktivitas berlangsung (〜ています), dan merangkai kegiatan.', formula:'Gol.1 (って/んで/いて/して) · Gol.2 (〜て) · する→して', example:'ちょっと<ruby>待<rt>ま</rt></ruby>ってください。', translation:'Tolong tunggu sebentar.', category:'3. Kata Kerja & Perubahannya', link:'grammar/kata-kerja.html#perubahan-dasar' },
+    { keys:'nai form nai-form negatif kasual jangan larangan ない ないでください', title:'Bentuk 〜ない (Nai-form)', meaning:'Bentuk negatif kasual sekaligus dasar pola larangan sopan (〜ないでください) dan keharusan (〜なければなりません).', formula:'Gol.1 (vokal a + ない) · Gol.2 (〜ない) · する→しない', example:'ここで<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>らないでください。', translation:'Tolong jangan mengambil foto di sini.', category:'3. Kata Kerja & Perubahannya', link:'grammar/kata-kerja.html#perubahan-dasar' },
+    { keys:'ta form ta-form lampau kasual pengalaman pernah た だ ことがある', title:'Bentuk 〜た (Ta-form)', meaning:'Bentuk lampau kasual yang polanya sejajar dengan Te-form (て→た, で→だ), juga dipakai untuk menyatakan pengalaman (〜たことがあります).', formula:'Ubah akhiran て→た / で→だ', example:'<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>ったことがあります。', translation:'Saya pernah pergi ke Jepang.', category:'3. Kata Kerja & Perubahannya', link:'grammar/kata-kerja.html#perubahan-dasar' },
 
     // 4. Kata Sifat
     { keys:'i keiyoushi kata sifat i kunai katta panas mahal い', title:'Kata Sifat い (I-keiyoushi)', meaning:'Kata sifat berakhiran i; negatif menjadi -kunai, lampau -katta.', formula:'Sifat-i + です / 〜くないです', example:'この<ruby>本<rt>ほん</rt></ruby>は<ruby>高<rt>たか</rt></ruby>くないです。', translation:'Buku ini tidak mahal.', category:'4. Kata Sifat', link:'grammar/kata-sifat.html' },
@@ -356,12 +390,39 @@ import { getEffectiveStreak } from './srs-core.js';
     { keys:'aisatsu salam ungkapan sumimasen maaf permisi すみません', title:'Aisatsu: Sumimasen', meaning:'Ungkapan meminta maaf atau memanggil perhatian dengan santun.', formula:'すみません', example:'すみません、<ruby>駅<rt>えき</rt></ruby>はどこですか。', translation:'Permisi, stasiun ada di mana?', category:'Ungkapan & Salam', link:'grammar/ungkapan-salam.html' },
     { keys:'aisatsu salam ungkapan sayounara sampai jumpa perpisahan さようなら', title:'Aisatsu: Sayounara', meaning:'Salam perpisahan saat tidak akan bertemu dalam jangka waktu tertentu.', formula:'さようなら', example:'さようなら。また<ruby>明日<rt>あした</rt></ruby>。', translation:'Sampai jumpa. Sampai besok.', category:'Ungkapan & Salam', link:'grammar/ungkapan-salam.html' }
   ];
+  const SPEAKER_SVG = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>';
+  const rubyMarkupToSpoken = (html) => String(html || '')
+    .replace(/<ruby>[^<]*<rt>([^<]+)<\/rt><\/ruby>/g, '$1')
+    .replace(/<[^>]+>/g, '')
+    .trim();
+
+  const extractSpokenFromNode = (node) => {
+    const clone = node.cloneNode(true);
+    clone.querySelectorAll('ruby').forEach(ruby => {
+      const rt = ruby.querySelector('rt');
+      ruby.replaceWith(rt ? rt.textContent : ruby.textContent);
+    });
+    return clone.textContent.trim();
+  };
+
+  const createInlineTtsButton = (spoken, label) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'tts-btn';
+    btn.dataset.speak = spoken;
+    btn.setAttribute('aria-label', label);
+    btn.innerHTML = `${SPEAKER_SVG}<span>Dengar</span>`;
+    return btn;
+  };
+
   const search = document.querySelector('#grammarSearch'); const results = document.querySelector('#grammarResults');
   if (search && results) {
     const render = () => {
       const query = search.value.toLowerCase().trim();
       const found = entries.filter(entry => !query || `${entry.keys} ${entry.title} ${entry.meaning} ${entry.category || ''}`.toLowerCase().includes(query));
-      results.innerHTML = found.length ? found.map(entry => `
+      results.innerHTML = found.length ? found.map(entry => {
+        const spoken = rubyMarkupToSpoken(entry.example).replace(/"/g, '&quot;');
+        return `
         <article class="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-5 transition-shadow hover:shadow-md">
           <div>
             <div class="flex flex-wrap items-center justify-between gap-2">
@@ -371,14 +432,24 @@ import { getEffectiveStreak } from './srs-core.js';
             ${entry.category ? `<span class="mt-2 inline-block rounded-md bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-600">${entry.category}</span>` : ''}
             <p class="mt-2 text-sm text-slate-600 leading-relaxed">${entry.meaning}</p>
             <div class="mt-3 rounded-lg bg-mist p-3">
-              <p lang="ja" class="font-display text-xl text-ink">${entry.example}</p>
+              <div class="flex items-start justify-between gap-2">
+                <p lang="ja" class="font-display text-xl text-ink">${entry.example}</p>
+                <button type="button" class="tts-btn shrink-0" data-speak="${spoken}" aria-label="Dengarkan contoh ${entry.title}">${SPEAKER_SVG}<span>Dengar</span></button>
+              </div>
               <p class="mt-1 text-xs text-slate-500">${entry.translation}</p>
             </div>
           </div>
           ${entry.link ? `<div class="mt-4 flex justify-end border-t border-slate-100 pt-3"><a href="${entry.link}" class="inline-flex items-center gap-1 text-xs font-bold text-crimson hover:underline">Pelajari di ${entry.category} &rarr;</a></div>` : ''}
         </article>
-      `).join('') : '<p class="col-span-full rounded-xl border border-slate-200 bg-white p-6 text-center text-sm text-slate-500">Pola tata bahasa tidak ditemukan. Coba kata kunci lain seperti <em>wa, desu, pergi, kata sifat, atau salam</em>.</p>';
+      `;
+      }).join('') : '<p class="col-span-full rounded-xl border border-slate-200 bg-white p-6 text-center text-sm text-slate-500">Pola tata bahasa tidak ditemukan. Coba kata kunci lain seperti <em>wa, desu, pergi, kata sifat, atau salam</em>.</p>';
     };
+    results.addEventListener('click', async event => {
+      const btn = event.target.closest('[data-speak]');
+      if (!btn) return;
+      const { speakJapanese } = await import('./speech.js');
+      speakJapanese(btn.dataset.speak, { button: btn });
+    });
     const count = document.querySelector('#grammarResultCount');
     let announcement;
     let searchTimer;
@@ -395,5 +466,42 @@ import { getEffectiveStreak } from './srs-core.js';
       searchTimer = setTimeout(update, 150);
     });
     update();
+  }
+
+  // Auto-enhance detail Grammar & Kosakata pages with TTS buttons
+  if (materialCategory) {
+    const hasJapanese = text => /[\u3040-\u30ff\u4e00-\u9faf]/.test(text);
+    const kind = materialCategory[1];
+
+    if (kind === 'grammar') {
+      document.querySelectorAll('.example-box p.font-display').forEach(p => {
+        if (p.parentElement?.querySelector('.tts-btn')) return;
+        const spoken = extractSpokenFromNode(p);
+        if (!hasJapanese(spoken)) return;
+        const row = document.createElement('div');
+        row.className = 'mt-2 flex justify-end';
+        row.append(createInlineTtsButton(spoken, `Dengarkan contoh ${spoken}`));
+        p.parentElement?.append(row);
+      });
+    } else if (kind === 'kosakata') {
+      document.querySelectorAll('main li').forEach(li => {
+        const jpSpan = li.querySelector('span.font-display');
+        if (!jpSpan || li.querySelector('.tts-btn')) return;
+        const raw = jpSpan.textContent.trim().replace(/^[（(]/, '').replace(/[）)]$/, '');
+        const parts = raw.split(/[／/]/).map(s => s.trim()).filter(Boolean);
+        const spoken = (parts.length > 1 && hasJapanese(parts[1]) ? parts[1] : parts[0]) || '';
+        if (!hasJapanese(spoken)) return;
+        const btn = createInlineTtsButton(spoken, `Dengarkan pelafalan ${spoken}`);
+        btn.classList.add('ml-2', 'align-middle');
+        li.append(btn);
+      });
+    }
+
+    document.querySelector('main')?.addEventListener('click', async event => {
+      const btn = event.target.closest('[data-speak]');
+      if (!btn) return;
+      const { speakJapanese } = await import('./speech.js');
+      speakJapanese(btn.dataset.speak, { button: btn });
+    });
   }
 })();

@@ -37,6 +37,7 @@ import {
   updateStreak,
 } from '../js/srs-core.js';
 import { cleanSpeechText } from '../js/speech.js';
+import { KANJI_CATEGORIES, KANJI_N5 } from '../js/kanji-data.js';
 
 test('isRootPath recognizes root paths and excludes nested sections', () => {
   for (const path of ['', '/', '/index.html', 'index.html', '/Hongo-Study/index.html', '/index.html?from=quiz#top']) {
@@ -415,4 +416,15 @@ test('cleanSpeechText strips parenthetical notes and normalizes separators', () 
   assert.equal(cleanSpeechText('おはよう（朝）'), 'おはよう');
   assert.equal(cleanSpeechText('いぬ / ねこ (hewan)'), 'いぬ 、 ねこ');
   assert.equal(cleanSpeechText(''), '');
+});
+
+test('KANJI_N5 dataset has 100 unique kanji with valid readings and categories', () => {
+  assert.equal(KANJI_N5.length, 100);
+  const unique = new Set(KANJI_N5.map(item => item.kanji));
+  assert.equal(unique.size, 100);
+  for (const item of KANJI_N5) {
+    assert.ok(Object.hasOwn(KANJI_CATEGORIES, item.category), item.kanji);
+    assert.ok(item.meaning.length > 0, item.kanji);
+    assert.ok(item.example.length > 0 && item.reading.length > 0, item.kanji);
+  }
 });

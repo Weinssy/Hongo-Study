@@ -1,5 +1,6 @@
 package io.github.weinssy.hongostudy;
 
+import android.media.AudioAttributes;
 import android.speech.tts.TextToSpeech;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
@@ -89,25 +90,40 @@ public class JapaneseTtsPlugin extends Plugin {
             onReady.run();
             return;
         }
-        try {
-            tts = new TextToSpeech(getContext().getApplicationContext(), status -> {
-                if (status == TextToSpeech.SUCCESS && tts != null) {
-                    int langResult = tts.setLanguage(Locale.JAPANESE);
-                    japaneseAvailable =
-                        langResult != TextToSpeech.LANG_MISSING_DATA &&
-                        langResult != TextToSpeech.LANG_NOT_SUPPORTED;
-                    initialized = true;
-                } else {
-                    initialized = false;
-                    japaneseAvailable = false;
+            try {
+                if (tts != null) {
+                    tts.shutdown();
+                    tts = null;
                 }
+            } catch (Exception ignored) {}
+            try {
+                tts = new TextToSpeech(getContext().getApplicationContext(), status -> {
+                    if (status == TextToSpeech.SUCCESS && tts != null) {
+                        tts.setAudioAttributes(
+                            new AudioAttributes.Builder()
+                                .setUsage(AudioAttributes.USAGE_MEDIA)
+                                .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+                                .build()
+                        );
+                        int langResult = tts.setLanguage(Locale.JAPAN);
+                        if (langResult == TextToSpeech.LANG_MISSING_DATA || langResult == TextToSpeech.LANG_NOT_SUPPORTED) {
+                            langResult = tts.setLanguage(Locale.JAPANESE);
+                        }
+                        japaneseAvailable =
+                            langResult != TextToSpeech.LANG_MISSING_DATA &&
+                            langResult != TextToSpeech.LANG_NOT_SUPPORTED;
+                        initialized = true;
+                    } else {
+                        initialized = false;
+                        japaneseAvailable = false;
+                    }
+                    onReady.run();
+                });
+            } catch (Exception ignored) {
+                initialized = false;
+                japaneseAvailable = false;
                 onReady.run();
-            });
-        } catch (Exception ignored) {
-            initialized = false;
-            japaneseAvailable = false;
-            onReady.run();
-        }
+            }
     }
 
     @Override

@@ -38,12 +38,12 @@ Hongo Study memakai satu repositori dengan dua target build Vite yang terpisah:
 | Aspek | Build Web (`dist/`) | Build Android (`dist-android/`) |
 | :--- | :--- | :--- |
 | Perintah build | `npm run build` | `npm run build:android` (`BUILD_TARGET=android`) |
-| Jumlah halaman HTML | 25 halaman (penuh) | 23 halaman inti (termasuk `latihan.html`, `flashcard.html`, dan `lab-visual.html`) |
+| Jumlah halaman HTML | 27 halaman (penuh) | 25 halaman inti (termasuk `latihan.html`, `flashcard.html`, `kanji.html`, `pengaturan.html`, dan `lab-visual.html`) |
 | Modul 3D (`menara-jepang.html`, `japanese-tower.html`, `public/anatomy/`, `public/japanese-tower-data.js`) | Disertakan | Dikecualikan agar ukuran APK ringkas dan stabil di WebView |
 | Sumber font | Google Fonts (daring) | Bundel Fontsource lokal (*Plus Jakarta Sans*, *JetBrains Mono*, *Shippori Mincho*, *Zen Kaku Gothic New*) |
 | Kebutuhan jaringan | Memuat font dari CDN Google | 100% luring (*offline*), tanpa permintaan ke `fonts.googleapis.com` atau `fonts.gstatic.com` |
 | Integrasi native | Di-tree-shake (0 byte Capacitor/Fontsource masuk ke `dist/`) | Capacitor 8 (tombol kembali, status bar sinkron tema, splash screen, audio TTS Jepang via `JapaneseTtsPlugin`, ekspor/impor progres) |
-| Validasi otomatis | `npm run check` | `npm run check:android` (23 HTML termasuk `latihan.html`, `flashcard.html`, dan `lab-visual.html`, tautan lokal valid, bebas referensi 3D/Google Fonts, total ukuran <= 15 MB) |
+| Validasi otomatis | `npm run check` | `npm run check:android` (25 HTML termasuk `latihan.html`, `flashcard.html`, `kanji.html`, `pengaturan.html`, dan `lab-visual.html`, tautan lokal valid, bebas referensi 3D/Google Fonts, total ukuran <= 15 MB) |
 
 ---
 

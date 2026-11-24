@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>Modul 100 Kanji Dasar N5 | Hongo Study</title>
+    <link rel="icon" type="image/svg+xml" href="{{rootPath}}favicon.svg" />
+    {{> head }}
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="font-sans bg-mist min-h-screen flex flex-col justify-between">
+    {{> header }}
+
+    <main id="main-content" tabindex="-1" class="wash flex-1 py-10 md:py-16">
+      <div class="mx-auto max-w-6xl px-5 min-w-0">
+        <div class="mb-8 flex flex-wrap items-end justify-between gap-4 border-b border-slate-200/80 pb-6">
+          <div>
+            <p class="text-sm font-bold text-crimson">Referensi Aksara · JLPT N5</p>
+            <h1 class="mt-1 font-display text-3xl md:text-5xl font-bold text-ink">
+              100 Kanji Dasar N5 (<span lang="ja">漢字</span>)
+            </h1>
+            <p class="mt-2 max-w-2xl text-sm md:text-base text-slate-600">
+              Kenali 100 huruf Kanji fundamental lengkap dengan bacaan <em>Onyomi</em>, <em>Kunyomi</em>, arti Indonesia, contoh kata majemuk, dan audio pelafalan Jepang.
+            </p>
+          </div>
+          <a href="tebak-huruf.html" class="secondary-button shrink-0">Latih di Tebak Huruf &rarr;</a>
+        </div>
+
+        <div class="mb-5 space-y-4 min-w-0">
+          <div>
+            <label for="kanjiSearch" class="sr-only">Cari Kanji, bacaan, atau arti</label>
+            <input
+              id="kanjiSearch"
+              type="search"
+              placeholder="Cari Kanji, onyomi, kunyomi, atau arti (misal: sekolah, 水, ひと)..."
+              class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-ink shadow-sm focus:border-crimson focus:outline-none"
+            />
+          </div>
+
+          <div
+            id="kanjiCategorySelector"
+            role="group"
+            aria-label="Filter tema Kanji"
+            class="chip-scroll-row"
+          >
+            <button type="button" data-category="all" aria-pressed="true" class="shrink-0 whitespace-nowrap rounded-full border border-crimson bg-crimson px-4 py-2 text-xs md:text-sm font-bold text-white shadow-sm">
+              <span class="font-kanji mr-1" lang="ja">全</span> Semua (100)
+            </button>
+            <button type="button" data-category="angka" aria-pressed="false" class="shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2 text-xs md:text-sm font-bold text-slate-700 shadow-sm hover:border-crimson">
+              <span class="font-kanji text-crimson mr-1" lang="ja">数</span> Angka
+            </button>
+            <button type="button" data-category="waktu" aria-pressed="false" class="shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2 text-xs md:text-sm font-bold text-slate-700 shadow-sm hover:border-crimson">
+              <span class="font-kanji text-crimson mr-1" lang="ja">時</span> Waktu
+            </button>
+            <button type="button" data-category="orang" aria-pressed="false" class="shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2 text-xs md:text-sm font-bold text-slate-700 shadow-sm hover:border-crimson">
+              <span class="font-kanji text-crimson mr-1" lang="ja">人</span> Orang
+            </button>
+            <button type="button" data-category="tubuh" aria-pressed="false" class="shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2 text-xs md:text-sm font-bold text-slate-700 shadow-sm hover:border-crimson">
+              <span class="font-kanji text-crimson mr-1" lang="ja">自</span> Tubuh &amp; Alam
+            </button>
+            <button type="button" data-category="arah" aria-pressed="false" class="shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2 text-xs md:text-sm font-bold text-slate-700 shadow-sm hover:border-crimson">
+              <span class="font-kanji text-crimson mr-1" lang="ja">方</span> Arah
+            </button>
+            <button type="button" data-category="tempat" aria-pressed="false" class="shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2 text-xs md:text-sm font-bold text-slate-700 shadow-sm hover:border-crimson">
+              <span class="font-kanji text-crimson mr-1" lang="ja">所</span> Tempat
+            </button>
+            <button type="button" data-category="aksi" aria-pressed="false" class="shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2 text-xs md:text-sm font-bold text-slate-700 shadow-sm hover:border-crimson">
+              <span class="font-kanji text-crimson mr-1" lang="ja">動</span> Aksi &amp; Sifat
+            </button>
+          </div>
+        </div>
+
+        <p id="kanjiResultCount" class="mb-4 text-xs font-semibold text-slate-500" role="status" aria-live="polite">
+          Menampilkan 100 dari 100 Kanji dasar N5
+        </p>
+
+        <div id="kanjiResults" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+      </div>
+    </main>
+
+    {{> footer footerClass="border-t border-slate-200/80" }}
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/kanji.js"></script>
+  </body>
+</html>

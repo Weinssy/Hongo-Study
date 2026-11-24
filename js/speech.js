@@ -40,7 +40,10 @@ export async function speakJapanese(text, { rate = 0.92, button = null } = {}) {
         if (res?.spoken) return true;
         if (res?.reason === 'missing_voice') {
           const { showToast } = await import('./android-bridge.js');
-          showToast('Suara Jepang belum aktif di Pengaturan Text-to-Speech HP.');
+          showToast('Suara Jepang (ja-JP) belum terpasang di Pengaturan Text-to-Speech HP.');
+        } else if (res?.reason === 'init_failed' || res?.reason === 'error') {
+          const { showToast } = await import('./android-bridge.js');
+          showToast('Layanan Text-to-Speech Android tidak merespons. Cek Speech Services di Pengaturan.');
         }
         return false;
       } catch {
