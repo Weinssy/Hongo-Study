@@ -34,6 +34,16 @@ const items = [...hiragana, ...katakana, ...kanji, ...words];
 
 const character = document.querySelector('#letterCharacter');
 const game = document.querySelector('#letterGame');
+const drillProgress = document.querySelector('#drillProgress');
+const drillActiveCard = document.querySelector('#drillActiveCard');
+const drillSummary = document.querySelector('#drillSummary');
+const drillSummaryHeading = document.querySelector('#drillSummaryHeading');
+const drillFinalScore = document.querySelector('#drillFinalScore');
+const drillSummaryNote = document.querySelector('#drillSummaryNote');
+const drillFinalBest = document.querySelector('#drillFinalBest');
+const drillRepeatBtn = document.querySelector('#drillRepeatBtn');
+const drillChangeBtn = document.querySelector('#drillChangeBtn');
+const roundCount = document.querySelector('#letterRoundCount');
 const form = document.querySelector('#letterForm');
 const input = document.querySelector('#letterInput');
 const feedback = document.querySelector('#letterFeedback');
@@ -60,29 +70,50 @@ function renderMenus() {
   menus.innerHTML = ['Hiragana', 'Katakana', 'Kanji'].map(type => {
     const choices = items.map((item, index) => ({item, index})).filter(({item}) => item[2] === type && ([...item[0]].length === 1) === (mode() === 'single'));
     return `<fieldset class="rounded-xl border border-slate-200 p-4">
-      <legend class="px-2 font-bold">${type}</legend>
-      <label class="option flex items-center gap-2"><input type="checkbox" data-type="${type}"><span>Pilih semua ${type}</span></label>
-      <div class="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">${choices.map(({item,index}) => `<label class="option flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2 text-sm"><input type="checkbox" data-index="${index}"><span lang="ja">${escapeHtml(item[0])}</span><span class="text-slate-500">${escapeHtml(item[1])}</span></label>`).join('')}</div>
+      <legend class="px-2 text-sm font-bold">${type}</legend>
+      <div class="mb-3 flex flex-wrap items-center justify-between gap-2">
+        <span class="text-xs font-bold text-slate-500" data-group-count="${type}">0/${choices.length} dipilih</span>
+        <button type="button" class="secondary-button !px-3 !py-1.5 text-xs" data-toggle-group="${type}">Pilih Semua</button>
+      </div>
+      <div class="drill-tile-grid">${choices.map(({item, index}) => `<button type="button" class="drill-tile" data-index="${index}" aria-pressed="false"><span lang="ja" class="font-kanji font-bold">${escapeHtml(item[0])}</span><span class="font-mono text-xs text-slate-500">${escapeHtml(item[1])}</span></button>`).join('')}</div>
     </fieldset>`;
   }).join('');
   const indexes = preset.value === 'katakana' ? items.map((x, i) => x[2] === 'Katakana' && x[0].length === 1 ? i : -1).filter(i => i >= 0).slice(0, 10) : Array.from({length: 10}, (_, i) => i);
-  menus.querySelectorAll('[data-index]').forEach(box => { box.checked = preset.value === 'custom' || indexes.includes(Number(box.dataset.index)); });
+  menus.querySelectorAll('[data-index]').forEach(tile => {
+    const selected = preset.value === 'custom' || indexes.includes(Number(tile.dataset.index));
+    tile.setAttribute('aria-pressed', String(selected));
+  });
   updateSelection();
 }
 function updateSelection() {
-  selectedItems = [...menus.querySelectorAll('[data-index]:checked')].map(box => items[Number(box.dataset.index)]);
-  menus.querySelectorAll('[data-type]').forEach(box => {
-    const choices = [...box.closest('fieldset').querySelectorAll('[data-index]')];
-    const checked = choices.filter(choice => choice.checked).length;
-    box.checked = checked === choices.length && checked > 0;
-    box.indeterminate = checked > 0 && checked < choices.length;
+  selectedItems = [...menus.querySelectorAll('[data-index][aria-pressed="true"]')].map(tile => items[Number(tile.dataset.index)]);
+  menus.querySelectorAll('[data-toggle-group]').forEach(button => {
+    const group = button.closest('fieldset');
+    const choices = [...group.querySelectorAll('[data-index]')];
+    const checked = choices.filter(choice => choice.getAttribute('aria-pressed') === 'true').length;
+    const allChecked = checked === choices.length && choices.length > 0;
+    button.textContent = allChecked ? 'Hapus Semua' : 'Pilih Semua';
+    const counter = group.querySelector('[data-group-count]');
+    if (counter) counter.textContent = `${checked}/${choices.length} dipilih`;
   });
   startButton.disabled = selectedItems.length === 0;
   const total = rounds.value === 'all' ? selectedItems.length : Math.min(Number(rounds.value), selectedItems.length);
   hint.textContent = selectedItems.length ? `${selectedItems.length} pilihan. Sesi ini berisi ${total} soal tanpa pengulangan.` : 'Pilih setidaknya satu karakter.';
 }
-menus.addEventListener('change', event => {
-  if (event.target.matches('[data-type]')) event.target.closest('fieldset').querySelectorAll('[data-index]').forEach(box => { box.checked = event.target.checked; });
+menus.addEventListener('click', event => {
+  const tile = event.target.closest('[data-index]');
+  if (tile) {
+    const nextPressed = tile.getAttribute('aria-pressed') !== 'true';
+    tile.setAttribute('aria-pressed', String(nextPressed));
+    preset.value = 'custom';
+    updateSelection();
+    return;
+  }
+  const toggleGroup = event.target.closest('[data-toggle-group]');
+  if (!toggleGroup) return;
+  const choices = [...toggleGroup.closest('fieldset').querySelectorAll('[data-index]')];
+  const allChecked = choices.length > 0 && choices.every(choice => choice.getAttribute('aria-pressed') === 'true');
+  choices.forEach(choice => { choice.setAttribute('aria-pressed', String(!allChecked)); });
   preset.value = 'custom';
   updateSelection();
 });
@@ -97,13 +128,19 @@ function showQuestion() {
   const current = queue[round];
   answered = false;
   character.textContent = current[0];
+  character.style.fontSize = [...current[0]].length > 1 ? 'clamp(2rem, 9vw, 3.5rem)' : '';
   document.querySelector('#letterType').textContent = current[2];
+  if (roundCount) roundCount.textContent = `Soal ${round + 1} / ${queue.length}`;
+  if (drillProgress) {
+    drillProgress.max = queue.length;
+    drillProgress.value = round;
+  }
   input.value = '';
   input.readOnly = false;
   form.querySelector('button').disabled = false;
   next.hidden = true;
   feedback.textContent = 'Tulis bacaan yang dipelajari pada pilihan karakter.';
-  feedback.className = 'text-sm';
+  feedback.className = 'mt-4 text-sm text-slate-600';
   remaining.textContent = queue.length - round;
   input.focus();
 }
@@ -128,6 +165,12 @@ function start() {
   const previous = getProgress().bestDrills[sessionKey];
   best.textContent = previous ? `Skor terbaik untuk pilihan ini: ${previous.score}/${previous.total}.` : 'Belum ada skor untuk pilihan ini.';
   scoreText.textContent = `0/${queue.length}`;
+  if (drillActiveCard) drillActiveCard.hidden = false;
+  if (drillSummary) drillSummary.hidden = true;
+  if (drillProgress) {
+    drillProgress.max = queue.length;
+    drillProgress.value = 0;
+  }
   setup.hidden = true;
   game.hidden = false;
   showQuestion();
@@ -145,11 +188,20 @@ function advanceRound() {
   recordDrill(sessionKey, score, queue.length);
   const previous = getProgress().bestDrills[sessionKey];
   best.textContent = `Skor terbaik untuk pilihan ini: ${previous.score}/${previous.total}.`;
-  feedback.textContent = `Latihan selesai. Skor ${score} dari ${queue.length}. Ulangi latihan atau pilih karakter lain.`;
-  feedback.className = 'feedback feedback-correct';
+  if (drillProgress) {
+    drillProgress.max = queue.length;
+    drillProgress.value = queue.length;
+  }
+  if (drillActiveCard) drillActiveCard.hidden = true;
+  if (drillSummary) drillSummary.hidden = false;
+  if (drillFinalScore) drillFinalScore.textContent = `${score} / ${queue.length}`;
+  if (drillSummaryNote) drillSummaryNote.textContent = `Kamu menjawab benar ${score} dari ${queue.length} soal.`;
+  if (drillFinalBest) drillFinalBest.textContent = `Skor terbaik: ${previous.score}/${previous.total}`;
+  feedback.textContent = `Latihan selesai. Skor ${score} dari ${queue.length}.`;
+  feedback.className = 'mt-4 feedback feedback-correct';
   next.hidden = true;
   input.blur();
-  feedback.focus();
+  (drillSummaryHeading || feedback).focus();
 }
 form.addEventListener('submit', event => {
   event.preventDefault();
@@ -162,8 +214,9 @@ form.addEventListener('submit', event => {
   if (correct) score++;
   scoreText.textContent = `${score}/${queue.length}`;
   remaining.textContent = queue.length - round - 1;
+  if (drillProgress) drillProgress.value = round + 1;
   feedback.textContent = correct ? 'Benar. Bacaanmu tepat.' : `Belum tepat. Bacaan yang dilatih: ${current[1]}.`;
-  feedback.className = `feedback ${correct ? 'feedback-correct' : 'feedback-incorrect'}`;
+  feedback.className = `mt-4 feedback ${correct ? 'feedback-correct' : 'feedback-incorrect'}`;
   input.readOnly = true;
   form.querySelector('button').disabled = true;
   next.textContent = round === queue.length - 1 ? 'Lihat hasil latihan' : 'Soal berikutnya';
@@ -179,4 +232,6 @@ input.addEventListener('keydown', event => {
 next.addEventListener('click', advanceRound);
 document.querySelector('#backLetterGame').addEventListener('click', closeGame);
 document.querySelector('#refreshActiveLetterGame').addEventListener('click', start);
+drillRepeatBtn?.addEventListener('click', start);
+drillChangeBtn?.addEventListener('click', closeGame);
 renderMenus();

@@ -127,8 +127,23 @@ function renderUpdateBanner(remote) {
   else slot.prepend(banner);
 }
 
+async function getInstalledAppInfo() {
+  try {
+    const info = await App.getInfo();
+    if (typeof document !== 'undefined' && info?.version) {
+      const label = document.getElementById('appVersionLabel');
+      if (label) label.textContent = `Hongo Study v${info.version}`;
+    }
+    return info;
+  } catch {
+    return null;
+  }
+}
+
 export async function initAndroidUpdater() {
   if (!Capacitor.isNativePlatform()) return;
+
+  const info = await getInstalledAppInfo();
   if (typeof navigator !== 'undefined' && navigator.onLine === false) return;
 
   try {
@@ -139,7 +154,7 @@ export async function initAndroidUpdater() {
     const lastCheckedAt = Number(storage.get(LAST_CHECK_KEY, '0'));
     if (!shouldCheckForUpdate({ now, lastCheckedAt })) return;
 
-    const [info, remote] = await Promise.all([App.getInfo(), fetchRemoteRelease()]);
+    const remote = await fetchRemoteRelease();
     storage.set(LAST_CHECK_KEY, String(now));
     if (!remote) return;
 
@@ -151,5 +166,79 @@ export async function initAndroidUpdater() {
     renderUpdateBanner(remote);
   } catch {
     // Fail silently so offline study flow is never interrupted.
+  }
+}
+
+export async function checkForUpdatesManual() {
+  if (!Capacitor.isNativePlatform()) {
+    return {
+      status: 'unsupported',
+      message: 'Cek pembaruan hanya tersedia di aplikasi Android.',
+    };
+  }
+
+  const info = await getInstalledAppInfo();
+
+  try {
+    const support = await AppUpdater.isSupported();
+    if (!support?.supported) {
+      return {
+        status: 'unsupported',
+        message: 'Pembaruan dalam aplikasi tidak aktif untuk versi distribusi ini.',
+      };
+    }
+  } catch {
+    return {
+      status: 'error',
+      message: 'Gagal memeriksa dukungan pembaruan aplikasi.',
+    };
+  }
+
+  if (typeof navigator !== 'undefined' && navigator.onLine === false) {
+    return {
+      status: 'offline',
+      message: 'Perangkat sedang offline. Sambungkan internet untuk memeriksa pembaruan.',
+    };
+  }
+
+  try {
+    const remote = await fetchRemoteRelease();
+    storage.set(LAST_CHECK_KEY, String(Date.now()));
+    if (!remote) {
+      return {
+        status: 'error',
+        message: 'Gagal memeriksa rilis terbaru. Coba lagi nanti.',
+      };
+    }
+
+    const localVersionCode = Number.parseInt(String(info?.build || ''), 10);
+    const localVersionName = String(info?.version || '');
+    const available = isUpdateAvailable({ localVersionCode, localVersionName, remote });
+
+    if (typeof document !== 'undefined') {
+      document.getElementById('updateBanner')?.remove();
+    }
+
+    if (available) {
+      renderUpdateBanner(remote);
+      return {
+        status: 'update-available',
+        versionName: remote.versionName,
+        message: `Pembaruan v${remote.versionName} tersedia.`,
+      };
+    }
+
+    return {
+      status: 'up-to-date',
+      versionName: localVersionName || remote.versionName,
+      message: localVersionName
+        ? `Aplikasi sudah versi terbaru (v${localVersionName}).`
+        : 'Aplikasi sudah versi terbaru.',
+    };
+  } catch {
+    return {
+      status: 'error',
+      message: 'Gagal memeriksa pembaruan. Coba lagi nanti.',
+    };
   }
 }

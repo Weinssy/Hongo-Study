@@ -11,6 +11,8 @@ import { getWrongAnswers, recordAnswer, recordVisit } from './progress.js';
   const questionNumber = document.querySelector("#questionNumber");
   const progressBar = document.querySelector("#progressBar");
   const quizCategoryBadge = document.querySelector("#quizCategoryBadge");
+  const quizLiveScore = document.querySelector("#quizLiveScore");
+  const toggleRomajiHint = document.querySelector("#toggleRomajiHint");
   const questionJapanese = document.querySelector("#questionJapanese");
   const questionRomaji = document.querySelector("#questionRomaji");
   const optionsGrid = document.querySelector("#optionsGrid");
@@ -108,6 +110,30 @@ import { getWrongAnswers, recordAnswer, recordVisit } from './progress.js';
     });
   }
 
+  function updateLiveScore(total = questions.length) {
+    if (quizLiveScore) quizLiveScore.textContent = `Skor: ${score}/${total}`;
+  }
+
+  function setRomajiHintVisible(visible) {
+    questionRomaji.hidden = !visible;
+    if (!toggleRomajiHint) return;
+    toggleRomajiHint.setAttribute("aria-pressed", String(visible));
+    toggleRomajiHint.textContent = visible ? "Sembunyikan" : "Lihat Romaji";
+    toggleRomajiHint.classList.toggle("bg-sakura/30", visible);
+    toggleRomajiHint.classList.toggle("text-crimson", visible);
+    toggleRomajiHint.classList.toggle("border-crimson", visible);
+    toggleRomajiHint.classList.toggle("bg-white", !visible);
+    toggleRomajiHint.classList.toggle("text-ink", !visible);
+    toggleRomajiHint.classList.toggle("border-slate-200", !visible);
+  }
+
+  function applyFurigana() {
+    const hidden = document.body.classList.contains("furigana-off");
+    questionJapanese.querySelectorAll("rt").forEach((rt) => {
+      rt.setAttribute("aria-hidden", String(hidden));
+    });
+  }
+
   // Render question at currentIndex
   function renderQuestion(moveFocus = false) {
     answered = false;
@@ -121,6 +147,7 @@ import { getWrongAnswers, recordAnswer, recordVisit } from './progress.js';
 
     // Update Progress & Badges
     questionNumber.textContent = `Soal ${currentIndex + 1} dari ${total}`;
+    updateLiveScore(total);
     progressBar.max = total;
     progressBar.value = currentIndex;
 
@@ -132,11 +159,14 @@ import { getWrongAnswers, recordAnswer, recordVisit } from './progress.js';
 
     // Question content
     if (current.furigana) {
-      questionJapanese.innerHTML = `<ruby lang="ja">${escapeHtml(current.question)}<rt aria-hidden="${document.body.classList.contains('furigana-off')}">${escapeHtml(current.furigana)}</rt></ruby>`;
+      questionJapanese.innerHTML = `<ruby lang="ja">${escapeHtml(current.question)}<rt>${escapeHtml(current.furigana)}</rt></ruby>`;
     } else {
       questionJapanese.textContent = current.question;
     }
+    applyFurigana();
     questionRomaji.textContent = current.romaji;
+    if (toggleRomajiHint) toggleRomajiHint.hidden = false;
+    setRomajiHintVisible(false);
 
     // Render Choices
     optionsGrid.innerHTML = "";
@@ -218,6 +248,9 @@ import { getWrongAnswers, recordAnswer, recordVisit } from './progress.js';
     }
 
     feedbackBox.classList.remove("hidden");
+    updateLiveScore(questions.length);
+    progressBar.value = currentIndex + 1;
+    setRomajiHintVisible(true);
     nextButton.classList.remove("hidden");
     nextButton.textContent =
       currentIndex + 1 < questions.length
@@ -234,6 +267,8 @@ import { getWrongAnswers, recordAnswer, recordVisit } from './progress.js';
     document.querySelector('#summaryHeading').focus();
 
     const total = questions.length;
+    questionNumber.textContent = `Sesi selesai · ${total} soal`;
+    updateLiveScore(total);
     finalScoreText.textContent = `${score} / ${total}`;
     const percent = Math.round((score / total) * 100);
     finalScorePercent.textContent = `${percent}%`;
@@ -266,9 +301,9 @@ import { getWrongAnswers, recordAnswer, recordVisit } from './progress.js';
               <p class="font-bold"><span lang="ja">${escapeHtml(ans.question)}</span> <span class="text-xs font-normal">(${escapeHtml(ans.romaji)})</span></p>
               ${
                 !ans.isCorrect
-                  ? `<p class="text-sm text-rose-700 mt-1">Jawabanmu: <span class="line-through">${ans.userAnswer}</span></p>
-                   <p class="text-sm text-emerald-700 mt-1 font-bold">Benar: ${ans.correctAnswer}</p>`
-                  : `<p class="text-sm text-emerald-700 mt-1">Jawaban: ${ans.userAnswer}</p>`
+                  ? `<p class="text-sm text-rose-700 mt-1">Jawabanmu: <span class="line-through">${escapeHtml(ans.userAnswer)}</span></p>
+                   <p class="text-sm text-emerald-700 mt-1 font-bold">Benar: ${escapeHtml(ans.correctAnswer)}</p>`
+                  : `<p class="text-sm text-emerald-700 mt-1">Jawaban: ${escapeHtml(ans.userAnswer)}</p>`
               }
             </div>
           </div>
@@ -301,6 +336,18 @@ import { getWrongAnswers, recordAnswer, recordVisit } from './progress.js';
         btn.classList.toggle("text-white", isCurrent);
         btn.classList.toggle("bg-white", !isCurrent);
         btn.classList.toggle("text-ink", !isCurrent);
+        if (isCurrent && categorySelector.scrollWidth > categorySelector.clientWidth) {
+          const left = btn.offsetLeft - categorySelector.offsetLeft;
+          const right = left + btn.offsetWidth;
+          const viewLeft = categorySelector.scrollLeft;
+          const viewRight = viewLeft + categorySelector.clientWidth;
+          if (left < viewLeft || right > viewRight) {
+            categorySelector.scrollTo({
+              left: Math.max(0, left - 16),
+              behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+            });
+          }
+        }
       });
     }
 
@@ -313,9 +360,12 @@ import { getWrongAnswers, recordAnswer, recordVisit } from './progress.js';
       progressBar.max = 1;
       progressBar.value = 0;
       questionNumber.textContent = 'Belum ada soal';
+      updateLiveScore(0);
       questionJapanese.lang = 'id';
       questionJapanese.textContent = "Data belum tersedia";
       questionRomaji.textContent = "";
+      if (toggleRomajiHint) toggleRomajiHint.hidden = true;
+      setRomajiHintVisible(false);
       optionsGrid.innerHTML =
         "<p class='text-sm text-slate-500'>Soal untuk kategori ini belum tersedia. Pilih kategori lain untuk melanjutkan latihan.</p>";
       if (moveFocus) questionJapanese.focus();
@@ -326,6 +376,13 @@ import { getWrongAnswers, recordAnswer, recordVisit } from './progress.js';
   }
 
   // Event Listeners
+  toggleRomajiHint?.addEventListener("click", () => {
+    if (!questions.length) return;
+    setRomajiHintVisible(questionRomaji.hidden);
+  });
+
+  document.addEventListener("hongo-furigana-change", applyFurigana);
+
   nextButton.addEventListener("click", () => {
     if (!answered) return;
     if (currentIndex + 1 < questions.length) {

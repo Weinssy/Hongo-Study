@@ -28,6 +28,7 @@
               atau gunakan fitur pencarian cepat di bawah untuk menemukan pola kalimat yang kamu inginkan.
             </p>
           </div>
+          {{#unless isAndroid}}
           <button
             id="furiganaToggle"
             type="button"
@@ -38,6 +39,7 @@
             <span id="furiganaDot" class="h-4 w-4 rounded-full bg-crimson"></span>
             Furigana: <span id="furiganaState">ON</span>
           </button>
+          {{/unless}}
         </div>
 
         <!-- Section: Daftar Subbab Grammar -->

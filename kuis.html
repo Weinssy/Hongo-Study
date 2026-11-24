@@ -31,52 +31,52 @@
         <!-- Category Selector Tabs -->
         <div
           role="group" aria-label="Kategori kuis" id="categorySelector"
-          class="mb-8 flex flex-wrap justify-center gap-2"
+          class="chip-scroll-row mb-8"
         >
           <button
             type="button"
             data-category="waktu"
-            class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
+            class="shrink-0 whitespace-nowrap rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
           >
             <span class="font-kanji font-bold text-crimson mr-1">時</span> Waktu
           </button>
           <button
             type="button"
             data-category="sekolah"
-            class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
+            class="shrink-0 whitespace-nowrap rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
           >
             <span class="font-kanji font-bold text-crimson mr-1">校</span> Sekolah
           </button>
           <button
             type="button"
             data-category="mata-pelajaran"
-            class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
+            class="shrink-0 whitespace-nowrap rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
           >
             <span class="font-kanji font-bold text-crimson mr-1">科</span> Mata Pelajaran
           </button>
           <button
             type="button"
             data-category="pekerjaan"
-            class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
+            class="shrink-0 whitespace-nowrap rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
           >
             <span class="font-kanji font-bold text-crimson mr-1">職</span> Profesi
           </button>
           <button
             type="button"
             data-category="orang"
-            class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
+            class="shrink-0 whitespace-nowrap rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
           >
             <span class="font-kanji font-bold text-crimson mr-1">人</span> Orang
           </button>
           <button
             type="button"
             data-category="keluarga"
-            class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
+            class="shrink-0 whitespace-nowrap rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
           >Keluarga</button>
           <button
             type="button"
             data-category="campuran"
-            class="rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
+            class="shrink-0 whitespace-nowrap rounded-full border border-slate-200 px-4 py-2 text-xs md:text-sm font-bold transition shadow-sm hover:border-crimson"
           >
             <span class="font-kanji font-bold text-crimson mr-1">全</span> Mode Campuran
           </button>
@@ -85,10 +85,13 @@
         <!-- Progress Bar -->
         <div class="mb-4">
           <div
-            class="flex justify-between text-xs font-bold text-slate-500 mb-1"
+            class="flex flex-wrap items-center justify-between gap-2 text-xs font-bold text-slate-500 mb-1.5"
           >
             <span id="questionNumber">Soal 1 dari 10</span>
-            <span id="quizCategoryBadge" class="text-crimson">Kategori</span>
+            <div class="flex items-center gap-3">
+              <span id="quizCategoryBadge" class="text-crimson">Kategori</span>
+              <span id="quizLiveScore" class="font-mono text-crimson">Skor: 0/10</span>
+            </div>
           </div>
           <progress id="progressBar" class="quiz-progress w-full" max="10" value="0" aria-label="Soal yang selesai dijawab"></progress>
         </div>
@@ -98,11 +101,21 @@
           id="quizCard"
           class="rounded-3xl border border-slate-200 bg-white p-6 md:p-10 shadow-xl transition-colors"
         >
-          <div class="text-center py-4">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
             <span
-              class="inline-block rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson mb-3"
+              class="inline-block rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson"
               >Apa arti kosakata ini?</span
             >
+            <button
+              id="toggleRomajiHint"
+              type="button"
+              aria-pressed="false"
+              class="rounded-full border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-ink transition hover:border-crimson"
+            >
+              Lihat Romaji
+            </button>
+          </div>
+          <div class="text-center py-4">
             <h2
               id="questionJapanese"
               lang="ja" tabindex="-1" aria-describedby="questionNumber"
@@ -112,7 +125,8 @@
             </h2>
             <p
               id="questionRomaji"
-              class="mt-3 text-lg font-bold text-slate-400"
+              hidden
+              class="mt-3 font-mono text-lg font-bold text-slate-400"
             >
               kyou
             </p>

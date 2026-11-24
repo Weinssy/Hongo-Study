@@ -40,10 +40,10 @@
             <label class="option flex items-center gap-2"><input type="radio" name="letterMode" value="word"> Kata</label>
           </div>
         </fieldset>
-        <details class="mt-4"><summary class="py-3 font-bold">Lihat dan pilih karakter sendiri</summary><div id="letterMenus" class="space-y-4"></div></details>
         <p class="mt-4 text-sm text-slate-600">Variasi shi/si, chi/ti, tsu/tu, fu/hu, serta vokal panjang ou/oo dan ei/ee diterima. Untuk kanji, gunakan bacaan yang ditampilkan pada daftar pilihan.</p>
-        <p id="selectionHint" role="status" class="mt-3 text-sm"></p>
+        <p id="selectionHint" role="status" class="mt-3 text-sm font-semibold text-ink"></p>
         <div class="mt-4 flex flex-wrap gap-3"><button id="startLetterGame" class="primary-button" type="button">Mulai latihan</button><button id="refreshLetterGame" class="secondary-button" type="button">Atur ulang</button></div>
+        <div id="letterMenus" class="mt-6 space-y-4"></div>
       </section>
       <div class="grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:items-center">
         <div>
@@ -63,44 +63,59 @@
           id="letterGame"
           hidden class="study-panel"
         >
-          <div
-            class="flex flex-wrap justify-between gap-3 text-xs font-bold"
-          >
-            <span id="letterType">Hiragana</span
-            ><span id="letterFeedback" role="status" tabindex="-1" aria-live="polite">Siap?</span>
-          </div>
-          <div
-            id="letterCharacter"
-            lang="ja"
-            class="my-8 text-center font-display text-8xl"
-          >
-            あ
-          </div>
-          <label for="letterInput" class="mb-2 block text-sm font-bold">Jawaban romaji</label>
-          <form id="letterForm" class="flex gap-2">
-            <input
-              id="letterInput"
-              required
-              autocomplete="off"
-              autocapitalize="none"
-              autocorrect="off"
-              spellcheck="false"
-              inputmode="text"
-              enterkeyhint="done"
-              placeholder="Ketik romaji..."
-              class="min-w-0 flex-1 rounded-xl px-4 py-3 text-ink outline-none focus:ring-2 focus:ring-sakura"
-            /><button class="primary-button">
-              Periksa jawaban
+          <progress id="drillProgress" class="quiz-progress w-full mb-4" max="10" value="0" aria-label="Progres latihan huruf"></progress>
+          <div id="drillActiveCard">
+            <div
+              class="flex flex-wrap items-center justify-between gap-3 text-xs font-bold"
+            >
+              <span id="letterType" class="rounded-full bg-sakura/30 px-3 py-1 text-crimson">Hiragana</span>
+              <span id="letterRoundCount" class="font-mono text-slate-500">Soal 1 / 10</span>
+            </div>
+            <div
+              id="letterCharacter"
+              lang="ja"
+              class="my-8 text-center font-display text-8xl"
+            >
+              あ
+            </div>
+            <label for="letterInput" class="mb-2 block text-sm font-bold">Jawaban romaji</label>
+            <form id="letterForm" class="flex gap-2">
+              <input
+                id="letterInput"
+                required
+                autocomplete="off"
+                autocapitalize="none"
+                autocorrect="off"
+                spellcheck="false"
+                inputmode="text"
+                enterkeyhint="done"
+                placeholder="Ketik romaji..."
+                class="min-w-0 flex-1 rounded-xl px-4 py-3 text-ink outline-none focus:ring-2 focus:ring-sakura"
+              /><button class="primary-button">
+                Periksa jawaban
+              </button>
+            </form>
+            <p id="letterFeedback" role="status" tabindex="-1" aria-live="polite" class="mt-4 text-sm text-slate-600">Siap?</p>
+            <button
+              id="letterNext"
+              type="button"
+              hidden class="primary-button mt-3 w-full"
+            >
+              Soal berikutnya
             </button>
-          </form>
-          <button
-            id="letterNext"
-            type="button"
-            hidden class="primary-button mt-3 w-full"
-          >
-            Soal berikutnya
-          </button>
-          <div class="mt-4 flex flex-wrap gap-3"><button id="backLetterGame" class="secondary-button" type="button">Pilih karakter lain</button><button id="refreshActiveLetterGame" class="secondary-button" type="button">Ulangi latihan</button></div>
+            <div class="mt-4 flex flex-wrap gap-3"><button id="backLetterGame" class="secondary-button" type="button">Pilih karakter lain</button><button id="refreshActiveLetterGame" class="secondary-button" type="button">Ulangi latihan</button></div>
+          </div>
+          <div id="drillSummary" hidden class="py-2 text-center">
+            <span class="inline-block rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson">Latihan selesai</span>
+            <h2 id="drillSummaryHeading" tabindex="-1" class="mt-3 font-display text-3xl font-bold text-ink">Hasil latihan</h2>
+            <p id="drillFinalScore" class="mt-4 font-mono text-5xl font-bold text-crimson">0 / 10</p>
+            <p id="drillSummaryNote" class="mx-auto mt-3 text-sm text-slate-600"></p>
+            <p id="drillFinalBest" class="mt-3 inline-block rounded-full bg-slate-100 px-4 py-1.5 text-xs font-bold text-ink"></p>
+            <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+              <button id="drillRepeatBtn" type="button" class="primary-button flex-1">Ulangi</button>
+              <button id="drillChangeBtn" type="button" class="secondary-button flex-1">Ganti Karakter</button>
+            </div>
+          </div>
         </div>
       </div>
     </main>

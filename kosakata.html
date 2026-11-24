@@ -28,6 +28,7 @@
               atau gunakan fitur pencarian terpusat di bawah untuk menemukan kata secara instan.
             </p>
           </div>
+          {{#unless isAndroid}}
           <button
             id="furiganaToggle"
             type="button"
@@ -38,6 +39,7 @@
             <span id="furiganaDot" class="h-4 w-4 rounded-full bg-crimson"></span>
             Furigana: <span id="furiganaState">ON</span>
           </button>
+          {{/unless}}
         </div>
 
         <!-- Section: Ringkasan Silabus & Fitur -->
@@ -249,57 +251,69 @@
                 Cari kata berdasarkan bahasa Indonesia, romaji, kanji, atau hiragana di seluruh kategori.
               </p>
             </div>
-            <span id="vocabResultCount" role="status" aria-live="polite" class="text-xs font-bold text-slate-500"></span>
+            <div class="flex flex-wrap items-center gap-3">
+              <span id="vocabResultCount" role="status" aria-live="polite" class="text-xs font-bold text-slate-500"></span>
+              <a id="vocabQuizLink" href="kuis.html?kategori=campuran" class="inline-flex min-h-[2.75rem] items-center text-xs font-bold text-crimson hover:underline">Latih Kuis &rarr;</a>
+            </div>
           </div>
 
           <!-- Kategori Filter Pills -->
-          <div class="mb-5 flex flex-wrap gap-2">
+          <div class="chip-scroll-row mb-5">
             <button
               type="button"
               data-category="all"
-              class="category-filter-btn rounded-full bg-crimson px-4 py-1.5 text-xs font-bold text-white shadow-sm transition hover:opacity-90"
+              class="category-filter-btn shrink-0 whitespace-nowrap rounded-full border border-crimson bg-crimson px-4 py-1.5 text-xs font-bold text-white shadow-sm transition hover:opacity-90"
             >
               Semua Kosakata
             </button>
             <button
               type="button"
+              data-category="review"
+              id="reviewFilterBtn"
+              hidden
+              class="category-filter-btn shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
+            >
+              Perlu Ulang (0)
+            </button>
+            <button
+              type="button"
               data-category="waktu"
-              class="category-filter-btn rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
+              class="category-filter-btn shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
             >
               時間 Waktu
             </button>
             <button
               type="button"
               data-category="sekolah"
-              class="category-filter-btn rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
+              class="category-filter-btn shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
             >
               学校 Sekolah
             </button>
             <button
               type="button"
               data-category="mata-pelajaran"
-              class="category-filter-btn rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
+              class="category-filter-btn shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
             >
               教科 Mapel
             </button>
             <button
               type="button"
               data-category="pekerjaan"
-              class="category-filter-btn rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
+              class="category-filter-btn shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
             >
               仕事 Profesi
             </button>
             <button
               type="button"
               data-category="orang"
-              class="category-filter-btn rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
+              class="category-filter-btn shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
             >
               人 Orang
             </button>
             <button
               type="button"
               data-category="keluarga"
-              class="category-filter-btn rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
+              class="category-filter-btn shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 transition hover:border-crimson"
             >
               家族 Keluarga
             </button>

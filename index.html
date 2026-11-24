@@ -15,6 +15,71 @@
     <main id="main-content" tabindex="-1">
       {{#if isAndroid}}
       <div id="updateBannerSlot" class="mx-auto max-w-6xl px-5 pt-4"></div>
+      <section class="mx-auto max-w-6xl px-5 pt-4" aria-labelledby="heroHeading">
+        <div class="kyoto-hero">
+          <svg class="kyoto-hero__art" viewBox="0 0 400 220" fill="none" aria-hidden="true" focusable="false" preserveAspectRatio="xMaxYMid slice">
+            <circle cx="315" cy="76" r="46" fill="var(--accent-fill)" fill-opacity="0.16" />
+            <circle cx="315" cy="76" r="30" fill="var(--accent-fill)" fill-opacity="0.22" />
+            <path d="M120 220 L210 135 L275 182 L335 120 L400 185 L400 220 Z" fill="currentColor" fill-opacity="0.06" />
+            <path d="M180 220 L265 152 L320 192 L378 142 L400 166 L400 220 Z" fill="currentColor" fill-opacity="0.08" />
+            <g fill="currentColor" fill-opacity="0.14">
+              <rect x="313" y="48" width="4" height="22" rx="1" />
+              <path d="M286 72 L344 72 L334 65 L296 65 Z" />
+              <rect x="299" y="72" width="32" height="14" />
+              <path d="M278 92 L352 92 L340 84 L290 84 Z" />
+              <rect x="294" y="92" width="42" height="16" />
+              <path d="M268 116 L362 116 L348 106 L282 106 Z" />
+              <rect x="288" y="116" width="54" height="28" />
+            </g>
+          </svg>
+          <div class="kyoto-hero__body">
+            <div class="mb-3 flex items-center gap-2">
+              <span class="font-kanji text-xs font-bold text-crimson" lang="ja">初級 · 中級</span>
+              <span class="h-3 w-px bg-slate-300" aria-hidden="true"></span>
+              <span class="text-xs font-semibold text-slate-500">Silabus SMA · JLPT N5–N4</span>
+            </div>
+            <h1 id="heroHeading" class="font-display text-3xl font-bold leading-tight text-ink">
+              <span lang="ja">こんにちは、</span><br />
+              <span class="text-crimson">Siap belajar hari ini?</span>
+            </h1>
+            <p class="mt-2.5 max-w-md text-sm leading-relaxed text-slate-600">
+              Kuasai aksara Kana, kosakata tematik, tata bahasa, dan dialog kelas langsung dari perangkatmu.
+            </p>
+            <div class="mt-5 flex flex-wrap items-center gap-2.5">
+              <a id="resumeStudy" href="tebak-huruf.html" class="primary-button !rounded-full !px-6">Mulai latihan Kana</a>
+              <a href="latihan.html" class="secondary-button !rounded-full !px-5">Pilih Mode</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 pt-6" aria-labelledby="studyHeading">
+        <div class="study-panel">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h2 id="studyHeading" class="font-display text-xl font-bold text-ink">Catatan Latihanmu</h2>
+            <span class="font-mono text-xs text-slate-500">Tersimpan offline</span>
+          </div>
+          <div class="metric-grid mt-4">
+            <div class="metric-cell">
+              <span id="metricAnswered" class="metric-cell__value">0</span>
+              <span class="metric-cell__label">Dijawab</span>
+            </div>
+            <div class="metric-cell">
+              <span id="metricCorrect" class="metric-cell__value">0</span>
+              <span class="metric-cell__label">Benar</span>
+            </div>
+            <div class="metric-cell">
+              <span id="metricWrong" class="metric-cell__value">0</span>
+              <span class="metric-cell__label">Perlu Ulang</span>
+            </div>
+          </div>
+          <p id="studyProgress" class="mt-4 text-sm text-slate-600" aria-live="polite">Mulai dengan 10 huruf Kana. Hasil latihan disimpan di perangkat ini.</p>
+          <div class="mt-4 flex flex-wrap gap-2.5">
+            <button id="exportProgress" type="button" class="secondary-button">Unduh progres</button>
+            <button id="resetProgress" type="button" class="secondary-button">Atur ulang</button>
+          </div>
+        </div>
+      </section>
       {{/if}}
       {{#unless isAndroid}}
       <!-- Hero Section -->
@@ -80,9 +145,8 @@
           </div>
         </div>
       </section>
-      {{/unless}}
 
-      <section class="mx-auto max-w-6xl px-5 {{#if isAndroid}}pt-4{{else}}pt-10{{/if}}" aria-labelledby="studyHeading">
+      <section class="mx-auto max-w-6xl px-5 pt-10" aria-labelledby="studyHeading">
         <div class="study-panel">
           <h2 id="studyHeading" class="font-display text-2xl">Langkah belajar berikutnya</h2>
           <p id="studyProgress" class="mt-3 text-sm text-slate-600">Mulai dengan 10 huruf Kana. Hasil latihan disimpan di browser ini.</p>
@@ -95,6 +159,7 @@
           </ol>
         </div>
       </section>
+      {{/unless}}
 
       <!-- Ruang Latihan: Asymmetric Bento Layout -->
       <section id="latihan" class="mx-auto max-w-6xl px-5 {{#if isAndroid}}py-10{{else}}py-16 md:py-20{{/if}}">
@@ -198,11 +263,11 @@
       </section>
 
       <!-- Materi Pembelajaran: Asymmetric Bento Layout -->
-      <section id="materi" class="mx-auto max-w-6xl px-5 {{#if isAndroid}}py-8 pb-12{{else}}py-12 pb-24{{/if}}">
+      <section id="materi" class="mx-auto max-w-6xl px-5 {{#if isAndroid}}py-6{{else}}py-12 pb-24{{/if}}">
         <div class="mb-10 flex flex-wrap items-end justify-between gap-4 border-b border-slate-200/70 pb-6">
           <div>
             <span class="font-mono text-xs font-bold text-crimson">Modul Referensi 02</span>
-            <h2 class="mt-1 font-display text-3xl font-bold md:text-4xl text-ink">Materi & Ensiklopedia Belajar</h2>
+            <h2 class="mt-1 font-display text-3xl font-bold md:text-4xl text-ink">{{#if isAndroid}}Materi &amp; Lab Visual{{else}}Materi &amp; Ensiklopedia Belajar{{/if}}</h2>
           </div>
           <p class="max-w-md text-sm text-slate-600">
             Kumpulan referensi terstruktur yang dirancang untuk pendamping belajar mandiri maupun persiapan ujian JLPT.
@@ -274,6 +339,32 @@
             </div>
           </a>
 
+          {{#if isAndroid}}
+          <!-- Card 3 Android: Lab Visual 2D -->
+          <a
+            href="lab-visual.html"
+            class="feature-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-7 shadow-sm md:col-span-12"
+          >
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="rounded-full bg-sakura px-3 py-1 text-xs font-bold text-crimson">Lab Visual 2D</span>
+                <span class="font-kanji text-3xl font-bold text-crimson" lang="ja" aria-hidden="true">塔</span>
+              </div>
+              <h3 class="mt-5 font-display text-2xl font-bold text-ink group-hover:text-crimson transition-colors">
+                Lab Visual: Menara Jepang &amp; Anatomi
+              </h3>
+              <p class="mt-2.5 text-sm leading-relaxed text-slate-600">
+                Eksplorasi diagram pagoda lima tingkat (<span lang="ja">五重塔</span>) secara interaktif serta pelajari istilah arsitektur dan anatomi tubuh dengan furigana.
+              </p>
+            </div>
+            <div class="mt-6 border-t border-slate-100 pt-4 flex items-center justify-between">
+              <span class="font-mono text-xs text-slate-500">6 istilah menara · 8 kosakata anatomi</span>
+              <span class="text-sm font-bold text-crimson group-hover:translate-x-0.5 transition-transform">
+                Buka Lab Visual
+              </span>
+            </div>
+          </a>
+          {{/if}}
           {{#unless isAndroid}}
           <!-- Card 3: Anatomi 3D & Eksplorasi Visual (Full row / Spans 12 cols) -->
           <div class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm md:col-span-12">
@@ -311,6 +402,19 @@
           {{/unless}}
         </div>
       </section>
+
+      {{#if isAndroid}}
+      <section class="mx-auto max-w-6xl px-5 pb-10" aria-labelledby="appUpdateHeading">
+        <div class="update-card">
+          <div>
+            <h2 id="appUpdateHeading" class="font-display text-base font-bold text-ink">Versi Aplikasi &amp; Pembaruan</h2>
+            <p id="appVersionLabel" class="mt-1 font-mono text-xs font-semibold text-ink">Hongo Study v1.0.2</p>
+            <p id="updateCheckStatus" class="mt-1 text-xs text-slate-500" role="status" aria-live="polite">Ketuk Cek Update untuk memeriksa rilis terbaru.</p>
+          </div>
+          <button id="manualCheckUpdate" type="button" class="secondary-button shrink-0">Cek Update</button>
+        </div>
+      </section>
+      {{/if}}
     </main>
 
     {{> footer }}

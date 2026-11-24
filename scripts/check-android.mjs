@@ -1,7 +1,7 @@
 import { readdir, readFile, stat } from 'node:fs/promises';
 import { resolve, relative, join } from 'node:path';
 
-const EXPECTED_HTML_COUNT = 20;
+const EXPECTED_HTML_COUNT = 22;
 const SIZE_LIMIT_BYTES = 15_000_000;
 const FORBIDDEN_PATTERN = /menara-jepang|japanese-tower|anatomy\//i;
 const EXTERNAL_FONT_PATTERN = /fonts\.(?:googleapis|gstatic)\.com/i;

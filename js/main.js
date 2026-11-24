@@ -1,6 +1,6 @@
 import { storage } from './storage.js';
 import { annotateJapanese } from './language.js';
-import { exportProgress, getProgress, getWrongAnswers, recordVisit } from './progress.js';
+import { exportProgress, getProgress, getWrongAnswers, recordVisit, resetProgress } from './progress.js';
 
 (() => {
   const isAndroidBuild = typeof __ANDROID_APP__ !== 'undefined' && __ANDROID_APP__;
@@ -56,9 +56,13 @@ import { exportProgress, getProgress, getWrongAnswers, recordVisit } from './pro
     toggle?.setAttribute('aria-label', 'Furigana');
     document.querySelectorAll('rt').forEach(rt => rt.setAttribute('aria-hidden', String(!enabled)));
     if (toggle) {
-      document.querySelector('#furiganaState').textContent = enabled ? 'ON' : 'OFF';
-      document.querySelector('#furiganaDot').classList.toggle('bg-crimson', enabled);
-      document.querySelector('#furiganaDot').classList.toggle('bg-slate-400', !enabled);
+      const stateEl = document.querySelector('#furiganaState');
+      const dotEl = document.querySelector('#furiganaDot');
+      if (stateEl) stateEl.textContent = enabled ? 'ON' : 'OFF';
+      if (dotEl) {
+        dotEl.classList.toggle('bg-crimson', enabled);
+        dotEl.classList.toggle('bg-slate-400', !enabled);
+      }
     }
   };
   applyFurigana(storage.get('hongo-furigana', 'on') !== 'off');
@@ -66,6 +70,7 @@ import { exportProgress, getProgress, getWrongAnswers, recordVisit } from './pro
     const enabled = document.body.classList.contains('furigana-off');
     applyFurigana(enabled);
     storage.set('hongo-furigana', enabled ? 'on' : 'off');
+    document.dispatchEvent(new CustomEvent('hongo-furigana-change', { detail: { enabled } }));
   });
 
   document.querySelectorAll('table').forEach((table, index) => {
@@ -88,41 +93,99 @@ import { exportProgress, getProgress, getWrongAnswers, recordVisit } from './pro
   const materialCategory = location.pathname.match(/\/(grammar|kosakata)\/([^/]+)\.html$/);
   if (materialCategory) recordVisit(materialCategory[1], materialCategory[2]);
 
+  const studyProgress = document.querySelector('#studyProgress');
   const resumeLink = document.querySelector('#resumeStudy');
-  if (resumeLink) {
+  const exportButton = document.querySelector('#exportProgress');
+  const resetButton = document.querySelector('#resetProgress');
+  const metricAnswered = document.querySelector('#metricAnswered');
+  const metricCorrect = document.querySelector('#metricCorrect');
+  const metricWrong = document.querySelector('#metricWrong');
+  const practiceWrongBadge = document.querySelector('#practiceWrongBadge');
+
+  const destinations = { drill: 'tebak-huruf.html', quiz: 'kuis.html', grammar: 'kamus-grammar.html', kosakata: 'kosakata.html', conversation: 'percakapan.html' };
+  const vocabularyCategories = ['waktu', 'sekolah', 'mata-pelajaran', 'pekerjaan', 'orang', 'keluarga'];
+  const grammarCategories = ['struktur-kalimat', 'partikel-dasar', 'kata-kerja', 'kata-sifat', 'pertanyaan-negatif', 'kebutuhan-sehari-hari', 'keberadaan-lokasi', 'ungkapan-salam'];
+
+  const renderStudyStatus = () => {
     const progress = getProgress();
     const due = getWrongAnswers().length;
-    const last = progress.last;
-    const destinations = { drill: 'tebak-huruf.html', quiz: 'kuis.html', grammar: 'kamus-grammar.html', kosakata: 'kosakata.html', conversation: 'percakapan.html' };
-    const vocabularyCategories = ['waktu', 'sekolah', 'mata-pelajaran', 'pekerjaan', 'orang', 'keluarga'];
-    const grammarCategories = ['struktur-kalimat', 'partikel-dasar', 'kata-kerja', 'kata-sifat', 'pertanyaan-negatif', 'kebutuhan-sehari-hari', 'keberadaan-lokasi', 'ungkapan-salam'];
-    if (last && Object.hasOwn(destinations, last.kind)) {
-      let href = destinations[last.kind];
-      if (last.kind === 'quiz' && [...vocabularyCategories, 'campuran'].includes(last.category)) href += `?kategori=${last.category}`;
-      if ((last.kind === 'grammar' && grammarCategories.includes(last.category)) || (last.kind === 'kosakata' && vocabularyCategories.includes(last.category))) href = `${last.kind}/${last.category}.html`;
-      resumeLink.href = href;
-      resumeLink.textContent = 'Lanjutkan belajar';
+    if (metricAnswered) metricAnswered.textContent = String(progress.answered);
+    if (metricCorrect) metricCorrect.textContent = String(progress.correct);
+    if (metricWrong) metricWrong.textContent = String(due);
+    if (practiceWrongBadge) {
+      practiceWrongBadge.hidden = due === 0;
+      practiceWrongBadge.textContent = due > 0 ? `${due} prioritas ulang` : '';
     }
-    document.querySelector('#studyProgress').textContent = progress.answered
-      ? `${progress.correct} jawaban benar dari ${progress.answered} soal kuis. ${due} kosakata perlu diulang.`
-      : isAndroidBuild
-        ? 'Mulai dengan 10 huruf Kana. Hasil latihan disimpan di perangkat ini.'
-        : 'Mulai dengan 10 huruf Kana. Hasil latihan disimpan di browser ini.';
-    document.querySelector('#exportProgress').addEventListener('click', async () => {
-      if (typeof __ANDROID_APP__ !== 'undefined' && __ANDROID_APP__) {
-        const { exportProgressNative } = await import('./android-bridge.js');
-        if (await exportProgressNative()) return;
+    if (resumeLink) {
+      const last = progress.last;
+      if (last && Object.hasOwn(destinations, last.kind)) {
+        let href = destinations[last.kind];
+        if (last.kind === 'quiz' && [...vocabularyCategories, 'campuran'].includes(last.category)) href += `?kategori=${last.category}`;
+        if ((last.kind === 'grammar' && grammarCategories.includes(last.category)) || (last.kind === 'kosakata' && vocabularyCategories.includes(last.category))) href = `${last.kind}/${last.category}.html`;
+        resumeLink.href = href;
+        resumeLink.textContent = 'Lanjutkan belajar';
+      } else {
+        resumeLink.href = 'tebak-huruf.html';
+        resumeLink.textContent = 'Mulai latihan Kana';
       }
-      const url = URL.createObjectURL(new Blob([JSON.stringify(exportProgress(), null, 2)], { type: 'application/json' }));
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'hongo-study-progres.json';
-      document.body.append(link);
-      link.click();
-      link.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+    if (studyProgress) {
+      studyProgress.textContent = progress.answered
+        ? `${progress.correct} jawaban benar dari ${progress.answered} soal kuis. ${due} kosakata perlu diulang.`
+        : isAndroidBuild
+          ? 'Mulai dengan 10 huruf Kana. Hasil latihan disimpan di perangkat ini.'
+          : 'Mulai dengan 10 huruf Kana. Hasil latihan disimpan di browser ini.';
+    }
+  };
+
+  if (resumeLink || studyProgress || metricAnswered || practiceWrongBadge) {
+    renderStudyStatus();
+    window.addEventListener('pageshow', event => {
+      if (event.persisted) renderStudyStatus();
     });
   }
+
+  exportButton?.addEventListener('click', async () => {
+    if (typeof __ANDROID_APP__ !== 'undefined' && __ANDROID_APP__) {
+      const { exportProgressNative } = await import('./android-bridge.js');
+      if (await exportProgressNative()) return;
+    }
+    const url = URL.createObjectURL(new Blob([JSON.stringify(exportProgress(), null, 2)], { type: 'application/json' }));
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'hongo-study-progres.json';
+    document.body.append(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  });
+
+  if (resetButton) {
+    let armed = false;
+    let resetTimer;
+    const defaultLabel = resetButton.textContent.trim() || 'Atur ulang';
+    const disarm = () => {
+      armed = false;
+      clearTimeout(resetTimer);
+      resetButton.textContent = defaultLabel;
+      resetButton.removeAttribute('data-armed');
+    };
+    resetButton.addEventListener('click', () => {
+      if (!armed) {
+        armed = true;
+        resetButton.textContent = 'Tekan sekali lagi untuk reset';
+        resetButton.setAttribute('data-armed', 'true');
+        clearTimeout(resetTimer);
+        resetTimer = setTimeout(disarm, 3000);
+        return;
+      }
+      disarm();
+      resetProgress();
+      renderStudyStatus();
+      if (studyProgress) studyProgress.textContent = 'Progres belajar telah diatur ulang.';
+    });
+  }
+
   showStorageStatus();
   if (typeof __ANDROID_APP__ !== 'undefined' && __ANDROID_APP__) {
     document.body.classList.add('has-bottom-nav');
@@ -132,6 +195,33 @@ import { exportProgress, getProgress, getWrongAnswers, recordVisit } from './pro
         closeMenu,
         isMenuOpen: () => menuButton?.getAttribute('aria-expanded') === 'true',
       });
+    });
+    const manualCheckBtn = document.querySelector('#manualCheckUpdate');
+    const updateCheckStatus = document.querySelector('#updateCheckStatus');
+    manualCheckBtn?.addEventListener('click', async () => {
+      if (manualCheckBtn.disabled) return;
+      manualCheckBtn.disabled = true;
+      const originalText = manualCheckBtn.textContent;
+      manualCheckBtn.textContent = 'Memeriksa...';
+      if (updateCheckStatus) updateCheckStatus.textContent = 'Menghubungi server pembaruan...';
+      try {
+        const { checkForUpdatesManual } = await import('./android-updater.js');
+        const result = await checkForUpdatesManual();
+        if (updateCheckStatus && result?.message) {
+          updateCheckStatus.textContent = result.message;
+        }
+        if (result?.status === 'update-available') {
+          document.getElementById('updateBanner')?.scrollIntoView({
+            behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+            block: 'nearest',
+          });
+        }
+      } catch {
+        if (updateCheckStatus) updateCheckStatus.textContent = 'Gagal memeriksa pembaruan. Coba lagi nanti.';
+      } finally {
+        manualCheckBtn.disabled = false;
+        manualCheckBtn.textContent = originalText;
+      }
     });
   }
   const entries = [

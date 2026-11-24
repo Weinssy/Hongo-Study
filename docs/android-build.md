@@ -38,12 +38,12 @@ Hongo Study memakai satu repositori dengan dua target build Vite yang terpisah:
 | Aspek | Build Web (`dist/`) | Build Android (`dist-android/`) |
 | :--- | :--- | :--- |
 | Perintah build | `npm run build` | `npm run build:android` (`BUILD_TARGET=android`) |
-| Jumlah halaman HTML | 22 halaman (penuh) | 20 halaman inti |
+| Jumlah halaman HTML | 24 halaman (penuh) | 22 halaman inti (termasuk `latihan.html` dan `lab-visual.html`) |
 | Modul 3D (`menara-jepang.html`, `japanese-tower.html`, `public/anatomy/`, `public/japanese-tower-data.js`) | Disertakan | Dikecualikan agar ukuran APK ringkas dan stabil di WebView |
 | Sumber font | Google Fonts (daring) | Bundel Fontsource lokal (*Plus Jakarta Sans*, *JetBrains Mono*, *Shippori Mincho*, *Zen Kaku Gothic New*) |
 | Kebutuhan jaringan | Memuat font dari CDN Google | 100% luring (*offline*), tanpa permintaan ke `fonts.googleapis.com` atau `fonts.gstatic.com` |
 | Integrasi native | Di-tree-shake (0 byte Capacitor/Fontsource masuk ke `dist/`) | Capacitor 8 (tombol kembali, status bar sinkron tema, splash screen, ekspor progres via dialog bagikan) |
-| Validasi otomatis | `npm run check` | `npm run check:android` (20 HTML, tautan lokal valid, bebas referensi 3D/Google Fonts, total ukuran <= 15 MB) |
+| Validasi otomatis | `npm run check` | `npm run check:android` (22 HTML termasuk `latihan.html` dan `lab-visual.html`, tautan lokal valid, bebas referensi 3D/Google Fonts, total ukuran <= 15 MB) |
 
 ---
 

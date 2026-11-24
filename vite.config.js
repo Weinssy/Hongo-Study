@@ -5,12 +5,13 @@ import { resolve } from 'path';
 import { vocabularyCount } from './js/quiz-data.js';
 
 const isAndroid = process.env.BUILD_TARGET === 'android';
+const LATIHAN_PAGES = ['/latihan.html', '/tebak-huruf.html', '/kuis.html', '/percakapan.html'];
 
 function getActiveTab(pagePath) {
-  const normalized = pagePath.replaceAll('\\', '/');
+  const normalized = pagePath.replaceAll('\\', '/').replace(/^(?!\/)/, '/');
   if (normalized.includes('/grammar/') || normalized.endsWith('/kamus-grammar.html')) return 'grammar';
   if (normalized.includes('/kosakata/') || normalized.endsWith('/kosakata.html')) return 'kosakata';
-  if (normalized.endsWith('/kuis.html')) return 'kuis';
+  if (LATIHAN_PAGES.some(page => normalized.endsWith(page))) return 'latihan';
   return 'home';
 }
 
@@ -62,7 +63,8 @@ export default defineConfig({
           isAndroid,
           activeTab,
           isHomeTab: activeTab === 'home',
-          isKuisTab: activeTab === 'kuis',
+          isLatihanTab: activeTab === 'latihan',
+          isKuisTab: activeTab === 'latihan',
           isGrammarTab: activeTab === 'grammar',
           isKosakataTab: activeTab === 'kosakata',
           rootPath: isNested ? '../' : './'
@@ -93,6 +95,8 @@ export default defineConfig({
         kosakataOrang: resolve(import.meta.dirname, 'kosakata/orang.html'),
         kosakataKeluarga: resolve(import.meta.dirname, 'kosakata/keluarga.html'),
         kuis: resolve(import.meta.dirname, 'kuis.html'),
+        latihan: resolve(import.meta.dirname, 'latihan.html'),
+        labVisual: resolve(import.meta.dirname, 'lab-visual.html'),
         ...(isAndroid ? {} : {
           menaraJepang: resolve(import.meta.dirname, 'menara-jepang.html'),
           japaneseTower: resolve(import.meta.dirname, 'japanese-tower.html')

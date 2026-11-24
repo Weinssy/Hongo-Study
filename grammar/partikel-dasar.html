@@ -33,6 +33,7 @@
                 Partikel Dasar (助詞)
               </h1>
             </div>
+            {{#unless isAndroid}}
             <button
               id="furiganaToggle"
               type="button"
@@ -43,6 +44,7 @@
               <span id="furiganaDot" class="h-4 w-4 rounded-full bg-crimson"></span>
               Furigana: <span id="furiganaState">ON</span>
             </button>
+            {{/unless}}
           </div>
           <p class="mt-4 text-base leading-relaxed text-slate-600">
             Partikel (<em>joshi</em>) adalah kata bantu penghubung yang menentukan peran tata bahasa setiap kata dalam kalimat bahasa Jepang.

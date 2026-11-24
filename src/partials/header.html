@@ -8,8 +8,14 @@
         <small class="brand-tagline text-xs text-slate-500 font-medium"><span lang="ja">日本語スタディ</span> · Belajar sedikit setiap hari</small>
       </span>
     </a>
-    <button id="themeToggle" type="button" class="header-action rounded-xl border border-slate-200 px-3 py-2 text-xs font-bold" aria-pressed="false">Tema gelap</button>
+    {{#if isAndroid}}
+    <div class="flex shrink-0 items-center gap-1.5 sm:gap-2">
+      <button id="furiganaToggle" type="button" role="switch" aria-checked="true" class="header-action header-furigana-chip" aria-label="Furigana"><span id="furiganaDot" class="header-furigana-dot bg-crimson" aria-hidden="true"></span><span lang="ja">ふりがな</span> <span id="furiganaState">ON</span></button>
+      <button id="themeToggle" type="button" class="header-action rounded-xl border border-slate-200 px-3 py-2 text-xs font-bold" aria-pressed="false">Tema gelap</button>
+    </div>
+    {{/if}}
     {{#unless isAndroid}}
+    <button id="themeToggle" type="button" class="header-action rounded-xl border border-slate-200 px-3 py-2 text-xs font-bold" aria-pressed="false">Tema gelap</button>
     <button id="menuButton" type="button" class="header-action rounded-xl border border-slate-200 px-3 py-2 text-xs font-bold lg:hidden" aria-controls="mainNav" aria-expanded="false">
       <span aria-hidden="true">☰</span> Menu
     </button>

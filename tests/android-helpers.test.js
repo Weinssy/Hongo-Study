@@ -14,6 +14,13 @@ import {
   selectLatestAndroidRelease,
   shouldCheckForUpdate,
 } from '../js/android-updater-core.js';
+import {
+  getProgress,
+  getWrongAnswers,
+  recordAnswer,
+  recordDrill,
+  resetProgress,
+} from '../js/progress.js';
 
 test('isRootPath recognizes root paths and excludes nested sections', () => {
   for (const path of ['', '/', '/index.html', 'index.html', '/Hongo-Study/index.html', '/index.html?from=quiz#top']) {
@@ -195,4 +202,66 @@ test('selectLatestAndroidRelease picks newest valid android-v release', () => {
   assert.equal(picked.versionName, '1.0.1');
   assert.equal(picked.sha256, 'def');
   assert.equal(picked.notes, 'Update bugfix');
+});
+
+test('v1.0.2 version comparison and versionCode 3 vs 2 update detection', () => {
+  const apkV102 = 'https://github.com/Weinssy/Hongo-Study/releases/download/android-v1.0.2/hongo-study-v1.0.2.apk';
+  assert.equal(compareVersions('1.0.2', '1.0.1'), 1);
+  assert.equal(compareVersions('1.0.1', '1.0.2'), -1);
+  assert.equal(compareVersions('v1.0.2', '1.0.2'), 0);
+  assert.equal(isAllowedApkUrl(apkV102), true);
+
+  assert.equal(isUpdateAvailable({
+    localVersionCode: 2,
+    localVersionName: '1.0.1',
+    remote: { versionCode: 3, versionName: '1.0.2', apkUrl: apkV102 },
+  }), true);
+  assert.equal(isUpdateAvailable({
+    localVersionCode: 3,
+    localVersionName: '1.0.2',
+    remote: { versionCode: 3, versionName: '1.0.2', apkUrl: apkV102 },
+  }), false);
+  assert.equal(isUpdateAvailable({
+    localVersionCode: 2,
+    localVersionName: '1.0.1',
+    remote: { versionCode: null, versionName: '1.0.2', apkUrl: apkV102 },
+  }), true);
+});
+
+test('resetProgress clears wrong answers and resets stored progress counters', () => {
+  const originalDescriptor = Object.getOwnPropertyDescriptor(globalThis, 'localStorage');
+  const backing = new Map();
+  Object.defineProperty(globalThis, 'localStorage', {
+    configurable: true,
+    writable: true,
+    value: {
+      getItem: (key) => (backing.has(key) ? backing.get(key) : null),
+      setItem: (key, value) => backing.set(key, String(value)),
+      removeItem: (key) => backing.delete(key),
+    },
+  });
+
+  try {
+    recordAnswer('今日', false, 'waktu');
+    recordDrill('hiragana', 9, 10);
+
+    assert.equal(getProgress().answered, 1);
+    assert.equal(getProgress().correct, 0);
+    assert.deepEqual(getProgress().bestDrills, { hiragana: { score: 9, total: 10 } });
+    assert.deepEqual(getWrongAnswers(), ['今日']);
+
+    const reset = resetProgress();
+    const expectedEmpty = { version: 1, answered: 0, correct: 0, last: null, bestDrills: {} };
+    assert.deepEqual(reset, expectedEmpty);
+    assert.deepEqual(getProgress(), expectedEmpty);
+    assert.deepEqual(getWrongAnswers(), []);
+    assert.equal(backing.has('hongo_wrong_answers'), false);
+    assert.deepEqual(JSON.parse(backing.get('hongo-progress-v1')), expectedEmpty);
+  } finally {
+    if (originalDescriptor) {
+      Object.defineProperty(globalThis, 'localStorage', originalDescriptor);
+    } else {
+      delete globalThis.localStorage;
+    }
+  }
 });

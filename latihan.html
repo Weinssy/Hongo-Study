@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>Pilih Mode Latihan | Hongo Study</title>
+    <link rel="icon" type="image/svg+xml" href="{{rootPath}}favicon.svg" />
+    {{> head }}
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="font-sans bg-mist min-h-screen flex flex-col justify-between">
+    {{> header }}
+
+    <main id="main-content" tabindex="-1" class="wash flex-1 py-8 md:py-16">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="mb-8 border-b border-slate-200/70 pb-6">
+          <p class="font-mono text-xs font-bold text-crimson">
+            Ruang Latihan · <span lang="ja">日本語練習</span>
+          </p>
+          <h1 class="mt-1.5 font-display text-3xl font-bold text-ink md:text-5xl">
+            Pilih Mode Latihan
+          </h1>
+          <p class="mt-2.5 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+            Latih refleks membaca aksara, uji penguasaan kosakata tematik, atau praktikkan alur dialog kelas secara langsung.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-12">
+          <!-- Anchor Card: Tebak Huruf (Speed Drill) -->
+          <a
+            href="tebak-huruf.html"
+            class="feature-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 md:p-7 shadow-sm md:col-span-7"
+          >
+            <div>
+              <div class="flex items-center justify-between gap-3">
+                <span class="rounded-full bg-sakura px-3 py-1 text-xs font-bold text-crimson">Speed Drill Aksara</span>
+                <span class="font-kanji text-3xl font-bold text-crimson" lang="ja" aria-hidden="true">あ</span>
+              </div>
+              <h2 class="mt-5 font-display text-2xl font-bold text-ink group-hover:text-crimson transition-colors">
+                Tebak Huruf (Speed Drill)
+              </h2>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                Latih kecepatan membaca huruf Jepang dengan mengetik romajinya. Mencakup Hiragana, Katakana, 59 Kanji N5, dan Kata Utuh.
+              </p>
+
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-lg border border-slate-200 bg-mist px-3 py-1.5 font-kanji text-sm font-bold text-ink">Hiragana</span>
+                <span class="rounded-lg border border-slate-200 bg-mist px-3 py-1.5 font-kanji text-sm font-bold text-ink">Katakana</span>
+                <span class="rounded-lg border border-slate-200 bg-mist px-3 py-1.5 font-kanji text-sm font-bold text-ink">59 Kanji N5</span>
+                <span class="rounded-lg border border-slate-200 bg-mist px-3 py-1.5 font-kanji text-sm font-bold text-ink">Kata Utuh</span>
+              </div>
+            </div>
+
+            <div class="mt-7 flex items-center justify-between border-t border-slate-100 pt-4">
+              <span class="font-mono text-xs text-slate-500">Pilih karakter &amp; panjang sesi sendiri</span>
+              <span class="text-sm font-bold text-crimson group-hover:translate-x-0.5 transition-transform">
+                Mulai Drill &rarr;
+              </span>
+            </div>
+          </a>
+
+          <!-- Stacked Utility Cards -->
+          <div class="flex flex-col gap-6 md:col-span-5">
+            <!-- Kuis Materi Tematik -->
+            <article class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div>
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Pilihan Ganda</span>
+                    <span id="practiceWrongBadge" hidden class="rounded-full bg-sakura px-3 py-1 text-xs font-bold text-crimson"></span>
+                  </div>
+                  <span class="font-kanji text-2xl font-bold text-crimson" lang="ja" aria-hidden="true">問</span>
+                </div>
+                <h2 class="mt-4 font-display text-xl font-bold text-ink">
+                  Kuis Materi Tematik
+                </h2>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Jawab 10 soal pilihan ganda per topik atau mode campuran dengan prioritas kosakata yang perlu diulang.
+                </p>
+
+                <div class="chip-scroll-row mt-4" role="group" aria-label="Pilih kategori kuis langsung">
+                  <a href="kuis.html?kategori=campuran" class="rounded-full border border-slate-200 bg-mist px-3.5 py-2 text-xs font-bold text-ink">Campuran</a>
+                  <a href="kuis.html?kategori=waktu" class="rounded-full border border-slate-200 bg-mist px-3.5 py-2 text-xs font-bold text-ink">Waktu</a>
+                  <a href="kuis.html?kategori=sekolah" class="rounded-full border border-slate-200 bg-mist px-3.5 py-2 text-xs font-bold text-ink">Sekolah</a>
+                  <a href="kuis.html?kategori=mata-pelajaran" class="rounded-full border border-slate-200 bg-mist px-3.5 py-2 text-xs font-bold text-ink">Mapel</a>
+                  <a href="kuis.html?kategori=pekerjaan" class="rounded-full border border-slate-200 bg-mist px-3.5 py-2 text-xs font-bold text-ink">Profesi</a>
+                  <a href="kuis.html?kategori=orang" class="rounded-full border border-slate-200 bg-mist px-3.5 py-2 text-xs font-bold text-ink">Orang</a>
+                  <a href="kuis.html?kategori=keluarga" class="rounded-full border border-slate-200 bg-mist px-3.5 py-2 text-xs font-bold text-ink">Keluarga</a>
+                </div>
+              </div>
+
+              <div class="mt-5 flex items-center justify-between border-t border-slate-100 pt-3">
+                <span class="font-mono text-xs text-slate-500">7 kategori kuis</span>
+                <a href="kuis.html" class="inline-flex min-h-[2.75rem] items-center text-xs font-bold text-crimson hover:underline">
+                  Buka Kuis &rarr;
+                </a>
+              </div>
+            </article>
+
+            <!-- Roleplay Percakapan -->
+            <a
+              href="percakapan.html"
+              class="feature-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+            >
+              <div>
+                <div class="flex items-center justify-between gap-3">
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Simulasi Dialog</span>
+                  <span class="font-kanji text-2xl font-bold text-slate-400 group-hover:text-crimson transition-colors" lang="ja" aria-hidden="true">話</span>
+                </div>
+                <h2 class="mt-4 font-display text-xl font-bold text-ink group-hover:text-crimson transition-colors">
+                  Roleplay Percakapan
+                </h2>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                  Pilih balasan paling tepat dalam 8 giliran dialog kelas dengan furigana dan romaji.
+                </p>
+              </div>
+              <div class="mt-5 flex items-center justify-between border-t border-slate-100 pt-3">
+                <span class="font-mono text-xs text-slate-500">8 giliran dialog kelas</span>
+                <span class="text-xs font-bold text-crimson group-hover:translate-x-0.5 transition-transform">
+                  Buka Percakapan &rarr;
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    {{> footer }}
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

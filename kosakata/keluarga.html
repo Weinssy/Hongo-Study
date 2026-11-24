@@ -22,6 +22,7 @@
           >
             &larr; Kembali ke Indeks Kosakata
           </a>
+          {{#unless isAndroid}}
           <button
             id="furiganaToggle"
             type="button"
@@ -32,6 +33,7 @@
             <span class="inline-block h-2 w-2 rounded-full bg-crimson" id="furiganaDot"></span>
             Furigana: <span id="furiganaState" class="font-mono text-crimson">ON</span>
           </button>
+          {{/unless}}
         </nav>
 
         <!-- Header Materi -->

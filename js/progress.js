@@ -46,3 +46,10 @@ export function recordVisit(kind, category) {
 export function exportProgress() {
   return { exportedAt: new Date().toISOString(), progress: getProgress(), wrongAnswers: getWrongAnswers() };
 }
+
+export function resetProgress() {
+  storage.remove('hongo_wrong_answers');
+  const fresh = emptyProgress();
+  storage.write(KEY, fresh);
+  return fresh;
+}

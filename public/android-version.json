@@ -1,8 +1,8 @@
 {
-  "versionCode": 2,
-  "versionName": "1.0.1",
-  "tag": "android-v1.0.1",
-  "apkUrl": "https://github.com/Weinssy/Hongo-Study/releases/download/android-v1.0.1/hongo-study-v1.0.1.apk",
-  "sha256": "5cca3ff7437726cb2e2cba07ca830cb6ca93a943631ff498f8ce69dc2a2f20e2",
-  "notes": "Navigasi tab bawah khusus Android, perbaikan keyboard Tebak Huruf, dan pembaruan dalam aplikasi."
+  "versionCode": 3,
+  "versionName": "1.0.2",
+  "tag": "android-v1.0.2",
+  "apkUrl": "https://github.com/Weinssy/Hongo-Study/releases/download/android-v1.0.2/hongo-study-v1.0.2.apk",
+  "sha256": "ee8c8fe092b405539c6ec0a5c78aa0c804930da18d2265a3e9b7794764939de8",
+  "notes": "Toggle furigana global, Beranda baru dengan ringkasan progres, tab Latihan, Kuis hint Romaji, filter Perlu Ulang kosakata, chat bubble Percakapan, dan Lab Visual 2D."
 }
