@@ -1,6 +1,51 @@
 export const SPEAKER_ICON_SVG = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>';
 
 let nativeTtsPromise;
+let manifestPromise;
+let activeAudio;
+
+async function getAudioManifest() {
+  if (!manifestPromise) {
+    manifestPromise = import('./audio-manifest.json')
+      .then((mod) => mod.default || mod)
+      .catch(() => ({}));
+  }
+  return manifestPromise;
+}
+
+function resolveAudioUrl(fileName) {
+  if (typeof window === 'undefined') return `./audio/${fileName}`;
+  const path = window.location?.pathname || '/';
+  const prefix = path.includes('/grammar/') || path.includes('/kosakata/') ? '../audio/' : './audio/';
+  return new URL(prefix + fileName, window.location.href).href;
+}
+
+async function playBundledAudio(cleaned, raw, clearBusy) {
+  if (typeof Audio === 'undefined') return false;
+  const manifest = await getAudioManifest();
+  const fileName = manifest[cleaned] || manifest[String(raw || '').trim()];
+  if (!fileName) return false;
+
+  try {
+    if (activeAudio) {
+      activeAudio.pause();
+      activeAudio.currentTime = 0;
+    } else {
+      activeAudio = new Audio();
+      activeAudio.preload = 'auto';
+    }
+    const audio = activeAudio;
+    audio.onended = clearBusy;
+    audio.onerror = clearBusy;
+    audio.src = resolveAudioUrl(fileName);
+    await audio.play();
+    setTimeout(clearBusy, 4000);
+    return true;
+  } catch {
+    clearBusy();
+    return false;
+  }
+}
 
 async function getNativeTts() {
   if (typeof __ANDROID_APP__ !== 'undefined' && __ANDROID_APP__) {
@@ -30,6 +75,10 @@ export async function speakJapaneseDetailed(text, { rate = 0.92, button = null }
 
   if (button) button.setAttribute('aria-busy', 'true');
   const clearBusy = () => button?.removeAttribute('aria-busy');
+
+  if (await playBundledAudio(cleaned, text, clearBusy)) {
+    return { spoken: true, engine: 'audio-offline-jepang' };
+  }
 
   if (typeof __ANDROID_APP__ !== 'undefined' && __ANDROID_APP__) {
     const plugin = await getNativeTts();

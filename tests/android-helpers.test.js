@@ -1,5 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { existsSync, readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import {
   buildProgressExportPayload,
   getHomeHref,
@@ -426,5 +428,17 @@ test('KANJI_N5 dataset has 100 unique kanji with valid readings and categories',
     assert.ok(Object.hasOwn(KANJI_CATEGORIES, item.category), item.kanji);
     assert.ok(item.meaning.length > 0, item.kanji);
     assert.ok(item.example.length > 0 && item.reading.length > 0, item.kanji);
+  }
+});
+
+test('bundled audio manifest maps 450 phrases to existing MP3 files', () => {
+  const manifestPath = resolve(import.meta.dirname, '../js/audio-manifest.json');
+  const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
+  const entries = Object.entries(manifest);
+  assert.ok(entries.length >= 450, `Expected >= 450 clips, got ${entries.length}`);
+  for (const [phrase, file] of entries) {
+    assert.ok(phrase.length > 0);
+    assert.match(file, /^[a-f0-9]{10}\.mp3$/);
+    assert.equal(existsSync(resolve(import.meta.dirname, '../public/audio', file)), true, file);
   }
 });

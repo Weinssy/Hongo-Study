@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
-import { copyFile, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { copyFile, cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { resolve } from 'path';
 import { vocabularyCount } from './js/quiz-data.js';
 
@@ -42,6 +42,11 @@ function optimizeAndroidBundle() {
       await copyFile(
         resolve(import.meta.dirname, 'public/favicon.svg'),
         resolve(outDir, 'favicon.svg')
+      );
+      await cp(
+        resolve(import.meta.dirname, 'public/audio'),
+        resolve(outDir, 'audio'),
+        { recursive: true }
       );
       const entries = await readdir(assetsDir).catch(() => []);
       await Promise.all(
