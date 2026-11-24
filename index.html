@@ -57,7 +57,7 @@
         <div class="study-panel">
           <div class="flex flex-wrap items-baseline justify-between gap-2">
             <h2 id="studyHeading" class="font-display text-xl font-bold text-ink">Catatan Latihanmu</h2>
-            <span class="font-mono text-xs text-slate-500">Tersimpan offline</span>
+            <span id="streakPill" class="font-mono text-xs text-slate-500">Tersimpan offline</span>
           </div>
           <div class="metric-grid mt-4">
             <div class="metric-cell">
@@ -73,11 +73,14 @@
               <span class="metric-cell__label">Perlu Ulang</span>
             </div>
           </div>
-          <p id="studyProgress" class="mt-4 text-sm text-slate-600" aria-live="polite">Mulai dengan 10 huruf Kana. Hasil latihan disimpan di perangkat ini.</p>
+          <p id="studyProgress" class="mt-4 text-sm text-slate-600" aria-live="polite">Mulai dengan 10 huruf Kana atau Flashcard SRS. Hasil latihan disimpan di perangkat ini.</p>
           <div class="mt-4 flex flex-wrap gap-2.5">
             <button id="exportProgress" type="button" class="secondary-button">Unduh progres</button>
+            <button id="importProgress" type="button" class="secondary-button">Pulihkan progres</button>
             <button id="resetProgress" type="button" class="secondary-button">Atur ulang</button>
           </div>
+          <input id="importProgressInput" type="file" accept=".json,application/json" hidden />
+          <p id="importStatus" class="mt-2 text-xs font-semibold" role="status" aria-live="polite" hidden></p>
         </div>
       </section>
       {{/if}}
@@ -148,14 +151,20 @@
 
       <section class="mx-auto max-w-6xl px-5 pt-10" aria-labelledby="studyHeading">
         <div class="study-panel">
-          <h2 id="studyHeading" class="font-display text-2xl">Langkah belajar berikutnya</h2>
-          <p id="studyProgress" class="mt-3 text-sm text-slate-600">Mulai dengan 10 huruf Kana. Hasil latihan disimpan di browser ini.</p>
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h2 id="studyHeading" class="font-display text-2xl">Langkah belajar berikutnya</h2>
+            <span id="streakPill" class="font-mono text-xs text-slate-500">Tersimpan offline</span>
+          </div>
+          <p id="studyProgress" class="mt-3 text-sm text-slate-600">Mulai dengan 10 huruf Kana atau Flashcard SRS. Hasil latihan disimpan di browser ini.</p>
           <div class="mt-5 flex flex-wrap gap-3">
             <a id="resumeStudy" href="tebak-huruf.html" class="primary-button">Mulai latihan Kana</a>
             <button id="exportProgress" type="button" class="secondary-button">Unduh progres</button>
+            <button id="importProgress" type="button" class="secondary-button">Pulihkan progres</button>
           </div>
+          <input id="importProgressInput" type="file" accept=".json,application/json" hidden />
+          <p id="importStatus" class="mt-2 text-xs font-semibold" role="status" aria-live="polite" hidden></p>
           <ol class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-600">
-            <li>1. Kenali Kana</li><li>2. <a class="underline" href="kosakata.html">Pelajari kosakata</a></li><li>3. <a class="underline" href="kuis.html">Uji pemahaman</a></li>
+            <li>1. Kenali Kana</li><li>2. <a class="underline" href="flashcard.html">Latihan Flashcard SRS</a></li><li>3. <a class="underline" href="kuis.html">Uji pemahaman</a></li>
           </ol>
         </div>
       </section>
@@ -259,6 +268,28 @@
               </div>
             </a>
           </div>
+
+          <!-- Flashcard SRS Full-Width Card -->
+          <a
+            href="flashcard.html"
+            class="feature-card group flex flex-col justify-between gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:col-span-12 md:flex-row md:items-center"
+          >
+            <div class="min-w-0">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="rounded-full bg-sakura px-3 py-1 text-xs font-bold text-crimson">Spaced Repetition (SRS)</span>
+                <span class="font-kanji text-xl font-bold text-crimson" lang="ja">暗記</span>
+              </div>
+              <h3 class="mt-3 font-display text-xl font-bold text-ink group-hover:text-crimson transition-colors">
+                Flashcard Kosakata SRS &amp; Audio
+              </h3>
+              <p class="mt-1.5 max-w-2xl text-sm text-slate-600 leading-relaxed">
+                Ulangi kosakata berdasarkan jadwal ingat otomatis (Lupa, Sulit, Bisa, Gampang) lengkap dengan pelafalan audio bahasa Jepang.
+              </p>
+            </div>
+            <span class="shrink-0 text-sm font-bold text-crimson group-hover:translate-x-0.5 transition-transform">
+              Buka Flashcard &rarr;
+            </span>
+          </a>
         </div>
       </section>
 

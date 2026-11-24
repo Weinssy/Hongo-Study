@@ -106,14 +106,25 @@
               class="inline-block rounded-full bg-sakura/30 px-3 py-1 text-xs font-bold text-crimson"
               >Apa arti kosakata ini?</span
             >
-            <button
-              id="toggleRomajiHint"
-              type="button"
-              aria-pressed="false"
-              class="rounded-full border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-ink transition hover:border-crimson"
-            >
-              Lihat Romaji
-            </button>
+            <div class="flex flex-wrap items-center gap-2">
+              <button
+                id="speakQuestionBtn"
+                type="button"
+                class="tts-btn"
+                aria-label="Dengarkan pelafalan soal"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                <span>Dengar</span>
+              </button>
+              <button
+                id="toggleRomajiHint"
+                type="button"
+                aria-pressed="false"
+                class="rounded-full border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-ink transition hover:border-crimson"
+              >
+                Lihat Romaji
+              </button>
+            </div>
           </div>
           <div class="text-center py-4">
             <h2

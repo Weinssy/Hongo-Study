@@ -11,17 +11,39 @@
   </head>
   <body class="font-sans">
     {{> header }}
-    <main id="main-content" tabindex="-1" class="mx-auto max-w-4xl px-5 py-20">
-      <div class="mb-10 text-center">
+    <main id="main-content" tabindex="-1" class="mx-auto max-w-4xl px-5 py-12 md:py-16 min-w-0">
+      <div class="mb-8 text-center">
         <p class="text-sm font-bold text-crimson">
-          02 · Roleplay chat
+          02 · Roleplay Chat &amp; Audio
         </p>
-        <h1 class="mt-2 font-display text-5xl">Di depan ruang kelas</h1>
-        <p class="mt-4 text-slate-500">
-          Pilih balasan bahasa Jepang yang paling tepat untuk melanjutkan
-          percakapan.
+        <h1 id="scenarioTitle" class="mt-2 font-display text-3xl md:text-5xl text-ink">Di depan ruang kelas</h1>
+        <p id="scenarioDesc" class="mt-3 text-sm md:text-base text-slate-600">
+          Pilih skenario percakapan harian, dengarkan pelafalan Jepangnya, lalu pilih balasan yang paling tepat.
         </p>
       </div>
+
+      <div class="mx-auto max-w-2xl min-w-0">
+        <div
+          id="scenarioSelector"
+          role="group"
+          aria-label="Pilih skenario percakapan"
+          class="chip-scroll-row mb-5"
+        >
+          <button type="button" data-scenario="kelas" aria-pressed="true" class="shrink-0 whitespace-nowrap rounded-full border border-crimson bg-crimson px-4 py-2 text-xs md:text-sm font-bold text-white shadow-sm">
+            <span class="font-kanji mr-1" lang="ja">教室</span> Ruang Kelas
+          </button>
+          <button type="button" data-scenario="perkenalan" aria-pressed="false" class="shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2 text-xs md:text-sm font-bold text-slate-700 shadow-sm hover:border-crimson">
+            <span class="font-kanji text-crimson mr-1" lang="ja">挨拶</span> Perkenalan
+          </button>
+          <button type="button" data-scenario="konbini" aria-pressed="false" class="shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2 text-xs md:text-sm font-bold text-slate-700 shadow-sm hover:border-crimson">
+            <span class="font-kanji text-crimson mr-1" lang="ja">店</span> Konbini &amp; Kafe
+          </button>
+          <button type="button" data-scenario="arah" aria-pressed="false" class="shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2 text-xs md:text-sm font-bold text-slate-700 shadow-sm hover:border-crimson">
+            <span class="font-kanji text-crimson mr-1" lang="ja">道</span> Tanya Arah
+          </button>
+        </div>
+      </div>
+
       <section class="mx-auto max-w-2xl space-y-4">
         <div class="rounded-2xl border border-slate-200 bg-white p-4 md:p-5 shadow-sm">
           <div class="mb-3 flex flex-wrap items-center justify-between gap-2">

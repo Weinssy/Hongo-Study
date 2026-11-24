@@ -15,12 +15,28 @@ import {
   shouldCheckForUpdate,
 } from '../js/android-updater-core.js';
 import {
+  exportProgress,
   getProgress,
+  getSrsMap,
+  getStreak,
   getWrongAnswers,
+  importProgress,
   recordAnswer,
   recordDrill,
+  recordSrsReview,
   resetProgress,
+  validateImportedProgress,
 } from '../js/progress.js';
+import {
+  DAY_MS,
+  MIN_EF,
+  buildSrsQueue,
+  formatIntervalLabel,
+  getEffectiveStreak,
+  reviewCard,
+  updateStreak,
+} from '../js/srs-core.js';
+import { cleanSpeechText } from '../js/speech.js';
 
 test('isRootPath recognizes root paths and excludes nested sections', () => {
   for (const path of ['', '/', '/index.html', 'index.html', '/Hongo-Study/index.html', '/index.html?from=quiz#top']) {
@@ -264,4 +280,139 @@ test('resetProgress clears wrong answers and resets stored progress counters', (
       delete globalThis.localStorage;
     }
   }
+});
+
+test('reviewCard follows SM-2 intervals, EF floor, and lapse reset', () => {
+  const t0 = 1_700_000_000_000;
+  const firstGood = reviewCard(undefined, 4, t0);
+  assert.equal(firstGood.reps, 1);
+  assert.equal(firstGood.interval, 1);
+  assert.equal(firstGood.ef, 2.5);
+  assert.equal(firstGood.dueAt, t0 + DAY_MS);
+
+  const secondGood = reviewCard(firstGood, 4, t0 + DAY_MS);
+  assert.equal(secondGood.reps, 2);
+  assert.equal(secondGood.interval, 6);
+
+  const thirdEasy = reviewCard(secondGood, 5, t0 + 7 * DAY_MS);
+  assert.equal(thirdEasy.reps, 3);
+  assert.equal(thirdEasy.ef, 2.6);
+  assert.equal(thirdEasy.interval, Math.round(6 * 2.6));
+
+  const lapsed = reviewCard(thirdEasy, 1, t0 + 20 * DAY_MS);
+  assert.equal(lapsed.reps, 0);
+  assert.equal(lapsed.interval, 1);
+  assert.equal(lapsed.lapses, 1);
+
+  let lowEfCard = { reps: 0, interval: 0, ef: 1.35, lapses: 0 };
+  for (let i = 0; i < 6; i++) {
+    lowEfCard = reviewCard(lowEfCard, 1, t0 + i * DAY_MS);
+  }
+  assert.equal(lowEfCard.ef, MIN_EF);
+  assert.throws(() => reviewCard(undefined, 2, t0), RangeError);
+  assert.equal(formatIntervalLabel(1), '1 hari');
+  assert.equal(formatIntervalLabel(60), '2 bln');
+});
+
+test('updateStreak and getEffectiveStreak handle consecutive days and gaps', () => {
+  let s = updateStreak(null, '2026-11-20');
+  assert.deepEqual(s, { current: 1, best: 1, lastActiveDate: '2026-11-20', todayCount: 1 });
+
+  s = updateStreak(s, '2026-11-20');
+  assert.equal(s.current, 1);
+  assert.equal(s.todayCount, 2);
+
+  s = updateStreak(s, '2026-11-21');
+  assert.equal(s.current, 2);
+  assert.equal(s.best, 2);
+  assert.equal(s.todayCount, 1);
+
+  assert.equal(getEffectiveStreak(s, '2026-11-21'), 2);
+  assert.equal(getEffectiveStreak(s, '2026-11-22'), 2);
+  assert.equal(getEffectiveStreak(s, '2026-11-23'), 0);
+
+  s = updateStreak(s, '2026-11-24');
+  assert.equal(s.current, 1);
+  assert.equal(s.best, 2);
+});
+
+test('buildSrsQueue prioritizes overdue cards and limits daily new cards', () => {
+  const items = [
+    { id: 'a', categoryKey: 'waktu' },
+    { id: 'b', categoryKey: 'waktu' },
+    { id: 'c', categoryKey: 'waktu' },
+    { id: 'd', categoryKey: 'sekolah' },
+  ];
+  const now = 10_000;
+  const srsMap = {
+    b: { reps: 1, interval: 1, ef: 2.5, dueAt: 5_000 },
+    a: { reps: 2, interval: 6, ef: 2.5, dueAt: 2_000 },
+  };
+  const result = buildSrsQueue(items, srsMap, { nowMs: now, dailyNewLimit: 1, category: 'all' });
+  assert.deepEqual(result.queue.map(x => x.id), ['a', 'b', 'c']);
+  assert.equal(result.dueCount, 2);
+  assert.equal(result.newCount, 1);
+  assert.equal(result.masteredCount, 1);
+});
+
+test('importProgress validates payloads and round-trips v2 progress with SRS and streak', () => {
+  const originalDescriptor = Object.getOwnPropertyDescriptor(globalThis, 'localStorage');
+  const backing = new Map();
+  Object.defineProperty(globalThis, 'localStorage', {
+    configurable: true,
+    writable: true,
+    value: {
+      getItem: (key) => (backing.has(key) ? backing.get(key) : null),
+      setItem: (key, value) => backing.set(key, String(value)),
+      removeItem: (key) => backing.delete(key),
+    },
+  });
+
+  try {
+    assert.equal(validateImportedProgress(null).ok, false);
+    assert.equal(validateImportedProgress({ progress: { version: 1, answered: 1, correct: 5, bestDrills: {} } }).ok, false);
+    assert.equal(validateImportedProgress({
+      progress: { version: 1, answered: 2, correct: 1, last: null, bestDrills: {} },
+      srs: { bad: { reps: -1, interval: 1, ef: 2.5, dueAt: 100 } },
+    }).ok, false);
+
+    recordAnswer('明日', true, 'waktu');
+    recordSrsReview('waktu-1', 4, 1_700_000_000_000);
+    const snapshot = exportProgress();
+    assert.equal(snapshot.version, 2);
+    assert.equal(Object.keys(snapshot.srs).length, 1);
+    assert.equal(snapshot.streak.current, 1);
+
+    resetProgress();
+    assert.equal(getProgress().answered, 0);
+    assert.deepEqual(getSrsMap(), {});
+    assert.equal(getStreak().current, 0);
+
+    const restored = importProgress(snapshot);
+    assert.equal(restored.ok, true);
+    assert.equal(getProgress().answered, 1);
+    assert.equal(getSrsMap()['waktu-1'].reps, 1);
+    assert.equal(getStreak().current, 1);
+
+    // Backward-compatible v1 backup without srs/streak
+    const v1Result = importProgress({
+      progress: { version: 1, answered: 4, correct: 3, last: null, bestDrills: {} },
+      wrongAnswers: ['今日'],
+    });
+    assert.equal(v1Result.ok, true);
+    assert.equal(getProgress().answered, 4);
+    assert.deepEqual(getWrongAnswers(), ['今日']);
+  } finally {
+    if (originalDescriptor) {
+      Object.defineProperty(globalThis, 'localStorage', originalDescriptor);
+    } else {
+      delete globalThis.localStorage;
+    }
+  }
+});
+
+test('cleanSpeechText strips parenthetical notes and normalizes separators', () => {
+  assert.equal(cleanSpeechText('おはよう（朝）'), 'おはよう');
+  assert.equal(cleanSpeechText('いぬ / ねこ (hewan)'), 'いぬ 、 ねこ');
+  assert.equal(cleanSpeechText(''), '');
 });

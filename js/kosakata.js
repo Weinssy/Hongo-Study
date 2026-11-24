@@ -1,6 +1,7 @@
 import { quizData, vocabularyCount } from './quiz-data.js';
 import { escapeHtml } from './study-core.js';
 import { getWrongAnswers } from './progress.js';
+import { SPEAKER_ICON_SVG, speakJapanese } from './speech.js';
 
 (() => {
   const searchInput = document.querySelector('#vocabSearch');
@@ -120,7 +121,16 @@ import { getWrongAnswers } from './progress.js';
             <p class="mt-1 text-sm font-semibold text-slate-700">${escapeHtml(item.meaning)}</p>
           </div>
         </div>
-        <div class="mt-4 border-t border-slate-100 pt-2 flex justify-end">
+        <div class="mt-4 border-t border-slate-100 pt-2 flex items-center justify-between gap-2">
+          <button
+            type="button"
+            class="tts-btn"
+            data-speak="${escapeHtml(item.furigana || item.kanji)}"
+            aria-label="Dengarkan pelafalan ${escapeHtml(item.meaning)}"
+          >
+            ${SPEAKER_ICON_SVG}
+            <span>Dengar</span>
+          </button>
           <a href="${item.categoryLink}" class="inline-flex items-center text-xs font-bold text-crimson hover:underline">
             Buka di ${item.categoryName} &rarr;
           </a>
@@ -166,6 +176,14 @@ import { getWrongAnswers } from './progress.js';
     searchInput.addEventListener('input', () => {
       clearTimeout(searchTimer);
       searchTimer = setTimeout(() => render(true), 150);
+    });
+  }
+
+  if (resultsContainer) {
+    resultsContainer.addEventListener('click', (event) => {
+      const btn = event.target.closest('[data-speak]');
+      if (!btn) return;
+      speakJapanese(btn.dataset.speak, { button: btn });
     });
   }
 

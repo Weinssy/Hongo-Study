@@ -102,6 +102,29 @@ export function initAndroidBridge({ closeMenu, isMenuOpen } = {}) {
     }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
   }
 
+  // Prefetch local HTML pages on pointerdown so tab switches feel immediate.
+  const prefetched = new Set();
+  const prefetchLink = (anchor) => {
+    if (!anchor) return;
+    const raw = anchor.getAttribute('href');
+    if (!raw || raw.startsWith('#') || /^[a-z]+:/i.test(raw)) return;
+    const url = new URL(anchor.href, location.href);
+    if (url.origin !== location.origin || url.pathname === location.pathname) return;
+    const key = url.pathname + url.search;
+    if (prefetched.has(key)) return;
+    prefetched.add(key);
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.as = 'document';
+    link.href = url.href;
+    document.head?.append(link);
+  };
+  document.addEventListener('pointerdown', (event) => {
+    const anchor = event.target?.closest?.('a[href]');
+    if (anchor) prefetchLink(anchor);
+  }, { passive: true });
+  document.querySelectorAll('.bottom-nav__item[href]').forEach((el) => prefetchLink(el));
+
   if (!Capacitor.isNativePlatform()) return;
 
   let lastBackPressAt = null;

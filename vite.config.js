@@ -5,7 +5,23 @@ import { resolve } from 'path';
 import { vocabularyCount } from './js/quiz-data.js';
 
 const isAndroid = process.env.BUILD_TARGET === 'android';
-const LATIHAN_PAGES = ['/latihan.html', '/tebak-huruf.html', '/kuis.html', '/percakapan.html'];
+const LATIHAN_PAGES = ['/latihan.html', '/tebak-huruf.html', '/kuis.html', '/percakapan.html', '/flashcard.html'];
+
+function androidFontsVirtualPlugin() {
+  const virtualId = 'virtual:android-fonts';
+  const resolvedId = '\0' + virtualId;
+  return {
+    name: 'android-fonts-virtual',
+    resolveId(id) {
+      if (id === virtualId) return resolvedId;
+    },
+    load(id) {
+      if (id === resolvedId) {
+        return isAndroid ? `import './js/android-fonts.js';` : 'export {};';
+      }
+    }
+  };
+}
 
 function getActiveTab(pagePath) {
   const normalized = pagePath.replaceAll('\\', '/').replace(/^(?!\/)/, '/');
@@ -51,6 +67,7 @@ export default defineConfig({
     __ANDROID_APP__: JSON.stringify(isAndroid)
   },
   plugins: [
+    androidFontsVirtualPlugin(),
     handlebars({
       partialDirectory: resolve(import.meta.dirname, 'src/partials'),
       context(pagePath) {
@@ -95,6 +112,7 @@ export default defineConfig({
         kosakataOrang: resolve(import.meta.dirname, 'kosakata/orang.html'),
         kosakataKeluarga: resolve(import.meta.dirname, 'kosakata/keluarga.html'),
         kuis: resolve(import.meta.dirname, 'kuis.html'),
+        flashcard: resolve(import.meta.dirname, 'flashcard.html'),
         latihan: resolve(import.meta.dirname, 'latihan.html'),
         labVisual: resolve(import.meta.dirname, 'lab-visual.html'),
         ...(isAndroid ? {} : {

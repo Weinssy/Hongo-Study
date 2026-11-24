@@ -6,6 +6,7 @@
 <meta name="theme-color" content="#FAF8F5" />
 <script>
   (() => {
+    {{#if isAndroid}}document.documentElement.classList.add('is-android');{{/if}}
     let saved;
     try { saved = localStorage.getItem('nihongo-theme'); } catch {}
     const dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;

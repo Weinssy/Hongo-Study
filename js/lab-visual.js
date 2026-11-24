@@ -1,5 +1,6 @@
 import { annotateJapanese } from './language.js';
 import { escapeHtml } from './study-core.js';
+import { SPEAKER_ICON_SVG, speakJapanese } from './speech.js';
 
 const ARCHITECTURE_TERMS = [
   ['城', 'しろ', 'shiro', 'Kastel', 'Benteng tradisional Jepang dengan fondasi batu melengkung dan menara utama.'],
@@ -321,7 +322,7 @@ const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
     if (!box) return;
     const off = document.body.classList.contains('furigana-off');
     box.innerHTML = terms.map(([k, f, r, m, d]) =>
-      `<article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div class="flex items-start justify-between gap-3"><p class="font-display text-3xl font-bold text-ink"><ruby lang="ja">${escapeHtml(k)}<rt aria-hidden="${off}">${escapeHtml(f)}</rt></ruby></p><div class="text-right"><p class="text-base font-bold text-ink">${escapeHtml(m)}</p><p class="font-mono text-xs font-semibold text-crimson">${escapeHtml(r)}</p></div></div><p class="mt-3 text-xs leading-relaxed text-slate-600">${escapeHtml(d)}</p></article>`
+      `<article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div class="flex items-start justify-between gap-3"><p class="font-display text-3xl font-bold text-ink"><ruby lang="ja">${escapeHtml(k)}<rt aria-hidden="${off}">${escapeHtml(f)}</rt></ruby></p><div class="text-right"><p class="text-base font-bold text-ink">${escapeHtml(m)}</p><p class="font-mono text-xs font-semibold text-crimson">${escapeHtml(r)}</p></div></div><p class="mt-3 text-xs leading-relaxed text-slate-600">${escapeHtml(d)}</p><div class="mt-3 flex justify-end"><button type="button" class="tts-btn" data-speak="${escapeHtml(f || k)}" aria-label="Dengarkan pelafalan ${escapeHtml(m)}">${SPEAKER_ICON_SVG}<span>Dengar</span></button></div></article>`
     ).join('');
     annotateJapanese(box);
   }
@@ -349,6 +350,11 @@ const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
   renderTerms($('#anatomyGrid'), ANATOMY_TERMS);
   syncFurigana();
   document.addEventListener('hongo-furigana-change', syncFurigana);
+  vocabSection?.addEventListener('click', (event) => {
+    const btn = event.target.closest('[data-speak]');
+    if (!btn) return;
+    speakJapanese(btn.dataset.speak, { button: btn });
+  });
 
   tabs.forEach((t, i) => {
     t.addEventListener('click', () => selectTab(t.dataset.tab));

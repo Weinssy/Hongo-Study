@@ -23,3 +23,6 @@
 -keep class io.github.weinssy.hongostudy.AppUpdaterPlugin {
     *;
 }
+-keep class io.github.weinssy.hongostudy.JapaneseTtsPlugin {
+    *;
+}

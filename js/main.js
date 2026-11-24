@@ -1,6 +1,18 @@
+import 'virtual:android-fonts';
 import { storage } from './storage.js';
 import { annotateJapanese } from './language.js';
-import { exportProgress, getProgress, getWrongAnswers, recordVisit, resetProgress } from './progress.js';
+import {
+  exportProgress,
+  getDueSrsCount,
+  getProgress,
+  getSrsMap,
+  getStreak,
+  getWrongAnswers,
+  importProgress,
+  recordVisit,
+  resetProgress,
+} from './progress.js';
+import { getEffectiveStreak } from './srs-core.js';
 
 (() => {
   const isAndroidBuild = typeof __ANDROID_APP__ !== 'undefined' && __ANDROID_APP__;
@@ -96,25 +108,49 @@ import { exportProgress, getProgress, getWrongAnswers, recordVisit, resetProgres
   const studyProgress = document.querySelector('#studyProgress');
   const resumeLink = document.querySelector('#resumeStudy');
   const exportButton = document.querySelector('#exportProgress');
+  const importButton = document.querySelector('#importProgress');
+  const importInput = document.querySelector('#importProgressInput');
+  const importStatus = document.querySelector('#importStatus');
   const resetButton = document.querySelector('#resetProgress');
   const metricAnswered = document.querySelector('#metricAnswered');
   const metricCorrect = document.querySelector('#metricCorrect');
   const metricWrong = document.querySelector('#metricWrong');
+  const streakPill = document.querySelector('#streakPill');
   const practiceWrongBadge = document.querySelector('#practiceWrongBadge');
+  const practiceSrsBadge = document.querySelector('#practiceSrsBadge');
 
-  const destinations = { drill: 'tebak-huruf.html', quiz: 'kuis.html', grammar: 'kamus-grammar.html', kosakata: 'kosakata.html', conversation: 'percakapan.html' };
+  const destinations = { drill: 'tebak-huruf.html', quiz: 'kuis.html', flashcard: 'flashcard.html', grammar: 'kamus-grammar.html', kosakata: 'kosakata.html', conversation: 'percakapan.html' };
   const vocabularyCategories = ['waktu', 'sekolah', 'mata-pelajaran', 'pekerjaan', 'orang', 'keluarga'];
   const grammarCategories = ['struktur-kalimat', 'partikel-dasar', 'kata-kerja', 'kata-sifat', 'pertanyaan-negatif', 'kebutuhan-sehari-hari', 'keberadaan-lokasi', 'ungkapan-salam'];
 
   const renderStudyStatus = () => {
     const progress = getProgress();
     const due = getWrongAnswers().length;
+    const srsMap = getSrsMap();
+    const srsStudied = Object.keys(srsMap).length;
+    const srsDue = getDueSrsCount();
+    const streak = getStreak();
+    const activeStreak = getEffectiveStreak(streak);
+
     if (metricAnswered) metricAnswered.textContent = String(progress.answered);
     if (metricCorrect) metricCorrect.textContent = String(progress.correct);
     if (metricWrong) metricWrong.textContent = String(due);
+    if (streakPill) {
+      streakPill.textContent = activeStreak > 0
+        ? `Streak ${activeStreak} hari`
+        : 'Tersimpan offline';
+    }
     if (practiceWrongBadge) {
       practiceWrongBadge.hidden = due === 0;
       practiceWrongBadge.textContent = due > 0 ? `${due} prioritas ulang` : '';
+    }
+    if (practiceSrsBadge) {
+      practiceSrsBadge.hidden = false;
+      practiceSrsBadge.textContent = srsDue > 0
+        ? `${srsDue} jatuh tempo`
+        : srsStudied > 0
+          ? `${srsStudied} kartu dipelajari`
+          : '10 kartu baru siap';
     }
     if (resumeLink) {
       const last = progress.last;
@@ -130,20 +166,65 @@ import { exportProgress, getProgress, getWrongAnswers, recordVisit, resetProgres
       }
     }
     if (studyProgress) {
-      studyProgress.textContent = progress.answered
-        ? `${progress.correct} jawaban benar dari ${progress.answered} soal kuis. ${due} kosakata perlu diulang.`
-        : isAndroidBuild
-          ? 'Mulai dengan 10 huruf Kana. Hasil latihan disimpan di perangkat ini.'
-          : 'Mulai dengan 10 huruf Kana. Hasil latihan disimpan di browser ini.';
+      if (progress.answered || srsStudied) {
+        const parts = [];
+        if (progress.answered) parts.push(`${progress.correct} benar dari ${progress.answered} soal kuis`);
+        if (srsStudied) parts.push(`${srsStudied} kartu SRS${srsDue ? ` (${srsDue} jatuh tempo)` : ''}`);
+        if (activeStreak > 0) parts.push(`streak ${activeStreak} hari`);
+        studyProgress.textContent = `${parts.join(' · ')}. ${due} kosakata perlu diulang.`;
+      } else {
+        studyProgress.textContent = isAndroidBuild
+          ? 'Mulai dengan 10 huruf Kana atau Flashcard SRS. Hasil latihan disimpan di perangkat ini.'
+          : 'Mulai dengan 10 huruf Kana atau Flashcard SRS. Hasil latihan disimpan di browser ini.';
+      }
     }
   };
 
-  if (resumeLink || studyProgress || metricAnswered || practiceWrongBadge) {
+  if (resumeLink || studyProgress || metricAnswered || practiceWrongBadge || practiceSrsBadge) {
     renderStudyStatus();
     window.addEventListener('pageshow', event => {
       if (event.persisted) renderStudyStatus();
     });
   }
+
+  const showImportStatus = (message, isError = false) => {
+    if (!importStatus) return;
+    importStatus.hidden = false;
+    importStatus.textContent = message;
+    importStatus.classList.toggle('text-crimson', isError);
+    importStatus.classList.toggle('text-emerald-700', !isError);
+  };
+
+  importButton?.addEventListener('click', () => {
+    importInput?.click();
+  });
+
+  importInput?.addEventListener('change', async () => {
+    const file = importInput.files?.[0];
+    importInput.value = '';
+    if (!file) return;
+    if (file.size > 1_048_576) {
+      showImportStatus('Ukuran file terlalu besar (maksimal 1 MB).', true);
+      return;
+    }
+    try {
+      const text = await file.text();
+      const parsed = JSON.parse(text);
+      const result = importProgress(parsed);
+      if (!result.ok) {
+        showImportStatus(result.error, true);
+        return;
+      }
+      renderStudyStatus();
+      const { answered, srsCount, streak } = result.summary;
+      showImportStatus(
+        `Progres berhasil dipulihkan (${answered} soal kuis, ${srsCount} kartu SRS, streak ${streak} hari).`,
+        false
+      );
+    } catch {
+      showImportStatus('File tidak dapat dibaca sebagai JSON progres Hongo Study.', true);
+    }
+  });
 
   exportButton?.addEventListener('click', async () => {
     if (typeof __ANDROID_APP__ !== 'undefined' && __ANDROID_APP__) {
@@ -189,7 +270,13 @@ import { exportProgress, getProgress, getWrongAnswers, recordVisit, resetProgres
   showStorageStatus();
   if (typeof __ANDROID_APP__ !== 'undefined' && __ANDROID_APP__) {
     document.body.classList.add('has-bottom-nav');
-    import('./android-fonts.js');
+    if (typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function' && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.bottom-nav__item').forEach(tab => {
+        tab.addEventListener('click', () => {
+          try { navigator.vibrate(8); } catch {}
+        }, { passive: true });
+      });
+    }
     import('./android-bridge.js').then(({ initAndroidBridge }) => {
       initAndroidBridge({
         closeMenu,

@@ -1,6 +1,7 @@
 import { quizData } from './quiz-data.js';
 import { escapeHtml, isCorrectChoice, shuffle } from './study-core.js';
 import { getWrongAnswers, recordAnswer, recordVisit } from './progress.js';
+import { speakJapanese } from './speech.js';
 
 (() => {
 
@@ -12,6 +13,7 @@ import { getWrongAnswers, recordAnswer, recordVisit } from './progress.js';
   const progressBar = document.querySelector("#progressBar");
   const quizCategoryBadge = document.querySelector("#quizCategoryBadge");
   const quizLiveScore = document.querySelector("#quizLiveScore");
+  const speakQuestionBtn = document.querySelector("#speakQuestionBtn");
   const toggleRomajiHint = document.querySelector("#toggleRomajiHint");
   const questionJapanese = document.querySelector("#questionJapanese");
   const questionRomaji = document.querySelector("#questionRomaji");
@@ -165,6 +167,10 @@ import { getWrongAnswers, recordAnswer, recordVisit } from './progress.js';
     }
     applyFurigana();
     questionRomaji.textContent = current.romaji;
+    if (speakQuestionBtn) {
+      speakQuestionBtn.hidden = false;
+      speakQuestionBtn.dataset.speak = current.furigana || current.question;
+    }
     if (toggleRomajiHint) toggleRomajiHint.hidden = false;
     setRomajiHintVisible(false);
 
@@ -364,6 +370,7 @@ import { getWrongAnswers, recordAnswer, recordVisit } from './progress.js';
       questionJapanese.lang = 'id';
       questionJapanese.textContent = "Data belum tersedia";
       questionRomaji.textContent = "";
+      if (speakQuestionBtn) speakQuestionBtn.hidden = true;
       if (toggleRomajiHint) toggleRomajiHint.hidden = true;
       setRomajiHintVisible(false);
       optionsGrid.innerHTML =
@@ -376,6 +383,12 @@ import { getWrongAnswers, recordAnswer, recordVisit } from './progress.js';
   }
 
   // Event Listeners
+  speakQuestionBtn?.addEventListener("click", () => {
+    const current = questions[currentIndex];
+    if (!current) return;
+    speakJapanese(current.furigana || current.question, { button: speakQuestionBtn });
+  });
+
   toggleRomajiHint?.addEventListener("click", () => {
     if (!questions.length) return;
     setRomajiHintVisible(questionRomaji.hidden);
