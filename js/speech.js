@@ -24,9 +24,9 @@ export function cleanSpeechText(text) {
     .trim();
 }
 
-export async function speakJapanese(text, { rate = 0.92, button = null } = {}) {
+export async function speakJapaneseDetailed(text, { rate = 0.92, button = null } = {}) {
   const cleaned = cleanSpeechText(text);
-  if (!cleaned) return false;
+  if (!cleaned) return { spoken: false, reason: 'empty' };
 
   if (button) button.setAttribute('aria-busy', 'true');
   const clearBusy = () => button?.removeAttribute('aria-busy');
@@ -37,20 +37,28 @@ export async function speakJapanese(text, { rate = 0.92, button = null } = {}) {
       try {
         const res = await plugin.speak({ text: cleaned, rate });
         setTimeout(clearBusy, 450);
-        if (res?.spoken) return true;
+        if (res?.spoken) return { spoken: true, engine: res.engine || 'android-tts' };
         if (res?.reason === 'missing_voice') {
           const { showToast } = await import('./android-bridge.js');
           showToast('Suara Jepang (ja-JP) belum terpasang di Pengaturan Text-to-Speech HP.');
-        } else if (res?.reason === 'init_failed' || res?.reason === 'error') {
+        } else if (res?.reason === 'init_failed' || res?.reason === 'error' || String(res?.reason || '').startsWith('speak_failed')) {
           const { showToast } = await import('./android-bridge.js');
           showToast('Layanan Text-to-Speech Android tidak merespons. Cek Speech Services di Pengaturan.');
         }
-        return false;
-      } catch {
+        return {
+          spoken: false,
+          reason: res?.reason || 'unknown',
+          engine: res?.engine || '',
+          initStatus: res?.initStatus,
+          langResult: res?.langResult,
+        };
+      } catch (err) {
         clearBusy();
-        return false;
+        return { spoken: false, reason: 'plugin_exception', detail: err?.message || '' };
       }
     }
+    clearBusy();
+    return { spoken: false, reason: 'plugin_unavailable' };
   }
 
   if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
@@ -66,13 +74,18 @@ export async function speakJapanese(text, { rate = 0.92, button = null } = {}) {
       utterance.onerror = clearBusy;
       window.speechSynthesis.speak(utterance);
       setTimeout(clearBusy, 2500);
-      return true;
+      return { spoken: true, engine: 'web-speech-synthesis' };
     } catch {
       clearBusy();
-      return false;
+      return { spoken: false, reason: 'web_tts_error' };
     }
   }
 
   clearBusy();
-  return false;
+  return { spoken: false, reason: 'unsupported' };
+}
+
+export async function speakJapanese(text, options) {
+  const result = await speakJapaneseDetailed(text, options);
+  return Boolean(result?.spoken);
 }

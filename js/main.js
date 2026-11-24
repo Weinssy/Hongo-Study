@@ -102,16 +102,24 @@ import { getEffectiveStreak } from './srs-core.js';
   const testTtsBtn = document.querySelector('#testTtsBtn');
   const testTtsStatus = document.querySelector('#testTtsStatus');
   testTtsBtn?.addEventListener('click', async () => {
-    const { speakJapanese } = await import('./speech.js');
     if (testTtsStatus) {
       testTtsStatus.hidden = false;
       testTtsStatus.textContent = 'Memutar contoh suara: こんにちは、ほんごスタディです。';
     }
-    const ok = await speakJapanese('こんにちは、ほんごスタディです。', { button: testTtsBtn });
-    if (testTtsStatus) {
-      testTtsStatus.textContent = ok
-        ? 'Audio berhasil dikirim ke layanan Text-to-Speech (ja-JP). Jika belum terdengar, naikkan volume Media dan pastikan paket suara Jepang aktif di Pengaturan HP.'
-        : 'Audio gagal diputar. Pastikan layanan Google Text-to-Speech dan data suara Jepang (ja-JP) aktif di Pengaturan HP.';
+    try {
+      const { speakJapaneseDetailed } = await import('./speech.js');
+      const result = await speakJapaneseDetailed('こんにちは、ほんごスタディです。', { button: testTtsBtn });
+      if (testTtsStatus) {
+        testTtsStatus.hidden = false;
+        testTtsStatus.textContent = result?.spoken
+          ? `Audio berhasil dikirim (${result.engine || 'TTS'}). Jika belum terdengar, naikkan volume Media di HP.`
+          : `Audio gagal diputar (${result?.reason || 'unknown'}${result?.engine ? ` · ${result.engine}` : ''}). Pastikan Google Speech Services & suara Jepang aktif.`;
+      }
+    } catch (err) {
+      if (testTtsStatus) {
+        testTtsStatus.hidden = false;
+        testTtsStatus.textContent = `Gagal memuat modul audio (${err?.message || 'error'}).`;
+      }
     }
   });
 

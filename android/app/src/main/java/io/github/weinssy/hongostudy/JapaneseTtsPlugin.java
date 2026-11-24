@@ -1,6 +1,9 @@
 package io.github.weinssy.hongostudy;
 
+import android.app.Activity;
 import android.media.AudioAttributes;
+import android.os.Handler;
+import android.os.Looper;
 import android.speech.tts.TextToSpeech;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
@@ -13,15 +16,23 @@ import java.util.UUID;
 @CapacitorPlugin(name = "JapaneseTts")
 public class JapaneseTtsPlugin extends Plugin {
 
+    private static final String GOOGLE_TTS_ENGINE = "com.google.android.tts";
+
     private TextToSpeech tts;
     private volatile boolean initialized = false;
     private volatile boolean japaneseAvailable = false;
+    private volatile String activeEngine = "";
+    private volatile int lastLangResult = TextToSpeech.LANG_NOT_SUPPORTED;
+    private volatile int lastInitStatus = TextToSpeech.ERROR;
 
     @PluginMethod
     public void isAvailable(PluginCall call) {
         ensureInit(() -> {
             JSObject res = new JSObject();
             res.put("available", initialized && japaneseAvailable);
+            res.put("engine", activeEngine);
+            res.put("initStatus", lastInitStatus);
+            res.put("langResult", lastLangResult);
             call.resolve(res);
         });
     }
@@ -45,6 +56,8 @@ public class JapaneseTtsPlugin extends Plugin {
                 JSObject res = new JSObject();
                 res.put("spoken", false);
                 res.put("reason", "init_failed");
+                res.put("initStatus", lastInitStatus);
+                res.put("engine", activeEngine);
                 call.resolve(res);
                 return;
             }
@@ -52,6 +65,8 @@ public class JapaneseTtsPlugin extends Plugin {
                 JSObject res = new JSObject();
                 res.put("spoken", false);
                 res.put("reason", "missing_voice");
+                res.put("langResult", lastLangResult);
+                res.put("engine", activeEngine);
                 call.resolve(res);
                 return;
             }
@@ -65,11 +80,17 @@ public class JapaneseTtsPlugin extends Plugin {
                 );
                 JSObject res = new JSObject();
                 res.put("spoken", status == TextToSpeech.SUCCESS);
+                res.put("engine", activeEngine);
+                res.put("langResult", lastLangResult);
+                if (status != TextToSpeech.SUCCESS) {
+                    res.put("reason", "speak_failed_" + status);
+                }
                 call.resolve(res);
             } catch (Exception e) {
                 JSObject res = new JSObject();
                 res.put("spoken", false);
                 res.put("reason", "error");
+                res.put("detail", e.getMessage());
                 call.resolve(res);
             }
         });
@@ -85,45 +106,96 @@ public class JapaneseTtsPlugin extends Plugin {
         call.resolve();
     }
 
+    private void runOnMainThread(Runnable task) {
+        Activity activity = getActivity();
+        if (activity != null) {
+            activity.runOnUiThread(task);
+        } else {
+            new Handler(Looper.getMainLooper()).post(task);
+        }
+    }
+
     private synchronized void ensureInit(Runnable onReady) {
-        if (initialized && tts != null) {
+        if (initialized && japaneseAvailable && tts != null) {
             onReady.run();
             return;
         }
-            try {
-                if (tts != null) {
-                    tts.shutdown();
-                    tts = null;
-                }
-            } catch (Exception ignored) {}
-            try {
-                tts = new TextToSpeech(getContext().getApplicationContext(), status -> {
-                    if (status == TextToSpeech.SUCCESS && tts != null) {
+        runOnMainThread(() -> initEngine(null, true, onReady));
+    }
+
+    private void initEngine(String enginePackage, boolean allowGoogleFallback, Runnable onReady) {
+        try {
+            if (tts != null) {
+                tts.shutdown();
+                tts = null;
+            }
+        } catch (Exception ignored) {}
+
+        initialized = false;
+        japaneseAvailable = false;
+
+        try {
+            TextToSpeech.OnInitListener listener = status -> {
+                lastInitStatus = status;
+                if (status == TextToSpeech.SUCCESS && tts != null) {
+                    try {
                         tts.setAudioAttributes(
                             new AudioAttributes.Builder()
                                 .setUsage(AudioAttributes.USAGE_MEDIA)
                                 .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
                                 .build()
                         );
-                        int langResult = tts.setLanguage(Locale.JAPAN);
-                        if (langResult == TextToSpeech.LANG_MISSING_DATA || langResult == TextToSpeech.LANG_NOT_SUPPORTED) {
-                            langResult = tts.setLanguage(Locale.JAPANESE);
-                        }
-                        japaneseAvailable =
-                            langResult != TextToSpeech.LANG_MISSING_DATA &&
-                            langResult != TextToSpeech.LANG_NOT_SUPPORTED;
-                        initialized = true;
-                    } else {
-                        initialized = false;
-                        japaneseAvailable = false;
+                    } catch (Exception ignored) {}
+
+                    int langResult = tts.setLanguage(Locale.JAPAN);
+                    if (langResult == TextToSpeech.LANG_MISSING_DATA || langResult == TextToSpeech.LANG_NOT_SUPPORTED) {
+                        langResult = tts.setLanguage(Locale.JAPANESE);
+                    }
+                    lastLangResult = langResult;
+                    japaneseAvailable =
+                        langResult != TextToSpeech.LANG_MISSING_DATA &&
+                        langResult != TextToSpeech.LANG_NOT_SUPPORTED;
+                    initialized = true;
+                    try {
+                        activeEngine = enginePackage != null ? enginePackage : String.valueOf(tts.getDefaultEngine());
+                    } catch (Exception ignored) {
+                        activeEngine = enginePackage != null ? enginePackage : "";
+                    }
+
+                    if (!japaneseAvailable && allowGoogleFallback && !GOOGLE_TTS_ENGINE.equals(activeEngine)) {
+                        runOnMainThread(() -> initEngine(GOOGLE_TTS_ENGINE, false, onReady));
+                        return;
                     }
                     onReady.run();
-                });
-            } catch (Exception ignored) {
+                    return;
+                }
+
+                if (allowGoogleFallback && enginePackage == null) {
+                    runOnMainThread(() -> initEngine(GOOGLE_TTS_ENGINE, false, onReady));
+                    return;
+                }
+
                 initialized = false;
                 japaneseAvailable = false;
+                activeEngine = enginePackage != null ? enginePackage : "none";
                 onReady.run();
+            };
+
+            if (enginePackage != null) {
+                tts = new TextToSpeech(getContext().getApplicationContext(), listener, enginePackage);
+            } else {
+                tts = new TextToSpeech(getContext().getApplicationContext(), listener);
             }
+        } catch (Exception e) {
+            if (allowGoogleFallback && enginePackage == null) {
+                runOnMainThread(() -> initEngine(GOOGLE_TTS_ENGINE, false, onReady));
+                return;
+            }
+            initialized = false;
+            japaneseAvailable = false;
+            activeEngine = "exception:" + e.getClass().getSimpleName();
+            onReady.run();
+        }
     }
 
     @Override

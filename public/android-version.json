@@ -1,8 +1,8 @@
 {
-  "versionCode": 5,
-  "versionName": "1.0.4",
-  "tag": "android-v1.0.4",
-  "apkUrl": "https://github.com/Weinssy/Hongo-Study/releases/download/android-v1.0.4/hongo-study-v1.0.4.apk",
-  "sha256": "5e61a732a10aa954c5ebd940962317c161233dc26d9214a263221fa382ea7c97",
-  "notes": "Perbaikan Audio TTS Android 11+ (ja-JP), tombol audio di halaman detail Grammar & Kosakata, Modul 100 Kanji Dasar N5, panduan Perubahan Kata Kerja (Kamus/て/ない/た), dan halaman Pengaturan khusus dengan menu Cek Update."
+  "versionCode": 6,
+  "versionName": "1.0.5",
+  "tag": "android-v1.0.5",
+  "apkUrl": "https://github.com/Weinssy/Hongo-Study/releases/download/android-v1.0.5/hongo-study-v1.0.5.apk",
+  "sha256": "e2093986a1b2b1917cb996919beaf018beb5cf9b08263aa984ecbdbfd34b0033",
+  "notes": "Perbaikan inisialisasi TTS di UI thread, fallback langsung ke Google Speech Services (com.google.android.tts) untuk HyperOS/Android 15, dan diagnostik status audio langsung di halaman Pengaturan."
 }

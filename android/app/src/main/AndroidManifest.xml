@@ -35,6 +35,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <queries>
+        <package android:name="com.google.android.tts" />
         <intent>
             <action android:name="android.intent.action.TTS_SERVICE" />
         </intent>
