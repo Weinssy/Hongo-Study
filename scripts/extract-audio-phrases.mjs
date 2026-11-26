@@ -48,8 +48,8 @@ for (const m of labSrc.matchAll(/\[\s*'([^']+)'\s*,\s*'([^']+)'/g)) {
   addPhrase(m[2] || m[1]);
 }
 
-// 6. Kamus Grammar entries in js/main.js
-const mainSrc = await readFile(resolve(root, 'js/main.js'), 'utf8');
+// 6. Kamus Grammar entries in js/kamus-grammar.js
+const mainSrc = await readFile(resolve(root, 'js/kamus-grammar.js'), 'utf8');
 for (const m of mainSrc.matchAll(/example:'([^']+)'/g)) {
   addPhrase(rubyToSpoken(m[1]));
 }

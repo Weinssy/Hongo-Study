@@ -40,6 +40,8 @@ import {
 } from '../js/srs-core.js';
 import { cleanSpeechText } from '../js/speech.js';
 import { KANJI_CATEGORIES, KANJI_N5 } from '../js/kanji-data.js';
+import { grammarEntries } from '../js/kamus-grammar.js';
+import { detectPageKey, isSoftNavEligible } from '../js/soft-nav.js';
 
 test('isRootPath recognizes root paths and excludes nested sections', () => {
   for (const path of ['', '/', '/index.html', 'index.html', '/Hongo-Study/index.html', '/index.html?from=quiz#top']) {
@@ -441,4 +443,29 @@ test('bundled audio manifest maps 450 phrases to existing MP3 files', () => {
     assert.match(file, /^[a-f0-9]{10}\.mp3$/);
     assert.equal(existsSync(resolve(import.meta.dirname, '../public/audio', file)), true, file);
   }
+});
+
+test('soft navigation helpers filter internal links and detect feature modules', () => {
+  const makeAnchor = (href, attrs = {}) => ({
+    tagName: 'A',
+    href: new URL(href, 'https://localhost/index.html').href,
+    hasAttribute: (name) => Object.hasOwn(attrs, name),
+    getAttribute: (name) => (name === 'href' ? href : attrs[name] ?? null),
+  });
+  const here = { href: 'https://localhost/index.html', origin: 'https://localhost', pathname: '/index.html', search: '' };
+
+  assert.equal(isSoftNavEligible(makeAnchor('./latihan.html'), here), true);
+  assert.equal(isSoftNavEligible(makeAnchor('../kosakata/waktu.html'), here), true);
+  assert.equal(isSoftNavEligible(makeAnchor('#materi'), here), false);
+  assert.equal(isSoftNavEligible(makeAnchor('https://github.com/Weinssy/Hongo-Study'), here), false);
+  assert.equal(isSoftNavEligible(makeAnchor('./menara-jepang.html'), here), false);
+  assert.equal(isSoftNavEligible(makeAnchor('./anatomy/'), here), false);
+  assert.equal(isSoftNavEligible(makeAnchor('./kuis.html', { target: '_blank' }), here), false);
+  assert.equal(isSoftNavEligible(makeAnchor('./kuis.html', { download: '' }), here), false);
+
+  assert.equal(detectPageKey('/flashcard.html'), 'flashcard');
+  assert.equal(detectPageKey('/kamus-grammar.html'), 'kamus-grammar');
+  assert.equal(detectPageKey('/kanji.html'), 'kanji');
+  assert.equal(detectPageKey('/pengaturan.html'), null);
+  assert.ok(grammarEntries.length >= 26);
 });

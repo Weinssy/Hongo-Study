@@ -1,6 +1,7 @@
 import { createRound, escapeHtml } from './study-core.js';
 import { acceptsReading } from './romaji.js';
 import { getProgress, recordDrill, recordVisit } from './progress.js';
+import { mountPage } from './page-lifecycle.js';
 
 const kana = [
   ['あいうえお', ['a', 'i', 'u', 'e', 'o']], ['かきくけこ', ['ka', 'ki', 'ku', 'ke', 'ko']],
@@ -32,8 +33,10 @@ const kanji = [
 ].map(([letter, reading]) => [letter, reading, 'Kanji']);
 const items = [...hiragana, ...katakana, ...kanji, ...words];
 
+export function init(signal) {
 const character = document.querySelector('#letterCharacter');
 const game = document.querySelector('#letterGame');
+if (!game || !character) return;
 const drillProgress = document.querySelector('#drillProgress');
 const drillActiveCard = document.querySelector('#drillActiveCard');
 const drillSummary = document.querySelector('#drillSummary');
@@ -155,6 +158,9 @@ if (typeof window !== 'undefined') {
     closeGame();
     return true;
   };
+  signal?.addEventListener('abort', () => {
+    window.__hongoBackHandler = null;
+  }, { once: true });
 }
 function start() {
   if (!selectedItems.length) return;
@@ -235,3 +241,6 @@ document.querySelector('#refreshActiveLetterGame').addEventListener('click', sta
 drillRepeatBtn?.addEventListener('click', start);
 drillChangeBtn?.addEventListener('click', closeGame);
 renderMenus();
+}
+
+mountPage(init);

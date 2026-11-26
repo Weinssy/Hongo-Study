@@ -1,8 +1,8 @@
 {
-  "versionCode": 7,
-  "versionName": "1.0.6",
-  "tag": "android-v1.0.6",
-  "apkUrl": "https://github.com/Weinssy/Hongo-Study/releases/download/android-v1.0.6/hongo-study-v1.0.6.apk",
-  "sha256": "a2000eeb78a5d62c75e368690e624b1f88d13a025a0b5f40a4fc59b76dbab7d5",
-  "notes": "Bundled Offline Audio Jepang: 450 klip suara penutur Jepang (ja-JP-NanamiNeural) dibundel langsung di aplikasi tanpa bergantung pada layanan TTS perangkat."
+  "versionCode": 8,
+  "versionName": "1.0.7",
+  "tag": "android-v1.0.7",
+  "apkUrl": "https://github.com/Weinssy/Hongo-Study/releases/download/android-v1.0.7/hongo-study-v1.0.7.apk",
+  "sha256": "a197160b6b9471ae0ce7b60901258bfc9c2278de5ac2958b2007ee16ae6ce578",
+  "notes": "Optimasi performa & kemulusan: Soft Navigation ala SPA dengan View Transitions + cache HTML lokal, pemisahan kamus-grammar.js dari bundel utama, chunking annotateJapanese(), paginasi & content-visibility di 100 Kanji N5, font-display fallback, dan preload manifest audio saat idle."
 }

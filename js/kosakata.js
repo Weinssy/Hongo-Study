@@ -2,10 +2,12 @@ import { quizData, vocabularyCount } from './quiz-data.js';
 import { escapeHtml } from './study-core.js';
 import { getWrongAnswers } from './progress.js';
 import { SPEAKER_ICON_SVG, speakJapanese } from './speech.js';
+import { mountPage } from './page-lifecycle.js';
 
-(() => {
+export function init(signal) {
   const searchInput = document.querySelector('#vocabSearch');
   const resultsContainer = document.querySelector('#vocabResults');
+  if (!resultsContainer) return;
   const filterButtons = document.querySelectorAll('.category-filter-btn');
   const reviewFilterBtn = document.querySelector('#reviewFilterBtn');
   const resultCount = document.querySelector('#vocabResultCount');
@@ -103,7 +105,7 @@ import { SPEAKER_ICON_SVG, speakJapanese } from './speech.js';
     resultsContainer.innerHTML = visibleItems.map(item => {
       const isWrong = wrongSet.has(item.kanji);
       return `
-      <article class="flex flex-col justify-between rounded-xl border ${isWrong ? 'border-crimson/60' : 'border-slate-200'} bg-white p-4 shadow-sm transition-colors hover:border-crimson/50">
+      <article class="cv-auto flex flex-col justify-between rounded-xl border ${isWrong ? 'border-crimson/60' : 'border-slate-200'} bg-white p-4">
         <div>
           <div class="flex items-center justify-between gap-2 border-b border-slate-100 pb-2">
             <div class="flex flex-wrap items-center gap-1.5">
@@ -176,7 +178,7 @@ import { SPEAKER_ICON_SVG, speakJapanese } from './speech.js';
     searchInput.addEventListener('input', () => {
       clearTimeout(searchTimer);
       searchTimer = setTimeout(() => render(true), 150);
-    });
+    }, { signal });
   }
 
   if (resultsContainer) {
@@ -184,11 +186,25 @@ import { SPEAKER_ICON_SVG, speakJapanese } from './speech.js';
       const btn = event.target.closest('[data-speak]');
       if (!btn) return;
       speakJapanese(btn.dataset.speak, { button: btn });
-    });
+    }, { signal });
   }
+
+  document.addEventListener('hongo-furigana-change', () => {
+    const furiganaHidden = document.body.classList.contains('furigana-off');
+    resultsContainer.querySelectorAll('rt').forEach(rt => {
+      rt.setAttribute('aria-hidden', String(furiganaHidden));
+    });
+  }, { signal });
+
+  signal?.addEventListener('abort', () => {
+    clearTimeout(announcement);
+    clearTimeout(searchTimer);
+  }, { once: true });
 
   const total = document.querySelector('#vocabularyTotal');
   if (total) total.textContent = vocabularyCount;
   filterButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.category === 'all')));
   render();
-})();
+}
+
+mountPage(init);

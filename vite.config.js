@@ -56,7 +56,9 @@ function optimizeAndroidBundle() {
             await rm(fullPath, { force: true });
           } else if (name.endsWith('.css')) {
             const css = await readFile(fullPath, 'utf8');
-            const trimmed = css.replace(/,url\([^)]+\.woff\) format\(['"]woff['"]\)/g, '');
+            const trimmed = css
+              .replace(/,url\([^)]+\.woff\) format\(['"]woff['"]\)/g, '')
+              .replace(/font-display:swap/g, 'font-display:fallback');
             if (trimmed !== css) await writeFile(fullPath, trimmed, 'utf8');
           }
         })

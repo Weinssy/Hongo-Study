@@ -1,6 +1,7 @@
 import { createConversationState } from './study-core.js';
 import { recordVisit } from './progress.js';
 import { SPEAKER_ICON_SVG, speakJapanese } from './speech.js';
+import { mountPage } from './page-lifecycle.js';
 
 const SCENARIOS = {
   kelas: {
@@ -534,6 +535,7 @@ const SCENARIOS = {
   },
 };
 
+export function init(signal) {
 const scenarioSelector = document.querySelector('#scenarioSelector');
 const scenarioTitle = document.querySelector('#scenarioTitle');
 const scenarioDesc = document.querySelector('#scenarioDesc');
@@ -542,6 +544,8 @@ const options = document.querySelector('#chatOptions');
 const status = document.querySelector('#chatStatus');
 const next = document.querySelector('#chatNext');
 const restart = document.querySelector('#chatRestart');
+
+if (!log || !options || !next || !restart) return;
 
 let currentScenarioKey = 'kelas';
 let state = createConversationState(SCENARIOS.kelas.turns.length);
@@ -725,6 +729,9 @@ document.addEventListener('hongo-furigana-change', () => {
   document.querySelectorAll('#chatLog rt, #chatOptions rt').forEach(rt => {
     rt.setAttribute('aria-hidden', String(hidden));
   });
-});
+}, { signal });
 
 selectScenario('kelas', false);
+}
+
+mountPage(init);

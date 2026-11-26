@@ -1,19 +1,25 @@
 import { KANJI_CATEGORIES, KANJI_N5 } from './kanji-data.js';
 import { escapeHtml } from './study-core.js';
 import { SPEAKER_ICON_SVG, speakJapanese } from './speech.js';
+import { mountPage } from './page-lifecycle.js';
 
-(() => {
+const PAGE_SIZE = 30;
+
+export function init(signal) {
   const searchInput = document.querySelector('#kanjiSearch');
   const categorySelector = document.querySelector('#kanjiCategorySelector');
   const resultsEl = document.querySelector('#kanjiResults');
   const countEl = document.querySelector('#kanjiResultCount');
+  const paginationEl = document.querySelector('#kanjiPagination');
 
   if (!resultsEl) return;
 
   let currentCategory = 'all';
+  let visibleLimit = PAGE_SIZE;
   let searchTimer;
 
-  function render() {
+  function render(resetLimit = true) {
+    if (resetLimit) visibleLimit = PAGE_SIZE;
     const query = (searchInput?.value || '').toLowerCase().trim();
     const filtered = KANJI_N5.filter((item) => {
       if (currentCategory !== 'all' && item.category !== currentCategory) return false;
@@ -22,24 +28,27 @@ import { SPEAKER_ICON_SVG, speakJapanese } from './speech.js';
       return haystack.includes(query);
     });
 
-    if (countEl) {
-      countEl.textContent = `Menampilkan ${filtered.length} dari ${KANJI_N5.length} Kanji dasar N5`;
-    }
-
     if (!filtered.length) {
+      if (countEl) countEl.textContent = '0 Kanji ditemukan';
       resultsEl.innerHTML = `
         <div class="col-span-full rounded-2xl border border-slate-200 bg-white p-8 text-center">
           <p class="text-base font-bold text-slate-700">Kanji tidak ditemukan</p>
           <p class="mt-1 text-sm text-slate-500">Coba kata kunci arti Indonesia, onyomi, kunyomi, atau contoh kata lain.</p>
         </div>`;
+      paginationEl?.replaceChildren();
       return;
     }
 
     const furiganaHidden = document.body.classList.contains('furigana-off');
-    resultsEl.innerHTML = filtered.map((item) => {
+    const visibleItems = filtered.slice(0, visibleLimit);
+    if (countEl) {
+      countEl.textContent = `Menampilkan ${visibleItems.length} dari ${filtered.length} Kanji dasar N5`;
+    }
+
+    resultsEl.innerHTML = visibleItems.map((item) => {
       const cat = KANJI_CATEGORIES[item.category];
       return `
-      <article class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-colors hover:border-crimson/50">
+      <article class="cv-auto flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5">
         <div>
           <div class="flex items-start justify-between gap-3 border-b border-slate-100 pb-3">
             <div class="flex items-center gap-3">
@@ -86,13 +95,29 @@ import { SPEAKER_ICON_SVG, speakJapanese } from './speech.js';
         </div>
       </article>`;
     }).join('');
+
+    if (paginationEl) {
+      paginationEl.replaceChildren();
+      const remaining = filtered.length - visibleItems.length;
+      if (remaining > 0) {
+        const moreBtn = document.createElement('button');
+        moreBtn.type = 'button';
+        moreBtn.className = 'secondary-button';
+        moreBtn.textContent = `Tampilkan ${Math.min(PAGE_SIZE, remaining)} Kanji lagi (${remaining} tersisa)`;
+        moreBtn.addEventListener('click', () => {
+          visibleLimit += PAGE_SIZE;
+          render(false);
+        });
+        paginationEl.append(moreBtn);
+      }
+    }
   }
 
   resultsEl.addEventListener('click', (event) => {
     const btn = event.target.closest('[data-speak]');
     if (!btn) return;
     speakJapanese(btn.dataset.speak, { button: btn });
-  });
+  }, { signal });
 
   categorySelector?.addEventListener('click', (event) => {
     const btn = event.target.closest('[data-category]');
@@ -108,20 +133,24 @@ import { SPEAKER_ICON_SVG, speakJapanese } from './speech.js';
       chip.classList.toggle('text-slate-700', !active);
       chip.classList.toggle('border-slate-200', !active);
     });
-    render();
-  });
+    render(true);
+  }, { signal });
 
   searchInput?.addEventListener('input', () => {
     clearTimeout(searchTimer);
-    searchTimer = setTimeout(render, 120);
-  });
+    searchTimer = setTimeout(() => render(true), 120);
+  }, { signal });
 
   document.addEventListener('hongo-furigana-change', () => {
     const hidden = document.body.classList.contains('furigana-off');
     resultsEl.querySelectorAll('rt').forEach((rt) => {
       rt.setAttribute('aria-hidden', String(hidden));
     });
-  });
+  }, { signal });
 
-  render();
-})();
+  signal?.addEventListener('abort', () => clearTimeout(searchTimer), { once: true });
+
+  render(true);
+}
+
+mountPage(init);

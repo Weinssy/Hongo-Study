@@ -13,6 +13,25 @@ async function getAudioManifest() {
   return manifestPromise;
 }
 
+export function preloadAudioManifest() {
+  if (typeof window === 'undefined') return;
+  getAudioManifest().catch(() => {});
+}
+
+export function stopSpeech() {
+  if (activeAudio) {
+    try {
+      activeAudio.pause();
+      activeAudio.currentTime = 0;
+    } catch {}
+  }
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    try {
+      window.speechSynthesis.cancel();
+    } catch {}
+  }
+}
+
 function resolveAudioUrl(fileName) {
   if (typeof window === 'undefined') return `./audio/${fileName}`;
   const path = window.location?.pathname || '/';

@@ -2,8 +2,9 @@ import { quizData } from './quiz-data.js';
 import { escapeHtml, isCorrectChoice, shuffle } from './study-core.js';
 import { getWrongAnswers, recordAnswer, recordVisit } from './progress.js';
 import { speakJapanese } from './speech.js';
+import { mountPage } from './page-lifecycle.js';
 
-(() => {
+export function init(signal) {
 
   // DOM Elements
   const categorySelector = document.querySelector("#categorySelector");
@@ -394,7 +395,7 @@ import { speakJapanese } from './speech.js';
     setRomajiHintVisible(questionRomaji.hidden);
   });
 
-  document.addEventListener("hongo-furigana-change", applyFurigana);
+  document.addEventListener("hongo-furigana-change", applyFurigana, { signal });
 
   nextButton.addEventListener("click", () => {
     if (!answered) return;
@@ -418,7 +419,7 @@ import { speakJapanese } from './speech.js';
       // Update URL without page reload
       const newUrl = new URL(window.location);
       newUrl.searchParams.set("kategori", cat);
-      window.history.replaceState({}, "", newUrl);
+      window.history.replaceState(window.history.state || {}, "", newUrl);
 
       startQuiz(cat, true);
     });
@@ -426,4 +427,6 @@ import { speakJapanese } from './speech.js';
 
   // Initial Launch
   startQuiz(currentCategory);
-})();
+}
+
+mountPage(init);

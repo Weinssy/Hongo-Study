@@ -1,6 +1,7 @@
 import { annotateJapanese } from './language.js';
 import { escapeHtml } from './study-core.js';
 import { SPEAKER_ICON_SVG, speakJapanese } from './speech.js';
+import { mountPage } from './page-lifecycle.js';
 
 const ARCHITECTURE_TERMS = [
   ['城', 'しろ', 'shiro', 'Kastel', 'Benteng tradisional Jepang dengan fondasi batu melengkung dan menara utama.'],
@@ -32,7 +33,7 @@ const STAGES = [
 const $ = (sel, root = document) => root.querySelector(sel);
 const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
 
-(() => {
+export function init(signal) {
   const canvas = $('#pagodaCanvas');
   const ctx = canvas?.getContext('2d');
   const slider = $('#pagodaProgress');
@@ -252,12 +253,22 @@ const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
   }
 
   if (canvas && ctx) {
-    if ('ResizeObserver' in window) new ResizeObserver(resize).observe(canvas);
-    else addEventListener('resize', resize);
-    new MutationObserver(() => {
+    let resizeObserver = null;
+    if ('ResizeObserver' in window) {
+      resizeObserver = new ResizeObserver(resize);
+      resizeObserver.observe(canvas);
+    } else {
+      addEventListener('resize', resize, { signal });
+    }
+    const themeObserver = new MutationObserver(() => {
       const dark = document.documentElement.classList.contains('dark-mode');
       if (dark !== isDark) { isDark = dark; drawPagoda(); }
-    }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    });
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    signal?.addEventListener('abort', () => {
+      resizeObserver?.disconnect();
+      themeObserver.disconnect();
+    }, { once: true });
 
     canvas.addEventListener('pointerdown', e => {
       pointerId = e.pointerId;
@@ -289,12 +300,16 @@ const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
       drawPagoda();
     });
 
-    document.addEventListener('visibilitychange', syncMotion);
+    document.addEventListener('visibilitychange', syncMotion, { signal });
     reducedMotion.addEventListener('change', () => {
       if (reducedMotion.matches) playing = false;
       syncMotion();
       syncStage();
-    });
+    }, { signal });
+    signal?.addEventListener('abort', () => {
+      cancelAnimationFrame(rafId);
+      rafId = 0;
+    }, { once: true });
     resize();
     syncStage();
     syncMotion();
@@ -349,7 +364,7 @@ const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
   renderTerms($('#architectureGrid'), ARCHITECTURE_TERMS);
   renderTerms($('#anatomyGrid'), ANATOMY_TERMS);
   syncFurigana();
-  document.addEventListener('hongo-furigana-change', syncFurigana);
+  document.addEventListener('hongo-furigana-change', syncFurigana, { signal });
   vocabSection?.addEventListener('click', (event) => {
     const btn = event.target.closest('[data-speak]');
     if (!btn) return;
@@ -369,4 +384,6 @@ const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
     });
   });
   panels.forEach(p => p.addEventListener('beforematch', () => selectTab(p.dataset.panel)));
-})();
+}
+
+mountPage(init);

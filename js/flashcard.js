@@ -13,8 +13,9 @@ import {
   recordVisit,
 } from './progress.js';
 import { speakJapanese } from './speech.js';
+import { mountPage } from './page-lifecycle.js';
 
-(() => {
+export function init(signal) {
   const categorySelector = document.querySelector('#srsCategorySelector');
   const dueCountEl = document.querySelector('#srsDueCount');
   const newCountEl = document.querySelector('#srsNewCount');
@@ -258,9 +259,11 @@ import { speakJapanese } from './speech.js';
         handleRate(keyMap[event.key]);
       }
     }
-  });
+  }, { signal });
 
-  document.addEventListener('hongo-furigana-change', syncFurigana);
+  document.addEventListener('hongo-furigana-change', syncFurigana, { signal });
 
   startSrsSession('all', false);
-})();
+}
+
+mountPage(init);
